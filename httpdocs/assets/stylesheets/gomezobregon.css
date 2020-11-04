@@ -1,0 +1,30 @@
+body {
+	font-family: 'Source Sans Pro', sans-serif;
+	font-size: 1.35em;
+    color: #37474f;
+}
+
+main {
+	max-width: 40em;
+	margin: auto;
+    font-family: Georgia, serif;
+    line-height: 1.5;
+}
+
+main h1 {
+    font-family: 'Source Sans Pro', sans-serif;
+    text-align: center;
+    color: #263238;
+}
+
+main > p:first-of-type::first-line {
+    font-variant: small-caps;
+}
+
+main a {
+    color: inherit;
+}
+
+main blockquote {
+    font-style: italic;
+}
