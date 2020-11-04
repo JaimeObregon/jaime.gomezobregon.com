@@ -1,12 +1,82 @@
+:root {
+    --color-main-100: #0e2439;
+    --color-main-200: #182e43;
+    --color-main-300: #1f364d;
+    --color-main-400: #274059;
+    --color-main-500: #2b455e;
+    --color-main-600: #354f69;
+    --color-main-700: #63809c;
+    --color-main-800: #9cb3c9;
+    --color-main-900: #b6cce2;
+    --color-accent-white: #ffffff;
+    --color-accent-cyan: #4799eb;
+    --color-accent-red: #e6375a;
+}
+
+::selection {
+    background-color: var(--color-accent-cyan);
+    color: var(--color-accent-white);
+}
+
 body {
 	font-family: 'Source Sans Pro', sans-serif;
 	font-size: 1.35em;
     color: #37474f;
+    background: var(--color-main-100);
+    color: var(--color-main-800);
+    cursor: default;
+}
+
+a {
+    font-weight: 500;
+    text-decoration: none;
+    color: var(--color-accent-white);
+}
+
+a:hover {
+    color: var(--color-accent-white);
+    text-decoration: underline;
+}
+
+main,
+nav {
+    max-width: 50rem;
+    margin: auto;
+}
+
+nav {
+    font-size: 1.15em;
+}
+
+nav ol {
+    padding: 0;
+    list-style: none;
+}
+
+nav ol li {
+    margin: 1em 0;
+}
+
+nav ol li a {
+    color: var(--color-main-900);
+}
+
+nav ol time {
+    font-weight: 300;
+    font-size: .65em;
+    color: var(--color-main-600);
+}
+
+nav a time:before {
+    content: '';
+    display: block;
+}
+
+nav a:hover {
+    text-decoration: none;
 }
 
 main {
-	max-width: 40em;
-	margin: auto;
     font-family: Georgia, serif;
     line-height: 1.5;
 }
@@ -14,7 +84,7 @@ main {
 main h1 {
     font-family: 'Source Sans Pro', sans-serif;
     text-align: center;
-    color: #263238;
+    color: var(--color-accent-white);
 }
 
 main > p:first-of-type::first-line {
@@ -22,7 +92,6 @@ main > p:first-of-type::first-line {
 }
 
 main a {
-    color: inherit;
 }
 
 main blockquote {
