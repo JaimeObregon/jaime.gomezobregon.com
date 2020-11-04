@@ -12,7 +12,7 @@ import { posts } from './posts.js?1'
 
     const items = Object.entries(posts).map(([slug, post]) => `
         <li>
-            <a href="/${slug}">
+            <a href="/${slug}" hreflang="${post.language}">
                 ${post.title}
                 <time>${new Date(post.date).toLocaleDateString('es-ES', options)}</time>
             </a>
