@@ -14,7 +14,7 @@
 }
 
 ::selection {
-    background-color: var(--color-accent-cyan);
+    background-color: var(--color-main-600);
     color: var(--color-accent-white);
 }
 
@@ -83,7 +83,12 @@ main {
 
 main h1 {
     font-family: 'Source Sans Pro', sans-serif;
-    text-align: center;
+    color: var(--color-accent-white);
+}
+
+main h2 {
+    font-size: 1.25em;
+    font-family: 'Source Sans Pro', sans-serif;
     color: var(--color-accent-white);
 }
 
@@ -96,4 +101,94 @@ main a {
 
 main blockquote {
     font-style: italic;
+}
+
+
+
+body {
+    overflow: hidden;
+    transition: 250ms ease;
+}
+
+body.article {
+    transition: 350ms ease;
+
+}
+
+body > div {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    width: 200vw;
+    overflow: scroll;
+}
+
+body > div > * {
+    width: 100vw;
+    align-self: flex-start;
+}
+
+main {
+    margin: 0 auto;
+    height: 100vh;
+    overflow: scroll;
+    position: relative;
+}
+
+body.article {
+    transform: translateX(-100vw)
+}
+
+
+nav {
+    box-sizing: border-box;
+    padding: 4em 0;
+    height: 100vh;
+    overflow: scroll;
+}
+
+button {
+    border: none;
+    outline: none;
+    background: transparent;
+    color: var(--color-main-400);
+    font-size: 5em;
+    position: fixed;
+    left: 100vw;
+    top: 0;
+    width: 10rem;
+    height: 100vh;
+    cursor: pointer;
+    transition: 400ms ease;
+}
+
+button:hover {
+    background: var(--color-main-200);
+    color: var(--color-accent-white);
+    transition: 250ms ease;
+}
+
+main strong {
+    font-weight: 600;
+    color:var(--color-main-900);
+}
+
+abbr {
+    cursor: help;
+}
+
+h1 {
+    line-height: 1.15;
+}
+
+main header {
+    text-align: center;
+    margin: 2em 0;
+}
+main header h1 {
+}
+
+main header time {
+    display: block;
+    color: var(--color-main-700);
 }
