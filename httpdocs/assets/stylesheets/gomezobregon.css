@@ -38,10 +38,10 @@ a:hover {
     text-decoration: underline;
 }
 
-main,
-nav {
+nav > div,
+main > div {
+    margin: 4em auto;
     max-width: 50rem;
-    margin: auto;
 }
 
 nav {
@@ -103,16 +103,16 @@ main blockquote {
     font-style: italic;
 }
 
-
-
 body {
     overflow: hidden;
-    transition: 250ms ease;
 }
 
-body.article {
+body.transition.article {
     transition: 350ms ease;
+}
 
+body.transition {
+    transition: 250ms ease;
 }
 
 body > div {
@@ -139,7 +139,6 @@ body.article {
     transform: translateX(-100vw)
 }
 
-
 nav {
     box-sizing: border-box;
     padding: 4em 0;
@@ -152,14 +151,17 @@ button {
     outline: none;
     background: transparent;
     color: var(--color-main-400);
-    font-size: 5em;
     position: fixed;
     left: 100vw;
     top: 0;
-    width: 10rem;
+    width: calc((100vw - 50rem) / 2 - 5rem);
     height: 100vh;
     cursor: pointer;
     transition: 400ms ease;
+}
+
+button svg {
+    width: 5em;
 }
 
 button:hover {

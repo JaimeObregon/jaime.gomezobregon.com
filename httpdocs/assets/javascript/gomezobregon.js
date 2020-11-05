@@ -1,86 +1,122 @@
 import { posts } from './posts.js?1'
 
-    const options = {
+const blog = {
+
+    /**
+     * Formato de las fechas
+     */
+    dateFormat: {
         day: 'numeric',
         month: 'long',
         year: 'numeric',
-    }
+    },
 
-const load = async (url, contents) => {
-    const slug = url.split('/')[1]
-    document.querySelector('head base').remove()
-    document.head.innerHTML += `<base href="/posts/${slug}/">`
-    const response = await fetch(`/posts/${slug}/index.html`)
+    nav : null,
 
-    if (!response.ok) {
-        console.log('404')
-    }
-    else {
-        document.body.classList.add('article')
-        const content = await response.text()
-        document.querySelector(contents).innerHTML = content
+    main : null,
 
-        const header = document.createElement('header')
+    close : null,
 
-        const h1 = document.querySelector(contents).querySelector('h1').innerHTML
-        const date = new Date(posts[slug].date).toLocaleDateString('es-ES', options)
+    /**
+     * Inicializa la lógica del blog
+     */
+    init: function(options = {}) {
+        const {
+            nav = 'nav',
+            main = 'main',
+            close = 'main > button',
+        } = options
 
-        header.innerHTML = `
-            <h1>${h1}</h1>
-            <time>${date}</time>
-        `
+        this.nav = document.querySelector(nav)
+        this.main = document.querySelector(main)
+        this.close = document.querySelector(close)
 
-        document.querySelector(contents).querySelector('h1').replaceWith(header)
-
-        const title = posts[slug].title
-        history.pushState({}, title, url)
-    }
-}
-
-((menu, contents) => {
-
-    const nav = document.querySelector(menu)
-
-
-    const items = Object.entries(posts).map(([slug, post]) => `
-        <li>
-            <a href="/${slug}" hreflang="${post.language}">
-                ${post.title}
-                <time>${new Date(post.date).toLocaleDateString('es-ES', options)}</time>
-            </a>
-        </li>
-    `)
-
-    nav.innerHTML = `
-        <ol>
-            ${items.join('')}
-        </ol>
-    `
-
-    nav.addEventListener('click', event => {
-        const a = event.target.closest('a')
-        if (!a) {
-            return
+        const slug = document.location.pathname.split('/')[1]
+        if (posts[slug]) {
+            blog.load(slug)
         }
 
-        const url = new URL(a.href)
+        setTimeout(() => document.body.classList.add('transition'), 500)
 
-        event.preventDefault()
+        const items = Object.entries(posts).map(([slug, post]) => `
+            <li>
+                <a href="/${slug}" hreflang="${post.language}">
+                    ${post.title}
+                    <time>${new Date(post.date).toLocaleDateString('es-ES', this.dateFormat)}</time>
+                </a>
+            </li>
+        `)
 
-        load(url.pathname, contents)
-    })
+        this.nav.innerHTML = `
+            <ol>
+                ${items.join('')}
+            </ol>
+        `
 
-})('nav', 'main div')
+        this.nav.addEventListener('click', event => {
+            const a = event.target.closest('a')
+            if (!a) {
+                return
+            }
 
+            event.preventDefault()
 
-document.querySelector('button').addEventListener('click', event => {
-    document.body.classList.toggle('article')
-    // history.back()
-    history.pushState({}, '', '/')
-})
+            const slug = new URL(a.href).pathname.split('/')[1]
+            this.load(slug)
 
-const slug = document.location.pathname.split('/')[1]
+            const title = posts[slug].title
+            history.pushState(null, title, `/${slug}`)
+        })
 
-if (posts[slug]) {
-    load('/' + slug, 'main div')
+        this.close.addEventListener('click', event => {
+            this.menu()
+            history.pushState(null, '', '/')
+        })
+
+        window.addEventListener('popstate', event => {
+            const slug = new URL(document.location).pathname.split('/')[1]
+            slug ? this.load(slug) : this.menu()
+        })
+    },
+
+    menu: function() {
+        document.body.classList.toggle('article')
+    },
+
+    /**
+     * Carga un artículo
+     */
+    load: async function(slug) {
+        document.querySelector('head base').remove()
+        document.head.innerHTML += `<base href="/posts/${slug}/">`
+        const response = await fetch(`/posts/${slug}/index.html`)
+
+        if (!response.ok) {
+            alert('Error')
+        }
+        else {
+            document.body.classList.add('article')
+            const content = await response.text()
+            this.main.innerHTML = content
+
+            const header = document.createElement('header')
+
+            const h1 = this.main.querySelector('h1').innerHTML
+            const date = new Date(posts[slug].date).toLocaleDateString('es-ES', this.dateFormat)
+
+            header.innerHTML = `
+                <h1>${h1}</h1>
+                <time>${date}</time>
+            `
+
+            this.main.querySelector('h1').replaceWith(header)
+        }
+    },
+
 }
+
+blog.init({
+    nav: 'nav > div',
+    main: 'main > div',
+    close: 'main > button',
+})
