@@ -1,4 +1,7 @@
 :root {
+    --padding: 5rem;
+    --width: 50rem;
+
     --color-main-100: #0e2439;
     --color-main-200: #182e43;
     --color-main-300: #1f364d;
@@ -19,92 +22,12 @@
 }
 
 body {
-	font-family: 'Source Sans Pro', sans-serif;
-	font-size: 1.35em;
-    color: #37474f;
+	font-family: 'Open Sans', sans-serif;
+	font-size: 1.25em;
     background: var(--color-main-100);
     color: var(--color-main-800);
-    cursor: default;
-}
-
-a {
-    font-weight: 500;
-    text-decoration: none;
-    color: var(--color-accent-white);
-}
-
-a:hover {
-    color: var(--color-accent-white);
-    text-decoration: underline;
-}
-
-nav > div,
-main > div {
-    margin: 4em auto;
-    max-width: 50rem;
-}
-
-nav {
-    font-size: 1.15em;
-}
-
-nav ol {
-    padding: 0;
-    list-style: none;
-}
-
-nav ol li {
-    margin: 1em 0;
-}
-
-nav ol li a {
-    color: var(--color-main-900);
-}
-
-nav ol time {
-    font-weight: 300;
-    font-size: .65em;
-    color: var(--color-main-600);
-}
-
-nav a time:before {
-    content: '';
-    display: block;
-}
-
-nav a:hover {
-    text-decoration: none;
-}
-
-main {
-    font-family: Georgia, serif;
-    line-height: 1.5;
-}
-
-main h1 {
-    font-family: 'Source Sans Pro', sans-serif;
-    color: var(--color-accent-white);
-}
-
-main h2 {
-    font-size: 1.25em;
-    font-family: 'Source Sans Pro', sans-serif;
-    color: var(--color-accent-white);
-}
-
-main > p:first-of-type::first-line {
-    font-variant: small-caps;
-}
-
-main a {
-}
-
-main blockquote {
-    font-style: italic;
-}
-
-body {
     overflow: hidden;
+    cursor: default;
 }
 
 body.transition.article {
@@ -113,6 +36,24 @@ body.transition.article {
 
 body.transition {
     transition: 250ms ease;
+}
+
+body.article {
+    transform: translateX(-100vw);
+}
+
+a {
+    font-weight: 400;
+    text-decoration: none;
+    color: var(--color-accent-white);
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+abbr {
+    cursor: help;
 }
 
 body > div {
@@ -128,69 +69,113 @@ body > div > * {
     align-self: flex-start;
 }
 
-main {
-    margin: 0 auto;
-    height: 100vh;
-    overflow: scroll;
-    position: relative;
-}
-
-body.article {
-    transform: translateX(-100vw)
+nav > div,
+main article {
+    margin: var(--padding) auto;
+    max-width: var(--width);
 }
 
 nav {
     box-sizing: border-box;
-    padding: 4em 0;
+    font-size: 1.15em;
+    padding: var(--padding) 0;
     height: 100vh;
     overflow: scroll;
 }
 
-button {
+nav ol {
+    padding: 0;
+    list-style: none;
+}
+
+nav ol li {
+    margin: 1em 0;
+}
+
+nav ol li a {
+    color: var(--color-main-900);
+    transition: 350ms ease;
+}
+
+nav ol li a:hover {
+    color: var(--color-accent-white);
+    text-decoration: none;
+    transition: 250ms ease;
+}
+
+nav ol time {
+    font-size: .65em;
+    font-weight: 300;
+    color: var(--color-main-600);
+}
+
+nav a time:before {
+    content: '';
+    display: block;
+}
+
+main {
+    position: relative;
+    height: 100vh;
+    margin: 0 auto;
+    overflow: scroll;
+    font-family: 'Merriweather', serif;
+    font-weight: 300;
+    line-height: 1.75;
+}
+
+main > button {
+    position: fixed;
+    top: 0;
+    left: 100vw;
+    width: calc((100vw - var(--width)) / 2 - var(--padding));
+    height: 100vh;
     border: none;
     outline: none;
+    transition: 400ms ease;
     background: transparent;
     color: var(--color-main-400);
-    position: fixed;
-    left: 100vw;
-    top: 0;
-    width: calc((100vw - 50rem) / 2 - 5rem);
-    height: 100vh;
     cursor: pointer;
-    transition: 400ms ease;
 }
 
-button svg {
-    width: 5em;
-}
-
-button:hover {
+main > button:hover {
     background: var(--color-main-200);
     color: var(--color-accent-white);
     transition: 250ms ease;
 }
 
-main strong {
-    font-weight: 600;
-    color:var(--color-main-900);
-}
-
-abbr {
-    cursor: help;
-}
-
-h1 {
-    line-height: 1.15;
+main > button svg {
+    width: 5em;
 }
 
 main header {
-    text-align: center;
     margin: 2em 0;
-}
-main header h1 {
+    text-align: center;
 }
 
 main header time {
+    font-size: .75em;
     display: block;
     color: var(--color-main-700);
+}
+
+main h1,
+main h2 {
+    font-family: 'Open Sans', sans-serif;
+    color: var(--color-accent-white);
+    line-height: 1.15;
+}
+
+main h2 {
+    font-size: 1.25em;
+}
+
+main blockquote {
+    margin: 0;
+    font-style: italic;
+}
+
+main strong {
+    font-weight: 700;
+    color:var(--color-main-900);
 }

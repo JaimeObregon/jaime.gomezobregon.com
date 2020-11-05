@@ -23,8 +23,8 @@ const blog = {
     init: function(options = {}) {
         const {
             nav = 'nav',
-            main = 'main',
-            close = 'main > button',
+            main = 'article',
+            close = 'button',
         } = options
 
         this.nav = document.querySelector(nav)
@@ -110,6 +110,8 @@ const blog = {
             `
 
             this.main.querySelector('h1').replaceWith(header)
+
+            this.main.querySelectorAll('script').forEach(script => eval(script.innerText))
         }
     },
 
@@ -117,6 +119,6 @@ const blog = {
 
 blog.init({
     nav: 'nav > div',
-    main: 'main > div',
+    main: 'article',
     close: 'main > button',
 })
