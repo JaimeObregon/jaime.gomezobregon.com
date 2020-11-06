@@ -1,3 +1,9 @@
+<style>
+    iframe {
+        width: 100%;
+    }
+</style>
+
 <h1>Feynman on religion</h1>
 
 <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/_MmpUWEW6Is" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
@@ -9,3 +15,10 @@
         — <a href="http://es.wikipedia.org/wiki/Richard_Feynman">Richard Feynman</a>. Genio (y premio Nobel de física)
     </footer>
 </blockquote>
+
+<script>
+    const ratio = 16 / 9
+    const iframe = document.querySelector('iframe')
+    const height = iframe.offsetWidth / ratio
+    iframe.style.height = `${height}px`
+</script>
