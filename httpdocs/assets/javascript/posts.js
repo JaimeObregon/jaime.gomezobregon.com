@@ -1,8 +1,14 @@
 export const posts = {
+    "tsunami-de-libertad-o-alienacion-tecnificada": {
+        title: "¿Tsunami de libertad o alienación tecnificada?",
+        date: "2019-12-28 19:41",
+        tags: ['General'],
+        language: "es",
+    },
     "on-the-verge-of-a-new-era-freedom-tsunami-or-schemed-alienation": {
         title: "On the verge of a new era: freedom tsunami or schemed alienation?",
-        date: "",
-        tags: [],
+        date: "2019-12-16 18:36",
+        tags: ["General"],
         language: "en",
     },
     "las-noticias-son-para-la-mente-lo-que-la-comida-basura-para-el-cuerpo": {
@@ -10,6 +16,12 @@ export const posts = {
         date: "2019-01-28 22:15",
         tags: ["General"],
         language: "es",
+    },
+    "tecnologia-inteligente-ciudades-idiotas": {
+        title: "Tecnología inteligente, ciudades idiotas",
+        date: "2015-11-24",
+        tags: ["General"],
+        language: "en",
     },
     "me-entrevistan-en-el-heraldo-de-colombia": {
         title: "Me entrevistan en El Heraldo de Colombia",

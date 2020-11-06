@@ -1,3 +1,15 @@
+@keyframes appearFromTop {
+    0% {
+        opacity: 0;
+        transform: translateY(-4em);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
 :root {
     --padding: 5rem;
     --width: 50rem;
@@ -90,6 +102,7 @@ nav ol {
 
 nav ol li {
     margin: 1em 0;
+    animation: appearFromTop 150ms calc(30ms * var(--order)) backwards;
 }
 
 nav ol li a {
@@ -171,8 +184,21 @@ main h2 {
 }
 
 main blockquote {
+    --padding: 3em;
+    position: relative;
     margin: 0;
+    padding-left: var(--padding);
     font-style: italic;
+}
+
+main blockquote:before {
+    content: '”';
+    position: absolute;
+    top: .15em;
+    left: 0;
+    width: var(--padding);
+    font-size: 3em;
+    line-height: 1;
 }
 
 main strong {

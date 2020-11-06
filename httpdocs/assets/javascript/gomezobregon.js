@@ -38,8 +38,8 @@ const blog = {
 
         setTimeout(() => document.body.classList.add('transition'), 500)
 
-        const items = Object.entries(posts).map(([slug, post]) => `
-            <li>
+        const items = Object.entries(posts).map(([slug, post], order) => `
+            <li style="--order: ${order + 1}">
                 <a href="/${slug}" hreflang="${post.language}">
                     ${post.title}
                     <time>${new Date(post.date).toLocaleDateString('es-ES', this.dateFormat)}</time>
