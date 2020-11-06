@@ -32,7 +32,7 @@ const blog = {
         this.close = document.querySelector(close)
 
         const slug = document.location.pathname.split('/')[1]
-        if (posts[slug]) {
+        if (slug) {
             blog.load(slug)
         }
 
@@ -54,8 +54,12 @@ const blog = {
         `
 
         this.nav.addEventListener('click', event => {
+            // Discriminemos el control+clic o clic con el botón central,
+            // para que el usuario pueda seguir abriendo los enlaces en nuevas pestañas
+            const leftButtonClick = event.which === 1 && !event.ctrlKey && !event.metaKey
+
             const a = event.target.closest('a')
-            if (!a) {
+            if (!a || !leftButtonClick) {
                 return
             }
 
@@ -87,14 +91,15 @@ const blog = {
      * Carga un artículo
      */
     load: async function(slug) {
-        document.querySelector('head base').remove()
-        document.head.innerHTML += `<base href="/posts/${slug}/">`
         const response = await fetch(`/posts/${slug}/index.html`)
 
         if (!response.ok) {
-            alert('Error')
+            this.error()
         }
         else {
+            const base = document.querySelector('head base')
+            base.setAttribute('href', `/posts/${slug}/`)
+
             document.body.classList.add('article')
             const content = await response.text()
             this.main.innerHTML = content
@@ -114,6 +119,17 @@ const blog = {
             this.main.querySelectorAll('script').forEach(script => eval(script.innerText))
         }
     },
+
+    /**
+     * Muestra una página de error
+     */
+    error: async () => {
+        const response = await fetch(`/error.html`)
+        const content = await response.text()
+        document.body.innerHTML = content
+        document.head.innerHTML = `<style>${document.body.querySelector('style').innerText}</style>`
+        document.body.querySelector('style').remove()
+    }
 
 }
 
