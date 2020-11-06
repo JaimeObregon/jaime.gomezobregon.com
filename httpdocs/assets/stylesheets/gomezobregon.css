@@ -13,6 +13,7 @@
 :root {
     --padding: 5rem;
     --width: 50rem;
+    --line-height: 1.75;
 
     --color-main-100: #0e2439;
     --color-main-200: #182e43;
@@ -68,6 +69,11 @@ abbr {
     cursor: help;
 }
 
+summary {
+    cursor: pointer;
+    outline: none;
+}
+
 body > div {
     display: flex;
     justify-content: space-between;
@@ -81,48 +87,73 @@ body > div > * {
     align-self: flex-start;
 }
 
-nav > div,
+body > div > header > *,
 main article {
     margin: var(--padding) auto;
     max-width: var(--width);
 }
 
-nav {
+body > div > header {
     box-sizing: border-box;
-    font-size: 1.15em;
-    padding: var(--padding) 0;
+    font-size: 1.25em;
     height: 100vh;
     overflow: scroll;
 }
 
-nav ol {
-    padding: 0;
-    list-style: none;
+body > div > header section {
+    font-family: 'Merriweather', serif;
+    line-height: var(--line-height);
+    font-size: 1.25rem;
+    font-weight: 300;
 }
 
-nav ol li {
-    margin: 1em 0;
-    animation: appearFromTop 150ms calc(30ms * var(--order)) backwards;
-}
-
-nav ol li a {
-    color: var(--color-main-900);
+body > div > header section summary {
     transition: 350ms ease;
 }
 
-nav ol li a:hover {
+body > div > header section summary:hover {
     color: var(--color-accent-white);
     text-decoration: none;
     transition: 250ms ease;
 }
 
-nav ol time {
+body > div > header section h1 {
+    font-size: 1.5em;
+    color: var(--color-accent-white);
+}
+
+body > div > header ol {
+    padding: 0;
+    list-style: none;
+}
+
+body > div > header ol li {
+    margin: 1em 0;
+    animation: appearFromTop 150ms calc(30ms * var(--order)) backwards;
+}
+
+body > div > header ol li a {
+    color: var(--color-main-900);
+    transition: 350ms ease;
+}
+
+body > div > header ol li a:visited {
+    color: var(--color-main-700);
+}
+
+body > div > header ol li a:hover {
+    color: var(--color-accent-white);
+    text-decoration: none;
+    transition: 250ms ease;
+}
+
+body > div > header ol time {
     font-size: .65em;
     font-weight: 300;
     color: var(--color-main-600);
 }
 
-nav a time:before {
+body > div > header a time:before {
     content: '';
     display: block;
 }
@@ -134,7 +165,7 @@ main {
     overflow: scroll;
     font-family: 'Merriweather', serif;
     font-weight: 300;
-    line-height: 1.75;
+    line-height: var(--line-height);
 }
 
 main > button {

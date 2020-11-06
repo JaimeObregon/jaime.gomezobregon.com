@@ -134,7 +134,7 @@ const blog = {
 }
 
 blog.init({
-    nav: 'nav > div',
-    main: 'article',
+    nav: 'body > div > header > nav',
+    main: 'main > article',
     close: 'main > button',
 })
