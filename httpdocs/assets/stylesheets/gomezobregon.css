@@ -44,6 +44,15 @@ a:hover {
     text-decoration: underline;
 }
 
+figure {
+    text-align: center;
+    margin: 1em 0;
+}
+
+figure figcaption {
+    font-size: .85em;
+}
+
 abbr {
     cursor: help;
 }
