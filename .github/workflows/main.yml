@@ -1,0 +1,24 @@
+name: Despliega en producción tras cada push a master
+
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Se trae el repositorio
+        uses: actions/checkout@v1
+
+      - name: Despliega en producción
+        uses: easingthemes/ssh-deploy@v2.1.5
+        env:
+          ARGS: -rltgoDzvO --delete
+          SOURCE: "httpdocs/"
+          TARGET: ${{ secrets.TARGET }}
+          REMOTE_HOST: ${{ secrets.HOST }}
+          REMOTE_USER: ${{ secrets.USER }}
+          REMOTE_PORT: ${{ secrets.PORT }}
+          SSH_PRIVATE_KEY: ${{ secrets.KEY }}
