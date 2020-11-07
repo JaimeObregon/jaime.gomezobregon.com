@@ -13,7 +13,7 @@ const blog = {
 
     nav : null,
 
-    main : null,
+    article : null,
 
     close : null,
 
@@ -23,12 +23,12 @@ const blog = {
     init: function(options = {}) {
         const {
             nav = 'nav',
-            main = 'article',
             close = 'button',
+            article = 'article',
         } = options
 
         this.nav = document.querySelector(nav)
-        this.main = document.querySelector(main)
+        this.article = document.querySelector(article)
         this.close = document.querySelector(close)
 
         const slug = document.location.pathname.split('/')[1]
@@ -102,11 +102,11 @@ const blog = {
 
             document.body.classList.add('article')
             const content = await response.text()
-            this.main.innerHTML = content
+            this.article.innerHTML = content
 
             const header = document.createElement('header')
 
-            const h1 = this.main.querySelector('h1').innerHTML
+            const h1 = this.article.querySelector('h1').innerHTML
             const date = new Date(posts[slug].date).toLocaleDateString('es-ES', this.dateFormat)
 
             header.innerHTML = `
@@ -114,9 +114,9 @@ const blog = {
                 <time>${date}</time>
             `
 
-            this.main.querySelector('h1').replaceWith(header)
+            this.article.querySelector('h1').replaceWith(header)
 
-            this.main.querySelectorAll('script').forEach(script => eval(script.innerText))
+            this.article.querySelectorAll('script').forEach(script => eval(script.innerText))
         }
     },
 
@@ -135,6 +135,6 @@ const blog = {
 
 blog.init({
     nav: 'body > header > nav',
-    main: 'main > article',
+    article: 'main > article',
     close: 'main > button',
 })
