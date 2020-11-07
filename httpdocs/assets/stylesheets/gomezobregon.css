@@ -265,3 +265,9 @@ main strong {
         height: 75%;
     }
 }
+
+@media (max-width: 50rem) {
+    body {
+        font-size: 1em;
+    }
+}
