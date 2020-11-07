@@ -34,27 +34,6 @@
     color: var(--color-accent-white);
 }
 
-body {
-	font-family: 'Open Sans', sans-serif;
-	font-size: 1.25em;
-    background: var(--color-main-100);
-    color: var(--color-main-800);
-    overflow: hidden;
-    cursor: default;
-}
-
-body.transition.article {
-    transition: 350ms ease;
-}
-
-body.transition {
-    transition: 250ms ease;
-}
-
-body.article {
-    transform: translateX(-100vw);
-}
-
 a {
     font-weight: 400;
     text-decoration: none;
@@ -74,86 +53,113 @@ summary {
     outline: none;
 }
 
-body > div {
+h1, h2 {
+    margin: 0;
+}
+
+body {
     display: flex;
     justify-content: space-between;
     align-items: flex-start;
     width: 200vw;
-    overflow: scroll;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 1.25em;
+    font-weight: 300;
+    line-height: var(--line-height);
+    background: var(--color-main-100);
+    color: var(--color-main-800);
+    overflow: hidden;
+    cursor: default;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
 }
 
-body > div > * {
+body.transition.article {
+    transition: 350ms ease;
+}
+
+body.transition {
+    transition: 250ms ease;
+}
+
+body.article {
+    transform: translateX(-100vw);
+}
+
+body > * {
     width: 100vw;
     align-self: flex-start;
 }
 
-body > div > header > *,
+body > header > *,
 main article {
-    margin: var(--padding) auto;
     max-width: var(--width);
+    margin: 0 auto;
+    padding: var(--padding);
 }
 
-body > div > header {
-    box-sizing: border-box;
-    font-size: 1.25em;
+body > header {
     height: 100vh;
     overflow: scroll;
 }
 
-body > div > header section {
+body > header section {
     font-family: 'Merriweather', serif;
-    line-height: var(--line-height);
-    font-size: 1.25rem;
-    font-weight: 300;
 }
 
-body > div > header section summary {
+body > header section summary {
     transition: 350ms ease;
 }
 
-body > div > header section summary:hover {
+body > header section summary:hover {
     color: var(--color-accent-white);
-    text-decoration: none;
     transition: 250ms ease;
 }
 
-body > div > header section h1 {
-    font-size: 1.5em;
+body > header section h1 {
+    font-size: 1.75em;
+    margin-bottom: .25em;
     color: var(--color-accent-white);
 }
 
-body > div > header ol {
+body > header nav {
+    font-size: 1.25em;
+    padding-top: 0;
+}
+
+body > header nav ol {
     padding: 0;
     list-style: none;
 }
 
-body > div > header ol li {
+body > header nav ol li {
     margin: 1em 0;
+    line-height: 1.15;
     animation: appearFromTop 150ms calc(30ms * var(--order)) backwards;
 }
 
-body > div > header ol li a {
+body > header nav ol li a {
     color: var(--color-main-900);
     transition: 350ms ease;
 }
 
-body > div > header ol li a:visited {
+body > header nav ol li a:visited {
     color: var(--color-main-700);
 }
 
-body > div > header ol li a:hover {
+body > header nav ol li a:hover {
     color: var(--color-accent-white);
     text-decoration: none;
     transition: 250ms ease;
 }
 
-body > div > header ol time {
+body > header nav ol time {
     font-size: .65em;
     font-weight: 300;
-    color: var(--color-main-600);
+    color: var(--color-main-700);
 }
 
-body > div > header a time:before {
+body > header nav ol time:before {
     content: '';
     display: block;
 }
@@ -161,11 +167,8 @@ body > div > header a time:before {
 main {
     position: relative;
     height: 100vh;
-    margin: 0 auto;
     overflow: scroll;
     font-family: 'Merriweather', serif;
-    font-weight: 300;
-    line-height: var(--line-height);
 }
 
 main > button {
@@ -189,29 +192,30 @@ main > button:hover {
 }
 
 main > button svg {
-    width: 5em;
+    width: 50%;
 }
 
 main header {
-    margin: 2em 0;
     text-align: center;
 }
 
 main header time {
-    font-size: .75em;
     display: block;
+    font-size: .85em;
+    margin: 1rem 0 3rem 0;
     color: var(--color-main-700);
 }
 
 main h1,
 main h2 {
+    line-height: 1.15;
     font-family: 'Open Sans', sans-serif;
     color: var(--color-accent-white);
-    line-height: 1.15;
 }
 
 main h2 {
     font-size: 1.25em;
+    margin-top: 2em;
 }
 
 main blockquote {
@@ -235,4 +239,29 @@ main blockquote:before {
 main strong {
     font-weight: 700;
     color:var(--color-main-900);
+}
+
+/**
+ * Este valor (75rem) viene de:
+ * var(--width) + 2 * (var(--padding) + 7.5rem)
+ *
+ * Donde 7.5rem es el ancho mínimo que asignamos a `button`
+ * antes de que desaparezca del lateral y se sitúe arriba.
+ */
+@media (max-width: 75rem) {
+    :root {
+        --padding: 1em;
+    }
+
+    main > button {
+        position: relative;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 5em;
+    }
+
+    main > button > svg {
+        height: 75%;
+    }
 }
