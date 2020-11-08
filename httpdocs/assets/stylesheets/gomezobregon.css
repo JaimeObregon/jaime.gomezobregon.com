@@ -250,6 +250,10 @@ main strong {
     color:var(--color-main-900);
 }
 
+main img {
+    max-width: 100%;
+}
+
 /**
  * Este valor (75rem) viene de:
  * var(--width) + 2 * (var(--padding) + 7.5rem)
