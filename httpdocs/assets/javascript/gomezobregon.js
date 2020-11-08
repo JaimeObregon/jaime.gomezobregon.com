@@ -117,11 +117,18 @@ const blog = {
             this.article.querySelector('h1').replaceWith(header)
 
             // Fuerza que los vídeos de YouTube se vean a ancho completo y en proporción 16:9
-            this.article.querySelectorAll('figure iframe[src*="youtube-nocookie\.com"]').forEach(iframe => {
-                const ratio = 16 / 9
-                iframe.style.width = '100%'
-                iframe.style.height = `${iframe.offsetWidth / ratio}px`
-            })
+            const resizeVideos = (element) => {
+                const selector = 'figure iframe[src*="youtube-nocookie\.com"]'
+                const videos = element.querySelectorAll(selector)
+                videos.forEach(iframe => {
+                    const ratio = 16 / 9
+                    iframe.style.width = '100%'
+                    iframe.style.height = `${iframe.offsetWidth / ratio}px`
+                })
+            }
+
+            window.addEventListener('resize', () => resizeVideos(this.article))
+            resizeVideos(this.article)
         }
     },
 
