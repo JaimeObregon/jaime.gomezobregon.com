@@ -21,3 +21,9 @@ Para añadir un artículo…
 # Tecnología
 
 Este proyecto es completamente estático y público. No necesita, por lo tanto, de ningún lenguaje, dependencia o base de datos.
+
+# Licencia
+
+De los contenidos: [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/deed.es)
+
+Del código fuente: AGPL 3.0
