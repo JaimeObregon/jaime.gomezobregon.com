@@ -116,7 +116,12 @@ const blog = {
 
             this.article.querySelector('h1').replaceWith(header)
 
-            this.article.querySelectorAll('script').forEach(script => eval(script.innerText))
+            // Fuerza que los vídeos de YouTube se vean a ancho completo y en proporción 16:9
+            this.article.querySelectorAll('figure iframe[src*="youtube-nocookie\.com"]').forEach(iframe => {
+                const ratio = 16 / 9
+                iframe.style.width = '100%'
+                iframe.style.height = `${iframe.offsetWidth / ratio}px`
+            })
         }
     },
 

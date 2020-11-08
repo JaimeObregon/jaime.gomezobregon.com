@@ -254,6 +254,16 @@ main img {
     max-width: 100%;
 }
 
+main dl {
+    display: flex;
+    justify-content: space-between;
+}
+
+main dt,
+main dd {
+    width: 50%;
+}
+
 /**
  * Este valor (75rem) viene de:
  * var(--width) + 2 * (var(--padding) + 7.5rem)
