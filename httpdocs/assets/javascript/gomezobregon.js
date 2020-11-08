@@ -17,6 +17,8 @@ const blog = {
 
     close : null,
 
+    title : document.querySelector('head title'),
+
     /**
      * Inicializa la lógica del blog
      */
@@ -85,6 +87,9 @@ const blog = {
 
     menu: function() {
         document.body.classList.toggle('article')
+
+        this.title.innerText = this.title.dataset.placeholder
+        delete this.title.dataset.placeholder
     },
 
     /**
@@ -99,6 +104,9 @@ const blog = {
         else {
             const base = document.querySelector('head base')
             base.setAttribute('href', `/posts/${slug}/`)
+
+            this.title.dataset.placeholder = this.title.innerText
+            this.title.innerText = posts[slug].title
 
             document.body.classList.add('article')
             const content = await response.text()
