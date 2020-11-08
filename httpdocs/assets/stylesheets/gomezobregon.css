@@ -254,14 +254,9 @@ main img {
     max-width: 100%;
 }
 
-main dl {
-    display: flex;
-    justify-content: space-between;
-}
-
 main dt,
 main dd {
-    width: 50%;
+    margin: 0;
 }
 
 /**
@@ -292,5 +287,17 @@ main dd {
 @media (max-width: 50rem) {
     body {
         font-size: 1em;
+    }
+}
+
+@media (min-width: 40rem) {
+    main dl {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    main dt,
+    main dd {
+        width: 50%;
     }
 }
