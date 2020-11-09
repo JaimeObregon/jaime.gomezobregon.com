@@ -34,6 +34,10 @@
     color: var(--color-accent-white);
 }
 
+.hidden {
+    font-size: 0;
+}
+
 a {
     font-weight: 400;
     text-decoration: none;
@@ -64,6 +68,7 @@ summary {
 
 h1, h2 {
     margin: 0;
+    font-family: 'Open Sans', sans-serif;
 }
 
 body {
@@ -72,24 +77,20 @@ body {
     align-items: flex-start;
     width: 200vw;
     margin: 0;
-    font-family: 'Open Sans', sans-serif;
     font-size: 1.25em;
     font-weight: 300;
+    font-family: 'Merriweather', serif;
     line-height: var(--line-height);
     background: var(--color-main-100);
     color: var(--color-main-800);
-    overflow: hidden;
+    overflow-x: hidden;
     cursor: default;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
 }
 
-body.transition.article {
-    transition: 350ms ease;
-}
-
 body.transition {
-    transition: 250ms ease;
+    transition: transform 450ms ease;
 }
 
 body.article {
@@ -108,23 +109,13 @@ main article {
     padding: var(--padding);
 }
 
-body > header {
-    height: 100vh;
-    height: -webkit-fill-available;
-    overflow: scroll;
-}
-
-body > header section {
-    font-family: 'Merriweather', serif;
-}
-
 body > header section summary {
-    transition: 350ms ease;
+    transition: color 350ms ease;
 }
 
 body > header section summary:hover {
     color: var(--color-accent-white);
-    transition: 250ms ease;
+    transition: color 250ms ease;
 }
 
 body > header section h1 {
@@ -135,6 +126,7 @@ body > header section h1 {
 
 body > header nav {
     font-size: 1.25em;
+    font-family: 'Open Sans', sans-serif;
     padding-top: 0;
 }
 
@@ -151,7 +143,7 @@ body > header nav ol li {
 
 body > header nav ol li a {
     color: var(--color-main-900);
-    transition: 350ms ease;
+    transition: color 350ms ease;
 }
 
 body > header nav ol li a:visited {
@@ -161,7 +153,7 @@ body > header nav ol li a:visited {
 body > header nav ol li a:hover {
     color: var(--color-accent-white);
     text-decoration: none;
-    transition: 250ms ease;
+    transition: color 250ms ease;
 }
 
 body > header nav ol time {
@@ -177,16 +169,11 @@ body > header nav ol time:before {
 
 main {
     position: relative;
-    height: 100vh;
-    height: -webkit-fill-available;
-    overflow: scroll;
-    font-family: 'Merriweather', serif;
 }
 
 main > button {
-    position: fixed;
+    position: sticky;
     top: 0;
-    left: 100vw;
     width: calc((100vw - var(--width)) / 2 - var(--padding));
     height: 100vh;
     border: none;
@@ -207,6 +194,10 @@ main > button svg {
     width: 50%;
 }
 
+main > article {
+    margin-top: -100vh;
+}
+
 main header {
     text-align: center;
 }
@@ -221,7 +212,6 @@ main header time {
 main h1,
 main h2 {
     line-height: 1.15;
-    font-family: 'Open Sans', sans-serif;
     color: var(--color-accent-white);
 }
 

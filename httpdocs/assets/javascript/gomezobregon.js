@@ -14,25 +14,25 @@ export const blog = {
     /**
      * Elemento del DOM en el que se mostrará el índice de artículos
      */
-    nav : null,
+    nav: null,
 
     /**
      * Elemento donde se cargará el contenido de cada artículo
      */
-    article : null,
+    article: null,
 
     /**
      * Elemento con el control para volver al índice de artículos desde un artículo
      */
-    close : null,
+    close: null,
 
     /**
      * Valor original de `head > title`, para poder restaurarlo tras cambiarlo
      */
-    title : null,
+    title: null,
 
     // Devuelve `ruta` cuando se le pasa `https://jaime.gomezobregon.com/ruta/y/mas/cosas/opcionales`
-    slug : location => new URL(location).pathname.split('/')[1],
+    slug: location => new URL(location).pathname.split('/')[1],
 
     /**
      * Inicializa la lógica del blog
@@ -98,6 +98,13 @@ export const blog = {
             const slug = this.slug(document.location)
             slug ? this.load(slug) : this.menu()
         })
+
+        document.body.addEventListener('transitionend', event => {
+            if (event.target.tagName === 'BODY' && event.propertyName === 'transform') {
+                const element = event.target.classList.contains('article') ? this.nav : this.article
+                element.parentNode.classList.add('hidden')
+            }
+        })
     },
 
     /**
@@ -106,6 +113,8 @@ export const blog = {
     menu: function() {
         document.body.classList.toggle('article')
         document.title = this.title
+
+        this.nav.parentNode.classList.remove('hidden')
     },
 
     /**
@@ -132,6 +141,8 @@ export const blog = {
         document.body.classList.add('article')
         this.article.innerHTML = await response.text()
         this.article.setAttribute('lang', post.language)
+
+        this.article.parentNode.classList.remove('hidden')
 
         const h1 = this.article.querySelector('h1').innerHTML
         const date = new Date(post.date).toLocaleDateString('es-ES', this.dateFormat)
