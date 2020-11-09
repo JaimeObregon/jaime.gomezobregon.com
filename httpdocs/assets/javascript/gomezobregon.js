@@ -1,6 +1,6 @@
-import { posts } from './posts.js?1'
+import { posts } from '../../posts/index.js?1'
 
-const blog = {
+export const blog = {
 
     /**
      * Formato de las fechas
@@ -11,13 +11,28 @@ const blog = {
         year: 'numeric',
     },
 
+    /**
+     * Elemento del DOM en el que se mostrará el índice de artículos
+     */
     nav : null,
 
+    /**
+     * Elemento donde se cargará el contenido de cada artículo
+     */
     article : null,
 
+    /**
+     * Elemento con el control para volver al índice de artículos desde un artículo
+     */
     close : null,
 
-    title : document.querySelector('head title'),
+    /**
+     * Valor original de `head > title`, para poder restaurarlo tras cambiarlo
+     */
+    title : null,
+
+    // Devuelve `ruta` cuando se le pasa `https://jaime.gomezobregon.com/ruta/y/mas/cosas/opcionales`
+    slug : location => new URL(location).pathname.split('/')[1],
 
     /**
      * Inicializa la lógica del blog
@@ -30,14 +45,14 @@ const blog = {
         } = options
 
         this.nav = document.querySelector(nav)
-        this.article = document.querySelector(article)
         this.close = document.querySelector(close)
+        this.article = document.querySelector(article)
 
-        const slug = document.location.pathname.split('/')[1]
-        if (slug) {
-            blog.load(slug)
-        }
+        const slug = this.slug(document.location)
+        slug && blog.load(slug)
 
+        // Queremos transiciones suaves al cargar un artículo,
+        // pero no cuando se accede directamente a uno por su URL
         setTimeout(() => document.body.classList.add('transition'), 500)
 
         const items = Object.entries(posts).map(([slug, post], order) => `
@@ -69,68 +84,68 @@ const blog = {
 
             event.preventDefault()
 
-            const slug = new URL(a.href).pathname.split('/')[1]
+            const slug = this.slug(a.href)
+            history.pushState(null, posts[slug].title, `/${slug}`)
             this.load(slug)
-
-            const title = posts[slug].title
-            history.pushState(null, title, `/${slug}`)
         })
 
         this.close.addEventListener('click', event => {
-            this.menu()
             history.pushState(null, '', '/')
+            this.menu()
         })
 
         window.addEventListener('popstate', event => {
-            const slug = new URL(document.location).pathname.split('/')[1]
+            const slug = this.slug(document.location)
             slug ? this.load(slug) : this.menu()
         })
     },
 
+    /**
+     * Cierra la vista de artículo y presenta el índice de artículos
+     */
     menu: function() {
         document.body.classList.toggle('article')
-
-        this.title.innerText = this.title.dataset.placeholder
-        delete this.title.dataset.placeholder
+        document.title = this.title
     },
 
     /**
-     * Carga un artículo
+     * Carga un artículo y lo presenta al usuario para su lectura
      */
     load: async function(slug) {
-        const response = await fetch(`/posts/${slug}/index.html`)
-
-        if (!response.ok) {
-            this.error()
+        if (!posts[slug]) {
+            return this.error()
         }
-        else {
-            const base = document.querySelector('head base')
-            base.setAttribute('href', `/posts/${slug}/`)
 
-            this.title.dataset.placeholder = this.title.innerText
-            this.title.innerText = posts[slug].title
+        const response = await fetch(`/posts/${slug}/index.html`)
+        if (!response.ok) {
+            return this.error()
+        }
 
-            document.body.classList.add('article')
-            const content = await response.text()
-            this.article.innerHTML = content
+        const post = posts[slug]
 
-            const header = document.createElement('header')
+        const base = document.querySelector('head base')
+        base.setAttribute('href', `/posts/${slug}/`)
 
-            const h1 = this.article.querySelector('h1').innerHTML
-            const post = posts[slug]
-            const date = new Date(post.date).toLocaleDateString('es-ES', this.dateFormat)
+        this.title = document.title
+        document.title = post.title
 
-            header.innerHTML = `
-                <h1>${h1}</h1>
-                <time datetime="${post.date}">${date}</time>
-            `
+        document.body.classList.add('article')
+        this.article.innerHTML = await response.text()
+        this.article.setAttribute('lang', post.language)
 
-            this.article.setAttribute('lang', post.language)
+        const h1 = this.article.querySelector('h1').innerHTML
+        const date = new Date(post.date).toLocaleDateString('es-ES', this.dateFormat)
+        const header = document.createElement('header')
+        header.innerHTML = `
+            <h1>${h1}</h1>
+            <time datetime="${post.date}">${date}</time>
+        `
 
-            this.article.querySelector('h1').replaceWith(header)
+        this.article.querySelector('h1').replaceWith(header)
 
-            // Fuerza que los vídeos de YouTube se vean a ancho completo y en proporción 16:9
-            const resizeVideos = (element) => {
+        // Fuerza que los vídeos de YouTube se vean a ancho completo y en proporción 16:9
+        {
+            const resizeVideos = element => {
                 const selector = 'figure iframe[src*="youtube-nocookie\.com"]'
                 const videos = element.querySelectorAll(selector)
                 videos.forEach(iframe => {
@@ -154,12 +169,8 @@ const blog = {
         document.body.innerHTML = content
         document.head.innerHTML = `<style>${document.body.querySelector('style').innerText}</style>`
         document.body.querySelector('style').remove()
+        document.title = 'Error'
+        return false
     }
 
 }
-
-blog.init({
-    nav: 'body > header > nav',
-    article: 'main > article',
-    close: 'main > button',
-})

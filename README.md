@@ -6,9 +6,9 @@ Mi blog personal, que comencé en el verano de 2006 como un sitio WordPress y qu
 
 Para añadir un artículo…
 
-1. Crea un directorio en `posts` y sitúa su contenido dentro. Cada artículo tiene que tener, como mínimo, un fichero `index.html` con el contenido del artículo.
+1. Crea un directorio en `index.js` y sitúa su contenido dentro. Cada artículo tiene que tener, como mínimo, un fichero `index.html` con el contenido del artículo.
 
-2. Referencia el artículo recién creado en `/assets/javascript/posts.js`.
+2. Referencia el artículo recién creado en `/posts/index.js`.
 
 # Estructura mínima de un artículo
 
