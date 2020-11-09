@@ -262,6 +262,10 @@ main dd {
     margin: 0;
 }
 
+main iframe {
+    border: none;
+}
+
 /**
  * Este valor (75rem) viene de:
  * var(--width) + 2 * (var(--padding) + 7.5rem)
