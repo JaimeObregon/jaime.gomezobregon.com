@@ -49,7 +49,7 @@ export const blog = {
         this.article = document.querySelector(article)
 
         const slug = this.slug(document.location)
-        slug && blog.load(slug)
+        slug && blog.load(slug) && this.nav.parentNode.classList.add('hidden')
 
         // Queremos transiciones suaves al cargar un artículo,
         // pero no cuando se accede directamente a uno por su URL
