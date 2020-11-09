@@ -44,7 +44,9 @@ const blog = {
             <li style="--order: ${order + 1}">
                 <a href="/${slug}" hreflang="${post.language}">
                     ${post.title}
-                    <time>${new Date(post.date).toLocaleDateString('es-ES', this.dateFormat)}</time>
+                    <time datetime="${post.date}">
+                        ${new Date(post.date).toLocaleDateString('es-ES', this.dateFormat)}
+                    </time>
                 </a>
             </li>
         `)
@@ -115,12 +117,15 @@ const blog = {
             const header = document.createElement('header')
 
             const h1 = this.article.querySelector('h1').innerHTML
-            const date = new Date(posts[slug].date).toLocaleDateString('es-ES', this.dateFormat)
+            const post = posts[slug]
+            const date = new Date(post.date).toLocaleDateString('es-ES', this.dateFormat)
 
             header.innerHTML = `
                 <h1>${h1}</h1>
-                <time>${date}</time>
+                <time datetime="${post.date}">${date}</time>
             `
+
+            this.article.setAttribute('lang', post.language)
 
             this.article.querySelector('h1').replaceWith(header)
 
