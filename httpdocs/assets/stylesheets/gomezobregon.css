@@ -110,6 +110,7 @@ main article {
 
 body > header {
     height: 100vh;
+    height: -webkit-fill-available;
     overflow: scroll;
 }
 
@@ -177,6 +178,7 @@ body > header nav ol time:before {
 main {
     position: relative;
     height: 100vh;
+    height: -webkit-fill-available;
     overflow: scroll;
     font-family: 'Merriweather', serif;
 }
