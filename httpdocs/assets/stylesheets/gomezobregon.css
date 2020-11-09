@@ -179,6 +179,7 @@ main > button {
     border: none;
     outline: none;
     transition: 400ms ease;
+    transition-property: color, background;
     background: transparent;
     color: var(--color-main-400);
     cursor: pointer;
@@ -188,6 +189,7 @@ main > button:hover {
     background: var(--color-main-200);
     color: var(--color-accent-white);
     transition: 250ms ease;
+    transition-property: color, background;
 }
 
 main > button svg {
@@ -272,12 +274,16 @@ main iframe {
         position: relative;
         top: 0;
         left: 0;
-        width: 100vw;
+        width: 100%;
         height: 5em;
     }
 
     main > button > svg {
         height: 75%;
+    }
+
+    main > article {
+        margin-top: 0;
     }
 }
 
