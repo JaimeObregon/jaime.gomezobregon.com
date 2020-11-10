@@ -369,6 +369,7 @@
 
 .hidden {
     font-size: 0;
+    visibility: hidden;
 }
 
 a {
@@ -639,6 +640,10 @@ main iframe {
 }
 
 @media print {
+    body {
+        overflow-x: unset;
+    }
+
     button {
         display: none;
     }

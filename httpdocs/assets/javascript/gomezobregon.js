@@ -48,6 +48,8 @@ export const blog = {
         this.close = document.querySelector(close)
         this.article = document.querySelector(article)
 
+        this.title = document.title
+
         const slug = this.slug(document.location)
         slug && blog.load(slug) && this.nav.parentNode.classList.add('hidden')
 
@@ -95,6 +97,7 @@ export const blog = {
         })
 
         window.addEventListener('popstate', event => {
+            document.body.classList.remove('transition')
             const slug = this.slug(document.location)
             slug ? this.load(slug) : this.menu()
         })
@@ -111,7 +114,8 @@ export const blog = {
      * Cierra la vista de artículo y presenta el índice de artículos
      */
     menu: function() {
-        document.body.classList.toggle('article')
+        window.scrollTo(0, 0)
+        document.body.classList.remove('article')
         document.title = this.title
 
         this.nav.parentNode.classList.remove('hidden')
@@ -135,7 +139,6 @@ export const blog = {
         const base = document.querySelector('head base')
         base.setAttribute('href', `/posts/${slug}/`)
 
-        this.title = document.title
         document.title = post.title
 
         document.body.classList.add('article')
@@ -153,6 +156,8 @@ export const blog = {
         `
 
         this.article.querySelector('h1').replaceWith(header)
+
+        window.scrollTo(0, 0)
 
         // Fuerza que los vídeos de YouTube se vean a ancho completo y en proporción 16:9
         {
