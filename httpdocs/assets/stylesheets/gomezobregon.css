@@ -495,7 +495,7 @@ body > header nav ol time {
     color: var(--color-main-700);
 }
 
-body > header nav ol time:before {
+body > header nav ol time::before {
     content: '';
     display: block;
 }
@@ -635,5 +635,15 @@ main iframe {
     main dt,
     main dd {
         width: 50%;
+    }
+}
+
+@media print {
+    button {
+        display: none;
+    }
+
+    main a::after {
+        content: " [" attr(href) "] ";
     }
 }
