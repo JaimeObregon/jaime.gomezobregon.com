@@ -10,6 +10,10 @@ Los contenidos del blog están todos en el directorio [`/posts`](/httpdocs/posts
 
 2. Añade el artículo recién creado a [`index.js`](/httpdocs/posts/index.js). La portada del blog mostrará el índice de artículos en el mismo orden en que los consignes en ese fichero.
 
+# Desplegue
+
+En [`.github/workflows/main.yml`](/.github/workflows/main.yml) he incorporado un *script* que, a partir de mi configuración personal en Github, despliega todo el sitio en mi servidor web con cada *push* a `master`.
+
 # Estructura mínima de un artículo
 
 Cada artículo tiene que tener, como mínimo, un fichero `index.html` con el contenido principal. No obstante ahí también puedes cargar imágenes, recursos multimedia, hojas de estilos y cualquier otra cosa que el artículo requiera.

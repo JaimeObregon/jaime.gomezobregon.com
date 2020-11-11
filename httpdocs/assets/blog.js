@@ -1,4 +1,4 @@
-import { posts } from '../../posts/index.js?1'
+import { posts } from '../posts/index.js?1'
 
 export const blog = {
 
