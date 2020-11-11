@@ -58,7 +58,7 @@ export const blog = {
         setTimeout(() => document.body.classList.add('transition'), 500)
 
         const items = Object.entries(posts).map(([slug, post], order) => `
-            <li style="--order: ${order + 1}">
+            <li style="--delay: ${order < 10 ? order + 1 : 0}">
                 <a href="/${slug}" hreflang="${post.language}">
                     ${post.title}
                     <time datetime="${post.date}">

@@ -331,10 +331,10 @@
   unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
 }
 
-@keyframes appearFromTop {
+@keyframes appear {
     0% {
         opacity: 0;
-        transform: translateY(-4em);
+        transform: translateY(-2em);
     }
 
     100% {
@@ -500,6 +500,10 @@ body > div > header section summary:hover {
     transition: color 250ms ease;
 }
 
+body > div > header section summary strong {
+    color: inherit;
+}
+
 body > div > header section h1 {
     font-size: 1.75em;
     margin-bottom: .25em;
@@ -520,7 +524,7 @@ body > div > header nav ol {
 body > div > header nav ol li {
     margin: 1em 0;
     line-height: 1.15;
-    animation: appearFromTop 150ms calc(30ms * var(--order)) backwards;
+    animation: appear 200ms calc(100ms * var(--delay)) backwards;
 }
 
 body > div > header nav ol li a {
@@ -621,6 +625,10 @@ main h2 {
 @media (max-width: 50rem) {
     body {
         font-size: 1em;
+    }
+
+    body.transition > div > header {
+        transition-duration: 150ms;
     }
 }
 
