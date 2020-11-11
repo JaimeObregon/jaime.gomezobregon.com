@@ -97,14 +97,22 @@ export const blog = {
         })
 
         window.addEventListener('popstate', event => {
+            // En iOS y Safari hay dos formas de navegar por el historial: pulsando los botones del
+            // navegador o haciendo un gesto ("swipe"). Este segundo método va acompañado de una
+            // animación que provoca un efecto visual feo si no desactivamos temporalmente la nuestra...
             document.body.classList.remove('transition')
+
+            // ...pero volvamos a activarla unos instantes después, cuando la animación del navegador
+            // ha concluido
+            setTimeout(() => document.body.classList.add('transition'), 500)
+
             const slug = this.slug(document.location)
             slug ? this.load(slug) : this.menu()
         })
 
-        document.body.addEventListener('transitionend', event => {
-            if (event.target.tagName === 'BODY' && event.propertyName === 'transform') {
-                const element = event.target.classList.contains('article') ? this.nav : this.article
+        document.querySelector('header').addEventListener('transitionend', event => {
+            if (event.target.tagName === 'HEADER' && event.propertyName === 'margin-left') {
+                const element = document.body.classList.contains('article') ? this.nav : this.article
                 element.parentNode.classList.add('hidden')
             }
         })
@@ -183,7 +191,11 @@ export const blog = {
         const response = await fetch(`/error.html`)
         const content = await response.text()
         document.body.innerHTML = content
-        document.head.innerHTML = `<style>${document.body.querySelector('style').innerText}</style>`
+        document.head.innerHTML = `
+            <style>
+                ${document.body.querySelector('style').innerText}
+            </style>
+        `
         document.body.querySelector('style').remove()
         document.title = 'Error'
         return false

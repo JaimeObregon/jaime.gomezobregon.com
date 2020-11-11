@@ -369,7 +369,68 @@
 
 .hidden {
     font-size: 0;
-    visibility: hidden;
+}
+
+html,
+body {
+    overflow-x: hidden;
+}
+
+h1, h2 {
+    margin: 0;
+    font-family: 'Open Sans', sans-serif;
+}
+
+figure {
+    text-align: center;
+    margin: 1em 0;
+}
+
+figcaption {
+    font-size: .85em;
+}
+
+summary {
+    cursor: pointer;
+    outline: none;
+}
+
+iframe {
+    border: none;
+}
+
+dt,
+dd {
+    margin: 0;
+}
+
+hr {
+    border: none;
+    border-top: 1px solid var(--color-main-600);
+    width: 60%;
+    margin: 5em auto;
+}
+
+img {
+    max-width: 100%;
+}
+
+blockquote {
+    --padding: 3em;
+    position: relative;
+    margin: 0;
+    padding-left: var(--padding);
+    font-style: italic;
+}
+
+blockquote:before {
+    content: '”';
+    position: absolute;
+    top: .15em;
+    left: 0;
+    width: var(--padding);
+    font-size: 3em;
+    line-height: 1;
 }
 
 a {
@@ -382,34 +443,16 @@ a:hover {
     text-decoration: underline;
 }
 
-figure {
-    text-align: center;
-    margin: 1em 0;
-}
-
-figure figcaption {
-    font-size: .85em;
-}
-
 abbr {
     cursor: help;
 }
 
-summary {
-    cursor: pointer;
-    outline: none;
-}
-
-h1, h2 {
-    margin: 0;
-    font-family: 'Open Sans', sans-serif;
+strong {
+    font-weight: 700;
+    color: var(--color-main-900);
 }
 
 body {
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
-    width: 200vw;
     margin: 0;
     font-size: 1.25em;
     font-weight: 300;
@@ -417,97 +460,97 @@ body {
     line-height: var(--line-height);
     background: var(--color-main-100);
     color: var(--color-main-800);
-    overflow-x: hidden;
     cursor: default;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
 }
 
-body.transition {
-    transition: transform 450ms ease;
+body > div {
+    display: flex;
+    align-items: flex-start;
+    width: 200vw;
 }
 
-body.article {
-    transform: translateX(-100vw);
-}
-
-body > * {
+body > div > * {
     width: 100vw;
     align-self: flex-start;
 }
 
-body > header > *,
-main article {
-    max-width: var(--width);
-    margin: 0 auto;
-    padding: var(--padding);
+body.transition > div > header {
+    transition: margin 450ms ease;
 }
 
-body > header section summary {
+body.article > div > header {
+    margin-left: -100vw;
+}
+
+body > div > header > *,
+main article {
+    max-width: var(--width);
+    padding: var(--padding);
+    margin: 0 auto;
+}
+
+body > div > header section summary {
     transition: color 350ms ease;
 }
 
-body > header section summary:hover {
+body > div > header section summary:hover {
     color: var(--color-accent-white);
     transition: color 250ms ease;
 }
 
-body > header section h1 {
+body > div > header section h1 {
     font-size: 1.75em;
     margin-bottom: .25em;
     color: var(--color-accent-white);
 }
 
-body > header nav {
+body > div > header nav {
     font-size: 1.25em;
     font-family: 'Open Sans', sans-serif;
     padding-top: 0;
 }
 
-body > header nav ol {
+body > div > header nav ol {
     padding: 0;
     list-style: none;
 }
 
-body > header nav ol li {
+body > div > header nav ol li {
     margin: 1em 0;
     line-height: 1.15;
     animation: appearFromTop 150ms calc(30ms * var(--order)) backwards;
 }
 
-body > header nav ol li a {
+body > div > header nav ol li a {
     color: var(--color-main-900);
     transition: color 350ms ease;
 }
 
-body > header nav ol li a:visited {
+body > div > header nav ol li a:visited {
     color: var(--color-main-700);
 }
 
-body > header nav ol li a:hover {
+body > div > header nav ol li a:hover {
     color: var(--color-accent-white);
     text-decoration: none;
     transition: color 250ms ease;
 }
 
-body > header nav ol time {
+body > div > header nav ol time {
     font-size: .65em;
     font-weight: 300;
     color: var(--color-main-700);
 }
 
-body > header nav ol time::before {
+body > div > header nav ol time::before {
     content: '';
     display: block;
 }
 
-main {
-    position: relative;
-}
-
 main > button {
-    position: sticky;
-    top: 0;
+    position: fixed;
     width: calc((100vw - var(--width)) / 2 - var(--padding));
     height: 100vh;
     border: none;
@@ -528,10 +571,6 @@ main > button:hover {
 
 main > button svg {
     width: 50%;
-}
-
-main > article {
-    margin-top: -100vh;
 }
 
 main header {
@@ -556,49 +595,6 @@ main h2 {
     margin-top: 2em;
 }
 
-main blockquote {
-    --padding: 3em;
-    position: relative;
-    margin: 0;
-    padding-left: var(--padding);
-    font-style: italic;
-}
-
-main blockquote:before {
-    content: '”';
-    position: absolute;
-    top: .15em;
-    left: 0;
-    width: var(--padding);
-    font-size: 3em;
-    line-height: 1;
-}
-
-main strong {
-    font-weight: 700;
-    color:var(--color-main-900);
-}
-
-main img {
-    max-width: 100%;
-}
-
-main dt,
-main dd {
-    margin: 0;
-}
-
-main iframe {
-    border: none;
-}
-
-main hr {
-    border: none;
-    border-top: 1px solid var(--color-main-600);
-    width: 60%;
-    margin: 5em auto;
-}
-
 /**
  * Este valor (75rem) viene de:
  * var(--width) + 2 * (var(--padding) + 7.5rem)
@@ -613,18 +609,12 @@ main hr {
 
     main > button {
         position: relative;
-        top: 0;
-        left: 0;
         width: 100%;
         height: 5em;
     }
 
     main > button > svg {
         height: 75%;
-    }
-
-    main > article {
-        margin-top: 0;
     }
 }
 
@@ -647,10 +637,6 @@ main hr {
 }
 
 @media print {
-    body {
-        overflow-x: unset;
-    }
-
     button {
         display: none;
     }
