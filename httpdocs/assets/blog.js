@@ -31,6 +31,12 @@ export const blog = {
      */
     title: null,
 
+    /**
+     * Valor original del atributo `content` de `<meta name="description">`,
+     * para poder restaurarlo tras cambiarlo
+     */
+    description: null,
+
     // Devuelve `ruta` cuando se le pasa `https://jaime.gomezobregon.com/ruta/y/mas/cosas/opcionales`
     slug: location => new URL(location).pathname.split('/')[1],
 
@@ -49,6 +55,7 @@ export const blog = {
         this.article = document.querySelector(article)
 
         this.title = document.title
+        this.description = document.querySelector('meta[name=description]').getAttribute('content')
 
         const slug = this.slug(document.location)
         slug && blog.load(slug) && this.nav.parentNode.classList.add('hidden')
@@ -128,7 +135,9 @@ export const blog = {
     menu: function() {
         window.scrollTo(0, 0)
         document.body.classList.remove('article')
+
         document.title = this.title
+        document.querySelector('meta[name=description]').setAttribute('content', this.description)
 
         this.nav.parentNode.classList.remove('hidden')
     },
@@ -152,6 +161,7 @@ export const blog = {
         base.setAttribute('href', `/posts/${slug}/`)
 
         document.title = post.title
+        document.querySelector('meta[name=description]').setAttribute('content', post.description)
 
         document.body.classList.add('article')
         this.article.innerHTML = await response.text()

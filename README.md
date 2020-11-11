@@ -6,7 +6,7 @@ He aquí el código fuente de mi blog personal. Lo inicié en el verano de 2006 
 
 Los contenidos del blog están todos en el directorio [`/posts`](/httpdocs/posts). Para añadir un artículo...
 
-1. Crea un subdirectorio en `/posts` y sitúa el contenido del artículo dentro: un fichero `index.html` con el contenido principal y cualquier otro recurso que el artículo necesite cargar.
+1. Crea un subdirectorio en [`/posts`](/httpdocs/posts/) y sitúa el contenido del artículo dentro: un fichero `index.html` con el contenido principal y cualquier otro recurso que el artículo necesite cargar.
 
 2. Añade el artículo recién creado a [`index.js`](/httpdocs/posts/index.js). La portada del blog mostrará el índice de artículos en el mismo orden en que los consignes en ese fichero.
 
