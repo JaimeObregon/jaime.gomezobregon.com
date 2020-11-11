@@ -57,8 +57,12 @@ export const blog = {
         // pero no cuando se accede directamente a uno por su URL
         setTimeout(() => document.body.classList.add('transition'), 500)
 
+        // La lista de artículos es larga. Apliquemos la demora estética solo en
+        // los primeros artículos, para que la lista completa no tarde demasiado en cargar.
+        // Mientras carga, Safari en iOS requiere un doble tap, que así evitamos.
+        const howManyAnimate = 10
         const items = Object.entries(posts).map(([slug, post], order) => `
-            <li style="--delay: ${order < 10 ? order + 1 : 0}">
+            <li style="--delay: ${order < howManyAnimate ? order + 1 : 0}">
                 <a href="/${slug}" hreflang="${post.language}">
                     ${post.title}
                     <time datetime="${post.date}">
