@@ -24,10 +24,10 @@ Es requisito que el fichero `index.html` de cada artículo tenga un elemento `<h
 
 Este proyecto utiliza exclusivamente estándares web: HTML5, CSS3 y ES6 (JavaScript). No hay ningún lenguaje de *scripting* en el lado del servidor, ni se requiere de una base de datos.
 
-Es necesario un servidor web capaz de interpretar las sencillas reglas de reescritura del fichero `.htaccess`[/httpdocs/.htaccess]. Por ejemplo, Apache.
+Es necesario un servidor web capaz de interpretar las sencillas reglas de reescritura del fichero [`.htaccess`](/httpdocs/.htaccess). Por ejemplo, Apache.
 
 # Licencia
 
 Los contenidos de mi blog están publicados bajo licencia [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/deed.es): puedes reutilizarlos citando que soy su autor y enlazando a la versión original.
 
-El código fuente de este blog [lo he publicado en Github](github.com/jaimeobregon/jaime.gomezobregon.com) y lo libero bajo licencia [AGPL 3.0](/LICENSE).
+El código fuente de este blog [lo he publicado en Github](github.com/jaimeobregon/jaime.gomezobregon.com) y lo libero bajo licencia [AGPL 3.0](/LICENSE). Puedes reutilizarlo atendiendo lo que establece la licencia.
