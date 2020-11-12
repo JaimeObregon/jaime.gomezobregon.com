@@ -32,7 +32,7 @@ Los contenidos del blog están todos en el directorio [`/posts`](/httpdocs/posts
 
 1. Crea un subdirectorio en [`/posts`](/httpdocs/posts/) y sitúa el contenido del artículo dentro: un fichero `index.html` con el contenido principal y cualquier otro recurso que el artículo necesite cargar.
 
-2. Añade el artículo recién creado a [`index.js`](/httpdocs/posts/index.js). La portada del blog mostrará el índice de artículos en el mismo orden en que los consignes en ese fichero.
+2. Añade el artículo recién creado a [`index.json`](/httpdocs/posts/index.json). La portada del blog mostrará el índice de artículos en el mismo orden en que los consignes en ese fichero.
 
 # Desplegue
 
@@ -42,7 +42,7 @@ En [`.github/workflows/main.yml`](/.github/workflows/main.yml) he incorporado un
 
 Cada artículo tiene que tener, como mínimo, un fichero `index.html` con el contenido principal. No obstante ahí también puedes cargar imágenes, recursos multimedia, hojas de estilos y cualquier otra cosa que el artículo requiera.
 
-Es requisito que el fichero `index.html` de cada artículo tenga un elemento `<h1>` con el título, que así puede ser diferente del título que hayas consignado en [`index.js`](/httpdocs/posts/index.js).
+Es requisito que el fichero `index.html` de cada artículo tenga un elemento `<h1>` con el título, que así puede ser diferente del título que hayas consignado en [`index.json`](/httpdocs/posts/index.json).
 
 # Tecnología
 

@@ -1,0 +1,677 @@
+{
+    "version": "https://jsonfeed.org/version/1.1",
+    "title": "Jaime Gómez-Obregón",
+    "icon": "https://jaime.gomezobregon.com/assets/jaime.jpg",
+    "favicon": "https://jaime.gomezobregon.com/assets/icon.svg",
+    "home_page_url": "https://jaime.gomezobregon.com/",
+    "feed_url": "https://jaime.gomezobregon.com/posts/index.json",
+    "description": "Hola, Jaime al teclado. Cacharreo con datos y ordenadores, leo, escribo y hago cosas.",
+    "items": [
+        {
+            "id": "tsunami-de-libertad-o-alienacion-tecnificada",
+            "url": "https://jaime.gomezobregon.com/tsunami-de-libertad-o-alienacion-tecnificada",
+            "title": "¿Tsunami de libertad o alienación tecnificada?",
+            "content_text": "Asistimos a un papel inédito de la tecnología en el empoderamiento de las revueltas sociales. ¿Son eficaces las leyes del siglo XX para las protestas del XXI?",
+            "date_published": "2019-12-28T19:41:00Z",
+            "tags": ["General"],
+            "language": "es"
+        },
+        {
+            "id": "on-the-verge-of-a-new-era-freedom-tsunami-or-schemed-alienation",
+            "url": "https://jaime.gomezobregon.com/on-the-verge-of-a-new-era-freedom-tsunami-or-schemed-alienation",
+            "title": "On the verge of a new era: freedom tsunami or schemed alienation?",
+            "content_text": "We have front row seats to an exciting historical moment, seeing the role of technology in empowering social unrest. Are 20th century responses efficient solutions to 21st century protests?",
+            "date_published": "2019-12-16T18:36:00Z",
+            "tags": ["General"],
+            "language": "en"
+        },
+        {
+            "id": "las-noticias-son-para-la-mente-lo-que-la-comida-basura-para-el-cuerpo",
+            "url": "https://jaime.gomezobregon.com/las-noticias-son-para-la-mente-lo-que-la-comida-basura-para-el-cuerpo",
+            "title": "Las noticias son para la mente lo que la comida basura para el cuerpo",
+            "content_text": "Las noticias satisfacen fugazmente tu apetito de espectáculo y entretenimiento, pero luego te dejan insatisfecho y desinformado. Las noticias son solo calorías.",
+            "date_published": "2019-01-28T22:15:00Z",
+            "tags": ["General"],
+            "language": "es"
+        },
+        {
+            "id": "tecnologia-inteligente-ciudades-idiotas",
+            "url": "https://jaime.gomezobregon.com/tecnologia-inteligente-ciudades-idiotas",
+            "title": "Tecnología inteligente, ciudades idiotas",
+            "content_text": "Recibo en mi teléfono mensajes inmediatos de la Estación Espacial y fotos instantáneas de los valles de Plutón, pero en dos meses nadie del Ayuntamiento de Santander ha sido capaz de responderme a un correo.",
+            "date_published": "2015-11-24T16:01:00Z",
+            "tags": ["General"],
+            "language": "en"
+        },
+        {
+            "id": "me-entrevistan-en-el-heraldo-de-colombia",
+            "url": "https://jaime.gomezobregon.com/me-entrevistan-en-el-heraldo-de-colombia",
+            "title": "Me entrevistan en El Heraldo de Colombia",
+            "content_text": "Hoy recibí un cordial correo de la responsable de la sección de política económica del diario colombiano El Heraldo.",
+            "date_published": "2012-03-31T00:07:00Z",
+            "tags": ["General"],
+            "language": "es"
+        },
+        {
+            "id": "fighting-email",
+            "url": "https://jaime.gomezobregon.com/fighting-email",
+            "title": "Fighting email",
+            "content_text": "My whole relationship with email had to be completely rethought.",
+            "date_published": "2012-01-16T13:26:00Z",
+            "tags": ["General"],
+            "language": "en"
+        },
+        {
+            "id": "dimitrij-email-cz",
+            "url": "https://jaime.gomezobregon.com/dimitrij-email-cz",
+            "title": "dimitrij@email.cz",
+            "content_text": "Giving up on 77.75.72.42.",
+            "date_published": "2011-02-06T08:04:00Z",
+            "tags": ["General"],
+            "language": "en"
+        },
+        {
+            "id": "terrorismo",
+            "url": "https://jaime.gomezobregon.com/terrorismo",
+            "title": "Terrorismo",
+            "content_text": "Los políticos clasifican los problemas en dos grandes tipos: aquellos que se solucionan por sí sólos con un poco de tiempo, y los que no tienen solución.",
+            "date_published": "2010-03-22T23:39:00Z",
+            "tags": ["General"],
+            "language": "es"
+        },
+        {
+            "id": "fe",
+            "url": "https://jaime.gomezobregon.com/fe",
+            "title": "Fe",
+            "content_text": "Una relación exhaustiva de todos los estudios científicos conectados con la religión",
+            "date_published": "2009-12-12T16:06:00Z",
+            "tags": ["Dios ha muerto"],
+            "language": "es"
+        },
+        {
+            "id": "intelligence",
+            "url": "https://jaime.gomezobregon.com/intelligence",
+            "title": "Intelligence",
+            "content_text": "You can use your intelligence to be stupid.",
+            "date_published": "2009-02-17T01:14:00Z",
+            "tags": ["General"],
+            "language": "en"
+        },
+        {
+            "id": "downshifting",
+            "url": "https://jaime.gomezobregon.com/downshifting",
+            "title": "Downshifting",
+            "content_text": "Escaping the rat race of obsessive materialism and focusing life goals on personal fulfillment and relationship building instead of the all-consuming pursuit of economic success.",
+            "date_published": "2009-02-16T00:25:00Z",
+            "tags": ["General"],
+            "language": "en"
+        },
+        {
+            "id": "feynman-on-religion",
+            "url": "https://jaime.gomezobregon.com/feynman-on-religion",
+            "title": "Feynman on religion",
+            "content_text": "About living with doubt, uncertainty and not knowing. It is much more interesting to live not knowing than to have answers which might be wrong.",
+            "date_published": "2009-02-05T03:48:00Z",
+            "tags": ["General"],
+            "language": "en"
+        },
+        {
+            "id": "ha-muerto-mikel-laboa",
+            "url": "https://jaime.gomezobregon.com/ha-muerto-mikel-laboa",
+            "title": "Ha muerto Mikel Laboa",
+            "content_text": "No os dejéis engañar / Con que la vida es poco. / Bebedla a grandes tragos / porque no os bastará / cuando hayáis de perderla.",
+            "date_published": "2008-12-02T01:03:00Z",
+            "tags": ["General"],
+            "language": "es"
+        },
+        {
+            "id": "can-we-have-our-ball-back",
+            "url": "https://jaime.gomezobregon.com/can-we-have-our-ball-back",
+            "title": "Can we have our ball back?",
+            "content_text": "Pintada en el Muro de Berlín.",
+            "date_published": "2008-11-24T23:16:00Z",
+            "tags": ["General"],
+            "language": "es"
+        },
+        {
+            "id": "correo-electronico",
+            "url": "https://jaime.gomezobregon.com/correo-electronico",
+            "title": "Correo electrónico",
+            "content_text": "En los 300 días que han transcurrido de este año, he escrito y enviado 2.622 correos electrónicos.",
+            "date_published": "2008-10-28T02:29:00Z",
+            "tags": ["General"],
+            "language": "es"
+        },
+        {
+            "id": "microsoft-word-ese-gran-desconocido",
+            "url": "https://jaime.gomezobregon.com/microsoft-word-ese-gran-desconocido",
+            "title": "Microsoft Word: ese gran desconocido",
+            "content_text": "Leyendo una resolución de la AEPD me doy cuenta de que parece que alguien está teniendo serios problemas con los autoenlaces de Microsoft Word…",
+            "date_published": "2008-10-07T08:49:00Z",
+            "tags": ["General"],
+            "language": "es"
+        },
+        {
+            "id": "ernst-rutherford-hablando-sobre-niels-bohr",
+            "url": "https://jaime.gomezobregon.com/ernst-rutherford-hablando-sobre-niels-bohr",
+            "title": "Ernst Rutherford hablando sobre Niels Bohr",
+            "content_text": "«Estaba a punto de poner un cero a un estudiante por la respuesta que había dado en un problema de física, pese a que este afirmaba con rotundidad que su respuesta era absolutamente acertada».",
+            "date_published": "2008-09-15T23:59:00Z",
+            "tags": ["General"],
+            "language": "es"
+        },
+        {
+            "id": "safari",
+            "url": "https://jaime.gomezobregon.com/safari",
+            "title": "Safari",
+            "content_text": "The word \"safari\" means \"journey\" in Swahili.",
+            "date_published": "2008-07-12T23:34:00Z",
+            "tags": ["General"],
+            "language": "en"
+        },
+        {
+            "id": "preguntas-de-un-obrero-que-lee",
+            "url": "https://jaime.gomezobregon.com/preguntas-de-un-obrero-que-lee",
+            "title": "Preguntas de un obrero que lee",
+            "content_text": "¿Quién construyó Tebas, la de las siete puertas? En los libros se mencionan los nombres de los reyes. ¿Acaso los reyes arrastraron las piedras?",
+            "date_published": "2008-02-15T01:12:00Z",
+            "tags": ["General"],
+            "language": "es"
+        },
+        {
+            "id": "por-que-tienen-las-horas-sesenta-minutos",
+            "url": "https://jaime.gomezobregon.com/por-que-tienen-las-horas-sesenta-minutos",
+            "title": "¿Por qué tienen las horas sesenta minutos?",
+            "content_text": "Las horas de nuestros días tienen sesenta minutos porque un comerciante babilónico se dio cuenta de cómo podía contar el género mucho más deprisa, en el estruendo de un día de mercado en Mesopotamia hace 4.000 años.",
+            "date_published": "2008-02-02T05:00:00Z",
+            "tags": ["General"],
+            "language": "es"
+        },
+        {
+            "id": "asignatura-de-religion",
+            "url": "https://jaime.gomezobregon.com/asignatura-de-religion",
+            "title": "¿Asignatura de religión?",
+            "content_text": "No vengas a rezar a mi escuela y yo no iré a pensar a tu iglesia.",
+            "date_published": "2008-01-28T23:42:00Z",
+            "tags": ["General"],
+            "language": "es"
+        },
+        {
+            "id": "stockholm-syndrome",
+            "url": "https://jaime.gomezobregon.com/stockholm-syndrome",
+            "title": "Stockholm syndrome",
+            "content_text": "«Olsson received many admiring letters from women who found him attractive. He later married to one of his female admirers».",
+            "date_published": "2008-01-13T15:18:00Z",
+            "tags": ["General"],
+            "language": "en"
+        },
+        {
+            "id": "conciencia",
+            "url": "https://jaime.gomezobregon.com/conciencia",
+            "title": "Conciencia",
+            "content_text": "¡No seamos cobardes con nuestros actos; no nos avergoncemos después de haberlos realizado! El remordimiento de conciencia es algo indecoroso.",
+            "date_published": "2008-01-13T02:49:00Z",
+            "tags": ["General"],
+            "language": "es"
+        },
+        {
+            "id": "la-identidad-de-euler",
+            "url": "https://jaime.gomezobregon.com/la-identidad-de-euler",
+            "title": "La identidad de Euler",
+            "content_text": "¿Es la identidad de Euler la ecuación más bella de la historia de las matemáticas?",
+            "date_published": "2008-01-06T21:05:00Z",
+            "tags": ["General"],
+            "language": "es"
+        },
+        {
+            "id": "aprender-y-olvidar",
+            "url": "https://jaime.gomezobregon.com/aprender-y-olvidar",
+            "title": "Aprender y olvidar",
+            "content_text": "Cuando aquella chica puso Trieste en sus labios, disparó en mi cabeza un mecanismo de evolución neuronal que ha durado un millón de años y que reproduce rápidamente un \"playback\" de una canción idiota de Raffaella Carrà.",
+            "date_published": "2008-01-02T13:25:00Z",
+            "tags": ["Idiomas"],
+            "language": "es"
+        },
+        {
+            "id": "neue-slowenische-kunst",
+            "url": "https://jaime.gomezobregon.com/neue-slowenische-kunst",
+            "title": "Neue Slowenische Kunst",
+            "content_text": "En 1987 las autoridades yugoslavas convocaron un concurso para elegir el cartel que conmemoraría el Día de la Juventud Yugoslava, efeméride del nacimiento del mariscal Tito.",
+            "date_published": "2007-12-30T18:05:00Z",
+            "tags": ["General"],
+            "language": "es"
+        },
+        {
+            "id": "el-hombre-mas-sabio-del-mundo",
+            "url": "https://jaime.gomezobregon.com/el-hombre-mas-sabio-del-mundo",
+            "title": "El hombre más sabio del mundo",
+            "content_text": "«El hombre más sabio que he conocido en toda mi vida no sabía leer ni escribir. A las cuatro de la madrugada, cuando la promesa de un nuevo día aún venía por tierras de Francia, se levantaba del catre y salía al campo».",
+            "date_published": "2007-12-30T16:48:00Z",
+            "tags": ["General"],
+            "language": "es"
+        },
+        {
+            "id": "copia-el-semanal-xl-a-stern",
+            "url": "https://jaime.gomezobregon.com/copia-el-semanal-xl-a-stern",
+            "title": "¿Copia El Semanal XL a Stern?",
+            "content_text": "A la izquierda, la portada del 12 de julio del semanario alemán Stern. A la derecha, la primera plana del ejemplar del 4 de noviembre de la revista española El Semanal XL, que se regala con los diarios de Vocento.",
+            "date_published": "2007-11-06T01:03:00Z",
+            "tags": ["General"],
+            "language": "es"
+        },
+        {
+            "id": "nacionalismo-e-idioma",
+            "url": "https://jaime.gomezobregon.com/nacionalismo-e-idioma",
+            "title": "Nacionalismo e idioma",
+            "content_text": "España tiene 45 millones de habitantes y cinco lenguas oficiales: el castellano, el catalán, el gallego, el vasco y el aranés. Más de 8 millones de españoles hablan dos de estas lenguas oficiales.",
+            "date_published": "2007-10-25T00:28:00Z",
+            "tags": ["Idiomas"],
+            "language": "es"
+        },
+        {
+            "id": "otono-en-alemania",
+            "url": "https://jaime.gomezobregon.com/otono-en-alemania",
+            "title": "Otoño en Alemania",
+            "content_text": "Brigitte Mohnhaupt ha sido puesta en libertad condicional en marzo, tras ser condenada a cinco cadenas perpetuas y pasar finalmente 24 años en prisión.",
+            "date_published": "2007-10-16T03:05:00Z",
+            "tags": ["General"],
+            "language": "es"
+        },
+        {
+            "id": "me-debe-usted-cuarenta-francos",
+            "url": "https://jaime.gomezobregon.com/me-debe-usted-cuarenta-francos",
+            "title": "Me debe usted cuarenta francos",
+            "content_text": "Los dadaístas construían poesía y literatura dificílmente clasificable haciendo trizas hojas de periódico y recomponiéndolas al azar después.",
+            "date_published": "2007-10-14T20:46:00Z",
+            "tags": ["Literatura"],
+            "language": "es"
+        },
+        {
+            "id": "le-vent-nous-portera",
+            "url": "https://jaime.gomezobregon.com/le-vent-nous-portera",
+            "title": "Le vent nous portera",
+            "content_text": "Ton message à la grande ourse / Et la trajectoire de la course / A l'instantané de velours / Même s'il ne sert à rien. / Le vent l'emportera. / Tout disparaîtra. / Le vent nous portera.",
+            "date_published": "2007-10-03T11:03:00Z",
+            "tags": ["Idiomas", "Poesía"],
+            "language": "fr"
+        },
+        {
+            "id": "ciencia-para-explicar-la-religion",
+            "url": "https://jaime.gomezobregon.com/ciencia-para-explicar-la-religion",
+            "title": "Ciencia para explicar la religión",
+            "content_text": "Mira al Sol y velo como lo han visto antes todos los demás humanos que a lo largo de las eras han alzado la mirada al firmamento. Y en su luz verás, como vieron ellos, al único Dios que desde la inmensidad del cielo gobierna el universo.",
+            "date_published": "2007-09-26T01:07:00Z",
+            "tags": ["Dios ha muerto"],
+            "language": "es"
+        },
+        {
+            "id": "la-fiesta-de-la-democracia",
+            "url": "https://jaime.gomezobregon.com/la-fiesta-de-la-democracia",
+            "title": "La fiesta de la democracia",
+            "content_text": "Lizartza es un pequeño municipio de Guipúzcoa. Tiene un censo de 509 vecinos. Desde 1979 hasta el 2003 ha sido gobernado, bajo distintas siglas, por la izquierda abertzale.",
+            "date_published": "2007-09-22T18:03:00Z",
+            "tags": ["General"],
+            "language": "es"
+        },
+        {
+            "id": "dias-de-28-horas",
+            "url": "https://jaime.gomezobregon.com/dias-de-28-horas",
+            "title": "Días de 28 horas",
+            "content_text": "«Modifiqué artificialmente mi ritmo circadiano. Me \"fabriqué\" una semana de 6 días de 28 horas cada uno. Mi intención era aumentar mi productividad y, sobre todo, hacer un experimento físico y psicológico de resultados impredecibles».",
+            "date_published": "2007-08-16T12:19:00Z",
+            "tags": ["General"],
+            "language": "es"
+        },
+        {
+            "id": "que-listo-es",
+            "url": "https://jaime.gomezobregon.com/que-listo-es",
+            "title": "Qué listo es",
+            "content_text": "Fragmento de una conversación escuchada en el pasillo de un hospital.",
+            "date_published": "2007-05-11T20:25:00Z",
+            "tags": ["General"],
+            "language": "es"
+        },
+        {
+            "id": "mucho-cuidado",
+            "url": "https://jaime.gomezobregon.com/mucho-cuidado",
+            "title": "Mucho cuidado",
+            "content_text": "Me ha contado mi abogado / que si no quiero ir al trullo / he de poner mucho cuidado / en no juntarme con capullos.",
+            "date_published": "2007-05-11T08:34:00Z",
+            "tags": ["General"],
+            "language": "es"
+        },
+        {
+            "id": "ostalgia",
+            "url": "https://jaime.gomezobregon.com/ostalgia",
+            "title": "Ostalgia",
+            "content_text": "Es lo que tienen las revoluciones, que destruyen Estados y construyen palabras. Aunque sean revoluciones sin fusiles, como la que acabó con Checoslovaquia, o con claveles en los fusiles, como el 25 de abril portugués.",
+            "date_published": "2007-05-09T01:07:00Z",
+            "tags": ["Idiomas", "Literatura", "Poesía"],
+            "language": "es"
+        },
+        {
+            "id": "fud",
+            "url": "https://jaime.gomezobregon.com/fud",
+            "title": "FUD",
+            "content_text": "El Gobierno de Cataluña no sanciona a los comercios \"que ponen los letreros de sus tiendas en castellano\", sino sólo a aquellos que no lo hacen en catalán. No es lo mismo: ni siquiera es parecido. Es más, es muy diferente.",
+            "date_published": "2007-05-02T17:56:00Z",
+            "tags": ["General"],
+            "language": "es"
+        },
+        {
+            "id": "rir",
+            "url": "https://jaime.gomezobregon.com/rir",
+            "title": "Rir",
+            "content_text": "Receta para un experimento dadaísta.",
+            "date_published": "2007-04-28T00:19:00Z",
+            "tags": ["General"],
+            "language": "es"
+        },
+        {
+            "id": "gott-nein-kirche-nein",
+            "url": "https://jaime.gomezobregon.com/gott-nein-kirche-nein",
+            "title": "Gott nein, Kirche nein",
+            "content_text": "«Le comunico que en este Obispado se ha recibido su escrito, en el que expresa su abandono de la Iglesia Católica».",
+            "date_published": "2007-04-27T23:33:00Z",
+            "tags": ["Dios ha muerto"],
+            "language": "es"
+        },
+        {
+            "id": "la-leccion-del-adios",
+            "url": "https://jaime.gomezobregon.com/la-leccion-del-adios",
+            "title": "La lección del adiós",
+            "content_text": "Tenía este billete de tren y el recuerdo melancólico de una despedida en el andén 21 de la estación central de Zurich. Me faltaba una canción, y ayer la encontré.",
+            "date_published": "2007-04-10T00:17:00Z",
+            "tags": ["General"],
+            "language": "es"
+        },
+        {
+            "id": "10-preguntas-para-un-cristiano-inteligente",
+            "url": "https://jaime.gomezobregon.com/10-preguntas-para-un-cristiano-inteligente",
+            "title": "10 preguntas que todo cristiano inteligente debería plantearse",
+            "content_text": "Si eres un cristiano instruido e inteligente me gustaría plantearte una pregunta interesante: ¿has analizado alguna vez tu fe religiosa desde el punto de vista de tu educación universitaria?",
+            "date_published": "2007-04-06T18:01:00Z",
+            "tags": ["Dios ha muerto"],
+            "language": "es"
+        },
+        {
+            "id": "la-donna-e-mobile",
+            "url": "https://jaime.gomezobregon.com/la-donna-e-mobile",
+            "title": "La donna è mobile",
+            "content_text": "La mujer es cambiante como una pluma en el viento / cambia de palabra y de pensamiento. / Es siempre mísero el que en ella confía / y le entrega incauto el corazón",
+            "date_published": "2007-03-18T23:15:00Z",
+            "tags": ["General"],
+            "language": "es"
+        },
+        {
+            "id": "quiero-toda-la-tierra",
+            "url": "https://jaime.gomezobregon.com/quiero-toda-la-tierra",
+            "title": "Quiero toda la tierra",
+            "content_text": "A través de una de esas películas que hacen pensar he llegado a \"Quiero toda la tierra más el 5%\", una interesante reflexión en forma de cuento breve sobre la historia del sistema bancario.",
+            "date_published": "2007-03-18T20:50:00Z",
+            "tags": ["General"],
+            "language": "es"
+        },
+        {
+            "id": "irgendwie-irgendwo-irgendwann",
+            "url": "https://jaime.gomezobregon.com/irgendwie-irgendwo-irgendwann",
+            "title": "Irgendwie, irgendwo, irgendwann",
+            "content_text": "En los últimos tiempos han sucedido tres cosas tales que cada una de ellas ha estado suficientemente fuera de lo común como para ser, por sí misma, todo un acontecimiento singular.",
+            "date_published": "2007-03-15T01:14:00Z",
+            "tags": ["General"],
+            "language": "es"
+        },
+        {
+            "id": "sonar-profundo",
+            "url": "https://jaime.gomezobregon.com/sonar-profundo",
+            "title": "Sonar profundo",
+            "content_text": "«Cualquier cosa dicha en latín suena profunda».",
+            "date_published": "2007-01-27T18:09:00Z",
+            "tags": ["General"],
+            "language": "la"
+        },
+        {
+            "id": "siempre",
+            "url": "https://jaime.gomezobregon.com/siempre",
+            "title": "Siempre",
+            "content_text": "Io sempre vinco.",
+            "date_published": "2007-01-09T00:25:00Z",
+            "tags": ["General"],
+            "language": "es"
+        },
+        {
+            "id": "der-wille-zur-macht",
+            "url": "https://jaime.gomezobregon.com/der-wille-zur-macht",
+            "title": "Der Wille zur Macht",
+            "content_text": "«Que Alá no te dé inteligencia, porque tendrás que ponerla al servicio de los poderosos, que Alá te dé poder, así los inteligentes trabajarán para ti».",
+            "date_published": "2007-01-08T01:09:00Z",
+            "tags": ["Dios ha muerto", "Literatura"],
+            "language": "es"
+        },
+        {
+            "id": "besos",
+            "url": "https://jaime.gomezobregon.com/besos",
+            "title": "Besos",
+            "content_text": "He leído que los romanos tenían tres palabras diferentes para decir \"beso\". ¿Por qué hemos perdido estas palabras?",
+            "date_published": "2006-12-29T00:34:00Z",
+            "tags": ["General"],
+            "language": "es"
+        },
+        {
+            "id": "sodade",
+            "url": "https://jaime.gomezobregon.com/sodade",
+            "title": "Sodade",
+            "content_text": "Si me escribes, te escribiré. Si me olvidas, te olvidaré.",
+            "date_published": "2006-12-27T00:30:00Z",
+            "tags": ["Idiomas", "Poesía"],
+            "language": "pt"
+        },
+        {
+            "id": "si-quiero-conocer",
+            "url": "https://jaime.gomezobregon.com/si-quiero-conocer",
+            "title": "Si quiero conocer",
+            "content_text": "«Es preciso que soporte dos o tres orugas si quiero conocer a las mariposas».",
+            "date_published": "2006-12-07T00:46:00Z",
+            "tags": ["Literatura"],
+            "language": "es"
+        },
+        {
+            "id": "el-banquero-anarquista",
+            "url": "https://jaime.gomezobregon.com/el-banquero-anarquista",
+            "title": "El banquero anarquista",
+            "content_text": "Demasiado largo para un artículo, pero demasiado breve para un libro. En \"El banquero anarquista\" Pessoa vuelve a la prosa y la pluma para explicar que el verdadero anarquismo comienza por la liberación solitaria de uno mismo, y que no es posible crear libertad sin ejercer al mismo tiempo la tiranía.",
+            "date_published": "2006-11-22T01:30:00Z",
+            "tags": ["Literatura"],
+            "language": "es"
+        },
+        {
+            "id": "dura-dura-lex",
+            "url": "https://jaime.gomezobregon.com/dura-dura-lex",
+            "title": "Dura, dura lex",
+            "content_text": "Audiencia Nacional, Madrid, España. Hoy.",
+            "date_published": "2006-11-07T23:18:00Z",
+            "tags": ["General"],
+            "language": "es"
+        },
+        {
+            "id": "ragioni-per-investire-in-italia",
+            "url": "https://jaime.gomezobregon.com/ragioni-per-investire-in-italia",
+            "title": "Due grandi ragioni per investire in Italia",
+            "content_text": "«L'Italia è ora una grande nazione per investire. Oggi abbiamo pochi comunisti e quelli che ci sono ancora negano di esserlo. Un'altra ragione per investire in Italia è che abbiamo belle segretarie, ragazze stupende».",
+            "date_published": "2006-10-31T00:32:00Z",
+            "tags": ["General"],
+            "language": "it"
+        },
+        {
+            "id": "agua-y-aceite",
+            "url": "https://jaime.gomezobregon.com/agua-y-aceite",
+            "title": "Agua y aceite",
+            "content_text": "La escena de Bettino Craxi escoltado de los estudiantes enfurecidos que le lanzan monedas gritando \"ladro\" o \"buffone\" ha sido recordada hasta la saciedad por los medios de comunicación italianos.",
+            "date_published": "2006-10-22T23:40:00Z",
+            "tags": ["General"],
+            "language": "es"
+        },
+        {
+            "id": "about-inner-revelations",
+            "url": "https://jaime.gomezobregon.com/about-inner-revelations",
+            "title": "About \"inner revelations\"...",
+            "content_text": "«Many inhabitants of lunatic asylums have an unshakable inner faith that they are Napoleon or, indeed, God himself. There is no doubting the power of such convictions for those that have them, but this is no reason for the rest of us to believe them».",
+            "date_published": "2006-09-21T15:42:00Z",
+            "tags": ["Dios ha muerto"],
+            "language": "en"
+        },
+        {
+            "id": "pueblo-de-dios-nuevos-capitulos",
+            "url": "https://jaime.gomezobregon.com/pueblo-de-dios-nuevos-capitulos",
+            "title": "Pueblo de Dios, nuevos capítulos",
+            "content_text": "¿Y tú?, ¿ya sintonizas en tu televisor la excitante programación de Vaticano TV?",
+            "date_published": "2006-08-29T23:34:00Z",
+            "tags": ["Dios ha muerto"],
+            "language": "es"
+        },
+        {
+            "id": "in-grog-we-trust",
+            "url": "https://jaime.gomezobregon.com/in-grog-we-trust",
+            "title": "In Grog we trust",
+            "content_text": "«El 20 de octubre de 1720, las tropas del Capitán Barnet, enviadas por el gobernador de Jamaica, capturaron a Rackham y su tripulación, la mayor parte de los cuales estaban borrachos y no opusieron resistencia».",
+            "date_published": "2006-08-28T14:37:00Z",
+            "tags": ["General"],
+            "language": "es"
+        },
+        {
+            "id": "la-locomotora-de-praga",
+            "url": "https://jaime.gomezobregon.com/la-locomotora-de-praga",
+            "title": "La locomotora de Praga",
+            "content_text": "Emil Zátopek asombró al mundo en los Juegos Olímpicos de Helsinki en 1952, ganando el oro en las competiciones de 5.000 y 10.000 metros, así como en la maratón; prueba en la que nunca antes había competido.",
+            "date_published": "2006-08-10T20:28:00Z",
+            "tags": ["general"],
+            "language": "es"
+        },
+        {
+            "id": "el-rio",
+            "url": "https://jaime.gomezobregon.com/el-rio",
+            "title": "El río",
+            "content_text": "«¿También a ti te enseñó el río aquel secreto: que el tiempo no existe?»",
+            "date_published": "2006-08-07T23:49:00Z",
+            "tags": ["Literatura"],
+            "language": "es"
+        },
+        {
+            "id": "todas-as-cartas-de-amor",
+            "url": "https://jaime.gomezobregon.com/todas-as-cartas-de-amor",
+            "title": "Todas as cartas de amor",
+            "content_text": "Todas as palavras esdrúxulas, como os sentimentos esdrúxulos, são naturalmente ridículas.",
+            "date_published": "2006-08-07T20:32:00Z",
+            "tags": ["Literatura", "Poesía"],
+            "language": "pt"
+        },
+        {
+            "id": "languages",
+            "url": "https://jaime.gomezobregon.com/languages",
+            "title": "Languages",
+            "content_text": "«To God I speak Spanish, to women Italian, to men French, and to my horse - German»",
+            "date_published": "2006-08-07T20:27:00Z",
+            "tags": ["Idiomas"],
+            "language": "en"
+        },
+        {
+            "id": "ateismo",
+            "url": "https://jaime.gomezobregon.com/ateismo",
+            "title": "Ateísmo",
+            "content_text": "«Nunca tendreis suficiente madera para quemar el azar que mueve el mundo».",
+            "date_published": "2006-07-09T01:02:00Z",
+            "tags": ["Dios ha muerto"],
+            "language": "es"
+        },
+        {
+            "id": "medios",
+            "url": "https://jaime.gomezobregon.com/medios",
+            "title": "Medios",
+            "content_text": "Lo leí en el prólogo de algún libro de Joseba Sarrionandía. Es la evolución de los titulares del principal periódico francés, Le Moniteur, durante el mes de marzo de 1815, cuando Napoleón huyó de la Isla de Elba para retomar Francia.",
+            "date_published": "2006-06-30T15:40:00Z",
+            "tags": ["Literatura", "General"],
+            "language": "es"
+        },
+        {
+            "id": "navegar",
+            "url": "https://jaime.gomezobregon.com/navegar",
+            "title": "Navegar",
+            "content_text": "«Navigare necesse est; vivere non est necesse»",
+            "date_published": "2006-06-25T15:19:00Z",
+            "tags": ["Literatura", "Dios ha muerto"],
+            "language": "la"
+        },
+        {
+            "id": "cuando-te-vieres-ante-la-luz-de-su-hermosura",
+            "url": "https://jaime.gomezobregon.com/cuando-te-vieres-ante-la-luz-de-su-hermosura",
+            "title": "Cuando te vieres ante la luz de su hermosura",
+            "content_text": "«Anda, hijo —replicó don Quijote—, y no te turbes cuando te vieres ante la luz del sol de hermosura que vas a buscar. ¡Dichoso tú sobre todos los escuderos del mundo! Ten memoria, y no se te pase de ella cómo te recibe»",
+            "date_published": "2006-06-24T21:56:00Z",
+            "tags": ["Literatura"],
+            "language": "es"
+        },
+        {
+            "id": "el-sol-grande-en-la-era",
+            "url": "https://jaime.gomezobregon.com/el-sol-grande-en-la-era",
+            "title": "El Sol grande en la era...",
+            "content_text": "El sol grande en la era / tal vez sea el remedio… / No quiero quien me quiera, / que me amen me da tedio.",
+            "date_published": "2006-06-22T23:34:00Z",
+            "tags": ["Poesía"],
+            "language": "es"
+        },
+        {
+            "id": "que-le-pedirias-al-presidente",
+            "url": "https://jaime.gomezobregon.com/que-le-pedirias-al-presidente",
+            "title": "¿Qué le pedirías al Presidente?",
+            "content_text": "«El presidente que se elija debería sanearlo todo —me comprende— cuando salgo me da hasta dolor de cabeza oler toda esta basura, quiero decir que la porquería está en todas partes, en fin…»",
+            "date_published": "2006-06-22T22:57:00Z",
+            "tags": ["General"],
+            "language": "es"
+        },
+        {
+            "id": "el-lugar-maldito",
+            "url": "https://jaime.gomezobregon.com/el-lugar-maldito",
+            "title": "El lugar maldito",
+            "content_text": "«El lugar maldito en que el cristianismo ha encovado sus huevos de basilisco será arrasado, y, como lugar infame de la tierra, constituirá el terror de toda la posteridad. En él se criarán serpientes venenosas».",
+            "date_published": "2006-06-16T22:07:00Z",
+            "tags": ["Dios ha muerto", "Literatura"],
+            "language": "es"
+        },
+        {
+            "id": "esta-bien-esta-mal",
+            "url": "https://jaime.gomezobregon.com/esta-bien-esta-mal",
+            "title": "Está bien, está mal",
+            "content_text": "«Está bien estudiar el Universo y dónde se originó. Pero no se debería profundizar en el origen en sí mismo, puesto que se trata del momento de la Creación y de la intervención de Dios.»",
+            "date_published": "2006-06-16T16:01:00Z",
+            "tags": ["Dios ha muerto"],
+            "language": "es"
+        },
+        {
+            "id": "vinas-verdes-junto-al-mar",
+            "url": "https://jaime.gomezobregon.com/vinas-verdes-junto-al-mar",
+            "title": "Viñas verdes junto al mar",
+            "content_text": "Vinyes verdes del meu cor… / Dins del cep s'adorm la tarda, / raïm negre, pàmpol d'or, /aigua, penyal i basarda. / Vinyes verdes del meu cor…",
+            "date_published": "2006-06-11T20:43:00Z",
+            "tags": ["Idiomas", "Poesía"],
+            "language": "ca"
+        },
+        {
+            "id": "poemas-palindromicos-en-euskera",
+            "url": "https://jaime.gomezobregon.com/poemas-palindromicos-en-euskera",
+            "title": "Poemas palindrómicos en euskera",
+            "content_text": "Dos poemas palindrómicos (simétricos) de Joseba Sarrionandía musicados por Mikel Laboa.",
+            "date_published": "2006-06-11T16:23:00Z",
+            "tags": ["Idiomas", "Poesía"],
+            "language": "eu"
+        },
+        {
+            "id": "o-sentimento-do-mundo",
+            "url": "https://jaime.gomezobregon.com/o-sentimento-do-mundo",
+            "title": "O sentimento do mundo",
+            "content_text": "Não és tu -faculdade de sentir- um espaço / terminado por linhas ou superfícies / e não obstante chove sobre ti, na cidade.",
+            "date_published": "2006-06-11T14:46:00Z",
+            "tags": ["Idiomas", "Poesía"],
+            "language": "pt"
+        }
+    ]
+}

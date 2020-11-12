@@ -1,5 +1,3 @@
-import { posts } from '../posts/index.js?1'
-
 export const blog = {
 
     /**
@@ -43,16 +41,21 @@ export const blog = {
     /**
      * Inicializa la lógica del blog
      */
-    init: function(options = {}) {
+    init: async function(options = {}) {
         const {
             nav = 'nav',
             close = 'button',
             article = 'article',
+            feed = '/posts/index.json',
         } = options
 
         this.nav = document.querySelector(nav)
         this.close = document.querySelector(close)
         this.article = document.querySelector(article)
+
+        const response = await fetch(feed)
+        const json = await response.json()
+        this.posts = json.items
 
         this.title = document.title
         this.description = document.querySelector('meta[name=description]').getAttribute('content')
@@ -68,12 +71,12 @@ export const blog = {
         // los primeros artículos, para que la lista completa no tarde demasiado en cargar.
         // Mientras carga, Safari en iOS requiere un doble tap, que así evitamos.
         const howManyAnimate = 10
-        const items = Object.entries(posts).map(([slug, post], order) => `
+        const items = this.posts.map((post, order) => `
             <li style="--delay: ${order < howManyAnimate ? order + 1 : 0}">
-                <a href="/${slug}" hreflang="${post.language}">
+                <a href="/${post.id}" hreflang="${post.language}">
                     ${post.title}
-                    <time datetime="${post.date}">
-                        ${new Date(post.date).toLocaleDateString('es-ES', this.dateFormat)}
+                    <time datetime="${post.date_published}">
+                        ${new Date(post.date_published).toLocaleDateString('es-ES', this.dateFormat)}
                     </time>
                 </a>
             </li>
@@ -96,9 +99,9 @@ export const blog = {
             }
 
             event.preventDefault()
-
             const slug = this.slug(a.href)
-            history.pushState(null, posts[slug].title, `/${slug}`)
+
+            history.pushState(null, this.posts.find(i => i.id === slug).title, `/${slug}`)
             this.load(slug)
         })
 
@@ -146,7 +149,7 @@ export const blog = {
      * Carga un artículo y lo presenta al usuario para su lectura
      */
     load: async function(slug) {
-        if (!posts[slug]) {
+        if (!this.posts.find(i => i.id === slug)) {
             return this.error()
         }
 
@@ -155,13 +158,13 @@ export const blog = {
             return this.error()
         }
 
-        const post = posts[slug]
+        const post = this.posts.find(i => i.id === slug)
 
         const base = document.querySelector('head base')
         base.setAttribute('href', `/posts/${slug}/`)
 
         document.title = post.title
-        document.querySelector('meta[name=description]').setAttribute('content', post.description)
+        document.querySelector('meta[name=description]').setAttribute('content', post.content_text)
 
         document.body.classList.add('article')
         this.article.innerHTML = await response.text()
@@ -170,11 +173,11 @@ export const blog = {
         this.article.parentNode.classList.remove('hidden')
 
         const h1 = this.article.querySelector('h1').innerHTML
-        const date = new Date(post.date).toLocaleDateString('es-ES', this.dateFormat)
+        const date = new Date(post.date_published).toLocaleDateString('es-ES', this.dateFormat)
         const header = document.createElement('header')
         header.innerHTML = `
             <h1>${h1}</h1>
-            <time datetime="${post.date}">${date}</time>
+            <time datetime="${post.date_published}">${date}</time>
         `
 
         this.article.querySelector('h1').replaceWith(header)
