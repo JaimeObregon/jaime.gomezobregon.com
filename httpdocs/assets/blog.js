@@ -35,6 +35,11 @@ export const blog = {
      */
     description: null,
 
+    /**
+     * URL original, para ídem
+     */
+    url: null,
+
     // Devuelve `ruta` cuando se le pasa `https://jaime.gomezobregon.com/ruta/y/mas/cosas/opcionales`
     slug: location => new URL(location).pathname.split('/')[1],
 
@@ -58,6 +63,7 @@ export const blog = {
         this.posts = json.items
 
         this.title = document.title
+        this.url = document.querySelector('meta[property="og:url"]').getAttribute('content')
         this.description = document.querySelector('meta[name=description]').getAttribute('content')
 
         const slug = this.slug(document.location)
@@ -141,6 +147,9 @@ export const blog = {
 
         document.title = this.title
         document.querySelector('meta[name=description]').setAttribute('content', this.description)
+        document.querySelector('meta[property="og:description"]').setAttribute('content', this.description)
+        document.querySelector('meta[property="og:title"]').setAttribute('content', this.title)
+        document.querySelector('meta[property="og:url"]').setAttribute('content', this.url)
 
         this.nav.parentNode.classList.remove('hidden')
     },
@@ -165,6 +174,9 @@ export const blog = {
 
         document.title = post.title
         document.querySelector('meta[name=description]').setAttribute('content', post.content_text)
+        document.querySelector('meta[property="og:description"]').setAttribute('content', post.content_text)
+        document.querySelector('meta[property="og:title"]').setAttribute('content', post.title)
+        document.querySelector('meta[property="og:url"]').setAttribute('content', post.url)
 
         document.body.classList.add('article')
         this.article.innerHTML = await response.text()
