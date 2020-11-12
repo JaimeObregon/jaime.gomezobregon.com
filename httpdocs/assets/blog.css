@@ -640,11 +640,15 @@ main h2 {
 
 @media (max-width: 50rem) {
     body {
-        font-size: 1em;
+        font-size: 1.1em;
     }
 
     body.transition > div > header {
         transition-duration: 150ms;
+    }
+
+    main article p {
+        hyphens: auto;
     }
 }
 
