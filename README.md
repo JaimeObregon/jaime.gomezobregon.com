@@ -34,6 +34,8 @@ Los contenidos del blog están todos en el directorio [`/posts`](/httpdocs/posts
 
 2. Añade el artículo recién creado a [`index.json`](/httpdocs/posts/index.json). La portada del blog mostrará el índice de artículos en el mismo orden en que los consignes en ese fichero.
 
+El fichero `index.json` es el *feed* del blog en formato [JSON Feed](https://jsonfeed.org). La mayoría de los sitios generan este *feed* a partir de los contenidos; aquí lo hacemos justo al revés.
+
 # Desplegue
 
 En [`.github/workflows/main.yml`](/.github/workflows/main.yml) he incorporado un *script* que, a partir de mi configuración personal en Github, despliega todo el sitio en mi servidor web con cada *push* a `master`.

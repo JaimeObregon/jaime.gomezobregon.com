@@ -1,4 +1,7 @@
 RewriteEngine on
+
+RedirectMatch ^/feed/?$ /posts/index.json
+
 RewriteCond %{DOCUMENT_ROOT}/posts%{REQUEST_URI}/index.html -f
 RewriteRule ^(.*)$ /index.html [NC,L,QSA]
 
