@@ -444,7 +444,6 @@ blockquote:before {
     position: absolute;
     top: .15em;
     left: 0;
-    width: var(--padding);
     font-size: 3em;
     line-height: 1;
 }
