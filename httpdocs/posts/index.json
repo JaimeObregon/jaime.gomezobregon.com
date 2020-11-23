@@ -8,6 +8,15 @@
     "description": "Hola, Jaime al teclado. Cacharreo con datos y ordenadores, leo, escribo y hago cosas.",
     "items": [
         {
+            "id": "las-abreviaturas-del-diccionario",
+            "url": "https://jaime.gomezobregon.com/las-abreviaturas-del-diccionario",
+            "title": "Las abreviaturas del diccionario",
+            "content_text": "",
+            "date_published": "2020-11-23T16:38:00Z",
+            "tags": ["General", "Diccionario"],
+            "language": "es"
+        },
+        {
             "id": "tsunami-de-libertad-o-alienacion-tecnificada",
             "url": "https://jaime.gomezobregon.com/tsunami-de-libertad-o-alienacion-tecnificada",
             "title": "¿Tsunami de libertad o alienación tecnificada?",
