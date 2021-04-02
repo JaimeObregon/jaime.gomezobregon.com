@@ -397,6 +397,10 @@ h1, h2 {
     font-family: 'Open Sans', sans-serif;
 }
 
+audio {
+    width: 100%;
+}
+
 figure {
     text-align: center;
     margin: 2em 0;

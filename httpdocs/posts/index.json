@@ -8,6 +8,15 @@
     "description": "Hola, Jaime al teclado. Cacharreo con datos y ordenadores, leo, escribo y hago cosas.",
     "items": [
         {
+            "id": "entrevista-en-onda-cero",
+            "url": "https://jaime.gomezobregon.com/entrevista-en-onda-cero",
+            "title": "Entrevista en Onda Cero sobre mis proyectos con datos y tecnología para la transparencia de las instituciones",
+            "content_text": "Hoy he podido contar en la radio algunas de mis iniciativas aplicando tecnología y datos para la transparencia del sector público. Ha sido en el programa «Más de uno» de Onda Cero, invitado por Patricia Martínez-Lope, a quien agradezco mucho su genuino interés.",
+            "date_published": "2021-04-02T17:17:00Z",
+            "tags": ["Transparencia"],
+            "language": "es"
+        },
+        {
             "id": "las-abreviaturas-del-diccionario",
             "url": "https://jaime.gomezobregon.com/las-abreviaturas-del-diccionario",
             "title": "Las abreviaturas del diccionario",
