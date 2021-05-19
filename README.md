@@ -1,6 +1,36 @@
 # `jaime.gomezobregon.com`
 
-He aquí el código fuente de mi blog personal. Lo inicié en el verano de 2006 como un sitio basado en WordPress y ahora, en 2020, lo he reconstruido con exquisito [prurito](https://dle.rae.es/prurito) y énfasis en el minimalismo y la eficacia.
+He aquí el código fuente de mi blog personal. Lo inicié en el verano de 2006 como un sitio basado en WordPress y en 2020 lo reconstruí con exquisito [prurito](https://dle.rae.es/prurito) y énfasis en el minimalismo y la eficacia.
+
+# Modo de empleo
+
+Los contenidos del blog están todos en [`/posts`](/httpdocs/posts). Para añadir un artículo…:
+
+1. Crea un subdirectorio en [`/posts`](/httpdocs/posts) y sitúa el contenido del artículo dentro: un fichero `index.html` con el contenido principal y cualquier otro recurso que el artículo necesite cargar.
+
+2. Añade el artículo recién creado a [`index.json`](/httpdocs/posts/index.json). La portada del blog mostrará el índice de artículos en el mismo orden en que los consignes en ese fichero.
+
+El fichero `index.json` es el *feed* del blog en formato [JSON Feed](https://jsonfeed.org). La mayoría de los sitios generan este *feed* a partir de los contenidos; aquí lo hacemos justo al revés.
+
+# Despliegue
+
+En [`.github/workflows/main.yml`](/.github/workflows/main.yml) he incorporado un *script* que, a partir de mi configuración personal en Github, despliega todo el sitio en mi servidor web con cada *push* a `master`.
+
+# Estructura mínima de un artículo
+
+Cada artículo ha de tener, como mínimo, un fichero `index.html` con el contenido principal. No obstante ahí también puedes cargar imágenes, recursos multimedia, hojas de estilos y cualquier otra cosa que el artículo requiera.
+
+Es requisito que el fichero `index.html` de cada artículo tenga un elemento `<h1>` con el título, que así puede ser diferente del título que hayas consignado en [`index.json`](/httpdocs/posts/index.json).
+
+Opcionalmente es posible proporcionar en el directorio de cada artículo también un fichero `poster.png` de 2400×1260 que se mostrará al compartir el artículo en redes sociales.
+
+# Tecnología
+
+Este proyecto utiliza exclusivamente estándares web: HTML5, CSS3 y ES6 (JavaScript). No hay ningún lenguaje de *scripting* en el lado del servidor, ni se requiere de una base de datos.
+
+Es necesario un servidor web capaz de interpretar las sencillas reglas de reescritura del fichero [`.htaccess`](/httpdocs/.htaccess). Por ejemplo, Apache.
+
+La imagen específica de cada artículo para redes sociales (`poster.png`) solo se mostrará si el servidor dispone de PHP 7.4 o superior.
 
 # El manifiesto: un tributo a las cosas sencillas
 
@@ -25,32 +55,6 @@ Yo aquí me apeo de ese mundo. Considero que hace falta **un reinicio, una trans
 - **Simple de mantener**. La locura de los CMS no tiene límites: actualizaciones, parches de seguridad, *plugins* y plantillas, *sitemaps*, metaetiquetas, cachés... Este sitio da la espalda a todo eso. Es un simple conjunto de ficheros estáticos y 200 líneas de JavaScript. No hay ninguna compleja arquitectura de software que mantener. Y es sano así. Cuando quiero escribir un artículo, simplemente creo un fichero y lo publico con un <em>commit</em> y un <em>push</em>. Y ya.
 
 - **Con un licenciamiento claro y permisivo**. Tanto el código del sitio como sus contenidos los publico bajo licencias libres. Estando ambas cosas complatemente expuestas en internet, no tiene mucho sentido hacerlo de otro modo.
-
-# Modo de empleo
-
-Los contenidos del blog están todos en el directorio [`/posts`](/httpdocs/posts). Para añadir un artículo...
-
-1. Crea un subdirectorio en [`/posts`](/httpdocs/posts/) y sitúa el contenido del artículo dentro: un fichero `index.html` con el contenido principal y cualquier otro recurso que el artículo necesite cargar.
-
-2. Añade el artículo recién creado a [`index.json`](/httpdocs/posts/index.json). La portada del blog mostrará el índice de artículos en el mismo orden en que los consignes en ese fichero.
-
-El fichero `index.json` es el *feed* del blog en formato [JSON Feed](https://jsonfeed.org). La mayoría de los sitios generan este *feed* a partir de los contenidos; aquí lo hacemos justo al revés.
-
-# Despliegue
-
-En [`.github/workflows/main.yml`](/.github/workflows/main.yml) he incorporado un *script* que, a partir de mi configuración personal en Github, despliega todo el sitio en mi servidor web con cada *push* a `master`.
-
-# Estructura mínima de un artículo
-
-Cada artículo tiene que tener, como mínimo, un fichero `index.html` con el contenido principal. No obstante ahí también puedes cargar imágenes, recursos multimedia, hojas de estilos y cualquier otra cosa que el artículo requiera.
-
-Es requisito que el fichero `index.html` de cada artículo tenga un elemento `<h1>` con el título, que así puede ser diferente del título que hayas consignado en [`index.json`](/httpdocs/posts/index.json).
-
-# Tecnología
-
-Este proyecto utiliza exclusivamente estándares web: HTML5, CSS3 y ES6 (JavaScript). No hay ningún lenguaje de *scripting* en el lado del servidor, ni se requiere de una base de datos.
-
-Es necesario un servidor web capaz de interpretar las sencillas reglas de reescritura del fichero [`.htaccess`](/httpdocs/.htaccess). Por ejemplo, Apache.
 
 # Licencia
 
