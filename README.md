@@ -22,7 +22,7 @@ Cada artículo ha de tener, como mínimo, un fichero `index.html` con el conteni
 
 Es requisito que el fichero `index.html` de cada artículo tenga un elemento `<h1>` con el título, que así puede ser diferente del título que hayas consignado en [`index.json`](/httpdocs/posts/index.json).
 
-Opcionalmente es posible proporcionar en el directorio de cada artículo también un fichero `poster.png` de 2400×1260 que se mostrará al compartir el artículo en redes sociales.
+Opcionalmente es posible proporcionar en el directorio de cada artículo también un fichero `poster.png` de 2400×1260 que se mostrará al compartir el artículo en redes sociales. En [`/posters/generator`](https://jaime.gomezobregon.com/posters/generator) he añadido un sencillo generador de estos pósters, basado en [el trabajo previo de George Francis](https://georgefrancis.dev/writing/generative-svg-social-images/).
 
 # Tecnología
 
