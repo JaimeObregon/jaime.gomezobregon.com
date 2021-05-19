@@ -1,5 +1,10 @@
 RewriteEngine on
 
+RewriteCond %{HTTP_USER_AGENT} (twitterbot|facebookexternalhit|linkedinbot|slackbot|discordbot) [NC]
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^(.*)$ /posters/index.php [NC,L,QSA]
+
 RedirectMatch ^/feed/?$ /posts/index.json
 
 RewriteCond %{DOCUMENT_ROOT}/posts%{REQUEST_URI}/index.html -f

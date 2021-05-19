@@ -1,2 +1,4 @@
 .DS_Store
 /private
+*.sublime-project
+*.sublime-workspace
