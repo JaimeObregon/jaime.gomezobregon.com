@@ -12,6 +12,32 @@ Los contenidos del blog están todos en [`/posts`](/httpdocs/posts). Para añadi
 
 El fichero `index.json` es el *feed* del blog en formato [JSON Feed](https://jsonfeed.org). La mayoría de los sitios generan este *feed* a partir de los contenidos; aquí lo hacemos justo al revés.
 
+## Incrustar un tuit
+
+El marcado mínimo para incrustar un tuit es el siguiente, donde el valor del atributo `data-id` es el `id` del tuit a incrustar:
+
+<blockquote class="tweet" data-id="1395067736531865604">
+</blockquote>
+
+No obstante, es recomendable utilizar el marcado completo tal como se indica en el siguiente ejemplo, que ha sido confeccionado a partir del *snippet* que genera el sitio web de Twitter cuando se pulsa en «Embed tweet»:
+
+<blockquote class="tweet" data-id="1395067736531865604">
+    <p>
+        Soy fan de simplificar la tecnología todo lo posible. También de la austeridad en el ornato. Con este espíritu el año pasado renové mi blog (iniciado en 2006).<br>
+        <br>
+        Bastaron solo 233 líneas de código y una pequeña hoja de estilos. El rendimiento es máximo.<br>
+        <br>
+        🔗 <a href="https://t.co/Z83n8yLxqo">https://t.co/Z83n8yLxqo</a>
+        <a href="https://t.co/WOjSZVVQts">pic.twitter.com/WOjSZVVQts</a>
+    </p>
+    <footer>
+        — Jaime Gómez-Obregón (<code>@JaimeObregon</code>), el
+        <a href="https://twitter.com/JaimeObregon/status/1395067736531865604">
+            19 de mayo de 2021
+        </a>.
+    </footer>
+</blockquote>
+
 # Despliegue
 
 En [`.github/workflows/main.yml`](/.github/workflows/main.yml) he incorporado un *script* que, a partir de mi configuración personal en Github, despliega todo el sitio en mi servidor web con cada *push* a `master`.
