@@ -30,24 +30,24 @@ main {
     overflow: hidden;
 }
 
-.controls {
+footer {
     display: flex;
     align-items: center;
     flex-wrap: wrap;
     margin: 2rem 0;
 }
 
-.controls__label {
-    margin-right: 1rem;
-    font-weight: 500;
-    font-size: 1rem;
-}
-
-.controls__randomize {
+.randomize {
     display: flex;
     justify-content: flex-start;
     align-items: center;
     flex-wrap: wrap;
+}
+
+.randomize p {
+    margin-right: 1rem;
+    font-weight: 500;
+    font-size: 1rem;
 }
 
 button {
@@ -83,8 +83,8 @@ button.save:hover {
     color: var(--black);
 }
 
-.controls__saving-disabled {
-    font-size: 0.875rem;
+.saving-disabled {
+    font-size: .875rem;
     margin-top: 2rem;
     font-weight: 500;
     display: none;
@@ -93,37 +93,38 @@ button.save:hover {
 
 @media only screen and (max-width: 800px) {
     body {
-        padding: 0.75rem;
+        padding: .75rem;
     }
 
     button {
         width: 6rem;
         height: 2rem;
-        font-size: 0.875rem;
-        margin-top: 0.75rem;
+        font-size: .875rem;
+        margin-top: .75rem;
     }
 
-    .controls__label {
-        font-size: 0.875rem;
-        margin-right: 0.5rem;
-        width: 100%;
-    }
     button.save {
         width: 100%;
         margin-top: 1.25rem;
+    }
+
+    .randomize p {
+        font-size: .875rem;
+        margin-right: .5rem;
+        width: 100%;
     }
 }
 
 @media only screen and (max-width: 480px) {
     button {
-        margin-right: 0.5rem;
+        margin-right: .5rem;
     }
 
     button.save {
         display: none;
     }
 
-    .controls__saving-disabled {
+    .saving-disabled {
         width: 100%;
         display: block;
     }

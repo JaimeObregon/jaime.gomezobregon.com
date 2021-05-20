@@ -217,7 +217,7 @@ saveBtn.addEventListener("click", () => {
     // this fixes an odd visual "cut off" bug when exporting
     window.scrollTo(0, 0)
 
-    html2canvas(document.querySelector(".wrapper__inner"), {
+    html2canvas(document.querySelector("main > div"), {
         width: 1200,
         height: 630,
         scale: 2 // export our image at 2x resolution so it is nice and crisp on retina devices
