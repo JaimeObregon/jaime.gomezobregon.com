@@ -198,7 +198,7 @@ export const blog = {
 
         window.scrollTo(0, 0)
 
-        this.resizeVideos('figure iframe[src*="youtube-nocookie\.com"]')
+        this.resizeVideos()
 
         this.renderTweets('blockquote.tweet[data-id]', {
             align: 'center',
@@ -208,8 +208,8 @@ export const blog = {
     /**
      * Fuerza que los vídeos de YouTube se vean a ancho completo y en proporción 16:9
      */
-    resizeVideos: selector => {
-        const videos = document.querySelectorAll(selector)
+    resizeVideos: () => {
+        const videos = document.querySelectorAll('figure iframe[src*="youtube-nocookie\.com"]')
         videos.forEach(iframe => {
             const ratio = 16 / 9
             iframe.style.width = '100%'
