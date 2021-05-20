@@ -136,6 +136,8 @@ export const blog = {
                 element.parentNode.classList.add('hidden')
             }
         })
+
+        window.addEventListener('resize', this.resizeVideos)
     },
 
     /**
@@ -195,22 +197,19 @@ export const blog = {
         this.article.querySelector('h1').replaceWith(header)
 
         window.scrollTo(0, 0)
+        this.resizeVideos()
+    },
 
-        // Fuerza que los vídeos de YouTube se vean a ancho completo y en proporción 16:9
-        {
-            const resizeVideos = element => {
-                const selector = 'figure iframe[src*="youtube-nocookie\.com"]'
-                const videos = element.querySelectorAll(selector)
-                videos.forEach(iframe => {
-                    const ratio = 16 / 9
-                    iframe.style.width = '100%'
-                    iframe.style.height = `${iframe.offsetWidth / ratio}px`
-                })
-            }
-
-            window.addEventListener('resize', () => resizeVideos(this.article))
-            resizeVideos(this.article)
-        }
+    /**
+     * Fuerza que los vídeos de YouTube se vean a ancho completo y en proporción 16:9
+     */
+    resizeVideos: () => {
+        const videos = document.querySelectorAll('figure iframe[src*="youtube-nocookie\.com"]')
+        videos.forEach(iframe => {
+            const ratio = 16 / 9
+            iframe.style.width = '100%'
+            iframe.style.height = `${iframe.offsetWidth / ratio}px`
+        })
     },
 
     /**
