@@ -16,11 +16,14 @@ El fichero `index.json` es el *feed* del blog en formato [JSON Feed](https://jso
 
 El marcado mínimo para incrustar un tuit es el siguiente, donde el valor del atributo `data-id` es el `id` del tuit a incrustar:
 
+```html
 <blockquote class="tweet" data-id="1395067736531865604">
 </blockquote>
+```
 
 No obstante, es recomendable utilizar el marcado completo tal como se indica en el siguiente ejemplo, que ha sido confeccionado a partir del *snippet* que genera el sitio web de Twitter cuando se pulsa en «Embed tweet»:
 
+```html
 <blockquote class="tweet" data-id="1395067736531865604">
     <p>
         Soy fan de simplificar la tecnología todo lo posible. También de la austeridad en el ornato. Con este espíritu el año pasado renové mi blog (iniciado en 2006).<br>
@@ -37,6 +40,7 @@ No obstante, es recomendable utilizar el marcado completo tal como se indica en 
         </a>.
     </footer>
 </blockquote>
+```
 
 # Despliegue
 
