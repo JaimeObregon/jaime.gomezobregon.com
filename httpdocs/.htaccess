@@ -1,5 +1,7 @@
 RewriteEngine on
 
+Header set Cache-Control "no-cache"
+
 RewriteCond %{HTTP_USER_AGENT} (twitterbot|facebookexternalhit|linkedinbot|slackbot|discordbot) [NC]
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d
