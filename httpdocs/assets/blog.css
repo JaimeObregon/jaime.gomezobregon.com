@@ -543,7 +543,7 @@ body > div > header nav ol {
 body > div > header nav ol li {
     margin: 1em 0;
     line-height: 1.15;
-    animation: appear 200ms calc(100ms * var(--delay)) backwards;
+    animation: appear 200ms calc(50ms * var(--delay)) backwards;
 }
 
 body > div > header nav ol li a {

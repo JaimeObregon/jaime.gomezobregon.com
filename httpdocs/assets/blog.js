@@ -76,7 +76,7 @@ export const blog = {
         // La lista de artículos es larga. Apliquemos la demora estética solo en
         // los primeros artículos, para que la lista completa no tarde demasiado en cargar.
         // Mientras carga, Safari en iOS requiere un doble tap, que así evitamos.
-        const howManyAnimate = 10
+        const howManyAnimate = 12
         const items = this.posts.map((post, order) => `
             <li style="--delay: ${order < howManyAnimate ? order + 1 : 0}">
                 <a href="/${post.id}" hreflang="${post.language}">
