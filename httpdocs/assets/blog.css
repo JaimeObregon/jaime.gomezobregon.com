@@ -435,7 +435,7 @@ img {
     max-width: 100%;
 }
 
-blockquote {
+blockquote:not(.tweet.rendered) {
     --padding: 3em;
     position: relative;
     margin: 0;
@@ -443,7 +443,7 @@ blockquote {
     font-style: italic;
 }
 
-blockquote:before {
+blockquote:not(.tweet.rendered):before {
     content: '”';
     position: absolute;
     top: .15em;

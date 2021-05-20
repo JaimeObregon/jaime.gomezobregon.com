@@ -197,14 +197,19 @@ export const blog = {
         this.article.querySelector('h1').replaceWith(header)
 
         window.scrollTo(0, 0)
-        this.resizeVideos()
+
+        this.resizeVideos('figure iframe[src*="youtube-nocookie\.com"]')
+
+        this.renderTweets('blockquote.tweet[data-id]', {
+            align: 'center',
+        })
     },
 
     /**
      * Fuerza que los vídeos de YouTube se vean a ancho completo y en proporción 16:9
      */
-    resizeVideos: () => {
-        const videos = document.querySelectorAll('figure iframe[src*="youtube-nocookie\.com"]')
+    resizeVideos: selector => {
+        const videos = document.querySelectorAll(selector)
         videos.forEach(iframe => {
             const ratio = 16 / 9
             iframe.style.width = '100%'
@@ -213,10 +218,32 @@ export const blog = {
     },
 
     /**
+     * Carga los tuits que pudiera haber incrustados en un artículo
+     */
+    renderTweets: async (selector, options) => {
+        const tweets = document.querySelectorAll(selector)
+        if (!tweets.length) {
+            return
+        }
+
+        // Cargamos la librería de Twitter solo si no lo ha sido previamente
+        // y la entrada contiene tuits
+        if (typeof window.twttr === 'undefined') {
+            await import('https://platform.twitter.com/widgets.js')
+        }
+
+        tweets.forEach(tweet => {
+            tweet.innerHTML = ''
+            tweet.classList.add('rendered')
+            twttr.widgets.createTweet(tweet.dataset.id, tweet, options)
+        })
+    },
+
+    /**
      * Muestra una página de error
      */
     error: async () => {
-        const response = await fetch(`/error.html`)
+        const response = await fetch('/error.html')
         const content = await response.text()
         document.body.innerHTML = content
         document.head.innerHTML = `
