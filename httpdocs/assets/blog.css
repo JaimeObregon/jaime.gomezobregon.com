@@ -671,11 +671,28 @@ main h2 {
 }
 
 @media print {
+    body {
+        font-size: 1em;
+    }
+
+    body,
+    strong,
+    a,
+    main h1,
+    main h2 {
+        color: black;
+    }
+
+    a {
+        text-decoration: underline;
+    }
+
     button {
         display: none;
     }
 
     main a::after {
-        content: " [" attr(href) "] ";
+        content: " [" attr(href) "]";
+        font-family: monospace;
     }
 }
