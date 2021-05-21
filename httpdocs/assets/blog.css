@@ -403,6 +403,10 @@ audio {
 
 figure {
     text-align: center;
+}
+
+figure,
+blockquote {
     margin: 2em 0;
 }
 
@@ -426,7 +430,7 @@ dd {
 
 hr {
     border: none;
-    border-top: 1px solid var(--color-main-600);
+    border-top: 1px solid var(--color-main-300);
     width: 60%;
     margin: 5em auto;
 }
@@ -438,7 +442,6 @@ img {
 blockquote:not(.tweet.rendered) {
     --padding: 3em;
     position: relative;
-    margin: 0;
     padding-left: var(--padding);
     font-style: italic;
 }
