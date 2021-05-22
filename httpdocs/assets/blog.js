@@ -119,10 +119,11 @@ export const blog = {
         window.addEventListener('popstate', event => {
             // En iOS y Safari hay dos formas de navegar por el historial: pulsando los botones del
             // navegador o haciendo un gesto ("swipe"). Este segundo método va acompañado de una
-            // animación que provoca un efecto visual feo si no desactivamos temporalmente la nuestra...
+            // animación que provoca un efecto visual feo si no desactivamos temporalmente la nuestra…
             document.body.classList.remove('transition')
+            document.querySelector('header').classList.add('hidden')
 
-            // ...pero volvamos a activarla unos instantes después, cuando la animación del navegador
+            // …pero volvamos a activarla unos instantes después, cuando la animación del navegador
             // ha concluido
             setTimeout(() => document.body.classList.add('transition'), 500)
 
