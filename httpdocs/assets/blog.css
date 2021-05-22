@@ -361,6 +361,7 @@
 
 :root {
     --padding: 5rem;
+    --margin: 3rem;
     --width: 50rem;
     --line-height: 1.75;
 
@@ -397,7 +398,8 @@ h1, h2 {
     font-family: 'Open Sans', sans-serif;
 }
 
-audio {
+audio,
+video {
     width: 100%;
 }
 
@@ -407,7 +409,7 @@ figure {
 
 figure,
 blockquote {
-    margin: 2em 0;
+    margin: var(--margin) 0;
 }
 
 figcaption {
@@ -600,13 +602,24 @@ main > button svg {
 }
 
 main header {
+    margin: 0 calc(-1 * var(--padding) + 1em);
+}
+
+main header:first-of-type {
     text-align: center;
+}
+
+main header + header {
+    font-size: 1.075em;
+    font-weight: 500;
+    margin-bottom: var(--margin);
+    color: var(--color-main-900);
 }
 
 main header time {
     display: block;
     font-size: .85em;
-    margin: 1rem 0 3rem 0;
+    margin: 1rem 0 var(--margin) 0;
     color: var(--color-main-700);
 }
 
@@ -618,7 +631,7 @@ main h2 {
 
 main h2 {
     font-size: 1.25em;
-    margin-top: 2em;
+    margin-top: calc(2 * var(--margin));
 }
 
 /**
