@@ -8,6 +8,15 @@
     "description": "Hola, Jaime al teclado. Cacharreo con datos y ordenadores, leo, escribo y hago cosas.",
     "items": [
         {
+            "id": "ministra-libere-los-datos-mercantiles",
+            "url": "https://jaime.gomezobregon.com/ministra-libere-los-datos-mercantiles",
+            "title": "Ministra, libere los datos mercantiles",
+            "content_text": "España necesita un diario de operaciones mercantiles efectivamente transparente y eficaz en la lucha contra la corrupción. Y la nueva ministra de Justicia debe tener la audacia de poner estos datos al servicio público.",
+            "date_published": "2021-07-23T21:26:00Z",
+            "tags": ["Transparencia"],
+            "language": "es"
+        },
+        {
             "id": "entrevista-en-onda-cero",
             "url": "https://jaime.gomezobregon.com/entrevista-en-onda-cero",
             "title": "Entrevista en Onda Cero sobre mis proyectos con datos y tecnología para la transparencia de las instituciones",
