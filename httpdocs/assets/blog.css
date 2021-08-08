@@ -515,6 +515,18 @@ main article {
     margin: 0 auto;
 }
 
+main article > footer {
+    padding-top: var(--margin);
+    font-size: .85em;
+}
+
+main article > footer::before {
+    content: "";
+    position: absolute;
+    width: 6em;
+    border-top: 1px solid;
+}
+
 body > div > header section summary {
     transition: color 350ms ease;
 }
