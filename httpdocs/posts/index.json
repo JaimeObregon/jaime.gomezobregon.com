@@ -8,6 +8,15 @@
     "description": "Hola, Jaime al teclado. Cacharreo con datos y ordenadores, leo, escribo y hago cosas.",
     "items": [
         {
+            "id": "la-pandemia-de-las-plataformas-municipales",
+            "url": "https://jaime.gomezobregon.com/la-pandemia-de-las-plataformas-municipales",
+            "title": "La pandemia de las plataformas municipales de comercio electrónico",
+            "content_text": "Se extiende por los ayuntamientos españoles una rara fiebre entre alcaldes y concejales: la de unas plataformas de comercio electrónico financiadas con dinero público y abocadas al fracaso.",
+            "date_published": "2021-08-19T09:46:00Z",
+            "tags": ["Tecnología"],
+            "language": "es"
+        },
+        {
             "id": "ministra-libere-los-datos-mercantiles",
             "url": "https://jaime.gomezobregon.com/ministra-libere-los-datos-mercantiles",
             "title": "Ministra, libere los datos mercantiles",
