@@ -8,6 +8,15 @@
     "description": "Hola, Jaime al teclado. Cacharreo con datos y ordenadores, leo, escribo y hago cosas.",
     "items": [
         {
+            "id": "discurso-premio-blasillo",
+            "url": "https://jaime.gomezobregon.com/discurso-premio-blasillo",
+            "title": "Discurso en la clasura del XXII Congreso de Periodismo",
+            "content_text": "Esta semana me concedieron el premio Blasillo de Huesca en el XXII Congreso de Periodismo de Huesca. Me invitaron a intervenir en la clausura y decidí aprovechar la ocasión para reclamar la liberación de los datos mercantiles y visibilizar la importancia de la ciencia de datos y los datos abiertos para la transparencia en el sector público. Este fue mi discurso en la clausura del Congreso.",
+            "date_published": "2021-11-07T11:39:00Z",
+            "tags": ["Transparencia"],
+            "language": "es"
+        },
+        {
             "id": "la-pandemia-de-las-plataformas-municipales",
             "url": "https://jaime.gomezobregon.com/la-pandemia-de-las-plataformas-municipales",
             "title": "La pandemia de las plataformas municipales de comercio electrónico",
