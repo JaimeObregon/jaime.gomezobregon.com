@@ -13,7 +13,7 @@
             "title": "Física y Química",
             "content_text": "Confronto aquí, cara a cara, dos experiencias escolares antagónicas que resonaron dentro de mí en dos momentos vitales muy diferentes. Son dos historias, y dos sentimientos.",
             "date_published": "2022-06-18T16:47:00Z",
-            "tags": ["Reflexiones"],
+            "tags": ["Destacado", "Reflexiones"],
             "language": "es"
         },
         {
@@ -22,7 +22,7 @@
             "title": "Discurso en la clasura del XXII Congreso de Periodismo",
             "content_text": "Esta semana me concedieron el premio Blasillo de Huesca en el XXII Congreso de Periodismo de Huesca. Me invitaron a intervenir en la clausura y decidí aprovechar la ocasión para reclamar la liberación de los datos mercantiles y visibilizar la importancia de la ciencia de datos y los datos abiertos para la transparencia en el sector público. Este fue mi discurso en la clausura del Congreso.",
             "date_published": "2021-11-07T11:39:00Z",
-            "tags": ["Transparencia"],
+            "tags": ["Destacado", "Transparencia"],
             "language": "es"
         },
         {
@@ -31,7 +31,7 @@
             "title": "La pandemia de las plataformas municipales de comercio electrónico",
             "content_text": "Se extiende por los ayuntamientos españoles una rara fiebre entre alcaldes y concejales: la de unas plataformas de comercio electrónico financiadas con dinero público y abocadas al fracaso.",
             "date_published": "2021-08-19T09:46:00Z",
-            "tags": ["Tecnología"],
+            "tags": ["Destacado", "Tecnología"],
             "language": "es"
         },
         {
@@ -40,16 +40,16 @@
             "title": "Ministra, libere los datos mercantiles",
             "content_text": "España necesita un diario de operaciones mercantiles efectivamente transparente y eficaz en la lucha contra la corrupción. Y la nueva ministra de Justicia debe tener la audacia de poner estos datos al servicio público.",
             "date_published": "2021-07-23T21:26:00Z",
-            "tags": ["Transparencia"],
+            "tags": ["Destacado", "Transparencia"],
             "language": "es"
         },
         {
             "id": "entrevista-en-onda-cero",
             "url": "https://jaime.gomezobregon.com/entrevista-en-onda-cero",
-            "title": "Entrevista en Onda Cero sobre mis proyectos con datos y tecnología para la transparencia de las instituciones",
+            "title": "Entrevista en Onda Cero",
             "content_text": "Hoy he podido contar en la radio algunas de mis iniciativas aplicando tecnología y datos para la transparencia del sector público. Ha sido en el programa «Más de uno» de Onda Cero, invitado por Patricia Martínez-Lope, a quien agradezco mucho su genuino interés.",
             "date_published": "2021-04-02T17:17:00Z",
-            "tags": ["Transparencia"],
+            "tags": ["Destacado", "Transparencia"],
             "language": "es"
         },
         {
@@ -58,7 +58,7 @@
             "title": "Las abreviaturas del diccionario",
             "content_text": "Utilizo constantantemente el diccionario. Me sirve para escribir con más rigor y descubrir palabras y significados nuevos. Y con el uso y el tiempo he ido acostumbrándome a las frecuentes y a veces crípticas abreviaturas que tiene en casi todas sus entradas. Acostumbrándome sin entenderlas.",
             "date_published": "2020-11-23T16:38:00Z",
-            "tags": ["General", "Diccionario"],
+            "tags": ["Destacado", "General", "Diccionario"],
             "language": "es"
         },
         {
@@ -67,7 +67,7 @@
             "title": "¿Tsunami de libertad o alienación tecnificada?",
             "content_text": "Asistimos a un papel inédito de la tecnología en el empoderamiento de las revueltas sociales. ¿Son eficaces las leyes del siglo XX para las protestas del XXI?",
             "date_published": "2019-12-28T19:41:00Z",
-            "tags": ["General"],
+            "tags": ["Destacado", "General"],
             "language": "es"
         },
         {
@@ -238,7 +238,7 @@
             "title": "¿Por qué tienen las horas sesenta minutos?",
             "content_text": "Las horas de nuestros días tienen sesenta minutos porque un comerciante babilónico se dio cuenta de cómo podía contar el género mucho más deprisa, en el estruendo de un día de mercado en Mesopotamia hace 4.000 años.",
             "date_published": "2008-02-02T05:00:00Z",
-            "tags": ["General"],
+            "tags": ["Destacado", "General"],
             "language": "es"
         },
         {
@@ -283,7 +283,7 @@
             "title": "Aprender y olvidar",
             "content_text": "Cuando aquella chica puso Trieste en sus labios, disparó en mi cabeza un mecanismo de evolución neuronal que ha durado un millón de años y que reproduce rápidamente un \"playback\" de una canción idiota de Raffaella Carrà.",
             "date_published": "2008-01-02T13:25:00Z",
-            "tags": ["Idiomas"],
+            "tags": ["Destacado", "Idiomas"],
             "language": "es"
         },
         {
@@ -676,7 +676,7 @@
         {
             "id": "que-le-pedirias-al-presidente",
             "url": "https://jaime.gomezobregon.com/que-le-pedirias-al-presidente",
-            "title": "¿Qué le pedirías al Presidente?",
+            "title": "¿Qué le pedirías al presidente?",
             "content_text": "«El presidente que se elija debería sanearlo todo —me comprende— cuando salgo me da hasta dolor de cabeza oler toda esta basura, quiero decir que la porquería está en todas partes, en fin…»",
             "date_published": "2006-06-22T22:57:00Z",
             "tags": ["General"],

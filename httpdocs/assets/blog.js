@@ -1,13 +1,13 @@
 export const blog = {
-
     /**
-     * Formato de las fechas
+     * Formatea las fechas
      */
-    dateFormat: {
-        day: 'numeric',
-        month: 'long',
-        year: 'numeric',
-    },
+    formatDate: (date) =>
+        new Date(date).toLocaleDateString('es-ES', {
+            day: 'numeric',
+            month: 'long',
+            year: 'numeric',
+        }),
 
     /**
      * Elemento del DOM en el que se mostrará el índice de artículos
@@ -41,12 +41,12 @@ export const blog = {
     url: null,
 
     // Devuelve `ruta` cuando se le pasa `https://jaime.gomezobregon.com/ruta/y/mas/cosas/opcionales`
-    slug: location => new URL(location).pathname.split('/')[1],
+    slug: (location) => new URL(location).pathname.split('/')[1],
 
     /**
      * Inicializa la lógica del blog
      */
-    init: async function(options = {}) {
+    init: async function (options = {}) {
         const {
             nav = 'nav',
             close = 'button',
@@ -63,8 +63,12 @@ export const blog = {
         this.posts = json.items
 
         this.title = document.title
-        this.url = document.querySelector('meta[property="og:url"]').getAttribute('content')
-        this.description = document.querySelector('meta[name=description]').getAttribute('content')
+        this.url = document
+            .querySelector('meta[property="og:url"]')
+            .getAttribute('content')
+        this.description = document
+            .querySelector('meta[name=description]')
+            .getAttribute('content')
 
         const slug = this.slug(document.location)
         slug && blog.load(slug) && this.nav.parentNode.classList.add('hidden')
@@ -73,31 +77,46 @@ export const blog = {
         // pero no cuando se accede directamente a uno por su URL
         setTimeout(() => document.body.classList.add('transition'), 500)
 
-        // La lista de artículos es larga. Apliquemos la demora estética solo en
-        // los primeros artículos, para que la lista completa no tarde demasiado en cargar.
-        // Mientras carga, Safari en iOS requiere un doble tap, que así evitamos.
-        const howManyAnimate = 12
-        const items = this.posts.map((post, order) => `
-            <li style="--delay: ${order < howManyAnimate ? order + 1 : 0}">
-                <a href="/${post.id}" hreflang="${post.language}">
-                    ${post.title}
-                    <time datetime="${post.date_published}">
-                        ${new Date(post.date_published).toLocaleDateString('es-ES', this.dateFormat)}
-                    </time>
-                </a>
-            </li>
-        `)
+        const featured = this.posts
+            .filter((post) => post.tags.includes('Destacado'))
+            .map(
+                (post, order) => `
+                <li style="--delay: ${order + 1}">
+                    <a href="/${post.id}" hreflang="${post.language}">
+                        <time datetime="${post.date_published}">
+                            ${blog.formatDate(post.date_published)}
+                        </time>
+                        <cite>${post.title}</cite>
+                        <p>${post.content_text}</p>
+                    </a>
+                </li>`
+            )
+
+        const other = this.posts
+            .filter((post) => !post.tags.includes('Destacado'))
+            .map(
+                (post) => `
+                <li>
+                    <a href="/${post.id}" hreflang="${post.language}">
+                        <time datetime="${post.date_published}">
+                            ${blog.formatDate(post.date_published)}
+                        </time>
+                        <cite>${post.title}</cite>
+                    </a>
+                </li>`
+            )
 
         this.nav.innerHTML = `
-            <ol>
-                ${items.join('')}
-            </ol>
+            <ol class="featured">${featured.join('')}</ol>
+            <hr />
+            <ol>${other.join('')}</ol>
         `
 
-        this.nav.addEventListener('click', event => {
+        this.nav.addEventListener('click', (event) => {
             // Discriminemos el control+clic o clic con el botón central,
             // para que el usuario pueda seguir abriendo los enlaces en nuevas pestañas
-            const leftButtonClick = event.which === 1 && !event.ctrlKey && !event.metaKey
+            const leftButtonClick =
+                event.which === 1 && !event.ctrlKey && !event.metaKey
 
             const a = event.target.closest('a')
             if (!a || !leftButtonClick) {
@@ -107,16 +126,20 @@ export const blog = {
             event.preventDefault()
             const slug = this.slug(a.href)
 
-            history.pushState(null, this.posts.find(i => i.id === slug).title, `/${slug}`)
+            history.pushState(
+                null,
+                this.posts.find((i) => i.id === slug).title,
+                `/${slug}`
+            )
             this.load(slug)
         })
 
-        this.close.addEventListener('click', event => {
+        this.close.addEventListener('click', (event) => {
             history.pushState(null, '', '/')
             this.menu()
         })
 
-        window.addEventListener('popstate', event => {
+        window.addEventListener('popstate', (event) => {
             // En iOS y Safari hay dos formas de navegar por el historial: pulsando los botones del
             // navegador o haciendo un gesto ("swipe"). Este segundo método va acompañado de una
             // animación que provoca un efecto visual feo si no desactivamos temporalmente la nuestra…
@@ -131,12 +154,19 @@ export const blog = {
             slug ? this.load(slug) : this.menu()
         })
 
-        document.querySelector('header').addEventListener('transitionend', event => {
-            if (event.target.tagName === 'HEADER' && event.propertyName === 'margin-left') {
-                const element = document.body.classList.contains('article') ? this.nav : this.article
-                element.parentNode.classList.add('hidden')
-            }
-        })
+        document
+            .querySelector('header')
+            .addEventListener('transitionend', (event) => {
+                if (
+                    event.target.tagName === 'HEADER' &&
+                    event.propertyName === 'margin-left'
+                ) {
+                    const element = document.body.classList.contains('article')
+                        ? this.nav
+                        : this.article
+                    element.parentNode.classList.add('hidden')
+                }
+            })
 
         window.addEventListener('resize', this.resizeVideos)
     },
@@ -144,15 +174,23 @@ export const blog = {
     /**
      * Cierra la vista de artículo y presenta el índice de artículos
      */
-    menu: function() {
+    menu: function () {
         window.scrollTo(0, 0)
         document.body.classList.remove('article')
 
         document.title = this.title
-        document.querySelector('meta[name=description]').setAttribute('content', this.description)
-        document.querySelector('meta[property="og:description"]').setAttribute('content', this.description)
-        document.querySelector('meta[property="og:title"]').setAttribute('content', this.title)
-        document.querySelector('meta[property="og:url"]').setAttribute('content', this.url)
+        document
+            .querySelector('meta[name=description]')
+            .setAttribute('content', this.description)
+        document
+            .querySelector('meta[property="og:description"]')
+            .setAttribute('content', this.description)
+        document
+            .querySelector('meta[property="og:title"]')
+            .setAttribute('content', this.title)
+        document
+            .querySelector('meta[property="og:url"]')
+            .setAttribute('content', this.url)
 
         this.nav.parentNode.classList.remove('hidden')
     },
@@ -160,8 +198,8 @@ export const blog = {
     /**
      * Carga un artículo y lo presenta al usuario para su lectura
      */
-    load: async function(slug) {
-        if (!this.posts.find(i => i.id === slug)) {
+    load: async function (slug) {
+        if (!this.posts.find((i) => i.id === slug)) {
             return this.error()
         }
 
@@ -170,16 +208,24 @@ export const blog = {
             return this.error()
         }
 
-        const post = this.posts.find(i => i.id === slug)
+        const post = this.posts.find((i) => i.id === slug)
 
         const base = document.querySelector('head base')
         base.setAttribute('href', `/posts/${slug}/`)
 
         document.title = post.title
-        document.querySelector('meta[name=description]').setAttribute('content', post.content_text)
-        document.querySelector('meta[property="og:description"]').setAttribute('content', post.content_text)
-        document.querySelector('meta[property="og:title"]').setAttribute('content', post.title)
-        document.querySelector('meta[property="og:url"]').setAttribute('content', post.url)
+        document
+            .querySelector('meta[name=description]')
+            .setAttribute('content', post.content_text)
+        document
+            .querySelector('meta[property="og:description"]')
+            .setAttribute('content', post.content_text)
+        document
+            .querySelector('meta[property="og:title"]')
+            .setAttribute('content', post.title)
+        document
+            .querySelector('meta[property="og:url"]')
+            .setAttribute('content', post.url)
 
         document.body.classList.add('article')
         this.article.innerHTML = await response.text()
@@ -188,7 +234,7 @@ export const blog = {
         this.article.parentNode.classList.remove('hidden')
 
         const h1 = this.article.querySelector('h1').innerHTML
-        const date = new Date(post.date_published).toLocaleDateString('es-ES', this.dateFormat)
+        const date = this.formatDate(post.date_published)
         const header = document.createElement('header')
         header.innerHTML = `
             <h1>${h1}</h1>
@@ -210,8 +256,10 @@ export const blog = {
      * Fuerza que los vídeos de YouTube se vean a ancho completo y en proporción 16:9
      */
     resizeVideos: () => {
-        const videos = document.querySelectorAll('figure iframe[src*="youtube-nocookie\.com"]')
-        videos.forEach(iframe => {
+        const videos = document.querySelectorAll(
+            'figure iframe[src*="youtube-nocookie.com"]'
+        )
+        videos.forEach((iframe) => {
             const ratio = 16 / 9
             iframe.style.width = '100%'
             iframe.style.height = `${iframe.offsetWidth / ratio}px`
@@ -233,7 +281,7 @@ export const blog = {
             await import('https://platform.twitter.com/widgets.js')
         }
 
-        tweets.forEach(tweet => {
+        tweets.forEach((tweet) => {
             tweet.innerHTML = ''
             tweet.classList.add('rendered')
             twttr.widgets.createTweet(tweet.dataset.id, tweet, options)
@@ -255,6 +303,5 @@ export const blog = {
         document.body.querySelector('style').remove()
         document.title = 'Error'
         return false
-    }
-
+    },
 }
