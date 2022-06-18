@@ -8,6 +8,15 @@
     "description": "Hola, Jaime al teclado. Cacharreo con datos y ordenadores, leo, escribo y hago cosas.",
     "items": [
         {
+            "id": "fisica-y-quimica",
+            "url": "https://jaime.gomezobregon.com/fisica-y-quimica",
+            "title": "Física y Química",
+            "content_text": "Confronto aquí, cara a cara, dos experiencias escolares antagónicas que resonaron dentro de mí en dos momentos vitales muy diferentes. Son dos historias, y dos sentimientos.",
+            "date_published": "2022-06-18T16:47:00Z",
+            "tags": ["Reflexiones"],
+            "language": "es"
+        },
+        {
             "id": "discurso-premio-blasillo",
             "url": "https://jaime.gomezobregon.com/discurso-premio-blasillo",
             "title": "Discurso en la clasura del XXII Congreso de Periodismo",
