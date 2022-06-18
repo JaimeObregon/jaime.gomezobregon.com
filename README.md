@@ -10,41 +10,43 @@ Los contenidos del blog están todos en [`/posts`](/httpdocs/posts). Para añadi
 
 2. Añade el artículo recién creado a [`index.json`](/httpdocs/posts/index.json). La portada del blog mostrará el índice de artículos en el mismo orden en que los consignes en ese fichero.
 
-El fichero `index.json` es el *feed* del blog en formato [JSON Feed](https://jsonfeed.org). La mayoría de los sitios generan este *feed* a partir de los contenidos; aquí lo hacemos justo al revés.
+El fichero `index.json` es el _feed_ del blog en formato [JSON Feed](https://jsonfeed.org). La mayoría de los sitios generan este _feed_ a partir de los contenidos; aquí lo hacemos justo al revés.
 
 ## Incrustar un tuit
 
 El marcado mínimo para incrustar un tuit es el siguiente, donde el valor del atributo `data-id` es el `id` del tuit a incrustar:
 
 ```html
-<blockquote class="tweet" data-id="1395067736531865604">
-</blockquote>
+<blockquote class="tweet" data-id="1395067736531865604"></blockquote>
 ```
 
-No obstante, es recomendable utilizar el marcado completo tal como se indica en el siguiente ejemplo, que ha sido confeccionado a partir del *snippet* que genera el sitio web de Twitter cuando se pulsa en «Embed tweet»:
+No obstante, es recomendable utilizar el marcado completo tal como se indica en el siguiente ejemplo, que ha sido confeccionado a partir del _snippet_ que genera el sitio web de Twitter cuando se pulsa en «Embed tweet»:
 
 ```html
 <blockquote class="tweet" data-id="1395067736531865604">
     <p>
-        Soy fan de simplificar la tecnología todo lo posible. También de la austeridad en el ornato. Con este espíritu el año pasado renové mi blog (iniciado en 2006).<br>
-        <br>
-        Bastaron solo 233 líneas de código y una pequeña hoja de estilos. El rendimiento es máximo.<br>
-        <br>
+        Soy fan de simplificar la tecnología todo lo posible. También de la
+        austeridad en el ornato. Con este espíritu el año pasado renové mi blog
+        (iniciado en 2006).<br />
+        <br />
+        Bastaron solo 233 líneas de código y una pequeña hoja de estilos. El
+        rendimiento es máximo.<br />
+        <br />
         🔗 <a href="https://t.co/Z83n8yLxqo">https://t.co/Z83n8yLxqo</a>
         <a href="https://t.co/WOjSZVVQts">pic.twitter.com/WOjSZVVQts</a>
     </p>
     <footer>
         — Jaime Gómez-Obregón (<code>@JaimeObregon</code>), el
         <a href="https://twitter.com/JaimeObregon/status/1395067736531865604">
-            19 de mayo de 2021
-        </a>.
+            19 de mayo de 2021 </a
+        >.
     </footer>
 </blockquote>
 ```
 
 # Despliegue
 
-En [`.github/workflows/main.yml`](/.github/workflows/main.yml) he incorporado un *script* que, a partir de mi configuración personal en Github, despliega todo el sitio en mi servidor web con cada *push* a `master`.
+En [`.github/workflows/main.yml`](/.github/workflows/main.yml) he incorporado un _script_ que, a partir de mi configuración personal en Github, despliega todo el sitio en mi servidor web con cada _push_ a `master`.
 
 # Estructura mínima de un artículo
 
@@ -56,7 +58,7 @@ Opcionalmente es posible proporcionar en el directorio de cada artículo tambié
 
 # Tecnología
 
-Este proyecto utiliza exclusivamente estándares web: HTML5, CSS3 y ES6 (JavaScript). No hay ningún lenguaje de *scripting* en el lado del servidor, ni se requiere de una base de datos.
+Este proyecto utiliza exclusivamente estándares web: HTML5, CSS3 y ES6 (JavaScript). No hay ningún lenguaje de _scripting_ en el lado del servidor, ni se requiere de una base de datos.
 
 Es necesario un servidor web capaz de interpretar las sencillas reglas de reescritura del fichero [`.htaccess`](/httpdocs/.htaccess). Por ejemplo, Apache o Nginx.
 
@@ -64,27 +66,27 @@ La imagen específica de cada artículo para redes sociales (`poster.png`) solo 
 
 # El manifiesto: un tributo a las cosas sencillas
 
-En 2003 presenté mi Proyecto Fin de Carrera, sobre **sistemas de gestión de contenidos** (CMS, por sus siglas en inglés). Desde entonces y hasta 2020 he trabajado con cientos de implantaciones de decenas de CMS diferentes. En este proyecto he querido dotarme del *anti-CMS*.
+En 2003 presenté mi Proyecto Fin de Carrera, sobre **sistemas de gestión de contenidos** (CMS, por sus siglas en inglés). Desde entonces y hasta 2020 he trabajado con cientos de implantaciones de decenas de CMS diferentes. En este proyecto he querido dotarme del _anti-CMS_.
 
-**El SEO, la publicidad online y el abuso de CMS como WordPress han destruido la web**: los autores ya no escriben artículos para los lectores, sino para *generar tráfico*. Y los técnicos ya no escriben código para los navegadores de los usuarios, sino para *posicionar bien en buscadores*. Es una perversión de los principios.
+**El SEO, la publicidad online y el abuso de CMS como WordPress han destruido la web**: los autores ya no escriben artículos para los lectores, sino para _generar tráfico_. Y los técnicos ya no escriben código para los navegadores de los usuarios, sino para _posicionar bien en buscadores_. Es una perversión de los principios.
 
 Yo aquí me apeo de ese mundo. Considero que hace falta **un reinicio, una transvaloración radical**: volver a poner a los usuarios en el centro y regresar a la esencia desnuda de las cosas.
 
-- **Menos es más.** Este sitio no tiene un buscador porque no hace falta: el navegador del usuario ya tiene uno. Y en internet hay más. Tampoco necesita este blog de una base de datos. No es necesaria. Aquí no hay política de privacidad porque no se recaba ningún dato personal, ni siquiera la dirección IP del visitante. También he erradicado todo ornamento. ¡Viva la bella sobriedad, la sublime austeridad en el ornato! Las imágenes genéricas, de *stock*, son una decoración irrelevante.
+-   **Menos es más.** Este sitio no tiene un buscador porque no hace falta: el navegador del usuario ya tiene uno. Y en internet hay más. Tampoco necesita este blog de una base de datos. No es necesaria. Aquí no hay política de privacidad porque no se recaba ningún dato personal, ni siquiera la dirección IP del visitante. También he erradicado todo ornamento. ¡Viva la bella sobriedad, la sublime austeridad en el ornato! Las imágenes genéricas, de _stock_, son una decoración irrelevante.
 
-- **Excelencia técnica.** Este sitio web utiliza exclusivamente tecnologías modernas y estándar: HTML5, CSS3 y ES6 (JavaScript). Aquí escribo marcado semántico, código válido conforme a las especificaciones, y proporciono metadatos a los contenidos. No utilizo clases (`class`) ni identificadores (`id`): es el sueño del tecnomarxista actual: un documento sin clases.
+-   **Excelencia técnica.** Este sitio web utiliza exclusivamente tecnologías modernas y estándar: HTML5, CSS3 y ES6 (JavaScript). Aquí escribo marcado semántico, código válido conforme a las especificaciones, y proporciono metadatos a los contenidos. No utilizo clases (`class`) ni identificadores (`id`): es el sueño del tecnomarxista actual: un documento sin clases.
 
-- **Muerte a la estupidez de las «cookies».** La ley europea obliga a informar al usuario antes de instalar *cookies* de seguimiento en su navegador, y eso está bien. Pero la gran mayoría de los sitios web **en realidad no necesitarían instalar ninguna cookie**. Pero lo excepcional se ha convertido en norma y ahora hasta los sitios web más anodinos requieren docenas de *cookies* y molestan al usuario pidiendo su consentimiento para instalarlas. Este es mi sitio web, y no instalará ninguna cookie en tu navegador. Por lo tanto, tampoco te molestará pidiéndote consentimiento.
+-   **Muerte a la estupidez de las «cookies».** La ley europea obliga a informar al usuario antes de instalar _cookies_ de seguimiento en su navegador, y eso está bien. Pero la gran mayoría de los sitios web **en realidad no necesitarían instalar ninguna cookie**. Pero lo excepcional se ha convertido en norma y ahora hasta los sitios web más anodinos requieren docenas de _cookies_ y molestan al usuario pidiendo su consentimiento para instalarlas. Este es mi sitio web, y no instalará ninguna cookie en tu navegador. Por lo tanto, tampoco te molestará pidiéndote consentimiento.
 
-- **No analizo el tráfico del sitio**. Esta es otra moderna obsesión: la de contar *las visitas* y trazar vistosas gráficas de tráfico online. En mi blog no escribo para batir ningún récord de visitas. La mayoría de las veces estas métricas solo alimentan vanidades, y usar Google Analytics refuerza la posición monopolística de Google.
+-   **No analizo el tráfico del sitio**. Esta es otra moderna obsesión: la de contar _las visitas_ y trazar vistosas gráficas de tráfico online. En mi blog no escribo para batir ningún récord de visitas. La mayoría de las veces estas métricas solo alimentan vanidades, y usar Google Analytics refuerza la posición monopolística de Google.
 
-- **Más rápido que la luz**. [PageSpeed Insights](https://developers.google.com/speed/pagespeed/insights/) le otorga a este blog una puntuación de entre 95 y 99 puntos sobre cien. Pero mi objetivo con este proyecto no ha sido ganar muchos puntos ahí, sino ofrecer a los usuarios la mejor experiencia de usuario posible.
+-   **Más rápido que la luz**. [PageSpeed Insights](https://developers.google.com/speed/pagespeed/insights/) le otorga a este blog una puntuación de entre 95 y 99 puntos sobre cien. Pero mi objetivo con este proyecto no ha sido ganar muchos puntos ahí, sino ofrecer a los usuarios la mejor experiencia de usuario posible.
 
-- **Me niego a escribir para buscadores**. Yo escribo castellano correcto para lectores alfabetizados, y marcado con código HTML5 semántico y válido conforme la especificación del W3C. Me ciño al estándar. Y luego que los buscadores hagan lo que quieran.
+-   **Me niego a escribir para buscadores**. Yo escribo castellano correcto para lectores alfabetizados, y marcado con código HTML5 semántico y válido conforme la especificación del W3C. Me ciño al estándar. Y luego que los buscadores hagan lo que quieran.
 
-- **Simple de mantener**. La locura de los CMS no tiene límites: actualizaciones, parches de seguridad, *plugins* y plantillas, *sitemaps*, metaetiquetas, cachés... Este sitio da la espalda a todo eso. Es un simple conjunto de ficheros estáticos y 200 líneas de JavaScript. No hay ninguna compleja arquitectura de software que mantener. Y es sano así. Cuando quiero escribir un artículo, simplemente creo un fichero y lo publico con un <em>commit</em> y un <em>push</em>. Y ya.
+-   **Simple de mantener**. La locura de los CMS no tiene límites: actualizaciones, parches de seguridad, _plugins_ y plantillas, _sitemaps_, metaetiquetas, cachés... Este sitio da la espalda a todo eso. Es un simple conjunto de ficheros estáticos y 300 líneas de JavaScript. No hay ninguna compleja arquitectura de software que mantener. Y es sano así. Cuando quiero escribir un artículo, simplemente creo un fichero y lo publico con un <em>commit</em> y un <em>push</em>. Y ya.
 
-- **Con un licenciamiento claro y permisivo**. Tanto el código del sitio como sus contenidos los publico bajo licencias libres. Estando ambas cosas complatemente expuestas en internet, no tiene mucho sentido hacerlo de otro modo.
+-   **Con un licenciamiento claro y permisivo**. Tanto el código del sitio como sus contenidos los publico bajo licencias libres. Estando ambas cosas complatemente expuestas en internet, no tiene mucho sentido hacerlo de otro modo.
 
 # Licencia
 

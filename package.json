@@ -1,0 +1,11 @@
+{
+    "name": "jaime.gomezobregon.com",
+    "author": "Jaime Gómez-Obregón",
+    "version": "1.0.0",
+    "description": "Mi blog personal, que comencé en el verano de 2006 como un sitio WordPress y que ahora, en 2020, he reconstruido con mimo exquisito y énfasis en el minimalismo y la eficacia.",
+    "prettier": {
+        "semi": false,
+        "singleQuote": true
+    },
+    "dependencies": {}
+}
