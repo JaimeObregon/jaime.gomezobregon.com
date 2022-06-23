@@ -8,6 +8,15 @@
     "description": "Hola, Jaime al teclado. Cacharreo con datos y ordenadores, leo, escribo y hago cosas.",
     "items": [
         {
+            "id": "la-donacion",
+            "url": "https://jaime.gomezobregon.com/la-donacion",
+            "title": "La donación",
+            "content_text": "En 2021 invertí cuatro meses de trabajo en ladonacion.es, un reto personal que aúna tecnología, datos, periodismo e investigación. Por razones de actualidad estoy presentando públicamente el proyecto estos días en varios medios y foros de periodismo.",
+            "date_published": "2022-06-23T10:49:00Z",
+            "tags": ["Destacado", "Transparencia"],
+            "language": "es"
+        },
+        {
             "id": "fisica-y-quimica",
             "url": "https://jaime.gomezobregon.com/fisica-y-quimica",
             "title": "Física y Química",

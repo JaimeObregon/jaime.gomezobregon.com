@@ -660,6 +660,10 @@ template {
     font-size: 0;
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 html,
 body {
     overflow-x: hidden;
@@ -788,6 +792,24 @@ main article {
     margin: 0 auto;
 }
 
+main article a.note {
+    margin: 0 2px;
+}
+
+main article aside {
+    float: left;
+    width: 65%;
+    font-size: 1.35em;
+    margin: 2rem 2rem 2rem calc(-1 * var(--padding) + 1rem);
+    font-style: italic;
+    line-height: 1.25;
+    color: var(--color-accent-white);
+}
+
+main article aside p {
+    margin: 0;
+}
+
 main article > footer {
     padding-top: var(--margin);
     font-size: 0.85em;
@@ -798,6 +820,40 @@ main article > footer::before {
     position: absolute;
     width: 6em;
     border-top: 1px solid;
+}
+
+main article > footer ol#notes {
+    font-size: 0.85em;
+    list-style-type: none;
+    counter-reset: number;
+    padding: 0;
+}
+
+main article > footer ol#notes li {
+    counter-increment: number;
+}
+
+main article > footer ol#notes li:target:not(:hover) {
+    text-decoration: underline 2px dotted var(--color-accent-white);
+}
+
+main article > footer ol#notes li::before {
+    display: inline-block;
+    position: relative;
+    top: -5px;
+    content: counter(number) ' ';
+    font-size: 0.75em;
+    margin: -0.5em 0.25em 0 0;
+}
+
+main article > footer ol#notes li a.ref {
+    margin: 0 2px;
+    visibility: hidden;
+    text-decoration: none;
+}
+
+main article > footer ol#notes li:hover a.ref {
+    visibility: visible;
 }
 
 body > div > header section summary {
@@ -915,7 +971,7 @@ main > button svg {
 }
 
 main header {
-    margin: 0 calc(-1 * var(--padding) + 1em);
+    margin: 0 calc(-1 * var(--padding) + 1rem);
 }
 
 main header:first-of-type {
@@ -968,6 +1024,10 @@ main h2 {
     main > button > svg {
         height: 75%;
     }
+
+    main header {
+        margin: 0;
+    }
 }
 
 @media (max-width: 50rem) {
@@ -981,6 +1041,12 @@ main h2 {
 
     main article p {
         hyphens: auto;
+    }
+
+    main article aside {
+        float: none;
+        width: 100%;
+        margin: var(--margin) 0;
     }
 }
 

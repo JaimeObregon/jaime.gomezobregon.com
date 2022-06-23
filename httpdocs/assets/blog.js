@@ -140,6 +140,10 @@ export const blog = {
         })
 
         window.addEventListener('popstate', (event) => {
+            if (document.location.hash) {
+                return
+            }
+
             // En iOS y Safari hay dos formas de navegar por el historial: pulsando los botones del
             // navegador o haciendo un gesto ("swipe"). Este segundo método va acompañado de una
             // animación que provoca un efecto visual feo si no desactivamos temporalmente la nuestra…
@@ -250,6 +254,8 @@ export const blog = {
         this.renderTweets('blockquote.tweet[data-id]', {
             align: 'center',
         })
+
+        this.renderFootnotes('ol#notes li', 'a.note')
     },
 
     /**
@@ -285,6 +291,37 @@ export const blog = {
             tweet.innerHTML = ''
             tweet.classList.add('rendered')
             twttr.widgets.createTweet(tweet.dataset.id, tweet, options)
+        })
+    },
+
+    /**
+     * Presenta las notas al pie, como las que hay en `/la-donacion`
+     */
+    renderFootnotes: async (references, footnotes) => {
+        const refs = document.querySelectorAll(references)
+        const notes = document.querySelectorAll(footnotes)
+
+        if (!notes.length) {
+            return
+        }
+
+        notes.forEach((note, i) => {
+            const href = note.getAttribute('href')
+            const index = [...refs].findIndex((ref) => `#${ref.id}` === href)
+
+            if (index < 0) {
+                throw new Error(`Nota al pie desconocida: ${href}`)
+            }
+
+            const number = index + 1
+            const id = `nota-${i + 1}`
+
+            const path = document.location.pathname
+
+            note.outerHTML = `<a class="note" href="${path}${href}" id="${id}"><sup>${number}</sup></a>`
+            refs[
+                index
+            ].innerHTML += `<a class="ref" href="${path}#${id}">↩︎</a>`
         })
     },
 
