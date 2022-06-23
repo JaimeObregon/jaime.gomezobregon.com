@@ -1082,6 +1082,11 @@ main h2 {
 }
 
 @media (max-width: 40rem) {
+    body > div > header nav ol.featured li:nth-child(-n + 2),
+    body > div > header nav ol.featured li:nth-last-child(-n + 2) {
+        margin: var(--gap) 0;
+    }
+
     body > div > header nav ol.featured li {
         width: 100%;
     }
