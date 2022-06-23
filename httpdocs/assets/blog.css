@@ -889,8 +889,17 @@ body > div > header nav ol li {
     animation: appear 200ms calc(50ms * var(--delay)) backwards;
 }
 
+body > div > header nav ol.featured {
+    --gap: 2rem;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin: 0 calc(-1 * var(--padding) + 1rem);
+}
+
 body > div > header nav ol.featured li {
-    margin: 3em 0;
+    margin: var(--gap) 0;
+    width: calc(50% - var(--gap));
 }
 
 body > div > header nav ol li a {
@@ -910,6 +919,10 @@ body > div > header nav ol li a:hover {
     transition: color 250ms ease;
 }
 
+body > div > header nav ol li a p {
+    margin: 0;
+}
+
 body > div > header nav ol li a:hover cite {
     text-decoration: underline 3px dotted;
 }
@@ -918,7 +931,7 @@ body > div > header nav ol li a cite {
     font-family: 'Open Sans', sans-serif;
     font-size: 1.25em;
     font-style: normal;
-    line-height: 1.15;
+    line-height: 1;
 }
 
 body > div > header nav ol.featured li a cite {
@@ -1039,6 +1052,10 @@ main h2 {
         transition-duration: 150ms;
     }
 
+    body > div > header nav ol.featured {
+        --gap: 1rem;
+    }
+
     main article p {
         hyphens: auto;
     }
@@ -1047,6 +1064,12 @@ main h2 {
         float: none;
         width: 100%;
         margin: var(--margin) 0;
+    }
+}
+
+@media (max-width: 40rem) {
+    body > div > header nav ol.featured li {
+        width: 100%;
     }
 }
 
