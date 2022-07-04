@@ -685,7 +685,7 @@ figure {
 }
 
 figure,
-blockquote {
+blockquote:not(.tweet.rendered) {
     margin: var(--margin) 0;
 }
 
@@ -832,7 +832,9 @@ main article > footer ol#notes {
 }
 
 main article > footer ol#notes li {
+    position: relative;
     counter-increment: number;
+    padding-left: 1.25em;
 }
 
 main article > footer ol#notes li:target:not(:hover) {
@@ -840,12 +842,14 @@ main article > footer ol#notes li:target:not(:hover) {
 }
 
 main article > footer ol#notes li::before {
-    display: inline-block;
-    position: relative;
-    top: -5px;
+    position: absolute;
+    top: 0.5em;
+    left: 0;
+    width: 1em;
     content: counter(number) ' ';
-    font-size: 0.75em;
     margin: -0.5em 0.25em 0 0;
+    font-size: 0.75em;
+    text-align: right;
 }
 
 main article > footer ol#notes li a.ref {

@@ -253,6 +253,7 @@ export const blog = {
 
         this.renderTweets('blockquote.tweet[data-id]', {
             align: 'center',
+            lang: 'es',
         })
 
         this.renderFootnotes('ol#notes li', 'a.note')
@@ -319,9 +320,9 @@ export const blog = {
             const path = document.location.pathname
 
             note.outerHTML = `<a class="note" href="${path}${href}" id="${id}"><sup>${number}</sup></a>`
-            refs[
-                index
-            ].innerHTML += `<a class="ref" href="${path}#${id}">↩︎</a>`
+            refs[index].querySelector(
+                'p:last-of-type'
+            ).innerHTML += `<a class="ref" href="${path}#${id}">↩︎</a>`
         })
     },
 
