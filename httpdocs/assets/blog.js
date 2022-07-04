@@ -79,6 +79,7 @@ export const blog = {
 
         const featured = this.posts
             .filter((post) => post.tags.includes('Destacado'))
+            .filter((post) => new Date(post.date_published) < new Date())
             .map(
                 (post, order) => `
                 <li style="--delay: ${order + 1}">
@@ -94,6 +95,7 @@ export const blog = {
 
         const other = this.posts
             .filter((post) => !post.tags.includes('Destacado'))
+            .filter((post) => new Date(post.date_published) < new Date())
             .map(
                 (post) => `
                 <li>
