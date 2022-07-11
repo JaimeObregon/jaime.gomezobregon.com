@@ -8,6 +8,15 @@
     "description": "Hola, Jaime al teclado. Cacharreo con datos y ordenadores, leo, escribo y hago cosas.",
     "items": [
         {
+            "id": "la-fiebre-de-los-marketplaces-locales",
+            "url": "https://jaime.gomezobregon.com/la-fiebre-de-los-marketplaces-locales",
+            "title": "La fiebre de los marketplaces locales",
+            "content_text": "Varios ayuntamientos y gobiernos de España han creado plataformas digitales para impulsar el comercio local después de la pandemia: una moto que no arranca, tal como disecciono en este reportaje coescrito con la periodista Mónica.",
+            "date_published": "2022-07-11T18:00:00Z",
+            "tags": ["Destacado", "Transparencia", "Tecnología"],
+            "language": "es"
+        },
+        {
             "id": "del-limitado-acceso-a-las-resoluciones-judiciales",
             "url": "https://jaime.gomezobregon.com/del-limitado-acceso-a-las-resoluciones-judiciales",
             "title": "Del limitado acceso a las resoluciones judiciales",

@@ -798,6 +798,11 @@ main article a.note {
     margin: 0 2px;
 }
 
+main article cite i,
+main article cite em {
+    font-style: normal;
+}
+
 main article aside {
     float: left;
     width: 65%;
@@ -806,6 +811,12 @@ main article aside {
     font-style: italic;
     line-height: 1.25;
     color: var(--color-accent-white);
+}
+
+main article aside i,
+main article aside em,
+main article aside cite {
+    font-style: normal;
 }
 
 main article aside p {
