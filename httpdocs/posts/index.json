@@ -8,6 +8,15 @@
     "description": "Hola, Jaime al teclado. Cacharreo con datos y ordenadores, leo, escribo y hago cosas.",
     "items": [
         {
+            "id": "por-una-digitalizacion-lenta",
+            "url": "https://jaime.gomezobregon.com/por-una-digitalizacion-lenta",
+            "title": "Por una digitalización lenta",
+            "content_text": "Cuánto bien nos haría, como país, una actitud «slow» en las políticas de digitalización que despliegan nuestras instituciones. Como en el «slow food» o en el «slow life», en esta reflexión propongo una «slow tech» que rebaje el efectismo, racionalice los riesgos y module las expectativas.",
+            "date_published": "2022-07-25T06:00:00Z",
+            "tags": ["Destacado", "Tecnología"],
+            "language": "es"
+        },
+        {
             "id": "la-fiebre-de-los-marketplaces-locales",
             "url": "https://jaime.gomezobregon.com/la-fiebre-de-los-marketplaces-locales",
             "title": "La fiebre de los marketplaces locales",
