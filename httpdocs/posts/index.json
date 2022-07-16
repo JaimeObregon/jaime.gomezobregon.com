@@ -12,15 +12,24 @@
             "url": "https://jaime.gomezobregon.com/por-una-digitalizacion-lenta",
             "title": "Por una digitalización lenta",
             "content_text": "Cuánto bien nos haría, como país, una actitud «slow» en las políticas de digitalización que despliegan nuestras instituciones. Como en el «slow food» o en el «slow life», en esta reflexión propongo una «slow tech» que rebaje el efectismo, racionalice los riesgos y module las expectativas.",
-            "date_published": "2022-07-25T06:00:00Z",
+            "date_published": "2022-08-01T06:00:00Z",
             "tags": ["Destacado", "Tecnología"],
+            "language": "es"
+        },
+        {
+            "id": "la-chanchullopedia",
+            "url": "https://jaime.gomezobregon.com/la-chanchullopedia",
+            "title": "La Chanchullopedia",
+            "content_text": "Un cóctel de curiosidad e instinto me llevó a explorar informáticamente las bases de datos de contratación pública. Para muchos, la más aburrida esquina del mundo. Una noche se me ocurrió cruzar esos datos con las listas de candidatos políticos. La onda expansiva todavía me sorprende.",
+            "date_published": "2022-07-16T11:55:00Z",
+            "tags": ["Destacado", "Transparencia", "Tecnología"],
             "language": "es"
         },
         {
             "id": "la-fiebre-de-los-marketplaces-locales",
             "url": "https://jaime.gomezobregon.com/la-fiebre-de-los-marketplaces-locales",
             "title": "La fiebre de los marketplaces locales",
-            "content_text": "Varios ayuntamientos y gobiernos de España han creado plataformas digitales para impulsar el comercio local después de la pandemia: una moto que no arranca, tal como disecciono en este reportaje coescrito con la periodista Mónica.",
+            "content_text": "Varios ayuntamientos y gobiernos de España han creado plataformas digitales para impulsar el comercio local después de la pandemia: una moto que no arranca, tal como disecciono en este reportaje coescrito con la periodista Mónica Redondo.",
             "date_published": "2022-07-11T18:00:00Z",
             "tags": ["Destacado", "Transparencia", "Tecnología"],
             "language": "es"
@@ -67,7 +76,7 @@
             "title": "La pandemia de las plataformas municipales de comercio electrónico",
             "content_text": "Se extiende por los ayuntamientos españoles una rara fiebre entre alcaldes y concejales: la de unas plataformas de comercio electrónico financiadas con dinero público y abocadas al fracaso.",
             "date_published": "2021-08-19T09:46:00Z",
-            "tags": ["Destacado", "Tecnología"],
+            "tags": ["Destacado", "Transparencia", "Tecnología"],
             "language": "es"
         },
         {

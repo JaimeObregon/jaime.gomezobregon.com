@@ -737,7 +737,6 @@ blockquote:not(.tweet.rendered):before {
 }
 
 a {
-    font-weight: 400;
     text-decoration: none;
     color: var(--color-accent-white);
 }
