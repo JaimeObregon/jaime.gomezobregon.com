@@ -7,7 +7,7 @@ RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d
 RewriteRule ^(.*)$ /posters/index.php [NC,L,QSA]
 
-RedirectMatch ^/feed/?$ /posts/index.json
+RedirectMatch ^/feed/?$ /index.json
 
 RewriteCond %{DOCUMENT_ROOT}/posts%{REQUEST_URI}/index.html -f
 RewriteRule ^(.*)$ /index.html [NC,L,QSA]

@@ -15,7 +15,7 @@ export const blog = {
     nav: null,
 
     /**
-     * Elemento donde se cargará el contenido de cada artículo
+     * Elemento donde se cargará el contenido del artículo a presentar
      */
     article: null,
 
@@ -51,7 +51,7 @@ export const blog = {
             nav = 'nav',
             close = 'button',
             article = 'article',
-            feed = '/posts/index.json',
+            feed = '/index.json',
         } = options
 
         this.nav = document.querySelector(nav)
@@ -60,7 +60,7 @@ export const blog = {
 
         const response = await fetch(feed)
         const json = await response.json()
-        this.posts = json.items
+        this.items = json.items
 
         this.title = document.title
         this.url = document
@@ -77,33 +77,35 @@ export const blog = {
         // pero no cuando se accede directamente a uno por su URL
         setTimeout(() => document.body.classList.add('transition'), 500)
 
-        const featured = this.posts
-            .filter((post) => post.tags.includes('Destacado'))
-            .filter((post) => new Date(post.date_published) < new Date())
+        const posts = this.items.filter((item) => item.date_published)
+
+        const featured = posts
+            .filter((item) => item.tags.includes('Destacado'))
+            .filter((item) => new Date(item.date_published) < new Date())
             .map(
-                (post, order) => `
+                (item, order) => `
                 <li style="--delay: ${order + 1}">
-                    <a href="/${post.id}" hreflang="${post.language}">
-                        <time datetime="${post.date_published}">
-                            ${blog.formatDate(post.date_published)}
+                    <a href="/${item.id}" hreflang="${item.language}">
+                        <time datetime="${item.date_published}">
+                            ${blog.formatDate(item.date_published)}
                         </time>
-                        <cite>${post.title}</cite>
-                        <p>${post.content_text}</p>
+                        <cite>${item.title}</cite>
+                        <p>${item.content_text}</p>
                     </a>
                 </li>`
             )
 
-        const other = this.posts
-            .filter((post) => !post.tags.includes('Destacado'))
-            .filter((post) => new Date(post.date_published) < new Date())
+        const other = posts
+            .filter((item) => !item.tags.includes('Destacado'))
+            .filter((item) => new Date(item.date_published) < new Date())
             .map(
-                (post) => `
+                (item) => `
                 <li>
-                    <a href="/${post.id}" hreflang="${post.language}">
-                        <time datetime="${post.date_published}">
-                            ${blog.formatDate(post.date_published)}
+                    <a href="/${item.id}" hreflang="${item.language}">
+                        <time datetime="${item.date_published}">
+                            ${blog.formatDate(item.date_published)}
                         </time>
-                        <cite>${post.title}</cite>
+                        <cite>${item.title}</cite>
                     </a>
                 </li>`
             )
@@ -114,7 +116,7 @@ export const blog = {
             <ol>${other.join('')}</ol>
         `
 
-        this.nav.addEventListener('click', (event) => {
+        document.addEventListener('click', (event) => {
             // Discriminemos el control+clic o clic con el botón central,
             // para que el usuario pueda seguir abriendo los enlaces en nuevas pestañas
             const leftButtonClick =
@@ -125,14 +127,15 @@ export const blog = {
                 return
             }
 
+            // ¿Enlace externo? Entonces el evento continúa con normalidad
+            if (new URL(a.href).origin !== document.location.origin) {
+                return
+            }
+
             event.preventDefault()
             const slug = this.slug(a.href)
 
-            history.pushState(
-                null,
-                this.posts.find((i) => i.id === slug).title,
-                `/${slug}`
-            )
+            history.pushState(null, '', `/${slug}`)
             this.load(slug)
         })
 
@@ -178,7 +181,7 @@ export const blog = {
     },
 
     /**
-     * Cierra la vista de artículo y presenta el índice de artículos
+     * Cierra la vista de artículo y presenta la portada
      */
     menu: function () {
         window.scrollTo(0, 0)
@@ -205,49 +208,54 @@ export const blog = {
      * Carga un artículo y lo presenta al usuario para su lectura
      */
     load: async function (slug) {
-        if (!this.posts.find((i) => i.id === slug)) {
+        const item = this.items.find((i) => i.id === slug)
+
+        if (!item) {
             return this.error()
         }
 
-        const response = await fetch(`/posts/${slug}/index.html`)
+        const type = item.date_published ? 'post' : 'page'
+        const folder = type === 'post' ? 'posts' : 'pages'
+
+        const response = await fetch(`/${folder}/${slug}/index.html`)
         if (!response.ok) {
             return this.error()
         }
 
-        const post = this.posts.find((i) => i.id === slug)
-
         const base = document.querySelector('head base')
-        base.setAttribute('href', `/posts/${slug}/`)
+        base.setAttribute('href', `/${folder}/${slug}/`)
 
-        document.title = post.title
+        document.title = item.title
         document
             .querySelector('meta[name=description]')
-            .setAttribute('content', post.content_text)
+            .setAttribute('content', item.content_text)
         document
             .querySelector('meta[property="og:description"]')
-            .setAttribute('content', post.content_text)
+            .setAttribute('content', item.content_text)
         document
             .querySelector('meta[property="og:title"]')
-            .setAttribute('content', post.title)
+            .setAttribute('content', item.title)
         document
             .querySelector('meta[property="og:url"]')
-            .setAttribute('content', post.url)
+            .setAttribute('content', item.url)
 
         document.body.classList.add('article')
         this.article.innerHTML = await response.text()
-        this.article.setAttribute('lang', post.language)
+        this.article.setAttribute('lang', item.language)
 
         this.article.parentNode.classList.remove('hidden')
 
-        const h1 = this.article.querySelector('h1').innerHTML
-        const date = this.formatDate(post.date_published)
-        const header = document.createElement('header')
-        header.innerHTML = `
-            <h1>${h1}</h1>
-            <time datetime="${post.date_published}">${date}</time>
-        `
+        if (type === 'post') {
+            const h1 = this.article.querySelector('h1').innerHTML
+            const date = this.formatDate(item.date_published)
+            const header = document.createElement('header')
+            header.innerHTML = `
+                <h1>${h1}</h1>
+                <time datetime="${item.date_published}">${date}</time>
+            `
 
-        this.article.querySelector('h1').replaceWith(header)
+            this.article.querySelector('h1').replaceWith(header)
+        }
 
         window.scrollTo(0, 0)
 

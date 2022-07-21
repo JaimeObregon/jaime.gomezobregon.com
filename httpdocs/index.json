@@ -4,7 +4,7 @@
     "icon": "https://jaime.gomezobregon.com/assets/jaime.jpg",
     "favicon": "https://jaime.gomezobregon.com/assets/icon.svg",
     "home_page_url": "https://jaime.gomezobregon.com/",
-    "feed_url": "https://jaime.gomezobregon.com/posts/index.json",
+    "feed_url": "https://jaime.gomezobregon.com/index.json",
     "description": "Hola, Jaime al teclado. Cacharreo con datos y ordenadores, leo, escribo y hago cosas.",
     "items": [
         {
@@ -771,6 +771,14 @@
             "date_published": "2006-06-11T14:46:00Z",
             "tags": ["Idiomas", "Poesía"],
             "language": "pt"
+        },
+        {
+            "id": "yo",
+            "url": "https://jaime.gomezobregon.com/yo",
+            "title": "Acerca de mí",
+            "content_text": "Hola, mundo.",
+            "tags": ["Personal"],
+            "language": "es"
         }
     ]
 }

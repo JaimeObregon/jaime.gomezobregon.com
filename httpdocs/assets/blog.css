@@ -693,11 +693,6 @@ figcaption {
     font-size: 0.85em;
 }
 
-summary {
-    cursor: pointer;
-    outline: none;
-}
-
 iframe {
     border: none;
 }
