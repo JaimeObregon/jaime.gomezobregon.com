@@ -117,18 +117,21 @@ export const blog = {
         `
 
         document.addEventListener('click', (event) => {
-            // Discriminemos el control+clic o clic con el botón central,
-            // para que el usuario pueda seguir abriendo los enlaces en nuevas pestañas
-            const leftButtonClick =
-                event.which === 1 && !event.ctrlKey && !event.metaKey
-
             const a = event.target.closest('a')
-            if (!a || !leftButtonClick) {
+            if (!a) {
                 return
             }
 
-            // ¿Enlace externo? Entonces el evento continúa con normalidad
-            if (new URL(a.href).origin !== document.location.origin) {
+            // No queremos interferir con CTRL+clic ni con el clic con el botón central,
+            // para que el usuario pueda seguir abriendo los enlaces en nuevas pestañas
+            const leftButtonClick =
+                !event.button && !event.ctrlKey && !event.metaKey
+
+            // Tampoco queremos interferir con los enlaces externos
+            const isExternalLink =
+                new URL(a.href).origin !== document.location.origin
+
+            if (!leftButtonClick || isExternalLink) {
                 return
             }
 
