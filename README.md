@@ -32,7 +32,7 @@ Esto es lo único que necesito y, por ende, lo único que he programado:
 
 1. **Notas al pie**. Son muy útiles para proporcionar referencias o añadir aclaraciones marginales sin entorpecer el desarrollo narrativo del texto. Véase [esta entrada con notas al pie](/httpdocs/posts/del-limitado-acceso-a-las-resoluciones-judiciales) para un ejemplo de uso.
 
-1. **Doble título**. Puedes mostrar un titular más sintético en la portada y un título más expresivo en la entrada. Esto es frecuente en sitios periodísticos, por ejemplo.
+1. **Doble título**. Puedes mostrar un titular sintético en la portada y un título más expresivo ya en la entrada. Esto es frecuente en sitios periodísticos, por ejemplo.
 
 1. **Tuits incrustados**. El marcado mínimo para incrustar un tuit es el siguiente, donde el valor del atributo `data-id` es el `id` del tuit a incrustar:
 
@@ -70,6 +70,8 @@ Esto es lo único que necesito y, por ende, lo único que he programado:
     ```
 
     </details>
+
+1. **Directorio de descargas**. Es posible utilizar [`/tmp`](/httpdocs/tmp) como sustituto doméstico de plataformas como WeTransfer a la hora de subir y compartir temporalmente ficheros. Los contenidos de este directorio desaparecerán automáticamente en el siguiente despliegue. Para hacer un fichero permanente, añádase al repositorio.
 
 # Funcionalidades que podría retirar
 

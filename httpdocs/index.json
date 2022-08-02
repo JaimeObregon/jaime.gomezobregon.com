@@ -6,6 +6,14 @@
     "home_page_url": "https://jaime.gomezobregon.com/",
     "feed_url": "https://jaime.gomezobregon.com/index.json",
     "description": "Hola, Jaime al teclado. Cacharreo con datos y ordenadores, leo, escribo y hago cosas.",
+    "authors": [
+        {
+            "name": "Jaime Gómez-Obregón",
+            "url": "https://twitter.com/JaimeObregon",
+            "avatar": "https://jaime.gomezobregon.com/assets/jaime.jpg"
+        }
+    ],
+    "language": "es",
     "items": [
         {
             "id": "por-una-digitalizacion-lenta",
@@ -772,6 +780,7 @@
             "tags": ["Idiomas", "Poesía"],
             "language": "pt"
         },
+
         {
             "id": "yo",
             "url": "https://jaime.gomezobregon.com/yo",
