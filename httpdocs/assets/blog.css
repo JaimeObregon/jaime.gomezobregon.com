@@ -619,6 +619,11 @@ template {
  * Comienzan aquí los estilos específicos del blog
  */
 
+@font-face {
+    font-family: 'Concourse Index';
+    src: url('/assets/concourse_index_regular.woff2') format('woff2');
+}
+
 @keyframes appear {
     0% {
         opacity: 0;
@@ -792,6 +797,27 @@ main > aside {
 
 main article a.note {
     margin: 0 2px;
+}
+
+main article ol:not(#notes) {
+    counter-reset: number;
+    list-style: none;
+    padding: 0;
+}
+
+main article ol:not(#notes) li {
+    margin-left: 3rem;
+    position: relative;
+}
+
+main article ol:not(#notes) li::before {
+    font-size: 1.15em;
+    font-family: Concourse Index;
+    counter-increment: number;
+    content: counter(number);
+    position: absolute;
+    margin-left: -3rem;
+    top: -0.1em;
 }
 
 main article cite i,
