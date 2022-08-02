@@ -252,9 +252,14 @@ export const blog = {
             const h1 = this.article.querySelector('h1').innerHTML
             const date = this.formatDate(item.date_published)
             const header = document.createElement('header')
+
+            const url = `https://github.com/JaimeObregon/jaime.gomezobregon.com/commits/master/httpdocs/posts/${item.id}/index.html`
+
             header.innerHTML = `
                 <h1>${h1}</h1>
-                <time datetime="${item.date_published}">${date}</time>
+                <time datetime="${item.date_published}">
+                    <a href="${url}">${date}</a>
+                </time>
             `
 
             this.article.querySelector('h1').replaceWith(header)
