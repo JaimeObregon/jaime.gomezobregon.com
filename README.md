@@ -81,6 +81,10 @@ La funcionalidad que sigue está vigente, pero estoy pensando en retirarla porqu
 
 # Modo de empleo
 
+Para arrancar el servidor local de desarrollo puede utilizarse, por ejemplo, [`live-server`](https://www.npmjs.com/package/live-server):
+
+    live-server --entry-file=index.html httpdocs
+
 Como en un blog, este proyecto habilita dos tipos de contenido: las **entradas** (en [`/posts`](/httpdocs/posts)), que se caracterizan por tener una fecha y formar parte de una cronología, y las **páginas** (en [`/pages`](/httpdocs/pages)), que no tienen esa temporalidad.
 
 Para añadir nuevo contenido…:
@@ -105,7 +109,7 @@ Este proyecto utiliza exclusivamente estándares web: HTML5, CSS3 y ES6 (JavaScr
 
 No obstante, y por limitaciones de los _crawlers_ como GoogleBot o TwitterBot, la imagen específica de cada artículo para redes sociales (`poster.png`) solo se mostrará si el servidor dispone de PHP 7.4 o superior.
 
-Es necesario un servidor web capaz de interpretar las reglas de reescritura del fichero [`.htaccess`](/httpdocs/.htaccess). Por ejemplo, Apache o Nginx.
+Es conveniente un servidor web capaz de interpretar las reglas de reescritura del fichero [`.htaccess`](/httpdocs/.htaccess). Por ejemplo, Apache o Nginx.
 
 # Despliegue
 
