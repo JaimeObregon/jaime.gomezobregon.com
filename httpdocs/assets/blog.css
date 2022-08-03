@@ -378,18 +378,6 @@ template {
     src: url('/assets/concourse_index_regular.woff2') format('woff2');
 }
 
-@keyframes appear {
-    0% {
-        opacity: 0;
-        transform: translateY(-2em);
-    }
-
-    100% {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
 :root {
     --padding: 5rem;
     --margin: 3rem;
@@ -717,7 +705,6 @@ body > div > header nav ol {
 
 body > div > header nav ol li {
     margin: 1em 0;
-    animation: appear 200ms calc(50ms * var(--delay)) backwards;
 }
 
 body > div > header nav ol.featured {
