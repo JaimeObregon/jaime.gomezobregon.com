@@ -370,7 +370,7 @@ template {
  */
 
 /**
- * La tipografía de Matthew Butterick para las listas numeradas (`<ol>`)
+ * La tipografía de Matthew Butterick para las listas numeradas (`<ol>`).
  * Véase https://practicaltypography.com/concourse-index.html
  */
 @font-face {
@@ -879,6 +879,7 @@ main h2 {
 @media (max-width: 50rem) {
     body {
         font-size: 1.1em;
+        line-height: 1.65;
     }
 
     body.transition > div > header {
@@ -901,6 +902,10 @@ main h2 {
 }
 
 @media (max-width: 40rem) {
+    body {
+        line-height: 1.5;
+    }
+
     body > div > header nav ol.featured li:nth-child(-n + 2),
     body > div > header nav ol.featured li:nth-last-child(-n + 2) {
         margin: var(--gap) 0;

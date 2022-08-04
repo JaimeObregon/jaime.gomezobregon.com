@@ -1,6 +1,6 @@
 export const blog = {
     /**
-     * Formatea las fechas
+     * Formatea una fecha en castellano
      */
     formatDate: (date) =>
         new Date(date).toLocaleDateString('es-ES', {
@@ -10,74 +10,146 @@ export const blog = {
         }),
 
     /**
-     * Elemento del DOM en el que se mostrará el índice de artículos
+     * Determina si una URL está o no está en el _feed_
      */
-    nav: null,
+    isItem: (url) => {
+        const { pathname } = new URL(url)
+        const slug = pathname.replace(/^\//, '')
+        const item = blog.feed.items.find((i) => i.id === slug)
+        return Boolean(item)
+    },
 
     /**
-     * Elemento donde se cargará el contenido del artículo a presentar
+     * Intercepta los clics en los enlaces internos para despacharlos dinámicamente
      */
-    article: null,
+    clickHandler: function (event) {
+        const a = event.target.closest('a')
+        if (!a) {
+            return
+        }
+
+        // No queremos interferir con CTRL+clic ni con el clic con el botón central,
+        // para que el usuario pueda seguir abriendo los enlaces en nuevas pestañas
+        const leftButtonClick =
+            !event.button && !event.ctrlKey && !event.metaKey
+
+        // Tampoco queremos interferir con los enlaces externos
+        const isExternalLink =
+            new URL(a.href).origin !== document.location.origin
+
+        if (!leftButtonClick || isExternalLink) {
+            return
+        }
+
+        if (this.isItem(a.href)) {
+            this.dispatch(a.href)
+            history.pushState(null, '', a.href)
+            event.preventDefault()
+        }
+    },
 
     /**
-     * Elemento con el control para volver al índice de artículos desde un artículo
+     * Manejador del evento disparado al avanzar o retroceder por el historial del navegador
      */
-    close: null,
+    popstateHandler: function (event) {
+        // En iOS y Safari hay dos formas de navegar por el historial: pulsando los botones del
+        // navegador o haciendo un gesto («swipe»). Este segundo método va acompañado de una
+        // transición que provoca un efecto visual feo si no desactivamos temporalmente la nuestra…
+        document.body.classList.remove('transition')
+        document.querySelector('header')?.classList.add('hidden')
 
-    /**
-     * Valor original de `head > title`, para poder restaurarlo tras cambiarlo
-     */
-    title: null,
-
-    /**
-     * Valor original del atributo `content` de `<meta name="description">`,
-     * para poder restaurarlo tras cambiarlo
-     */
-    description: null,
-
-    /**
-     * URL original, para ídem
-     */
-    url: null,
-
-    // Devuelve `ruta` cuando se le pasa `https://jaime.gomezobregon.com/ruta/y/mas/cosas/opcionales`
-    slug: (location) => new URL(location).pathname.split('/')[1],
-
-    /**
-     * Inicializa la lógica del blog
-     */
-    init: async function (options = {}) {
-        const {
-            nav = 'nav',
-            close = 'button',
-            article = 'article',
-            feed = '/index.json',
-        } = options
-
-        this.nav = document.querySelector(nav)
-        this.close = document.querySelector(close)
-        this.article = document.querySelector(article)
-
-        const response = await fetch(feed)
-        const json = await response.json()
-        this.items = json.items
-
-        this.title = document.title
-        this.url = document
-            .querySelector('meta[property="og:url"]')
-            .getAttribute('content')
-        this.description = document
-            .querySelector('meta[name=description]')
-            .getAttribute('content')
-
-        const slug = this.slug(document.location)
-        slug && blog.load(slug) && this.nav.parentNode.classList.add('hidden')
-
-        // Queremos transiciones suaves al cargar un artículo,
-        // pero no cuando se accede directamente a uno por su URL
+        // …y volvemos a activarla unos instantes después, cuando la animación del navegador
+        // ha concluido
         setTimeout(() => document.body.classList.add('transition'), 500)
 
-        const posts = this.items.filter((item) => item.date_published)
+        blog.dispatch(document.URL)
+    },
+
+    /**
+     * Al redimensionar la ventana…
+     */
+    resizeHandler: () => {
+        blog.resizeVideos()
+    },
+
+    /**
+     * Fuerza que los vídeos de YouTube se vean a ancho completo y en proporción 16:9
+     */
+    resizeVideos: () => {
+        const ratio = 16 / 9
+
+        const videos = document.querySelectorAll(
+            'figure iframe[src*="youtube-nocookie.com"]'
+        )
+
+        videos.forEach((iframe) => {
+            if (iframe instanceof HTMLElement) {
+                iframe.style.width = '100%'
+                iframe.style.height = `${iframe.offsetWidth / ratio}px`
+            }
+        })
+    },
+
+    /**
+     * Carga los tuits que pudiera haber incrustados en un artículo
+     */
+    renderTweets: async (selector, options) => {
+        const tweets = document.querySelectorAll(selector)
+        if (!tweets.length) {
+            return
+        }
+
+        // Cargamos la librería de Twitter solo si no lo ha sido previamente
+        // y la entrada contiene tuits
+        if (!window.hasOwnProperty('twttr')) {
+            // @ts-ignore
+            await import('https://platform.twitter.com/widgets.js')
+        }
+
+        tweets.forEach((tweet) => {
+            tweet.innerHTML = ''
+            tweet.classList.add('rendered')
+            // @ts-ignore
+            twttr.widgets.createTweet(tweet.dataset.id, tweet, options)
+        })
+    },
+
+    /**
+     * Presenta las notas al pie, como las que hay en `/la-donacion`
+     */
+    renderFootnotes: async (notesSelector, callsSelector) => {
+        const notes = document.querySelectorAll(notesSelector)
+        const calls = document.querySelectorAll(callsSelector)
+
+        if (!calls.length) {
+            return
+        }
+
+        calls.forEach((call, i) => {
+            const href = call.getAttribute('href')
+            const index = [...notes].findIndex((note) => `#${note.id}` === href)
+
+            if (index < 0) {
+                throw new Error(`Nota al pie desconocida: ${href}`)
+            }
+
+            const number = index + 1
+            const id = `nota-${i + 1}`
+
+            const path = document.location.pathname
+
+            call.outerHTML = `<a class="note" href="${path}${href}" id="${id}"><sup>${number}</sup></a>`
+            notes[index].querySelector(
+                'p:last-of-type'
+            ).innerHTML += `<a class="ref" href="${path}#${id}">↩︎</a>`
+        })
+    },
+
+    /**
+     *
+     */
+    renderHome: () => {
+        const posts = blog.feed.items.filter((item) => item.date_published)
 
         const featured = posts
             .filter((item) => item.tags.includes('Destacado'))
@@ -110,66 +182,122 @@ export const blog = {
                 </li>`
             )
 
-        this.nav.innerHTML = `
+        blog.nav.innerHTML = `
             <ol class="featured">${featured.join('')}</ol>
             <hr />
             <ol>${other.join('')}</ol>
         `
+    },
 
-        document.addEventListener('click', (event) => {
-            const a = event.target.closest('a')
-            if (!a) {
-                return
-            }
+    updateDocumentMetadata: (metadata) => {
+        const { title, description, url } = metadata
 
-            // No queremos interferir con CTRL+clic ni con el clic con el botón central,
-            // para que el usuario pueda seguir abriendo los enlaces en nuevas pestañas
-            const leftButtonClick =
-                !event.button && !event.ctrlKey && !event.metaKey
+        document.title = title
 
-            // Tampoco queremos interferir con los enlaces externos
-            const isExternalLink =
-                new URL(a.href).origin !== document.location.origin
+        document
+            .querySelector('meta[name=description]')
+            ?.setAttribute('content', description)
 
-            if (!leftButtonClick || isExternalLink) {
-                return
-            }
+        document
+            .querySelector('meta[property="og:description"]')
+            ?.setAttribute('content', description)
 
-            event.preventDefault()
-            const slug = this.slug(a.href)
+        document
+            .querySelector('meta[property="og:title"]')
+            ?.setAttribute('content', title)
 
-            history.pushState(null, '', `/${slug}`)
-            this.load(slug)
+        document
+            .querySelector('meta[property="og:url"]')
+            ?.setAttribute('content', url)
+    },
+
+    /**
+     * Carga y muestra la página de error
+     */
+    showError: async () => {
+        const response = await fetch('/error.html')
+        const content = await response.text()
+
+        const style = document.body.querySelector('style')
+        if (style) {
+            document.head.innerHTML = `<style>${style.innerText}</style>`
+            style.remove()
+        }
+
+        document.title = 'Error'
+        document.body.innerHTML = content
+    },
+
+    /**
+     * Muestra la portada
+     */
+    showHome: function () {
+        window.scrollTo(0, 0)
+        document.body.classList.remove('article')
+
+        this.updateDocumentMetadata({
+            description: this.feed.description,
+            url: this.feed.home_page_url,
+            title: this.feed.title,
         })
 
-        this.close.addEventListener('click', (event) => {
+        blog.nav?.parentNode.classList.remove('hidden')
+    },
+
+    /**
+     * Enruta una petición.
+     */
+    dispatch: async function (url) {
+        const { pathname } = new URL(url)
+
+        if (pathname === '/') {
+            this.showHome()
+            return
+        }
+
+        const slug = pathname.replace(/^\//, '')
+        const item = blog.feed.items.find((i) => i.id === slug)
+
+        await this.load(item)
+    },
+
+    /**
+     * Inicializa la lógica del blog
+     */
+    init: async function (options = {}) {
+        this.nav = document.querySelector(options.nav)
+        this.close = document.querySelector(options.close)
+        this.article = document.querySelector(options.article)
+
+        this.github = options.github
+
+        const response = await fetch(options.feed)
+        this.feed = await response.json()
+
+        if (blog.isItem(document.URL)) {
+            blog.dispatch(document.URL)
+        }
+
+        // Queremos transiciones suaves al cargar un artículo,
+        // pero no cuando se accede directamente a uno por su URL
+        setTimeout(() => document.body.classList.add('transition'), 500)
+
+        blog.renderHome()
+
+        window.addEventListener('popstate', blog.popstateHandler.bind(this))
+        window.addEventListener('resize', blog.resizeHandler.bind(this))
+        document.addEventListener('click', blog.clickHandler.bind(this))
+
+        this.close.addEventListener('click', function () {
             history.pushState(null, '', '/')
-            this.menu()
-        })
-
-        window.addEventListener('popstate', (event) => {
-            if (document.location.hash) {
-                return
-            }
-
-            // En iOS y Safari hay dos formas de navegar por el historial: pulsando los botones del
-            // navegador o haciendo un gesto ("swipe"). Este segundo método va acompañado de una
-            // animación que provoca un efecto visual feo si no desactivamos temporalmente la nuestra…
-            document.body.classList.remove('transition')
-            document.querySelector('header').classList.add('hidden')
-
-            // …pero volvamos a activarla unos instantes después, cuando la animación del navegador
-            // ha concluido
-            setTimeout(() => document.body.classList.add('transition'), 500)
-
-            const slug = this.slug(document.location)
-            slug ? this.load(slug) : this.menu()
+            blog.showHome()
         })
 
         document
             .querySelector('header')
-            .addEventListener('transitionend', (event) => {
+            ?.addEventListener('transitionend', (event) => {
                 if (
+                    event.target instanceof Element &&
                     event.target.tagName === 'HEADER' &&
                     event.propertyName === 'margin-left'
                 ) {
@@ -179,93 +307,65 @@ export const blog = {
                     element.parentNode.classList.add('hidden')
                 }
             })
-
-        window.addEventListener('resize', this.resizeVideos)
-    },
-
-    /**
-     * Cierra la vista de artículo y presenta la portada
-     */
-    menu: function () {
-        window.scrollTo(0, 0)
-        document.body.classList.remove('article')
-
-        document.title = this.title
-        document
-            .querySelector('meta[name=description]')
-            .setAttribute('content', this.description)
-        document
-            .querySelector('meta[property="og:description"]')
-            .setAttribute('content', this.description)
-        document
-            .querySelector('meta[property="og:title"]')
-            .setAttribute('content', this.title)
-        document
-            .querySelector('meta[property="og:url"]')
-            .setAttribute('content', this.url)
-
-        this.nav.parentNode.classList.remove('hidden')
     },
 
     /**
      * Carga un artículo y lo presenta al usuario para su lectura
      */
-    load: async function (slug) {
-        const item = this.items.find((i) => i.id === slug)
-
+    load: async function (item) {
         if (!item) {
-            return this.error()
+            this.showError()
+            return
         }
 
         const type = item.date_published ? 'post' : 'page'
         const folder = type === 'post' ? 'posts' : 'pages'
 
-        const response = await fetch(`/${folder}/${slug}/index.html`)
+        const response = await fetch(`/${folder}/${item.id}/index.html`)
+
         if (!response.ok) {
-            return this.error()
+            this.showError()
+            return
         }
 
         const base = document.querySelector('head base')
-        base.setAttribute('href', `/${folder}/${slug}/`)
+        base?.setAttribute('href', `/${folder}/${item.id}/`)
 
-        document.title = item.title
-        document
-            .querySelector('meta[name=description]')
-            .setAttribute('content', item.content_text)
-        document
-            .querySelector('meta[property="og:description"]')
-            .setAttribute('content', item.content_text)
-        document
-            .querySelector('meta[property="og:title"]')
-            .setAttribute('content', item.title)
-        document
-            .querySelector('meta[property="og:url"]')
-            .setAttribute('content', item.url)
+        this.updateDocumentMetadata({
+            description: item.content_text,
+            title: item.title,
+            url: item.url,
+        })
 
         document.body.classList.add('article')
-        this.article.innerHTML = await response.text()
-        this.article.setAttribute('lang', item.language)
 
-        this.article.parentNode.classList.remove('hidden')
+        blog.article.innerHTML = await response.text()
+        blog.article.setAttribute('lang', item.language)
+        blog.article.parentNode.classList.remove('hidden')
 
         if (type === 'post') {
             const h1 = this.article.querySelector('h1').innerHTML
             const date = this.formatDate(item.date_published)
             const header = document.createElement('header')
 
-            const url = `https://github.com/JaimeObregon/jaime.gomezobregon.com/commits/master/httpdocs/posts/${item.id}/index.html`
+            const url = `${blog.github.url}/commits/${blog.github.branch}/httpdocs/posts/${item.id}/index.html`
 
             header.innerHTML = `
                 <h1>${h1}</h1>
                 <time datetime="${item.date_published}">
-                    <a href="${url}">${date}</a>
+                    <a href="${url}" title="Ver el historial de cambios en GitHub">
+                        ${date}
+                    </a>
                 </time>
+                <nav>
+                    ${item.tags
+                        .map((tag) => `<a href="/temas/${tag}">${tag}</a>`)
+                        .join(', ')}
+                </nav>
             `
 
             this.article.querySelector('h1').replaceWith(header)
         }
-
-        window.scrollTo(0, 0)
 
         this.resizeVideos()
 
@@ -275,89 +375,14 @@ export const blog = {
         })
 
         this.renderFootnotes('ol#notes li', 'a.note')
-    },
 
-    /**
-     * Fuerza que los vídeos de YouTube se vean a ancho completo y en proporción 16:9
-     */
-    resizeVideos: () => {
-        const videos = document.querySelectorAll(
-            'figure iframe[src*="youtube-nocookie.com"]'
-        )
-        videos.forEach((iframe) => {
-            const ratio = 16 / 9
-            iframe.style.width = '100%'
-            iframe.style.height = `${iframe.offsetWidth / ratio}px`
-        })
-    },
-
-    /**
-     * Carga los tuits que pudiera haber incrustados en un artículo
-     */
-    renderTweets: async (selector, options) => {
-        const tweets = document.querySelectorAll(selector)
-        if (!tweets.length) {
-            return
+        console.log(location.hash)
+        if (location.hash) {
+            const id = location.hash.replace(/^#/, '')
+            const fragment = document.getElementById(id)
+            fragment?.scrollIntoView()
+        } else {
+            window.scrollTo(0, 0)
         }
-
-        // Cargamos la librería de Twitter solo si no lo ha sido previamente
-        // y la entrada contiene tuits
-        if (typeof window.twttr === 'undefined') {
-            await import('https://platform.twitter.com/widgets.js')
-        }
-
-        tweets.forEach((tweet) => {
-            tweet.innerHTML = ''
-            tweet.classList.add('rendered')
-            twttr.widgets.createTweet(tweet.dataset.id, tweet, options)
-        })
-    },
-
-    /**
-     * Presenta las notas al pie, como las que hay en `/la-donacion`
-     */
-    renderFootnotes: async (references, footnotes) => {
-        const refs = document.querySelectorAll(references)
-        const notes = document.querySelectorAll(footnotes)
-
-        if (!notes.length) {
-            return
-        }
-
-        notes.forEach((note, i) => {
-            const href = note.getAttribute('href')
-            const index = [...refs].findIndex((ref) => `#${ref.id}` === href)
-
-            if (index < 0) {
-                throw new Error(`Nota al pie desconocida: ${href}`)
-            }
-
-            const number = index + 1
-            const id = `nota-${i + 1}`
-
-            const path = document.location.pathname
-
-            note.outerHTML = `<a class="note" href="${path}${href}" id="${id}"><sup>${number}</sup></a>`
-            refs[index].querySelector(
-                'p:last-of-type'
-            ).innerHTML += `<a class="ref" href="${path}#${id}">↩︎</a>`
-        })
-    },
-
-    /**
-     * Muestra una página de error
-     */
-    error: async () => {
-        const response = await fetch('/error.html')
-        const content = await response.text()
-        document.body.innerHTML = content
-        document.head.innerHTML = `
-            <style>
-                ${document.body.querySelector('style').innerText}
-            </style>
-        `
-        document.body.querySelector('style').remove()
-        document.title = 'Error'
-        return false
     },
 }
