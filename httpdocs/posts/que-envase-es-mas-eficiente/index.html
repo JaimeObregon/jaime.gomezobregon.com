@@ -1,0 +1,369 @@
+<style>
+    article math {
+        display: block;
+    }
+
+    @media (min-width: 40rem) {
+        article figure.gallery div {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 0.5em;
+        }
+
+        article figure.gallery div a {
+            width: calc(50% - 0.25em);
+        }
+
+        article figure.gallery div img {
+            height: 12em;
+            align-self: center;
+            object-fit: cover;
+        }
+    }
+</style>
+
+<h1>¿Qué envase es más eficiente?</h1>
+
+<header>
+    <p>
+        Vi dos tetrabriks de leche. Ambos afirman contener un litro. Ambos
+        aluden a la <em>sostenibilidad</em> del planeta y la preservación del
+        medio natural. Y me he preguntado cuál es más eficiente, cuál de los dos
+        emplea menos materiales para lograr su cometido. O si se prefiere:
+        <strong>cuál es más <em>ecológico</em></strong
+        >.
+    </p>
+</header>
+
+<figure class="gallery">
+    <div>
+        <a href="clasico.webp"><img src="clasico.webp" alt="…" /></a>
+        <a href="estrecho.webp"><img src="estrecho.webp" alt="…" /></a>
+    </div>
+    <figcaption>
+        Dos envases. Dos litros. Dos fabricantes presumiendo de sostenibilidad.
+        ¿Cuál es más eficiente desde el punto de vista del consumo de materias
+        primas para la fabricación del envase?
+    </figcaption>
+</figure>
+
+<p>
+    Interesado en resolver este enigma del desayuno, fui al sitio web de Tetra
+    Pak<a class="note" href="#tetrapak"></a>, la multinacional sueca que fabrica
+    estos envases. No encontré allí lo que buscaba: las dimensiones exactas de
+    ambos cartones o la superficie del material que los compone. Así que hube de
+    tomar mis propias y aproximadas medidas para encontrar la respuesta a esta
+    incógnita de bachiller.
+</p>
+
+<p>Por definición, <strong>un litro es un decímetro cúbico</strong>.</p>
+
+<p>
+    Llamemos <dfn>clásico</dfn> al envase más ancho y <dfn>estrecho</dfn> al más
+    esbelto:
+</p>
+
+<ol>
+    <li>
+        <p>
+            El envase <var>clásico</var> tiene unas dimensiones 5,7 × 9 × 19,6
+            centímetros. Multiplicando, esto son <strong>unos 1005 cm³</strong>.
+            Un volumen de prácticamente un litro, como no podía ser de otra
+            manera.
+        </p>
+
+        <p>
+            Hallemos ahora la superficie del material empleado para construir el
+            envase, omitiendo —como una simplificación tolerable— los pliegues
+            encolados de la base y la superficie<a
+                class="note"
+                href="#pliegues"
+            ></a
+            >. Para ello basta sumar la superficie de las seis caras del prisma,
+            que son iguales dos a dos.
+        </p>
+
+        <p>
+            Sean <var>x</var>, <var>y</var> y <var>h</var> el ancho, largo y
+            alto respectivamente:
+        </p>
+
+        <figure>
+            <math>
+                <mtable>
+                    <mtr>
+                        <mtd>
+                            <mrow>
+                                <mi>S</mi>
+                            </mrow>
+                        </mtd>
+                        <mtd>
+                            <mrow>
+                                <mo>=</mo>
+                            </mrow>
+                        </mtd>
+                        <mtd>
+                            <mrow>
+                                <mn>2</mn>
+                                <mo>(</mo>
+                                <mi>x</mi>
+                                <mi>y</mi>
+                                <mo>+</mo>
+                                <mi>x</mi>
+                                <mi>h</mi>
+                                <mo>+</mo>
+                                <mi>y</mi>
+                                <mi>h</mi>
+                                <mo>)</mo>
+                            </mrow>
+                        </mtd>
+                    </mtr>
+                    <mtr>
+                        <mtd>
+                            <mrow>
+                                <mi>S</mi>
+                            </mrow>
+                        </mtd>
+                        <mtd>
+                            <mrow>
+                                <mo>≅</mo>
+                            </mrow>
+                        </mtd>
+                        <mtd>
+                            <mrow>
+                                <mn>679 cm²</mn>
+                            </mrow>
+                        </mtd>
+                    </mtr>
+                </mtable>
+            </math>
+        </figure>
+    </li>
+    <li>
+        <p>
+            La base del envase <var>estrecho</var> mide 6,1 × 7,1 centímetros.
+            Pero tiene dos alturas, pues la superficie superior no es paralela a
+            la base. Llamemos <dfn>h₁</dfn> y <dfn>h₂</dfn> a cada una de ellas,
+            que miden aproximadamente 22,4 y 24 centímetros respectivamente.
+        </p>
+
+        <p>
+            El volumen de este envase es la suma de los volúmenes en que podemos
+            descomponerlo: un prisma rectangular análogo en su forma al del
+            envase <var>clásico</var> y definido por su altura <var>h₁</var> más
+            otro con igual base y de perfil triangular cuya altura crece desde
+            cero hasta <var>h₂ – h₁</var>.
+        </p>
+
+        <p>
+            Por lo tanto el volumen total, <dfn>V</dfn>, es efectivamente un
+            litro:
+        </p>
+
+        <figure>
+            <math>
+                <mtable>
+                    <mtr>
+                        <mtd>
+                            <mrow>
+                                <mi>V</mi>
+                            </mrow>
+                        </mtd>
+                        <mtd>
+                            <mrow>
+                                <mo>=</mo>
+                            </mrow>
+                        </mtd>
+                        <mtd>
+                            <mrow>
+                                <mi>x</mi>
+                                <mi>y</mi>
+                                <msub>
+                                    <mi>h</mi>
+                                    <mn>1</mn>
+                                </msub>
+                                <mo>+</mo>
+                                <mfrac>
+                                    <mrow>
+                                        <mi>x</mi>
+                                        <mi>y</mi>
+                                        <mo>(</mo>
+                                        <msub>
+                                            <mi>h</mi>
+                                            <mn>2</mn>
+                                        </msub>
+                                        <mo>-</mo>
+                                        <msub>
+                                            <mi>h</mi>
+                                            <mn>1</mn>
+                                        </msub>
+                                        <mo>)</mo>
+                                    </mrow>
+                                    <mrow>
+                                        <mn>2</mn>
+                                    </mrow>
+                                </mfrac>
+                            </mrow>
+                        </mtd>
+                    </mtr>
+                    <mtr>
+                        <mtd>
+                            <mrow>
+                                <mi>V</mi>
+                            </mrow>
+                        </mtd>
+                        <mtd>
+                            <mrow>
+                                <mo>≅</mo>
+                            </mrow>
+                        </mtd>
+                        <mtd>
+                            <mrow>
+                                <mn>1005 cm³</mn>
+                            </mrow>
+                        </mtd>
+                    </mtr>
+                </mtable>
+            </math>
+        </figure>
+
+        <p>
+            Hallemos ahora la cantidad de material necesario para construirlo.
+            Para ello obviaremos, como en el caso anterior, los pliegues
+            constructivos. Y asimilaremos la superficie de las caras superior e
+            inferior, que no son exactamente iguales pero casi. El impacto de
+            esta simplificación es irrelevante para la conclusión que buscamos:
+        </p>
+
+        <figure>
+            <math>
+                <mtable>
+                    <mtr>
+                        <mtd>
+                            <mrow>
+                                <mi>S</mi>
+                            </mrow>
+                        </mtd>
+                        <mtd>
+                            <mrow>
+                                <mo>=</mo>
+                            </mrow>
+                        </mtd>
+                        <mtd>
+                            <mrow>
+                                <mn>2</mn>
+                                <mi>x</mi>
+                                <mi>y</mi>
+                                <mo>+</mo>
+                                <mi>y</mi>
+                                <msub>
+                                    <mi>h</mi>
+                                    <mn>1</mn>
+                                </msub>
+                                <mo>+</mo>
+                                <mi>y</mi>
+                                <msub>
+                                    <mi>h</mi>
+                                    <mn>2</mn>
+                                </msub>
+                                <mo>+</mo>
+                                <mn>2</mn>
+                                <mo>(</mo>
+                                <mi>x</mi>
+                                <msub>
+                                    <mi>h</mi>
+                                    <mn>1</mn>
+                                </msub>
+                                <mo>+</mo>
+                                <mfrac>
+                                    <mrow
+                                        ><mi>x</mi><mo>(</mo>
+                                        <msub>
+                                            <mi>h</mi>
+                                            <mn>2</mn>
+                                        </msub>
+                                        <mo>-</mo>
+                                        <msub>
+                                            <mi>h</mi>
+                                            <mn>1</mn>
+                                        </msub>
+
+                                        <mo>)</mo></mrow
+                                    >
+                                    <mrow><mn>2</mn></mrow>
+                                </mfrac>
+                                <mo>)</mo>
+                            </mrow>
+                        </mtd>
+                    </mtr>
+                    <mtr>
+                        <mtd>
+                            <mrow>
+                                <mi>S</mi>
+                            </mrow>
+                        </mtd>
+                        <mtd>
+                            <mrow>
+                                <mo>≅</mo>
+                            </mrow>
+                        </mtd>
+                        <mtd>
+                            <mrow>
+                                <mn>699 cm²</mn>
+                            </mrow>
+                        </mtd>
+                    </mtr>
+                </mtable>
+            </math>
+        </figure>
+    </li>
+</ol>
+
+<p>
+    Resulta entonces que el envase <var>clásico</var> requiere de unos 679 cm²
+    de material mientras que el <var>estrecho</var> necesita de
+    <strong>aproximadamente 20 cm² más</strong>, o un incremento del 3 %. Por
+    comparar,
+    <strong
+        >el exceso de material requerido por el envase
+        <var>estrecho</var> equivale a la mitad de la superficie de una tarjeta
+        de crédito</strong
+    >.
+</p>
+
+<p>
+    Hasta aquí, los datos. Sigue ahora mi conclusión personal, subjetiva: parece
+    un sobrecoste justificado para un envase más ergonómico tanto al asirlo con
+    la mano como al utilizarlo para verter. Y personalmente no diría que la
+    estética o el <i>marketing</i> se hayan impuesto sobre la economía y la
+    ecología, tal como me temía haciendo esta reflexión durante el desayuno.
+</p>
+
+<footer>
+    <ol id="notes">
+        <li id="tetrapak">
+            <p>
+                Como curiosidad, nótese la incongruencia en el nombre de la
+                compañía, que por razones históricas sigue conociéndose como
+                <em>Tetra Pak</em> en alusión a sus primeros envases, que eran
+                efectivamente
+                <a href="https://es.wikipedia.org/wiki/Tetraedro">tetraedros</a>
+                o pirámides de base triangular. Hace ya mucho que estos envases
+                son todos prismas rectangulares ortogonales de seis caras:
+                <a href="https://es.wikipedia.org/wiki/Ortoedro">ortoedros</a>.
+                De no ser por las limitaciones industriales de la época, quizá
+                hoy conoceríamos como <i>ortobriks</i> los envases de un
+                fabricante que hoy sería conocido como <em>Orto Pak</em>.
+            </p>
+        </li>
+        <li id="pliegues">
+            <p>
+                Omito los pliegues no tanto para simplificar los cálculos sino
+                porque son prácticamente iguales en ambos envases. Lo que me
+                interesa hallar es la relación entre la superficie de ambos, no
+                tanto la superficie del material de cada uno, razón por la cual
+                puedo omitirlos de ambos sin afectar a la conclusión.
+            </p>
+        </li>
+    </ol>
+</footer>

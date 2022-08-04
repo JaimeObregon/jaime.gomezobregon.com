@@ -16,6 +16,15 @@
     "language": "es",
     "items": [
         {
+            "id": "que-envase-es-mas-eficiente",
+            "url": "https://jaime.gomezobregon.com/que-envase-es-mas-eficiente",
+            "title": "¿Qué envase es más eficiente?",
+            "content_text": "Vi dos envases de un litro. Ambos aluden a la sostenibilidad del planeta y la preservación del medio natural. Pero tienen dimensiones diferentes. Me he preguntado cuál es más ecológico, cuál requiere menos materiales para hacer su función.",
+            "date_published": "2022-08-04T07:50:00Z",
+            "tags": ["Destacado", "Curiosidades"],
+            "language": "es"
+        },
+        {
             "id": "por-una-digitalizacion-lenta",
             "url": "https://jaime.gomezobregon.com/por-una-digitalizacion-lenta",
             "title": "Por una digitalización lenta",
