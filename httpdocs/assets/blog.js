@@ -146,6 +146,27 @@ export const blog = {
     },
 
     /**
+     * La raya (_emdash_, —) es un signo distinto del guion (_hyphen_, -) y el
+     * signo de restar (_endash, –). La raya se utiliza, entre otras cosas, para
+     * hacer incisos. Estos incisos están enmarcados entre dos rayas, que deben
+     * permanecer pegadas al caracter al que siguen o anteceden.
+     *
+     * Para evitar que en una línea queden rayas huérfanas separadas del inciso
+     * utilizamos aquí el caracter Unicode «WORD JOINER» (U+2060)
+     *
+     * Véase https://www.fundeu.es/escribireninternet/la-raya-tambien-exist
+     * Véase https://www.fundeu.es/recomendacion/guion-claves-para-usar-este-signo-1250/
+     * Véase https://practicaltypography.com/hyphens-and-dashes.html
+     * Véase https://www.fileformat.info/info/unicode/char/2060/index.htm
+     */
+    renderDashes: () => {
+        const article = document.querySelector('article')
+        article.innerHTML = article.innerHTML
+            .replace(/ —(\w)/, ' —\u2060$1')
+            .replace(/(\w)— /, '$1\u2060— ')
+    },
+
+    /**
      *
      */
     renderHome: () => {
@@ -368,6 +389,8 @@ export const blog = {
         }
 
         this.resizeVideos()
+
+        this.renderDashes()
 
         this.renderTweets('blockquote.tweet[data-id]', {
             align: 'center',
