@@ -10,6 +10,21 @@ export const blog = {
         }),
 
     /**
+     * Toma `Una cadena «como esta»` y devuelve `una-cadena-como-esta`.
+     * Véase https://stackoverflow.com/questions/990904/remove-accents-diacritics-in-a-string-in-javascript/37511463#37511463
+     */
+    slug: (string) => {
+        return string
+            .normalize('NFD')
+            .replace(/\p{Diacritic}/gu, '')
+            .replace(/[\u{0100}-\u{FFFF}]/gu, '')
+            .toLowerCase()
+            .replace(/[^a-z0-9-_]/g, '-')
+            .replace(/-+/g, '-')
+            .replace(/(^-|-$)/g, '')
+    },
+
+    /**
      * Determina si una URL está o no está en el _feed_
      */
     isItem: (url) => {
@@ -152,7 +167,7 @@ export const blog = {
      * permanecer pegadas al caracter al que siguen o anteceden.
      *
      * Para evitar que en una línea queden rayas huérfanas separadas del inciso
-     * utilizamos aquí el caracter Unicode «WORD JOINER» (U+2060)
+     * utilizamos aquí el caracter Unicode `WORD JOINER` (U+2060)
      *
      * Véase https://www.fundeu.es/escribireninternet/la-raya-tambien-exist
      * Véase https://www.fundeu.es/recomendacion/guion-claves-para-usar-este-signo-1250/
@@ -164,6 +179,27 @@ export const blog = {
         article.innerHTML = article.innerHTML
             .replace(/ —(\w)/, ' —\u2060$1')
             .replace(/(\w)— /, '$1\u2060— ')
+    },
+
+    renderHeadings: () => {
+        const headings = document
+            .querySelector('article')
+            ?.querySelectorAll('h2')
+        if (!headings) {
+            return
+        }
+
+        headings.forEach((heading) => {
+            const id = blog.slug(heading.innerText)
+
+            const url = new URL(document.URL)
+            url.hash = id
+
+            const href = url.toString()
+
+            heading.setAttribute('id', id)
+            heading.innerHTML = `<a href="${href}">${heading.innerHTML}</a>`
+        })
     },
 
     /**
@@ -392,6 +428,8 @@ export const blog = {
 
         this.renderDashes()
 
+        this.renderHeadings()
+
         this.renderTweets('blockquote.tweet[data-id]', {
             align: 'center',
             lang: 'es',
@@ -399,7 +437,6 @@ export const blog = {
 
         this.renderFootnotes('ol#notes li', 'a.note')
 
-        console.log(location.hash)
         if (location.hash) {
             const id = location.hash.replace(/^#/, '')
             const fragment = document.getElementById(id)

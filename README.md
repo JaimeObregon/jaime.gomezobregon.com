@@ -73,11 +73,21 @@ Esto es lo único que necesito y, por ende, lo único que he programado:
 
 1. **Directorio de descargas**. Es posible utilizar [`/tmp`](/httpdocs/tmp) como sustituto doméstico de plataformas como WeTransfer a la hora de subir y compartir temporalmente ficheros. Los contenidos de este directorio desaparecerán automáticamente en el siguiente despliegue. Para hacer un fichero permanente, añádase al repositorio.
 
+1. **Detalles ortotipográficos**. Como las [letras capitulares](/caps), la estilización de los [números romanos en versalitas](https://www.fundeu.es/consulta/siglo-21-o-siglo-xxi-29522/) o la prevención de saltos de línea inmediátamente antes o después de las [rayas](https://www.fundeu.es/escribireninternet/la-raya-tambien-exist/) (_em dash_ o «—», no confundir con el guion o «-») que marcan un inciso. Estas dos últimas, recomendación tanto de tipógrafos como de la Real Academia Española.
+
+1. **Secciones enlazables**. Cualquier `<h2>` dentro de una entrada es interpretado como un encabezado de sección y es automáticamente convertido en un enlace. Esto es práctico para facilitar el acceso a secciones específicas de entradas extensas.
+
 # Funcionalidades que podría retirar
 
 La funcionalidad que sigue está vigente, pero estoy pensando en retirarla porque ya no la necesito:
 
 1. **Un generador de imágenes para redes sociales**, también llamadas _posters_. Está en [`/posters/generator`](/httpdocs/posters/generator) y en mi sitio público puede verse [una demostración](https://jaime.gomezobregon.com/posters/generator/). Está basado en [el inspirador trabajo previo](https://georgefrancis.dev/writing/generative-svg-social-images/) de George Francis.
+
+# Sobre las florituras tipográficas
+
+La deliberada austeridad del diseño que persigo tiene una excepción consciente en la filigrana del separador temático (`<hr>`) y las floridas letras miniadas (también llamadas _letras capituales_ o _iniciales_).
+
+Para estas últimas he preferido las diseñadas por [William Morris](https://en.wikipedia.org/wiki/William_Morris) en el s. xɪx, que he encontrado en [Openclipart](https://openclipart.org/search/?query=William+Morris+Letter) bajo licencia de dominio público. Por una cuestión de rendimiento en el sitio las incrusto como elementos SVG. He optimizado el trazado vectorial de cada una de estas 26 letras capitulares, que comparto en [`/caps`](/caps) para quien las desee.
 
 # Modo de empleo
 
