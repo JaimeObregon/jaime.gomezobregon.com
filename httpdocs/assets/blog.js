@@ -414,11 +414,6 @@ export const blog = {
                         ${date}
                     </a>
                 </time>
-                <nav>
-                    ${item.tags
-                        .map((tag) => `<a href="/temas/${tag}">${tag}</a>`)
-                        .join(', ')}
-                </nav>
             `
 
             this.article.querySelector('h1').replaceWith(header)

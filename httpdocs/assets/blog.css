@@ -891,7 +891,7 @@ main header + header p:nth-child(1) > svg:nth-child(1) {
 main header time {
     display: block;
     font-size: 0.85em;
-    margin: 1rem 0;
+    margin: 1rem 0 var(--margin) 0;
 }
 
 main header time a {
