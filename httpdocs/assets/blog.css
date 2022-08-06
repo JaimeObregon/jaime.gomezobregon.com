@@ -891,6 +891,16 @@ main header + header p:nth-child(1) > svg:nth-child(1) {
     fill: currentColor;
 }
 
+@media (prefers-color-scheme: dark) {
+    main header + header p:nth-child(1) > svg:nth-child(1) {
+        background: var(--color-foreground);
+    }
+
+    main header + header p:nth-child(1) > svg:nth-child(1) path {
+        fill: var(--color-background);
+    }
+}
+
 main header time {
     display: block;
     font-size: 0.85em;
