@@ -24,7 +24,7 @@ Esto es lo único que necesito y, por ende, lo único que he programado:
 
 1. **Entradas destacadas**. Puedes destacar artículos en la portada sin más que añadir `Destacado` a la propiedad `tags`. Más información en [#7](/../../issues/7).
 
-1. **Sin _cookies_**. Y, por tanto, sin el molesto aviso de _cookies_.
+1. **Sin _cookies_ de seguimiento**. Y, por tanto, sin el molesto aviso de _cookies_.
 
 1. **Soporte para póster en redes sociales**. Es posible incorporar a cada entrada una imagen `poster.png` que será servida y utilizada al compartir la entrada en redes como Twitter, LinkedIn… Como en [este ejemplo](https://twitter.com/JaimeObregon/status/1433371404230082560).
 
