@@ -93,7 +93,7 @@ export const blog = {
     resizeVideos: () => {
         const ratio = 16 / 9
 
-        const videos = document.querySelectorAll(
+        const videos = blog.article.querySelectorAll(
             'figure iframe[src*="youtube-nocookie.com"]'
         )
 
@@ -109,7 +109,7 @@ export const blog = {
      * Carga los tuits que pudiera haber incrustados en un artículo
      */
     renderTweets: async (selector, options) => {
-        const tweets = document.querySelectorAll(selector)
+        const tweets = blog.article.querySelectorAll(selector)
         if (!tweets.length) {
             return
         }
@@ -133,8 +133,8 @@ export const blog = {
      * Presenta las notas al pie, como las que hay en `/la-donacion`
      */
     renderFootnotes: async (notesSelector, callsSelector) => {
-        const notes = document.querySelectorAll(notesSelector)
-        const calls = document.querySelectorAll(callsSelector)
+        const notes = blog.article.querySelectorAll(notesSelector)
+        const calls = blog.article.querySelectorAll(callsSelector)
 
         if (!calls.length) {
             return
@@ -175,10 +175,9 @@ export const blog = {
      * Véase https://www.fileformat.info/info/unicode/char/2060/index.htm
      */
     renderDashes: () => {
-        const article = document.querySelector('article')
-        article.innerHTML = article.innerHTML
-            .replace(/ —(\w)/, ' —\u2060$1')
-            .replace(/(\w)— /, '$1\u2060— ')
+        document.body.innerHTML = document.body.innerHTML
+            .replace(/(\s)—([^\s])/g, '$1—\u2060$2')
+            .replace(/([^\s])—(\s)/g, '$1\u2060—$2')
     },
 
     renderInitials: (selector) => {
@@ -192,11 +191,11 @@ export const blog = {
             return
         }
 
-        paragraph.innerHTML = paragraph.innerHTML.replace(/^\s*\w/, '')
+        const filename = `${initial.toLowerCase()}.svg`
 
         paragraph.innerHTML = `
-            <img src="/assets/initials/${initial}.svg" class="initial" alt="${initial}" />
-            ${paragraph.innerHTML}`
+            <img src="/assets/initials/${filename}" class="initial" alt="${initial}" />
+            ${paragraph.innerHTML.replace(/^\s*\w/, '')}`
     },
 
     /**
@@ -363,6 +362,8 @@ export const blog = {
         blog.renderHome()
 
         blog.renderInitials('header > section > p:first-of-type')
+
+        this.renderDashes()
 
         window.addEventListener('popstate', blog.popstateHandler.bind(this))
         window.addEventListener('resize', blog.resizeHandler.bind(this))
