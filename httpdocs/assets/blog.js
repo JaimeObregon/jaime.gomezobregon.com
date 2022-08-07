@@ -364,7 +364,7 @@ export const blog = {
 
         blog.renderInitials('header > section > p:first-of-type')
 
-        blog.renderDashes('header > section > p:first-of-type')
+        blog.renderDashes('div > header')
 
         window.addEventListener('popstate', blog.popstateHandler.bind(this))
         window.addEventListener('resize', blog.resizeHandler.bind(this))
@@ -450,7 +450,7 @@ export const blog = {
 
         this.renderInitials('main > article header > p:first-of-type')
 
-        this.renderDashes('main > article header > p:first-of-type')
+        this.renderDashes('main > article')
 
         this.renderTweets('blockquote.tweet[data-id]', {
             align: 'center',
