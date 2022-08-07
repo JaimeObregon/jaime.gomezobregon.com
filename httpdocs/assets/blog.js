@@ -174,8 +174,9 @@ export const blog = {
      * Véase https://practicaltypography.com/hyphens-and-dashes.html
      * Véase https://www.fileformat.info/info/unicode/char/2060/index.htm
      */
-    renderDashes: () => {
-        document.body.innerHTML = document.body.innerHTML
+    renderDashes: (selector) => {
+        const element = document.querySelector(selector)
+        element.innerHTML = element.innerHTML
             .replace(/(\s)—([^\s])/g, '$1—\u2060$2')
             .replace(/([^\s])—(\s)/g, '$1\u2060—$2')
     },
@@ -363,7 +364,7 @@ export const blog = {
 
         blog.renderInitials('header > section > p:first-of-type')
 
-        this.renderDashes()
+        blog.renderDashes('header > section > p:first-of-type')
 
         window.addEventListener('popstate', blog.popstateHandler.bind(this))
         window.addEventListener('resize', blog.resizeHandler.bind(this))
@@ -445,11 +446,11 @@ export const blog = {
 
         this.resizeVideos()
 
-        this.renderDashes()
-
         this.renderHeadings()
 
         this.renderInitials('main > article header > p:first-of-type')
+
+        this.renderDashes('main > article header > p:first-of-type')
 
         this.renderTweets('blockquote.tweet[data-id]', {
             align: 'center',
