@@ -181,6 +181,27 @@ export const blog = {
             .replace(/(\w)— /, '$1\u2060— ')
     },
 
+    renderInitials: (selector) => {
+        const paragraph = document.querySelector(selector)
+        if (!paragraph) {
+            return
+        }
+
+        const initial = paragraph.innerText.substring(0, 1)
+        if (!initial.match(/[A-Z]/)) {
+            return
+        }
+
+        paragraph.innerHTML = paragraph.innerHTML.replace(/^\s*\w/, '')
+
+        paragraph.innerHTML = `
+            <img src="/assets/initials/${initial}.svg" class="initial" alt="${initial}" />
+            ${paragraph.innerHTML}`
+    },
+
+    /**
+     *
+     */
     renderHeadings: () => {
         const headings = document
             .querySelector('article')
@@ -341,6 +362,8 @@ export const blog = {
 
         blog.renderHome()
 
+        blog.renderInitials('header > section > p:first-of-type')
+
         window.addEventListener('popstate', blog.popstateHandler.bind(this))
         window.addEventListener('resize', blog.resizeHandler.bind(this))
         document.addEventListener('click', blog.clickHandler.bind(this))
@@ -424,6 +447,8 @@ export const blog = {
         this.renderDashes()
 
         this.renderHeadings()
+
+        this.renderInitials('main > article header > p:first-of-type')
 
         this.renderTweets('blockquote.tweet[data-id]', {
             align: 'center',
