@@ -386,6 +386,7 @@ export const blog = {
                     const element = document.body.classList.contains('article')
                         ? this.nav
                         : this.article
+
                     element.parentNode.classList.add('hidden')
                 }
             })
@@ -433,11 +434,10 @@ export const blog = {
             const url = `${blog.github.url}/commits/${blog.github.branch}/httpdocs/posts/${item.id}/index.html`
 
             header.innerHTML = `
+                <a href="/">Jaime Gómez-Obregón</a>
                 <h1>${h1}</h1>
                 <time datetime="${item.date_published}">
-                    <a href="${url}" title="Ver el historial de cambios en GitHub">
-                        ${date}
-                    </a>
+                    ${date}
                 </time>
             `
 
