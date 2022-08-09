@@ -1,4 +1,4 @@
-@layer normalize, typography, general, refactor, newsletter, backbutton, article, home, footnotes;
+@layer normalize, typography, general, layout, newsletter, backbutton, article, home, footnotes;
 
 @layer normalize {
     /**
@@ -334,7 +334,7 @@
 @layer backbutton {
     main > button {
         position: fixed;
-        width: calc((100vw - var(--width)) / 2 - var(--padding));
+        width: calc((100vw - var(--width)) / 2 - var(--padding) - 1rem);
         height: 100vh;
         border: none;
         outline: none;
@@ -382,11 +382,11 @@
     }
 
     body > div > header nav ol.featured {
-        --gap: 1rem;
+        --gap: 0.5em;
         display: flex;
         flex-wrap: wrap;
         justify-content: space-between;
-        margin: 0 calc(-1 * var(--padding) + 1rem);
+        margin: 0 calc(-1 * var(--padding));
     }
 
     body > div > header nav ol.featured li {
@@ -494,7 +494,7 @@
             width: 1.5rem;
             height: 1.5rem;
             top: 0.25rem;
-            left: calc(-1 * var(--margin));
+            left: calc(-1 * var(--padding));
             background-size: 100%;
             background-repeat: no-repeat;
             background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='457.03' height='457.03'%3E%3Cpath d='m421.51 207.07-85.8 85.77c-47.34 47.38-124.16 47.38-171.52 0-7.46-7.44-13.3-15.82-18.42-24.46l39.86-39.86c1.9-1.92 4.24-3.01 6.47-4.3 2.76 9.42 7.57 18.33 14.97 25.74a60.7 60.7 0 0 0 85.77 0l85.76-85.77a60.7 60.7 0 0 0 0-85.78 60.72 60.72 0 0 0-85.76 0l-30.5 30.53c-24.75-9.64-51.42-12.23-77.38-8.42l65-65c47.37-47.36 124.17-47.36 171.55 0 47.36 47.38 47.36 124.19 0 171.55zM194.71 348.1l-30.52 30.54a60.75 60.75 0 0 1-85.78 0 60.75 60.75 0 0 1 0-85.8l85.78-85.77a60.69 60.69 0 0 1 85.76 0c7.4 7.4 12.2 16.3 14.99 25.71 2.25-1.3 4.56-2.37 6.45-4.27l39.87-39.84c-5.1-8.68-10.96-17.03-18.43-24.48-47.34-47.37-124.17-47.37-171.54 0l-85.76 85.77c-47.37 47.38-47.37 124.17 0 171.55 47.37 47.36 124.17 47.36 171.54 0l65.01-65c-25.97 3.83-52.64 1.21-77.37-8.4z'/%3E%3C/svg%3E");
@@ -515,7 +515,7 @@
             float: left;
             width: 65%;
             font-size: 1.35em;
-            margin: 2rem 2rem 2rem calc(-1 * var(--padding) + 1rem);
+            margin: 2rem 2rem 2rem calc(-1 * var(--padding));
             font-style: italic;
             font-weight: 700;
             line-height: 1.25;
@@ -529,10 +529,13 @@
 
     @layer header {
         main article > header {
-            margin: 0 calc(-1 * var(--padding) + 1rem);
+            margin: 0 calc(-1 * var(--padding));
         }
 
         main article > header:first-of-type {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
             text-align: center;
         }
 
@@ -543,12 +546,11 @@
         }
 
         main article > header:first-of-type > h1 {
-            margin: 1.5rem 0;
+            margin: 0.5rem 0;
             line-height: 1.15;
         }
 
         main article > header:first-of-type > time {
-            display: block;
             font-size: 0.85em;
         }
 
@@ -588,7 +590,7 @@
     @layer footer {
         main article > footer {
             font-size: 0.85em;
-            padding-top: var(--margin);
+            margin-top: calc(2 * var(--margin));
         }
 
         main article > footer::before {
@@ -603,7 +605,6 @@
         display: flow-root;
         font-size: 1.1em;
         font-weight: 400;
-        margin-bottom: var(--margin);
     }
 
     main article cite {
@@ -659,20 +660,21 @@
         border: none;
     }
 
+    main article dl {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    main article :is(dt, dd) {
+        width: 50%;
+    }
+
     main article :is(dt, dd) {
         margin: 0;
     }
 
     main article :is(blockquote, aside) :is(i, em) {
         font-style: normal;
-    }
-
-    main article > :last-child {
-        /**
-         * Neutraliamos aquí el margen inferior que introduce el último párrafo
-         * de la última nota.
-         */
-        margin-bottom: -1em;
     }
 }
 
@@ -725,10 +727,9 @@
 
     img.initial {
         float: left;
-        width: 6.25em;
-        height: 6.25em;
+        width: var(--initial-size);
+        height: var(--initial-size);
         margin-right: 0.5em;
-        margin-top: 0.5em;
         background: var(--initial-background);
         filter: var(--filter-initial);
     }
@@ -765,54 +766,13 @@
     span.roman {
         font-variant: all-small-caps;
     }
-}
-
-@layer refactor {
-    :root {
-        --padding: 5rem;
-        --margin: 3rem;
-
-        /* Ancho mínimo del artículo */
-        --width: 50rem;
-
-        /* Sangrado de las listas, numeradas o no, las citas en bloque… */
-        --indentation: 3rem;
-
-        /* El color del papel, de la tinta, y de una tinta realzada */
-        --color-foreground: #274059;
-        --color-background: #fbf7f0;
-        --color-attention: #0d1a26;
-
-        --filter-svg: invert(22%) sepia(6%) saturate(4367%) hue-rotate(169deg)
-            brightness(92%) contrast(88%);
-
-        --filter-svg-attention: none;
-
-        --initial-background: none;
-
-        /* https://stackoverflow.com/a/53336754 */
-        --filter-initial: invert(21%) sepia(47%) saturate(557%)
-            hue-rotate(168deg) brightness(90%) contrast(90%);
-    }
-
-    @media (prefers-color-scheme: dark) {
-        :root {
-            --color-foreground: #b6cce2;
-            --color-background: #0d1a26;
-            --color-attention: #ffffff;
-            --filter-svg: invert(87%) sepia(8%) saturate(1005%)
-                hue-rotate(179deg) brightness(94%) contrast(87%);
-            --filter-svg-attention: invert(1);
-            --initial-background: var(--color-foreground);
-            --filter-initial: invert(7%) sepia(45%) saturate(220%)
-                hue-rotate(166deg) brightness(100%) contrast(94%);
-        }
-    }
 
     .hidden {
-        font-size: 0;
+        display: none;
     }
+}
 
+@layer layout {
     body > div {
         display: flex;
         align-items: flex-start;
@@ -833,163 +793,140 @@
         margin-left: -100vw;
     }
 
-    body > div > header > section,
-    body > div > header > nav,
-    main article,
-    main > aside {
+    body > div > header > *,
+    main > :is(article, aside) {
         max-width: var(--width);
-        padding: var(--padding);
-        margin: 0 auto;
+        margin: calc(2 * var(--margin)) auto;
     }
+}
 
-    main > hr {
-        margin: calc(-1 * var(--padding) + 5em) auto;
-    }
+:root {
+    /* Ancho del cuerpo del artículo */
+    --width: 50rem;
+
+    /* Unidad básica de separación vertical.*/
+    --margin: 3rem;
+
+    /* Sangrado (horizontal) negativo de algunos elementos */
+    --padding: 6rem;
+
+    /* Sangrado de las listas, numeradas o no, las citas en bloque… */
+    --indentation: 3rem;
+
+    /* El color del papel, de la tinta, y de una tinta realzada */
+    --color-foreground: #274059;
+    --color-background: #fbf7f0;
+    --color-attention: #0d1a26;
+
+    /* Color para el fondo de las letras capitulares */
+    --initial-background: none;
 
     /**
-     * Este valor (75rem) viene de:
-     * var(--width) + 2 * (var(--padding) + 7.5rem)
-     *
-     * Donde 7.5rem es el ancho mínimo que asignamos a `button`
-     * antes de que desaparezca del lateral y se sitúe arriba.
+     * Tamaño de las letra capitulares:
+     * Altura en píxeles = número de líneas × altura de línea × tamaño de la fuente
      */
-    @media (max-width: 75rem) {
-        :root {
-            --padding: 1rem;
-        }
+    --initial-size: calc(4 * 1.75 * 22px);
 
-        body > div > header nav ol.featured {
-            margin-top: var(--gap);
-        }
+    /**
+      * Filtros para que los SVG tomen el color que corresponde
+      * Véase https://stackoverflow.com/a/53336754
+      */
+    --filter-svg: invert(22%) sepia(6%) saturate(4367%) hue-rotate(169deg)
+        brightness(92%) contrast(88%);
+    --filter-svg-attention: none;
+    --filter-initial: invert(21%) sepia(47%) saturate(557%) hue-rotate(168deg)
+        brightness(90%) contrast(90%);
+}
 
-        main > button {
-            position: relative;
-            width: 100%;
-            height: 5em;
-        }
+@media (prefers-color-scheme: dark) {
+    :root {
+        --color-foreground: #b6cce2;
+        --color-background: #0d1a26;
+        --color-attention: #ffffff;
+        --initial-background: var(--color-foreground);
+        --filter-svg: invert(87%) sepia(8%) saturate(1005%) hue-rotate(179deg)
+            brightness(94%) contrast(87%);
+        --filter-svg-attention: invert(1);
+        --filter-initial: invert(7%) sepia(45%) saturate(220%)
+            hue-rotate(166deg) brightness(100%) contrast(94%);
+    }
+}
 
-        main > button > svg {
-            height: 75%;
-        }
-
-        main header {
-            margin: 0;
-        }
+@media (max-width: 1280px) {
+    :root {
+        --padding: 4rem;
+        --indentation: 2.5rem;
+        --initial-size: calc(4 * 1.65 * 22px);
     }
 
-    @media (max-width: 50rem) {
-        body {
-            font-size: 1.1em;
-            line-height: 1.65;
-        }
+    body {
+        line-height: 1.65;
+    }
+}
 
-        body.transition > div > header {
-            transition-duration: 150ms;
-        }
-
-        body > div > header nav ol.featured {
-            --gap: 1rem;
-        }
-
-        main article p {
-            hyphens: auto;
-        }
-
-        main article aside {
-            float: none;
-            width: 100%;
-            margin: var(--margin) 0;
-        }
+@media (max-width: 1024px) {
+    :root {
+        --padding: 0;
+        --width: calc(100% - 10rem);
+        --margin: 2rem;
+        --initial-size: calc(4 * 1.5 * 19.35px);
     }
 
-    @media (max-width: 40rem) {
-        body {
-            --indentation: 2.5rem;
-            line-height: 1.5;
-        }
-
-        p {
-            text-align: left;
-        }
-
-        body > div > header nav ol.featured li:nth-child(-n + 2),
-        body > div > header nav ol.featured li:nth-last-child(-n + 2) {
-            margin: var(--gap) 0;
-        }
-
-        body > div > header nav ol.featured li {
-            width: 100%;
-        }
+    body {
+        font-size: 1.1em;
+        line-height: 1.5;
     }
 
-    @media (min-width: 40rem) {
-        main dl {
-            display: flex;
-            justify-content: space-between;
-        }
+    main article aside {
+        margin: 2rem 2rem 2rem 0;
+    }
+}
 
-        main dt,
-        main dd {
-            width: 50%;
-        }
+@media (max-width: 768px) {
+    :root {
+        --margin: 1rem;
+        --width: calc(100% - 2rem);
+        --initial-size: calc(4 * 1.5 * 17.6px);
     }
 
-    @media print {
-        @page {
-            /* DIN A4 */
-            size: 210mm 297mm;
-            margin: 30mm;
-        }
+    body {
+        font-size: 1em;
+    }
 
-        img,
-        figure,
-        pre {
-            break-inside: avoid-page;
-        }
+    body.transition > div > header {
+        transition-duration: 200ms;
+    }
 
-        p {
-            orphans: 4;
-            widows: 5;
-        }
+    p {
+        text-align: left;
+    }
 
-        h1,
-        h2 {
-            break-after: avoid-page;
-        }
+    main article aside {
+        float: none;
+        width: 100%;
+        margin: calc(2 * var(--margin)) 0;
+    }
 
-        body {
-            font-size: 0.75em;
-            line-height: 1.5;
-            background: white;
-        }
+    body > div > header nav ol li {
+        width: 100%;
+        margin: 0;
+    }
+    body > div > header nav ol li a {
+        margin: 0 -1rem;
+    }
+}
 
-        * {
-            color: black;
-        }
+@media (max-width: 640px) {
+    body {
+        --initial-size: calc(3 * 1.35 * 17.6px);
+        line-height: 1.35;
+    }
 
-        img.initial {
-            background: none;
-        }
+    main article dl {
+        display: block;
+    }
 
-        a {
-            text-decoration: underline;
-        }
-
-        main article a::after {
-            font-weight: 300;
-            content: ' [' attr(href) ']';
-            font-style: italic;
-            color: gray;
-        }
-
-        main nav a {
-            text-decoration: none;
-        }
-
-        main nav a::after,
-        main > aside,
-        button {
-            display: none;
-        }
+    main article :is(dt, dd) {
+        width: 100%;
     }
 }

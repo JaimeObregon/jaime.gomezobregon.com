@@ -233,8 +233,8 @@ export const blog = {
             .filter((item) => item.tags.includes('Destacado'))
             .filter((item) => new Date(item.date_published) < new Date())
             .map(
-                (item, order) => `
-                <li style="--delay: ${order + 1}">
+                (item) => `
+                <li>
                     <a href="/${item.id}" hreflang="${item.language}">
                         <time datetime="${item.date_published}">
                             ${blog.formatDate(item.date_published)}
