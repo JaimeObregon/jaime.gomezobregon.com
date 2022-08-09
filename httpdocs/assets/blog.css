@@ -368,6 +368,10 @@
         margin-bottom: 0.25em;
     }
 
+    body > div > header section img.initial {
+        --initial-size: calc(4 * 1.75 * 20px);
+    }
+
     body > div > header nav {
         padding-top: 0;
     }
