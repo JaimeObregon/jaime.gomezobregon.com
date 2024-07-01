@@ -123,7 +123,7 @@ Es conveniente un servidor web capaz de interpretar las reglas de reescritura de
 
 # Despliegue
 
-En [`.github/workflows/main.yml`](/.github/workflows/main.yml) he incorporado un _script_ que, a partir de mi configuración personal en Github, despliega todo el sitio en mi servidor web con cada _push_ a `master`.
+He configurado el panel de control Plesk de mi alojamiento para que clone y despliegue el proyecto con cada _push_ a `master`.
 
 # El manifiesto: un tributo a las cosas sencillas
 
