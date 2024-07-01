@@ -242,14 +242,15 @@
     }
 
     /**
- * La tipografía de Matthew Butterick para las listas numeradas (`<ol>`).
- *
- * Véase https://practicaltypography.com/concourse-index.html
- */
+     * La tipografía de Matthew Butterick para las listas numeradas (`<ol>`).
+     *
+     * Véase https://practicaltypography.com/concourse-index.html
+     */
+
     @font-face {
         font-family: 'Concourse Index';
         font-display: block;
-        src: url('/assets/fonts/concourse_index_regular.woff2') format('woff2');
+        src: url(/assets/fonts/concourse_index_regular.woff2) format('woff2');
     }
 }
 
