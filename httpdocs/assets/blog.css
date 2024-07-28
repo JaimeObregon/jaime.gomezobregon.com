@@ -821,7 +821,7 @@
     /* El color del papel, de la tinta, y de una tinta realzada */
     --color-foreground: #274059;
     --color-background: #fbf7f0;
-    --color-attention: #0d1a26;
+    --color-attention: #c71585;
 
     /* Color para el fondo de las letras capitulares */
     --initial-background: none;
@@ -839,14 +839,14 @@
     --filter-svg: invert(22%) sepia(6%) saturate(4367%) hue-rotate(169deg)
         brightness(92%) contrast(88%);
     --filter-svg-attention: none;
-    --filter-initial: invert(21%) sepia(47%) saturate(557%) hue-rotate(168deg)
-        brightness(90%) contrast(90%);
+    /*--filter-initial: invert(21%) sepia(47%) saturate(557%) hue-rotate(168deg)
+        brightness(90%) contrast(90%);*/
 }
 
 @media (prefers-color-scheme: dark) {
     :root {
-        --color-foreground: #b6cce2;
-        --color-background: #0d1a26;
+        --color-foreground: #dfdfdf;
+        --color-background: #0d2630;
         --color-attention: #ffffff;
         --initial-background: var(--color-foreground);
         --filter-svg: invert(87%) sepia(8%) saturate(1005%) hue-rotate(179deg)
