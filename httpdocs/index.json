@@ -16,6 +16,16 @@
     "language": "es",
     "items": [
         {
+            "id": "on-motivation",
+            "url": "https://jaime.gomezobregon.com/on-motivation",
+            "title": "On motivation, goals and freedom",
+            "content_text": "I have achieved my teenage goal of freedom. I should have felt content, yet an unsettling sense of emptiness quietly began to take root within me. It took months to acknowledge it. Only when everything went dark was I able to see.",
+            "date_published": "2024-08-11T12:34:00Z",
+            "tags": ["Destacado", "Reflexiones"],
+            "language": "en",
+            "x-license": "CC BY-NC-ND"
+        },
+        {
             "id": "mar-de-fondo",
             "url": "https://jaime.gomezobregon.com/mar-de-fondo",
             "title": "Mar de fondo",
