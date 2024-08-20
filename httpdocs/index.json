@@ -16,6 +16,16 @@
     "language": "es",
     "items": [
         {
+            "id": "de-las-plataformas-de-internet",
+            "url": "https://jaime.gomezobregon.com/de-las-plataformas-de-internet",
+            "title": "De las plataformas de internet",
+            "content_text": "Alguien me hizo llegar la propuesta de Odón Elorza para «una red social pública y europea frente al populismo». Elorza tiene una dilatada carrera política, por lo que lo presupuse la elaborada reflexión de quien, desde tales atalayas, observa, medita y propone soluciones a los complejos problemas de nuestro tiempo. Erré de parte a parte.",
+            "date_published": "2024-08-20T11:48:00Z",
+            "tags": ["Destacado", "Reflexiones", "Tecnología"],
+            "language": "es",
+            "x-license": "CC BY-NC-ND"
+        },
+        {
             "id": "on-motivation",
             "url": "https://jaime.gomezobregon.com/on-motivation",
             "title": "On motivation, goals and freedom",
