@@ -599,9 +599,9 @@
         }
 
         main article > footer::before {
-            position: absolute;
+            display: block;
             content: '';
-            width: 10%;
+            width: 15%;
             border-top: 1px solid;
         }
     }
