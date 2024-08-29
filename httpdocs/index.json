@@ -16,6 +16,16 @@
   "language": "es",
   "items": [
     {
+      "id": "he-aprendido-algunas-cosas",
+      "url": "https://jaime.gomezobregon.com/he-aprendido-algunas-cosas",
+      "title": "He aprendido algunas cosas",
+      "content_text": "He cumplido ocho meses sin domicilio fijo. En este tiempo he estado en ocho países y he dormido al menos en 32 sitios diferentes. La mayoría surtidos del azar el mismo día. O de nuevas lealtades forjadas en el camino. Porque el plan es que no hay plan.",
+      "date_published": "2024-08-29T12:22:00Z",
+      "tags": ["Destacado", "Reflexiones"],
+      "language": "es",
+      "x-license": "CC BY-NC-ND"
+    },
+    {
       "id": "doce-meses-troleando-al-estado",
       "url": "https://jaime.gomezobregon.com/doce-meses-troleando-al-estado",
       "title": "Balance de doce meses troleando al Estado",
