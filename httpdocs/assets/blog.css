@@ -241,16 +241,17 @@
             url(/assets/fonts/Merriweather-Black.woff2) format('woff2');
     }
 
-    /**
-     * La tipografía de Matthew Butterick para las listas numeradas (`<ol>`).
-     *
-     * Véase https://practicaltypography.com/concourse-index.html
-     */
+    /*
+      La tipografía para las listas numeradas (`<ol>`).
+    */
 
     @font-face {
-        font-family: 'Concourse Index';
-        font-display: block;
-        src: url(/assets/fonts/concourse_index_regular.woff2) format('woff2');
+      font-family: 'Numbered';
+      font-style: normal;
+      font-weight: normal;
+      font-stretch: normal;
+      src: url('/assets/fonts/Numbered.woff2') format('woff2');
+      font-display: swap;
     }
 }
 
@@ -473,7 +474,7 @@
             content: counter(number);
             top: -0.1em;
             font-size: 1.15em;
-            font-family: 'Concourse Index';
+            font-family: 'Numbered';
             margin-left: calc(-1 * var(--indentation));
             counter-increment: number;
         }
@@ -588,7 +589,7 @@
             }
 
             main article > header:first-of-type > nav > span > span {
-                font-family: 'Concourse Index';
+                font-family: 'Numbered';
                 margin-right: 0.125em;
             }
 
