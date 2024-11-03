@@ -1,6 +1,6 @@
 # jaime.gomezobregon.com
 
-He aquí el código fuente y los contenidos completos de [mi sitio web personal](https://jaime.gomezobregon.com). Lo inicié en el verano de 2006, entonces como un blog basado en WordPress, y en 2020 lo reconstruí a medida —conservando todos sus contenidos— con énfasis en **el minimalismo y la eficacia**.
+He aquí el código fuente y los contenidos completos de [mi sitio web personal](https://jaime.gomezobregon.com). Lo inicié en el verano de 2006, entonces como un blog, y en 2020 lo reconstruí a medida —conservando todos sus contenidos— con énfasis en **el minimalismo y la eficacia**.
 
 Mi objetivo es proporcionarme el sistema de gestión de contenidos (CMS) que exactamente necesito, al tiempo que proporcionar al lector una experiencia de usuario óptima y _humana_.
 
@@ -74,12 +74,6 @@ Esto es lo único que necesito y, por ende, lo único que he programado:
 1. **Detalles ortotipográficos**. Como las [letras capitulares](/httpdocs/assets/initials), la estilización de los [números romanos en versalitas](https://www.fundeu.es/consulta/siglo-21-o-siglo-xxi-29522/) o la prevención de saltos de línea inmediátamente antes o después de las [rayas](https://www.fundeu.es/escribireninternet/la-raya-tambien-exist/) (_em dash_ o «—», no confundir con el guion o «-») que marcan un inciso. Estas dos últimas, recomendación tanto de tipógrafos como de la Real Academia Española.
 
 1. **Secciones enlazables**. Cualquier `<h2>` dentro de una entrada es interpretado como un encabezado de sección y es automáticamente convertido en un enlace. Esto es práctico para facilitar el acceso a secciones específicas de entradas extensas.
-
-# Funcionalidades que podría retirar
-
-La funcionalidad que sigue está vigente, pero estoy pensando en retirarla porque ya no la necesito:
-
-1. **Un generador de imágenes para redes sociales**, también llamadas _posters_. Está en [`/posters/generator`](/httpdocs/posters/generator) y en mi sitio público puede verse [una demostración](https://jaime.gomezobregon.com/posters/generator/). Está basado en [el inspirador trabajo previo](https://georgefrancis.dev/writing/generative-svg-social-images/) de George Francis.
 
 # Sobre las florituras tipográficas
 
