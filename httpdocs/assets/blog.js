@@ -67,16 +67,6 @@ export const blog = {
      * Manejador del evento disparado al avanzar o retroceder por el historial del navegador
      */
     popstateHandler: function (event) {
-        // En iOS y Safari hay dos formas de navegar por el historial: pulsando los botones del
-        // navegador o haciendo un gesto («swipe»). Este segundo método va acompañado de una
-        // transición que provoca un efecto visual feo si no desactivamos temporalmente la nuestra…
-        document.body.classList.remove('transition')
-        document.querySelector('header')?.classList.add('hidden')
-
-        // …y volvemos a activarla unos instantes después, cuando la animación del navegador
-        // ha concluido
-        setTimeout(() => document.body.classList.add('transition'), 500)
-
         blog.dispatch(document.URL)
     },
 
