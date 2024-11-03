@@ -357,6 +357,12 @@
     main > button:hover:before {
         opacity: 0.25;
     }
+
+    @media (max-width: 1024px) {
+      main > button {
+        display: none;
+      }
+    }
 }
 
 @layer home {
