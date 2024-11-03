@@ -14,7 +14,7 @@
   "author": "Jaime Gómez-Obregón",
   "type": "module",
   "scripts": {
-    "start": "live-server --entry-file=index.html httpdocs"
+    "serve": "bin/serve.sh"
   },
   "prettier": {
     "semi": false,

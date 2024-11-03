@@ -3,7 +3,7 @@
         {
             "isBackground": true,
             "label": "Arranca el servidor web",
-            "script": "start",
+            "script": "serve",
             "type": "npm"
         }
     ],
