@@ -1,11 +1,52 @@
 {
-    "name": "jaime.gomezobregon.com",
-    "author": "Jaime Gómez-Obregón",
-    "version": "1.0.0",
-    "description": "Mi blog personal, que comencé en el verano de 2006 como un sitio WordPress y que ahora, en 2020, he reconstruido con mimo exquisito y énfasis en el minimalismo y la eficacia.",
-    "prettier": {
-        "semi": false,
-        "singleQuote": true
-    },
-    "dependencies": {}
+  "name": "jaime.gomezobregon.com",
+  "private": true,
+  "description": "Mi sitio web personal y sus contenidos desde 2006.",
+  "homepage": "https://jaime.gomezobregon.com",
+  "bugs": {
+    "url": "https://github.com/JaimeObregon/jaime.gomezobregon.com/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/JaimeObregon/jaime.gomezobregon.com.git"
+  },
+  "license": "Véase el fichero LICENSE",
+  "author": "Jaime Gómez-Obregón",
+  "type": "module",
+  "scripts": {
+    "start": "live-server --entry-file=index.html httpdocs"
+  },
+  "prettier": {
+    "semi": false,
+    "singleQuote": true
+  },
+  "stylelint": {
+    "overrides": [
+      {
+        "files": [
+          "*.js"
+        ],
+        "customSyntax": "postcss-styled-syntax"
+      }
+    ],
+    "extends": [
+      "stylelint-config-standard",
+      "stylelint-config-recess-order"
+    ],
+    "rules": {
+      "no-descending-specificity": null
+    }
+  },
+  "dependencies": {
+    "globby": "^14.0.2",
+    "jsdom": "^25.0.1"
+  },
+  "devDependencies": {
+    "esbuild": "^0.24.0",
+    "postcss-styled-syntax": "^0.6.4",
+    "prettier": "^3.2.5",
+    "stylelint": "^16.10.0",
+    "stylelint-config-recess-order": "^5.0.1",
+    "stylelint-config-standard": "^36.0.0"
+  }
 }
