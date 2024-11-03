@@ -14,6 +14,7 @@
   "author": "Jaime Gómez-Obregón",
   "type": "module",
   "scripts": {
+    "build": "bin/build.sh",
     "serve": "bin/serve.sh"
   },
   "prettier": {
