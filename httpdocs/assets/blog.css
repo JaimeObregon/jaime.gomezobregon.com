@@ -15,69 +15,69 @@
     font-size: 0.85em;
     list-style-type: none;
     counter-reset: number;
-  }
 
-  article > footer ol#notes li {
-    all: revert;
-    position: relative;
-    padding-left: 1.25em;
-    counter-increment: number;
-  }
+    li {
+      all: revert;
+      position: relative;
+      padding-left: 1.25em;
+      counter-increment: number;
 
-  article > footer ol#notes li::before {
-    all: revert;
-    position: absolute;
-    top: 0.5em;
-    left: 0;
-    width: 1em;
-    margin: -0.5em 0.25em 0 0;
-    font-size: 0.75em;
-    font-weight: 700;
-    text-align: right;
-    content: counter(number) ' ';
-  }
+      &:hover a.ref {
+        visibility: visible;
+      }
 
-  article > footer ol#notes li a.ref {
-    margin: 0 2px;
-    text-decoration: none;
-    visibility: hidden;
-  }
+      a.ref {
+        margin: 0 2px;
+        text-decoration: none;
+        visibility: hidden;
 
-  article > footer ol#notes li a.ref:hover {
-    font-weight: 900;
-    color: var(--color-attention);
-  }
+        &:hover {
+          font-weight: 900;
+          color: var(--color-attention);
+        }
+      }
+    }
 
-  article > footer ol#notes li:hover a.ref {
-    visibility: visible;
+    &::before {
+      all: revert;
+      position: absolute;
+      top: 0.5em;
+      left: 0;
+      width: 1em;
+      margin: -0.5em 0.25em 0 0;
+      font-size: 0.75em;
+      font-weight: 700;
+      text-align: right;
+      content: counter(number) ' ';
+    }
   }
 }
 
 @layer newsletter {
   main > aside {
     font-size: 0.85em;
-  }
 
-  main > aside > p {
-    all: revert;
-    margin: 0;
-  }
+    > p {
+      all: revert;
+      margin: 0;
+    }
 
-  main > aside > a {
-    display: inline-block;
-    padding: 0 1em;
-    margin-top: 1em;
-    font-weight: 700;
-    text-decoration: none;
-    background: var(--color-background);
-    border: 1px solid;
-    border-radius: 1em;
-  }
+    > a {
+      display: inline-block;
+      padding: 0 1em;
+      margin-top: 1em;
+      font-weight: 700;
+      text-decoration: none;
+      background: var(--color-background);
+      border: 1px solid;
+      border-radius: 1em;
 
-  main > aside > a:hover {
-    text-decoration: none;
-    filter: saturate(0) contrast(2) invert(1);
-    border-color: transparent;
+      &:hover {
+        text-decoration: none;
+        filter: saturate(0) contrast(2) invert(1);
+        border-color: transparent;
+      }
+    }
   }
 }
 
@@ -91,20 +91,20 @@
     background: transparent;
     border: none;
     outline: none;
-  }
 
-  main > button::before {
-    font-size: 4em;
-    content: '←';
-    opacity: 0.15;
-  }
+    &::before {
+      font-size: 4em;
+      content: '←';
+      opacity: 0.15;
+    }
 
-  main > button:hover {
-    backdrop-filter: contrast(1.05);
-  }
+    &:hover {
+      backdrop-filter: contrast(1.05);
 
-  main > button:hover::before {
-    opacity: 0.25;
+      &::before {
+        opacity: 0.25;
+      }
+    }
   }
 
   @media (width <= 1024px) {
@@ -115,129 +115,133 @@
 }
 
 @layer home {
-  body > div > header > * {
-    margin: calc(2 * var(--margin)) auto;
-  }
+  body > div > header {
+    > * {
+      margin: calc(2 * var(--margin)) auto;
+    }
 
-  body > div > header section {
-    padding-bottom: 0;
-  }
+    section {
+      padding-bottom: 0;
 
-  body > div > header section h1 {
-    margin-bottom: 0.25em;
-    font-size: 2.25em;
-  }
+      h1 {
+        margin-bottom: 0.25em;
+        font-size: 2.25em;
+      }
 
-  body > div > header section img.initial {
-    --initial-size: calc(4 * 1.75 * 1em);
-  }
+      img.initial {
+        --initial-size: calc(4 * 1.75 * 1em);
+      }
+    }
 
-  body > div > header nav {
-    padding-top: 0;
-  }
+    nav {
+      padding-top: 0;
 
-  body > div > header nav ol {
-    padding: 0;
-    list-style: none;
-  }
+      ol {
+        padding: 0;
+        list-style: none;
 
-  body > div > header nav ol li {
-    margin: 1em 0;
-  }
+        li {
+          margin: 1em 0;
 
-  body > div > header nav ol.featured {
-    --gap: 0.5em;
+          a {
+            box-sizing: border-box;
+            display: block;
+            padding: 1em;
+            font-weight: 900;
+            color: inherit;
 
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    margin: 0 calc(-1 * var(--padding));
-  }
+            &:hover {
+              backdrop-filter: contrast(1.15);
 
-  body > div > header nav ol.featured li {
-    width: calc(50% - var(--gap));
-    margin: var(--gap) 0;
-  }
+              cite {
+                text-decoration: underline 3px dotted;
+                text-underline-offset: 4px;
+              }
+            }
 
-  body > div > header nav ol.featured li:nth-child(-n + 2) {
-    margin-top: 0;
-  }
+            cite {
+              font-size: 1.25em;
+              font-style: normal;
+              line-height: 1.15;
+            }
 
-  body > div > header nav ol.featured li:nth-last-child(-n + 2) {
-    margin-bottom: 0;
-  }
+            p {
+              margin: 0.5em 0 0;
+              font-size: 0.95em;
+              font-weight: 300;
+              line-height: 1.5;
+            }
 
-  body > div > header nav ol li a {
-    box-sizing: border-box;
-    display: block;
-    padding: 1em;
-    font-weight: 900;
-    color: inherit;
-  }
+            time {
+              display: block;
+              font-size: 0.7em;
+              font-weight: 300;
+            }
+          }
+        }
 
-  body > div > header nav ol li a:hover {
-    backdrop-filter: contrast(1.15);
-  }
+        &.featured {
+          --gap: 0.5em;
 
-  body > div > header nav ol li a cite {
-    font-size: 1.25em;
-    font-style: normal;
-    line-height: 1.15;
-  }
+          display: flex;
+          flex-wrap: wrap;
+          justify-content: space-between;
+          margin: 0 calc(-1 * var(--padding));
 
-  body > div > header nav ol.featured li a cite {
-    font-size: 1.5em;
-    color: var(--color-attention);
-  }
+          li {
+            width: calc(50% - var(--gap));
+            margin: var(--gap) 0;
 
-  body > div > header nav ol li a:hover cite {
-    text-decoration: underline 3px dotted;
-    text-underline-offset: 4px;
-  }
+            &:nth-child(-n + 2) {
+              margin-top: 0;
+            }
 
-  body > div > header nav ol li a p {
-    margin: 0.5em 0 0;
-    font-size: 0.95em;
-    font-weight: 300;
-    line-height: 1.5;
-  }
+            &:nth-last-child(-n + 2) {
+              margin-bottom: 0;
+            }
 
-  body > div > header nav ol li a time {
-    display: block;
-    font-size: 0.7em;
-    font-weight: 300;
+            a cite {
+              font-size: 1.5em;
+              color: var(--color-attention);
+            }
+          }
+        }
+      }
+    }
   }
 }
 
 @layer article {
   @layer lists {
-    main article :is(ol, ul) {
-      padding: 0;
-      list-style: none;
-      counter-reset: number;
-    }
+    main article {
+      :is(ol, ul) {
+        padding: 0;
+        list-style: none;
+        counter-reset: number;
 
-    main article :is(ol, ul) li {
-      position: relative;
-      margin-left: var(--indentation);
-    }
+        li {
+          position: relative;
+          margin-left: var(--indentation);
+        }
+      }
 
-    main article ol li::before {
-      position: absolute;
-      top: -0.1em;
-      margin-left: calc(-1 * var(--indentation));
-      font-family: Numbered;
-      font-size: 1.15em;
-      content: counter(number);
-      counter-increment: number;
-    }
+      ol li::before {
+        position: absolute;
+        top: -0.1em;
+        margin-left: calc(-1 * var(--indentation));
+        font-family: Numbered;
+        font-size: 1.15em;
+        content: counter(number);
+        counter-increment: number;
+      }
 
-    main article ul li::before {
-      position: absolute;
-      top: -0.35em;
-      margin-left: calc(-1 * var(--indentation));
-      font-size: 1.75em;
-      content: '•';
+      ul li::before {
+        position: absolute;
+        top: -0.35em;
+        margin-left: calc(-1 * var(--indentation));
+        font-size: 1.75em;
+        content: '•';
+      }
     }
   }
 
@@ -246,32 +250,32 @@
       margin-top: calc(2 * var(--margin));
       font-size: 1.25em;
       line-height: 1.15;
-    }
 
-    main article h2 a {
-      position: relative;
-    }
+      a {
+        position: relative;
 
-    main article h2 a::before {
-      position: absolute;
-      top: 0.25rem;
-      left: calc(-1 * var(--padding));
-      display: none;
-      width: 1.5rem;
-      height: 1.5rem;
-      content: '';
-      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='457.03' height='457.03'%3E%3Cpath d='m421.51 207.07-85.8 85.77c-47.34 47.38-124.16 47.38-171.52 0-7.46-7.44-13.3-15.82-18.42-24.46l39.86-39.86c1.9-1.92 4.24-3.01 6.47-4.3 2.76 9.42 7.57 18.33 14.97 25.74a60.7 60.7 0 0 0 85.77 0l85.76-85.77a60.7 60.7 0 0 0 0-85.78 60.72 60.72 0 0 0-85.76 0l-30.5 30.53c-24.75-9.64-51.42-12.23-77.38-8.42l65-65c47.37-47.36 124.17-47.36 171.55 0 47.36 47.38 47.36 124.19 0 171.55zM194.71 348.1l-30.52 30.54a60.75 60.75 0 0 1-85.78 0 60.75 60.75 0 0 1 0-85.8l85.78-85.77a60.69 60.69 0 0 1 85.76 0c7.4 7.4 12.2 16.3 14.99 25.71 2.25-1.3 4.56-2.37 6.45-4.27l39.87-39.84c-5.1-8.68-10.96-17.03-18.43-24.48-47.34-47.37-124.17-47.37-171.54 0l-85.76 85.77c-47.37 47.38-47.37 124.17 0 171.55 47.37 47.36 124.17 47.36 171.54 0l65.01-65c-25.97 3.83-52.64 1.21-77.37-8.4z'/%3E%3C/svg%3E");
-      filter: var(--filter-svg-attention);
-      background-repeat: no-repeat;
-      background-size: 100%;
-    }
+        &::before {
+          position: absolute;
+          top: 0.25rem;
+          left: calc(-1 * var(--padding));
+          display: none;
+          width: 1.5rem;
+          height: 1.5rem;
+          content: '';
+          background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='457.03' height='457.03'%3E%3Cpath d='m421.51 207.07-85.8 85.77c-47.34 47.38-124.16 47.38-171.52 0-7.46-7.44-13.3-15.82-18.42-24.46l39.86-39.86c1.9-1.92 4.24-3.01 6.47-4.3 2.76 9.42 7.57 18.33 14.97 25.74a60.7 60.7 0 0 0 85.77 0l85.76-85.77a60.7 60.7 0 0 0 0-85.78 60.72 60.72 0 0 0-85.76 0l-30.5 30.53c-24.75-9.64-51.42-12.23-77.38-8.42l65-65c47.37-47.36 124.17-47.36 171.55 0 47.36 47.38 47.36 124.19 0 171.55zM194.71 348.1l-30.52 30.54a60.75 60.75 0 0 1-85.78 0 60.75 60.75 0 0 1 0-85.8l85.78-85.77a60.69 60.69 0 0 1 85.76 0c7.4 7.4 12.2 16.3 14.99 25.71 2.25-1.3 4.56-2.37 6.45-4.27l39.87-39.84c-5.1-8.68-10.96-17.03-18.43-24.48-47.34-47.37-124.17-47.37-171.54 0l-85.76 85.77c-47.37 47.38-47.37 124.17 0 171.55 47.37 47.36 124.17 47.36 171.54 0l65.01-65c-25.97 3.83-52.64 1.21-77.37-8.4z'/%3E%3C/svg%3E");
+          filter: var(--filter-svg-attention);
+          background-repeat: no-repeat;
+          background-size: 100%;
+        }
 
-    main article h2 a:hover {
-      text-decoration: underline;
-    }
+        &:hover {
+          text-decoration: underline;
+        }
 
-    main article h2 a:hover::before {
-      display: block;
+        &:hover::before {
+          display: block;
+        }
+      }
     }
   }
 
@@ -285,44 +289,44 @@
       font-weight: 700;
       line-height: 1.25;
       color: var(--color-attention);
-    }
 
-    main article aside p {
-      margin: 0;
+      p {
+        margin: 0;
+      }
     }
   }
 
   @layer header {
     main article > header {
       margin: 0 calc(-1 * var(--padding));
-    }
 
-    main article > header > p:first-of-type {
-      margin-top: 0;
-    }
+      &:first-of-type {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-bottom: var(--margin);
+        text-align: center;
 
-    main article > header:first-of-type {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      margin-bottom: var(--margin);
-      text-align: center;
-    }
+        > a {
+          font-size: 0.8em;
+          font-variant: all-small-caps;
+          letter-spacing: 5px;
+        }
 
-    main article > header:first-of-type > a {
-      font-size: 0.8em;
-      font-variant: all-small-caps;
-      letter-spacing: 5px;
-    }
+        > h1 {
+          margin: 0.5rem 0;
+          line-height: 1.15;
+          text-wrap: balance;
+        }
 
-    main article > header:first-of-type > h1 {
-      margin: 0.5rem 0;
-      line-height: 1.15;
-      text-wrap: balance;
-    }
+        > time {
+          font-size: 0.85em;
+        }
+      }
 
-    main article > header:first-of-type > time {
-      font-size: 0.85em;
+      > p:first-of-type {
+        margin-top: 0;
+      }
     }
 
     @layer metadata {
@@ -331,20 +335,20 @@
         justify-content: center;
         margin-bottom: var(--margin);
         font-size: 0.75em;
-      }
 
-      main article > header:first-of-type > nav > span:first-of-type {
-        font-style: italic;
-      }
+        > span:first-of-type {
+          font-style: italic;
+        }
 
-      main article > header:first-of-type > nav > span:not(:last-child)::after {
-        margin: 0 1em;
-        content: '·';
-      }
+        > span:not(:last-child)::after {
+          margin: 0 1em;
+          content: '·';
+        }
 
-      main article > header:first-of-type > nav > span > span {
-        margin-right: 0.125em;
-        font-family: Numbered;
+        > span > span {
+          margin-right: 0.125em;
+          font-family: Numbered;
+        }
       }
 
       main article > header:first-of-type a:hover {
@@ -358,13 +362,13 @@
     main article > footer {
       margin-top: calc(2 * var(--margin));
       font-size: 0.85em;
-    }
 
-    main article > footer::before {
-      display: block;
-      width: 15%;
-      content: '';
-      border-top: 1px solid;
+      &::before {
+        display: block;
+        width: 15%;
+        content: '';
+        border-top: 1px solid;
+      }
     }
   }
 
@@ -523,11 +527,11 @@
     color: inherit;
     text-decoration: underline 1px;
     text-underline-offset: 3px;
-  }
 
-  :is(p, footer, figcaption) a:hover {
-    color: var(--color-attention);
-    text-decoration: underline 1px double;
+    &:hover {
+      color: var(--color-attention);
+      text-decoration: underline 1px double;
+    }
   }
 
   span.roman {

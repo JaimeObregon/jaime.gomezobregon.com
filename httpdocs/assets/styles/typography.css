@@ -1,11 +1,8 @@
-/**
-  * Fuente Merriweather v2.100, que es una versión más actual que la que ofrece
-  * Google Fonts. Entre otras cosas, incorpora las versalitas, que necesitamos.
-  * Opto por `font-display: block` en vez de `swap` para evitar el _Flash Of
-  * Unstyled Text_ (FOUT).
-  *
-  * Véase https://github.com/SorkinType/Merriweather
-  */
+/*
+  Merriweather, en una versión más actual que la que ofrece Google Fonts.
+  Entre otras mejoras, incorpora las versalitas.
+  Véase https://github.com/SorkinType/Merriweather
+*/
 
 @font-face {
   font-family: Merriweather;
@@ -15,7 +12,7 @@
     local('Merriweather Light Italic'),
     local('Merriweather-LightItalic'),
     url('/assets/fonts/Merriweather-LightItalic.woff2') format('woff2');
-  font-display: block;
+  font-display: swap;
 }
 
 @font-face {
@@ -26,7 +23,7 @@
     local('Merriweather Italic'),
     local('Merriweather-Italic'),
     url('/assets/fonts/Merriweather-Italic.woff2') format('woff2');
-  font-display: block;
+  font-display: swap;
 }
 
 @font-face {
@@ -37,7 +34,7 @@
     local('Merriweather Bold Italic'),
     local('Merriweather-BoldItalic'),
     url('/assets/fonts/Merriweather-BoldItalic.woff2') format('woff2');
-  font-display: block;
+  font-display: swap;
 }
 
 @font-face {
@@ -48,7 +45,7 @@
     local('Merriweather Black Italic'),
     local('Merriweather-BlackItalic'),
     url('/assets/fonts/Merriweather-BlackItalic.woff2') format('woff2');
-  font-display: block;
+  font-display: swap;
 }
 
 @font-face {
@@ -59,7 +56,7 @@
     local('Merriweather Light'),
     local('Merriweather-Light'),
     url('/assets/fonts/Merriweather-Light.woff2') format('woff2');
-  font-display: block;
+  font-display: swap;
 }
 
 @font-face {
@@ -70,7 +67,7 @@
     local('Merriweather Regular'),
     local('Merriweather-Regular'),
     url('/assets/fonts/Merriweather-Regular.woff2') format('woff2');
-  font-display: block;
+  font-display: swap;
 }
 
 @font-face {
@@ -81,7 +78,7 @@
     local('Merriweather Bold'),
     local('Merriweather-Bold'),
     url('/assets/fonts/Merriweather-Bold.woff2') format('woff2');
-  font-display: block;
+  font-display: swap;
 }
 
 @font-face {
@@ -92,7 +89,7 @@
     local('Merriweather Black'),
     local('Merriweather-Black'),
     url('/assets/fonts/Merriweather-Black.woff2') format('woff2');
-  font-display: block;
+  font-display: swap;
 }
 
 /*
