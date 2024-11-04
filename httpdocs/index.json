@@ -1,11 +1,11 @@
 {
   "version": "https://jsonfeed.org/version/1.1",
   "title": "Jaime Gómez-Obregón",
+  "description": "Me llamo Jaime Gómez-Obregón y aquí escribo sobre mis varios intereses.",
   "icon": "https://jaime.gomezobregon.com/assets/jaime.jpg",
   "favicon": "https://jaime.gomezobregon.com/assets/icon.svg",
   "home_page_url": "https://jaime.gomezobregon.com",
   "feed_url": "https://jaime.gomezobregon.com/index.json",
-  "description": "Hola, Jaime al teclado. Cacharreo con datos y ordenadores, leo, escribo y hago cosas.",
   "authors": [
     {
       "name": "Jaime Gómez-Obregón",
@@ -191,7 +191,8 @@
       "content_text": "España necesita un diario de operaciones mercantiles efectivamente transparente y eficaz en la lucha contra la corrupción. Y la nueva ministra de Justicia debe tener la audacia de poner estos datos al servicio público.",
       "date_published": "2021-07-23T21:26:00Z",
       "tags": ["Destacado", "Transparencia"],
-      "language": "es"
+      "language": "es",
+      "x-license": "CC BY-SA"
     },
     {
       "id": "entrevista-en-onda-cero",
