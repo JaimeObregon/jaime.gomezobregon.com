@@ -367,6 +367,10 @@
 }
 
 @layer home {
+    body > div > header > * {
+        margin: calc(2 * var(--margin)) auto;
+    }
+
     body > div > header section {
         padding-bottom: 0;
     }
@@ -377,7 +381,7 @@
     }
 
     body > div > header section img.initial {
-        --initial-size: calc(4 * 1.75 * 20px);
+        --initial-size: calc(4 * 1.75 * 1em);
     }
 
     body > div > header nav {
@@ -544,11 +548,16 @@
             margin: 0 calc(-1 * var(--padding));
         }
 
+        main article > header > p:first-of-type {
+            margin-top: 0;
+        }
+
         main article > header:first-of-type {
             display: flex;
             flex-direction: column;
             align-items: center;
             text-align: center;
+            margin-bottom: var(--margin);
         }
 
         main article > header:first-of-type > a {
@@ -572,7 +581,7 @@
                 display: flex;
                 font-size: 0.75em;
                 justify-content: center;
-                margin: var(--margin) 0;
+                margin-bottom: var(--margin);
             }
 
             main article > header:first-of-type > nav > span:first-of-type {
@@ -809,7 +818,10 @@
     body > div > header > *,
     main > :is(article, aside) {
         max-width: var(--width);
-        margin: calc(2 * var(--margin)) auto;
+    }
+
+    main > :is(article, aside) {
+        margin: var(--margin) auto;
     }
 }
 
@@ -838,7 +850,7 @@
      * Tamaño de las letra capitulares:
      * Altura en píxeles = número de líneas × altura de línea × tamaño de la fuente
      */
-    --initial-size: calc(4 * 1.75 * 22px);
+    --initial-size: calc(4 * 1.75 * 1em);
 
     /**
       * Filtros para que los SVG tomen el color que corresponde
@@ -869,7 +881,7 @@
     :root {
         --padding: 4rem;
         --indentation: 2.5rem;
-        --initial-size: calc(4 * 1.65 * 22px);
+        --initial-size: calc(4 * 1.65 * 1em);
     }
 
     body {
@@ -882,7 +894,7 @@
         --padding: 0;
         --width: calc(100% - 10rem);
         --margin: 2rem;
-        --initial-size: calc(4 * 1.5 * 19.35px);
+        --initial-size: calc(4 * 1.5 * 1em);
     }
 
     body {
@@ -899,7 +911,7 @@
     :root {
         --margin: 1rem;
         --width: calc(100% - 2rem);
-        --initial-size: calc(4 * 1.5 * 17.6px);
+        --initial-size: calc(4 * 1.5 * 1em);
     }
 
     body {
@@ -931,8 +943,8 @@
 
 @media (max-width: 640px) {
     body {
-        --initial-size: calc(3 * 1.35 * 17.6px);
-        line-height: 1.35;
+        --initial-size: calc(3 * 1.35 * 1em);
+        line-height: 1.4;
     }
 
     main article dl {
