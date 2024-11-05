@@ -1,77 +1,79 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="es">
-    <head>
-        <base href="/" />
+  <head>
+    <base href="/" />
 
-        <meta charset="utf-8" />
-        <meta name="author" content="Jaime Gómez-Obregón" />
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <meta
-            name="description"
-            content="Hola, Jaime al teclado. Cacharreo con datos y ordenadores, leo, escribo y hago cosas."
-        />
+    <meta charset="utf-8" />
+    <meta name="author" content="Jaime Gómez-Obregón" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-        <meta property="og:title" content="Jaime Gómez-Obregón" />
-        <meta property="og:type" content="website" />
-        <meta
-            property="og:description"
-            content="Hola, Jaime al teclado. Cacharreo con datos y ordenadores, leo, escribo y hago cosas."
-        />
-        <meta
-            property="og:image"
-            content="https://jaime.gomezobregon.com/assets/jaime.jpg"
-        />
-        <meta property="og:width" content="319" />
-        <meta property="og:height" content="319" />
-        <meta property="og:url" content="https://jaime.gomezobregon.com" />
-        <meta property="og:site_name" content="Jaime Gómez-Obregón" />
-        <meta property="og:locale" content="es_ES" />
+    <!--METADATA_BEGIN
+      Las etiquetas de metadatos contenidas en este bloque serán reemplazadas
+      en tiempo de construcción (_build_) antes del despliegue.
+    -->
+    <meta
+      name="description"
+      content="Me llamo Jaime Gómez-Obregón y aquí escribo sobre mis varios intereses."
+    />
 
-        <meta name="twitter:site" content="@JaimeObregon" />
-        <meta name="twitter:creator" content="@JaimeObregon" />
-        <meta
-            name="twitter:image"
-            content="https://jaime.gomezobregon.com/assets/jaime.jpg"
-        />
-        <meta name="twitter:image:alt" content="Jaime Gómez-Obregón" />
+    <meta property="og:title" content="Jaime Gómez-Obregón" />
+    <meta property="og:type" content="website" />
+    <meta
+      property="og:description"
+      content="Me llamo Jaime Gómez-Obregón y aquí escribo sobre mis varios intereses."
+    />
+    <meta
+      property="og:image"
+      content="https://jaime.gomezobregon.com/assets/jaime.jpg"
+    />
+    <meta property="og:url" content="https://jaime.gomezobregon.com" />
+    <meta property="og:site_name" content="Jaime Gómez-Obregón" />
 
-        <!-- Do Not Track (DNT) de tuits incrustados.
+    <meta name="twitter:site" content="@JaimeObregon" />
+    <meta name="twitter:creator" content="@JaimeObregon" />
+    <meta
+      name="twitter:image"
+      content="https://jaime.gomezobregon.com/assets/jaime.jpg"
+    />
+    <meta name="twitter:image:alt" content="Jaime Gómez-Obregón" />
+
+    <title>Jaime Gómez-Obregón</title>
+    <!--METADATA_END-->
+
+    <!-- Do Not Track (DNT) de tuits incrustados.
         Véase https://developer.twitter.com/en/docs/twitter-for-websites/privacy -->
-        <meta name="twitter:dnt" content="on" />
-        <meta name="twitter:widgets:theme" content="dark" />
+    <meta name="twitter:dnt" content="on" />
+    <meta name="twitter:widgets:theme" content="dark" />
 
-        <link rel="stylesheet" href="/assets/blog.css" />
-        <link rel="alternate" type="application/feed+json" href="/index.json" />
-        <link rel="preload" as="script" href="/assets/blog.js" crossorigin />
-        <link rel="preload" as="fetch" href="/index.json" crossorigin />
-        <link rel="icon" type="image/svg+xml" href="/assets/icon.svg" />
-        <link rel="apple-touch-icon" href="/assets/icon.png" />
+    <link rel="stylesheet" href="/assets/blog.css" />
+    <link rel="alternate" type="application/feed+json" href="/index.json" />
+    <link rel="preload" as="script" href="/assets/blog.js" crossorigin />
+    <link rel="preload" as="fetch" href="/index.json" crossorigin />
+    <link rel="icon" type="image/svg+xml" href="/assets/icon.svg" />
+    <link rel="apple-touch-icon" href="/assets/icon.png" />
+  </head>
+  <body>
+    <div>
+      <header>
+        <section>
+          <h1>Hola, soy Jaime.</h1>
 
-        <title>Jaime Gómez-Obregón</title>
-    </head>
-    <body>
-        <div>
-            <header>
-                <section>
-                    <h1>Hola, soy Jaime.</h1>
+          <p>
+            Me llamo <strong>Jaime Gómez-Obregón</strong>.
+            <a href="/yo"
+              >Hago <em>cosas™️</em> con ordenadores, leo y escribo</a
+            >.
+          </p>
+        </section>
+        <hr />
+        <nav></nav>
+      </header>
 
-                    <p>
-                        Me llamo <strong>Jaime Gómez-Obregón</strong>.
-                        <a href="/yo"
-                            >Hago <em>cosas™️</em> con ordenadores, leo y
-                            escribo</a
-                        >.
-                    </p>
-                </section>
-                <hr />
-                <nav></nav>
-            </header>
-
-            <main>
-                <button tabindex="-1"></button>
-                <article></article>
-                <hr />
-                <!--
+      <main>
+        <button tabindex="-1"></button>
+        <article></article>
+        <hr />
+        <!--
                 <aside>
                     <p>
                         ¿Interesante? Comparto mis escritos, reflexiones y
@@ -84,22 +86,22 @@
                     >
                 </aside>
                 -->
-            </main>
-        </div>
+      </main>
+    </div>
 
-        <script type="module">
-            import { blog } from './assets/blog.js'
+    <script type="module">
+      import { blog } from './assets/blog.js'
 
-            blog.init({
-                nav: 'body > div > header > nav',
-                article: 'main > article',
-                close: 'main > button',
-                feed: '/index.json',
-                github: {
-                    url: 'https://github.com/JaimeObregon/jaime.gomezobregon.com',
-                    branch: 'master',
-                },
-            })
-        </script>
-    </body>
+      blog.init({
+        nav: 'body > div > header > nav',
+        article: 'main > article',
+        close: 'main > button',
+        feed: '/index.json',
+        github: {
+          url: 'https://github.com/JaimeObregon/jaime.gomezobregon.com',
+          branch: 'master',
+        },
+      })
+    </script>
+  </body>
 </html>

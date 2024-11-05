@@ -1,3 +1,6 @@
+// Solo para que prettier formatee la sintaxis.
+const html = String.raw
+
 export const blog = {
   /**
    * Formatea una fecha en castellano
@@ -168,7 +171,7 @@ export const blog = {
       .replace(/([^\s])—(\s)/g, '$1\u2060—$2')
   },
 
-  renderInitials: (selector) => {
+  renderInitials: async (selector) => {
     const paragraph = document.querySelector(selector)
     if (!paragraph) {
       return
@@ -179,11 +182,16 @@ export const blog = {
       return
     }
 
-    const filename = `${initial.toLowerCase()}.svg`
+    const path = `/assets/initials/${initial.toLowerCase()}.svg`
+
+    const url = new URL(path, window.location.origin)
+    const response = await fetch(url)
+    const text = await response.text()
 
     paragraph.innerHTML = `
-            <img src="/assets/initials/${filename}" class="initial" alt="${initial}" />
-            ${paragraph.innerHTML.replace(/^\s*\w/, '')}`
+      <div class="initial">${text}</div>
+      ${paragraph.innerHTML.replace(/^\s*(\w)/, '<span class="hidden">$1</span>')}
+    `
   },
 
   /**
@@ -278,7 +286,7 @@ export const blog = {
    * Carga y muestra la página de error
    */
   showError: async () => {
-    const response = await fetch('/error.html')
+    const response = await fetch('/404.html')
     const content = await response.text()
 
     const style = document.body.querySelector('style')
@@ -337,9 +345,7 @@ export const blog = {
     const response = await fetch(options.feed)
     this.feed = await response.json()
 
-    if (blog.isItem(document.URL)) {
-      blog.dispatch(document.URL)
-    }
+    blog.dispatch(document.URL)
 
     // Queremos transiciones suaves al cargar un artículo,
     // pero no cuando se accede directamente a uno por su URL
@@ -347,9 +353,9 @@ export const blog = {
 
     blog.renderHome()
 
-    blog.renderInitials('header > section > p:first-of-type')
-
     blog.renderDashes('div > header')
+
+    blog.renderInitials('header > section > p:first-of-type')
 
     window.addEventListener('popstate', blog.popstateHandler.bind(this))
     window.addEventListener('resize', blog.resizeHandler.bind(this))
@@ -433,8 +439,6 @@ export const blog = {
 
     this.renderHeadings()
 
-    this.renderInitials('main > article header > p:first-of-type')
-
     this.renderDashes('main > article')
 
     this.renderTweets('blockquote.tweet[data-id]', {
@@ -443,6 +447,8 @@ export const blog = {
     })
 
     this.renderFootnotes('ol#notes li', 'a.note')
+
+    this.renderInitials('main > article header > p:first-of-type')
 
     if (location.hash) {
       const id = location.hash.replace(/^#/, '')

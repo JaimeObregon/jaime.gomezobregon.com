@@ -36,19 +36,19 @@
           color: var(--color-attention);
         }
       }
-    }
 
-    &::before {
-      all: revert;
-      position: absolute;
-      top: 0.5em;
-      left: 0;
-      width: 1em;
-      margin: -0.5em 0.25em 0 0;
-      font-size: 0.75em;
-      font-weight: 700;
-      text-align: right;
-      content: counter(number) ' ';
+      &::before {
+        all: revert;
+        position: absolute;
+        top: 0.5em;
+        left: 0;
+        width: 1em;
+        margin: -0.5em 0.25em 0 0;
+        font-size: 0.75em;
+        font-weight: 700;
+        text-align: right;
+        content: counter(number) ' ';
+      }
     }
   }
 }
@@ -128,13 +128,21 @@
         font-size: 2.25em;
       }
 
-      img.initial {
+      div.initial {
         --initial-size: calc(4 * 1.75 * 1em);
       }
     }
 
     nav {
       padding-top: 0;
+
+      path {
+        fill: var(--initial-flourishes);
+
+        &.letter {
+          fill: var(--color-attention);
+        }
+      }
 
       ol {
         padding: 0;
@@ -314,13 +322,14 @@
         }
 
         > h1 {
-          margin: 0.5rem 0;
+          margin: 0.5em 0;
+          font-size: 2em;
           line-height: 1.15;
           text-wrap: balance;
         }
 
         > time {
-          font-size: 0.85em;
+          font-size: 0.75em;
         }
       }
 
@@ -496,13 +505,20 @@
     border: none;
   }
 
-  img.initial {
+  div.initial {
     float: left;
     width: var(--initial-size);
     height: var(--initial-size);
     margin-right: 0.5em;
     background: var(--initial-background);
-    filter: var(--filter-initial);
+
+    path {
+      fill: var(--initial-flourishes);
+
+      &.letter {
+        fill: var(--initial-letter);
+      }
+    }
   }
 
   p {
@@ -591,9 +607,9 @@
   --color-foreground: #274059;
   --color-background: #fbf7f0;
   --color-attention: #c71585;
-
-  /* Color para el fondo de las letras capitulares */
-  --initial-background: none;
+  --initial-background: green;
+  --initial-flourishes: var(--color-background);
+  --initial-letter: #222;
 
   /**
      * Tamaño de las letra capitulares:
@@ -608,9 +624,6 @@
   --filter-svg: invert(22%) sepia(6%) saturate(4367%) hue-rotate(169deg)
     brightness(92%) contrast(88%);
   --filter-svg-attention: none;
-
-  /* --filter-initial: invert(21%) sepia(47%) saturate(557%) hue-rotate(168deg)
-        brightness(90%) contrast(90%); */
 }
 
 @media (prefers-color-scheme: dark) {
@@ -618,12 +631,12 @@
     --color-foreground: #dfdfdf;
     --color-background: #0d2630;
     --color-attention: #fff;
-    --initial-background: var(--color-foreground);
+    --initial-background: darkkhaki;
+    --initial-flourishes: var(--color-background);
+    --initial-letter: #fff;
     --filter-svg: invert(87%) sepia(8%) saturate(1005%) hue-rotate(179deg)
       brightness(94%) contrast(87%);
     --filter-svg-attention: invert(1);
-    --filter-initial: invert(7%) sepia(45%) saturate(220%) hue-rotate(166deg)
-      brightness(100%) contrast(94%);
   }
 }
 

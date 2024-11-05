@@ -111,8 +111,6 @@ Es una aplicación estática (_frontend_) JavaScript, desarrollada íntegramente
 
 Este proyecto utiliza exclusivamente estándares web: HTML, CSS y JavaScript. No hay ningún lenguaje de _scripting_ en el lado del servidor, ni se requiere de una base de datos.
 
-No obstante, y por limitaciones de los _crawlers_ como GoogleBot o TwitterBot, la imagen específica de cada artículo para redes sociales (`poster.png`) solo se mostrará si el servidor dispone de PHP 7.4 o superior.
-
 Es conveniente un servidor web capaz de interpretar las reglas de reescritura del fichero [`.htaccess`](/httpdocs/.htaccess). Por ejemplo, Apache o Nginx.
 
 # Despliegue
