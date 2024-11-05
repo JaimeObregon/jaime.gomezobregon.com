@@ -321,19 +321,13 @@ export const blog = {
   dispatch: async function (url) {
     const { pathname } = new URL(url)
 
-    console.log(url)
-    console.log(pathname)
-
     if (pathname === '/') {
       this.showHome()
       return
     }
 
-    const slug = pathname.replace(/^\//, '')
+    const slug = pathname.replace(/^\/|\/$/g, '')
     const item = blog.feed.items.find((i) => i.id === slug)
-
-    console.log(slug)
-    console.log(item)
 
     await this.load(item)
   },
