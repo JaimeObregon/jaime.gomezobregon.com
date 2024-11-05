@@ -1,6 +1,6 @@
 [build]
-  command = "yarn build"
-  publish = "httpdocs"
+  command = "yarn run build"
+  publish = "httpdocs/build"
 
 [[redirects]]
   from = "/feed"

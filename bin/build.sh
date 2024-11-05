@@ -1,9 +1,5 @@
 #!/bin/bash
 
-if [ "$NETLIFY" = "true" ]; then
-  apt-get update && apt-get install -y jq
-fi
-
 yarn || exit 1
 
 rsync -a --delete --exclude 'build' httpdocs/ httpdocs/build/
