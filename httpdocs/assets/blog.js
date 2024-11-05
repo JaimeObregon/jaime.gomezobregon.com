@@ -387,6 +387,7 @@ export const blog = {
    * Carga un artículo y lo presenta al usuario para su lectura
    */
   load: async function (item) {
+    console.log(item)
     if (!item) {
       this.showError()
       return
@@ -396,6 +397,9 @@ export const blog = {
     const folder = type === 'post' ? 'posts' : 'pages'
 
     const response = await fetch(`/${folder}/${item.id}/index.html`)
+
+    console.log(`/${folder}/${item.id}/index.html`)
+    console.log(response)
 
     if (!response.ok) {
       this.showError()
