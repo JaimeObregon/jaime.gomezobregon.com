@@ -321,6 +321,9 @@ export const blog = {
   dispatch: async function (url) {
     const { pathname } = new URL(url)
 
+    console.log(url)
+    console.log(pathname)
+
     if (pathname === '/') {
       this.showHome()
       return
@@ -328,6 +331,9 @@ export const blog = {
 
     const slug = pathname.replace(/^\//, '')
     const item = blog.feed.items.find((i) => i.id === slug)
+
+    console.log(slug)
+    console.log(item)
 
     await this.load(item)
   },
@@ -387,7 +393,6 @@ export const blog = {
    * Carga un artículo y lo presenta al usuario para su lectura
    */
   load: async function (item) {
-    console.log(item)
     if (!item) {
       this.showError()
       return
@@ -397,9 +402,6 @@ export const blog = {
     const folder = type === 'post' ? 'posts' : 'pages'
 
     const response = await fetch(`/${folder}/${item.id}/index.html`)
-
-    console.log(`/${folder}/${item.id}/index.html`)
-    console.log(response)
 
     if (!response.ok) {
       this.showError()
