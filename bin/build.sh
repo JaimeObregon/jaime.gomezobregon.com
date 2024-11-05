@@ -6,7 +6,7 @@ fi
 
 yarn || exit 1
 
-cp -aR httpdocs httpdocs/build
+rsync -a --delete --exclude 'build' httpdocs/ httpdocs/build/
 
 esbuild \
   httpdocs/assets/blog.js \
