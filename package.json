@@ -38,10 +38,7 @@
       "no-descending-specificity": null
     }
   },
-  "dependencies": {
-    "globby": "^14.0.2",
-    "jsdom": "^25.0.1"
-  },
+  "dependencies": {},
   "devDependencies": {
     "esbuild": "^0.24.0",
     "postcss-styled-syntax": "^0.6.4",

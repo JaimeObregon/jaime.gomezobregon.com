@@ -2,7 +2,7 @@
 
 yarn || exit 1
 
-rsync -a --delete --exclude 'build' httpdocs/ httpdocs/build/
+rsync -a --delete httpdocs/ build/
 
 esbuild \
   httpdocs/assets/blog.js \
@@ -12,18 +12,12 @@ esbuild \
   --minify \
   --legal-comments=none \
   --external:"/assets/fonts/*" \
-  --outdir=httpdocs/build
-
-if [[ "$OSTYPE" == "darwin"* ]]; then
-  sed -E -i '' "s/\/assets\/(blog\.(css|js))/\/build\/\1/" httpdocs/build/index.html
-else
-  sed -E -i "s/\/assets\/(blog\.(css|js))/\/build\/\1/" httpdocs/build/index.html
-fi
+  --outdir=build/assets
 
 jq --compact-output '.items[]' httpdocs/index.json | while IFS= read -r item; do
   eval "$(echo "$item" | jq -r '@sh "id=\(.id) url=\(.url) title=\(.title) language=\(.language) content_text=\(.content_text) date_published=\(.date_published)"')"
 
-  mkdir -p "httpdocs/build/$id"
+  mkdir -p "build/$id"
 
   metadata=$(
     printf '<title>%s</title>\' "$title"
@@ -45,5 +39,5 @@ jq --compact-output '.items[]' httpdocs/index.json | while IFS= read -r item; do
   sed -e '/METADATA_BEGIN/,/METADATA_END/d' \
       -e "/<\/head>/i\\
 $metadata" httpdocs/index.html \
-      > "httpdocs/build/$id/index.html"
+      > "build/$id/index.html"
 done
