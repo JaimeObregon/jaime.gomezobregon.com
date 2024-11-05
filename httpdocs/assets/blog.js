@@ -287,16 +287,13 @@ export const blog = {
    */
   showError: async () => {
     const response = await fetch('/404.html')
-    const content = await response.text()
+    const text = await response.text()
 
-    const style = document.body.querySelector('style')
-    if (style) {
-      document.head.innerHTML = `<style>${style.innerText}</style>`
-      style.remove()
-    }
+    const parser = new DOMParser()
+    const parsed = parser.parseFromString(text, 'text/html')
 
-    document.title = 'Error'
-    document.body.innerHTML = content
+    document.head.innerHTML = parsed.head.innerHTML
+    document.body.innerHTML = parsed.body.innerHTML
   },
 
   /**
