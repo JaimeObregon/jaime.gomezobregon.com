@@ -2,99 +2,35 @@
 <html lang="es">
   <head>
     <meta charset="utf-8" />
+    <meta name="author" content="Jaime Gómez-Obregón" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>404</title>
 
-    <!--
-      Adaptado, conforme con su licencia, de un experimento de Piotr Galor.
-      Fuente: https://codepen.io/pgalor/pen/OeRWJQ
-    -->
-    <style>
-      @keyframes glitch {
-        2%,
-        64% {
-          transform: translate(2px, 0) skew(0deg);
-        }
+    <title>Página no encontrada</title>
 
-        4%,
-        60% {
-          transform: translate(-2px, 0) skew(0deg);
-        }
-
-        62% {
-          transform: translate(0, 0) skew(5deg);
-        }
-      }
-
-      @keyframes glitchBotom {
-        2%,
-        64% {
-          transform: translate(-2px, 0);
-        }
-
-        4%,
-        60% {
-          transform: translate(-2px, 0);
-        }
-
-        62% {
-          transform: translate(-22px, 5px) skew(21deg);
-        }
-      }
-
-      @keyframes glitchTop {
-        2%,
-        64% {
-          transform: translate(2px, -2px);
-        }
-
-        4%,
-        60% {
-          transform: translate(-2px, 2px);
-        }
-
-        62% {
-          transform: translate(13px, -1px) skew(-13deg);
-        }
-      }
-
-      body {
-        display: flex;
-        width: 100vw;
-        height: 100vh;
-        align-items: center;
-        justify-content: center;
-        margin: 0;
-        font-size: 5em;
-        font-family: monospace;
-        background: black;
-        color: white;
-      }
-
-      div {
-        animation: glitch 1s linear infinite;
-
-        &:before,
-        &:after {
-          content: attr(title);
-          position: absolute;
-          left: 0;
-          top: 0;
-        }
-
-        &:before {
-          animation: glitchTop 1s linear infinite;
-          clip-path: polygon(0 0, 100% 0, 100% 33%, 0 33%);
-        }
-
-        &:after {
-          animation: glitchBotom 1.5s linear infinite;
-          clip-path: polygon(0 67%, 100% 67%, 100% 100%, 0 100%);
-        }
-      }
-    </style>
+    <link rel="stylesheet" href="/styles/website.css" />
+    <link rel="icon" type="image/svg+xml" href="/assets/icon.svg" />
+    <link rel="apple-touch-icon" href="/assets/icon.png" />
   </head>
   <body>
-    <div title="404">404</div>
+    <article>
+      <h1>Error 404: página no encontrada</h1>
+
+      <p>
+        <x-initial letter="h"></x-initial><span class="hidden">H</span>as
+        solicitado una página que no existe en este servidor. Probablemente haya
+        alguna errata en el enlace que has seguido. O quizá esta página exisitó
+        en el pasado pero ha sido retirada. Revisa la dirección
+        <abbr>URL</abbr> y prueba de nuevo. También puedes
+        <a href="/">ir a la portada</a> y tratar de navegar desde allí a la
+        página que estás buscando.
+      </p>
+
+      <p>
+        Si consideras que esto es un error que puede ser corregido y deseas
+        avisarme, o si crees que puedo ayudarte de alguna forma, puedes
+        <a href="mailto:jaime@gomezobregon.com">contactarme por correo</a>
+        electrónico.
+      </p>
+    </article>
   </body>
 </html>

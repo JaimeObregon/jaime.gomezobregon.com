@@ -1,7 +1,7 @@
-// Solo para que prettier formatee la sintaxis.
-const html = String.raw
+import '../components/initial.js'
+import { slugize } from './strings.js'
 
-export const blog = {
+const blog = {
   /**
    * Formatea una fecha en castellano
    */
@@ -11,21 +11,6 @@ export const blog = {
       month: 'long',
       year: 'numeric',
     }),
-
-  /**
-   * Toma `Una cadena «como esta»` y devuelve `una-cadena-como-esta`.
-   * Véase https://stackoverflow.com/questions/990904/remove-accents-diacritics-in-a-string-in-javascript/37511463#37511463
-   */
-  slug: (string) => {
-    return string
-      .normalize('NFD')
-      .replace(/\p{Diacritic}/gu, '')
-      .replace(/[\u{0100}-\u{FFFF}]/gu, '')
-      .toLowerCase()
-      .replace(/[^a-z0-9-_]/g, '-')
-      .replace(/-+/g, '-')
-      .replace(/(^-|-$)/g, '')
-  },
 
   /**
    * Determina si una URL está o no está en el _feed_
@@ -204,7 +189,7 @@ export const blog = {
     }
 
     headings.forEach((heading) => {
-      const id = blog.slug(heading.innerText)
+      const id = slugize(heading.innerText)
 
       const url = new URL(document.URL)
       url.hash = id
@@ -456,3 +441,5 @@ export const blog = {
     }
   },
 }
+
+export { blog }
