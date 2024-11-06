@@ -11,7 +11,7 @@
   src:
     local('Merriweather Light Italic'),
     local('Merriweather-LightItalic'),
-    url('/assets/fonts/Merriweather-LightItalic.woff2') format('woff2');
+    url('/fonts/Merriweather-LightItalic.woff2') format('woff2');
   font-display: swap;
 }
 
@@ -22,7 +22,7 @@
   src:
     local('Merriweather Italic'),
     local('Merriweather-Italic'),
-    url('/assets/fonts/Merriweather-Italic.woff2') format('woff2');
+    url('/fonts/Merriweather-Italic.woff2') format('woff2');
   font-display: swap;
 }
 
@@ -33,7 +33,7 @@
   src:
     local('Merriweather Bold Italic'),
     local('Merriweather-BoldItalic'),
-    url('/assets/fonts/Merriweather-BoldItalic.woff2') format('woff2');
+    url('/fonts/Merriweather-BoldItalic.woff2') format('woff2');
   font-display: swap;
 }
 
@@ -44,7 +44,7 @@
   src:
     local('Merriweather Black Italic'),
     local('Merriweather-BlackItalic'),
-    url('/assets/fonts/Merriweather-BlackItalic.woff2') format('woff2');
+    url('/fonts/Merriweather-BlackItalic.woff2') format('woff2');
   font-display: swap;
 }
 
@@ -55,7 +55,7 @@
   src:
     local('Merriweather Light'),
     local('Merriweather-Light'),
-    url('/assets/fonts/Merriweather-Light.woff2') format('woff2');
+    url('/fonts/Merriweather-Light.woff2') format('woff2');
   font-display: swap;
 }
 
@@ -66,7 +66,7 @@
   src:
     local('Merriweather Regular'),
     local('Merriweather-Regular'),
-    url('/assets/fonts/Merriweather-Regular.woff2') format('woff2');
+    url('/fonts/Merriweather-Regular.woff2') format('woff2');
   font-display: swap;
 }
 
@@ -77,7 +77,7 @@
   src:
     local('Merriweather Bold'),
     local('Merriweather-Bold'),
-    url('/assets/fonts/Merriweather-Bold.woff2') format('woff2');
+    url('/fonts/Merriweather-Bold.woff2') format('woff2');
   font-display: swap;
 }
 
@@ -88,7 +88,7 @@
   src:
     local('Merriweather Black'),
     local('Merriweather-Black'),
-    url('/assets/fonts/Merriweather-Black.woff2') format('woff2');
+    url('/fonts/Merriweather-Black.woff2') format('woff2');
   font-display: swap;
 }
 
@@ -101,6 +101,6 @@
   font-style: normal;
   font-weight: normal;
   font-stretch: normal;
-  src: url('/assets/fonts/Numbered.woff2') format('woff2');
+  src: url('/fonts/Numbered.woff2') format('woff2');
   font-display: swap;
 }

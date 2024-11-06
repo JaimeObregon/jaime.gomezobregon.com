@@ -182,7 +182,7 @@ export const blog = {
       return
     }
 
-    const path = `/assets/initials/${initial.toLowerCase()}.svg`
+    const path = `/initials/${initial.toLowerCase()}.svg`
 
     const url = new URL(path, window.location.origin)
     const response = await fetch(url)

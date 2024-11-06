@@ -45,9 +45,9 @@
     <meta name="twitter:dnt" content="on" />
     <meta name="twitter:widgets:theme" content="dark" />
 
-    <link rel="stylesheet" href="/assets/blog.css" />
+    <link rel="stylesheet" href="/styles/website.css" />
     <link rel="alternate" type="application/feed+json" href="/index.json" />
-    <link rel="preload" as="script" href="/assets/blog.js" crossorigin />
+    <link rel="preload" as="script" href="/modules/website.js" crossorigin />
     <link rel="preload" as="fetch" href="/index.json" crossorigin />
     <link rel="icon" type="image/svg+xml" href="/assets/icon.svg" />
     <link rel="apple-touch-icon" href="/assets/icon.png" />
@@ -90,7 +90,7 @@
     </div>
 
     <script type="module">
-      import { blog } from './assets/blog.js'
+      import { blog } from './modules/website.js'
 
       blog.init({
         nav: 'body > div > header > nav',

@@ -1,7 +1,7 @@
 @layer general, layout, newsletter, backbutton, article, home, footnotes;
 
-@import url('./styles/normalize.css');
-@import url('./styles/typography.css');
+@import url('./normalize.css');
+@import url('./typography.css');
 
 @layer footnotes {
   article a.note {

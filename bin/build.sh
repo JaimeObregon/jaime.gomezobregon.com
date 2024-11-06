@@ -5,13 +5,13 @@ yarn || exit 1
 rsync -a --delete httpdocs/ build/
 
 esbuild \
-  httpdocs/assets/blog.js \
-  httpdocs/assets/blog.css \
+  httpdocs/modules/website.js \
+  httpdocs/styles/website.css \
   --format=esm \
   --bundle \
   --minify \
   --legal-comments=none \
-  --external:"/assets/fonts/*" \
+  --external:"/fonts/*" \
   --outdir=build/assets
 
 jq --compact-output '.items[]' httpdocs/index.json | while IFS= read -r item; do

@@ -1,13 +1,13 @@
 #!/bin/bash
 
 esbuild \
-  httpdocs/assets/blog.js \
-  httpdocs/assets/blog.css \
+  httpdocs/modules/website.js \
+  httpdocs/styles/website.css \
   --format=esm \
   --bundle \
   --minify \
   --legal-comments=none \
-  --external:"/assets/fonts/*" \
+  --external:"/fonts/*" \
   --outdir=httpdocs/build \
   --servedir=httpdocs \
   --serve-fallback=httpdocs/index.html \
