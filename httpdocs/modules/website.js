@@ -1,5 +1,6 @@
 import '../components/initial.js'
-import { slugize } from './strings.js'
+import '../components/separator.js'
+import { html, slugize } from './strings.js'
 
 const blog = {
   /**
@@ -167,14 +168,8 @@ const blog = {
       return
     }
 
-    const path = `/initials/${initial.toLowerCase()}.svg`
-
-    const url = new URL(path, window.location.origin)
-    const response = await fetch(url)
-    const text = await response.text()
-
     paragraph.innerHTML = `
-      <div class="initial">${text}</div>
+      <x-initial letter="${initial}"></x-initial>
       ${paragraph.innerHTML.replace(/^\s*(\w)/, '<span class="hidden">$1</span>')}
     `
   },
@@ -240,7 +235,7 @@ const blog = {
 
     blog.nav.innerHTML = `
             <ol class="featured">${featured.join('')}</ol>
-            <hr />
+            <x-separator></x-separator>
             <ol>${other.join('')}</ol>
         `
   },

@@ -17,7 +17,7 @@ class Initial extends MyElement {
       fill: var(--color-background);
 
       path.letter {
-        fill: var(--color-foreground);
+        fill: var(--initial-letter);
       }
     }
   `
