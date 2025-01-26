@@ -4,7 +4,7 @@
     "uuid": "CC6AECE7-388D-439F-98D1-B087134DBAE2",
     "primary_key": 661,
     "creation_time": "2025-01-20 23:54:46 +0100",
-    "modify_time": "2025-01-26 15:58:31 +0100",
+    "modify_time": "2025-01-26 16:31:33 +0100",
     "is_pinned": false,
     "title": "Digital garden",
     "html": "\n<h1>Digital garden<br>\n</h1>\n<br>jaime.gomezobregon.com/apuntes<br>apuntes.jaime.gomezobregon.com<br><br><ul class=\"dashed\" data-apple-notes-indent-amount=\"0\">\n<li>Un «agent» monitoriza cambios en el fichero SQLite de Apple Notes<ul class=\"dashed\" data-apple-notes-indent-amount=\"1\"><li>Con un mecanismo de «debounce»<ul class=\"dashed\" data-apple-notes-indent-amount=\"2\"><li>Cuando hay cambios<ul class=\"dashed\" data-apple-notes-indent-amount=\"3\"><li>Exporta las notas a JSON mediante «apple_cloud_notes_parser»<ul class=\"dashed\" data-apple-notes-indent-amount=\"4\">\n<li>Solo la carpeta «Público»</li>\n<li>…</li>\n</ul>\n</li></ul>\n</li></ul>\n</li></ul>\n</li>\n<li>Las adapta a formato de Quartz</li>\n</ul>\n<br><h3>.notesmonitor/notesmonitor.sh<br>\n</h3>\n<br><pre>#!/bin/bash\n# Monitorea cambios en Apple Notes y publica los cambios en mi sitio web.\n\n# Ruta del archivo a monitorizar\nMONITORED_FILE=\"/Users/jaime/Library/Group Containers/group.com.apple.notes/NoteStore.sqlite\"\n\necho \"$(md5sum \"$MONITORED_FILE\")\"\n</pre>\n<br><h3>Automator<br>\n</h3>\n<br><ol data-apple-notes-indent-amount=\"0\">\n<li>Abrir Automator y crear una nueva aplicación</li>\n<li>Seleccionar «Ejecutar script de shell» y crear uno cuyo cuerpo sea: /Users/jaime/.notesmonitor/notesmonitor.sh</li>\n<li>Guardarla en la ruta adecuada</li>\n</ol>\n</div>\n",
@@ -16,10 +16,10 @@
     "uuid": "9CCAAF8E-9455-48A5-A380-836A43A45CFE",
     "primary_key": 664,
     "creation_time": "2025-01-21 18:56:00 +0100",
-    "modify_time": "2025-01-26 16:23:50 +0100",
+    "modify_time": "2025-01-26 16:26:46 +0100",
     "is_pinned": false,
     "title": "Portada de prueba",
-    "html": "\n<h1>Portada de prueba<br>\n</h1>\n<br>😃<br><br>Digital garden [applenotes:note/cc6aece7-388d-439f-98d1-b087134dbae2?ownerIdentifier=_534fb4ed294e8a305ac606f7368d1ca8]<br><br><br><br>.<br><br>\n</div>\n",
+    "html": "\n<h1>Portada de prueba<br>\n</h1>\n<br>😃<br><br>Digital garden [applenotes:note/cc6aece7-388d-439f-98d1-b087134dbae2?ownerIdentifier=_534fb4ed294e8a305ac606f7368d1ca8]<br><br>TODO:<br><ul class=\"dashed\" data-apple-notes-indent-amount=\"0\">\n<li>debounce</li>\n<li>revisar seguridad</li>\n</ul>\n<br>\n</div>\n",
     "embedded_objects": [
       {
         "primary_key": 3175,
