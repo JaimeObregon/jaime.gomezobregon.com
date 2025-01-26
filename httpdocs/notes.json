@@ -1,0 +1,170 @@
+[
+  {
+    "note_id": 3171,
+    "uuid": "CC6AECE7-388D-439F-98D1-B087134DBAE2",
+    "primary_key": 661,
+    "creation_time": "2025-01-20 23:54:46 +0100",
+    "modify_time": "2025-01-26 15:36:23 +0100",
+    "is_pinned": false,
+    "title": "Digital garden",
+    "html": "\n<h1>Digital garden<br>\n</h1>\n<br>jaime.gomezobregon.com/apuntes<br>apuntes.jaime.gomezobregon.com<br><br><ul class=\"dashed\" data-apple-notes-indent-amount=\"0\">\n<li>Un «agent» monitoriza cambios en el fichero SQLite de Apple Notes<ul class=\"dashed\" data-apple-notes-indent-amount=\"1\"><li>Con un mecanismo de «debounce»<ul class=\"dashed\" data-apple-notes-indent-amount=\"2\"><li>Cuando hay cambios<ul class=\"dashed\" data-apple-notes-indent-amount=\"3\"><li>Exporta las notas a JSON mediante «apple_cloud_notes_parser»<ul class=\"dashed\" data-apple-notes-indent-amount=\"4\">\n<li>Solo la carpeta «Público»</li>\n<li>…</li>\n</ul>\n</li></ul>\n</li></ul>\n</li></ul>\n</li>\n<li>Las adapta a formato de Quartz</li>\n</ul>\n<br><h3>.notesmonitor/notesmonitor.sh<br>\n</h3>\n<br><pre>#!/bin/bash\n# Monitorea cambios en Apple Notes y publica los cambios en mi sitio web.\n\n# Ruta del archivo a monitorizar\nMONITORED_FILE=\"/Users/jaime/Library/Group Containers/group.com.apple.notes/NoteStore.sqlite\"\n\necho \"$(md5sum \"$MONITORED_FILE\")\"\n</pre>\n<br><h3>Automator<br>\n</h3>\n<br><ol data-apple-notes-indent-amount=\"0\">\n<li>Abrir Automator y crear una nueva aplicación</li>\n<li>Seleccionar «Ejecutar script de shell» y crear uno cuyo cuerpo sea: /Users/jaime/.notesmonitor/notesmonitor.sh</li>\n<li>Guardarla en la ruta adecuada</li>\n</ol>\n<br>{public.png missing due to not having a file reference location}<br>{public.png missing due to not having a file reference location}<br>w<br>\n</div>\n",
+    "embedded_objects": [
+      {
+        "primary_key": 3339,
+        "parent_primary_key": null,
+        "note_id": 3171,
+        "uuid": "FE0251D3-0987-481C-B439-B9E4F2A1AA41",
+        "type": "public.png",
+        "conforms_to": "image",
+        "filename": "Captura de pantalla 2025-01-26 a las 13.33.17.png",
+        "filepath": "Accounts/9562DF82-016A-40BA-A633-04971CE206A3/Media/06C04BE6-7C55-458F-B888-E96EAEC1AF0B/1_165BAC34-FC03-443E-850A-590A49688BCA/Captura de pantalla 2025-01-26 a las 13.33.17.png",
+        "user_title": null,
+        "is_password_protected": false,
+        "html": "{public.png missing due to not having a file reference location}",
+        "thumbnails": [
+          {
+            "primary_key": 3342,
+            "parent_primary_key": null,
+            "note_id": 3171,
+            "uuid": "FE0251D3-0987-481C-B439-B9E4F2A1AA41-1-192x136-0",
+            "type": "thumbnail",
+            "is_password_protected": false
+          },
+          {
+            "primary_key": 3341,
+            "parent_primary_key": null,
+            "note_id": 3171,
+            "uuid": "FE0251D3-0987-481C-B439-B9E4F2A1AA41-1-384x271-0",
+            "type": "thumbnail",
+            "is_password_protected": false
+          }
+        ]
+      },
+      {
+        "primary_key": 3343,
+        "parent_primary_key": null,
+        "note_id": 3171,
+        "uuid": "12E4716F-07A1-482C-A8EB-589D63DDA4AD",
+        "type": "public.png",
+        "conforms_to": "image",
+        "filename": "Captura de pantalla 2025-01-26 a las 13.33.20.png",
+        "filepath": "Accounts/9562DF82-016A-40BA-A633-04971CE206A3/Media/5E255634-1F15-42DC-88B8-EF0C4AB03055/1_150A91AE-665D-44BF-81E8-F91057891A3B/Captura de pantalla 2025-01-26 a las 13.33.20.png",
+        "user_title": null,
+        "is_password_protected": false,
+        "html": "{public.png missing due to not having a file reference location}",
+        "thumbnails": [
+          {
+            "primary_key": 3345,
+            "parent_primary_key": null,
+            "note_id": 3171,
+            "uuid": "12E4716F-07A1-482C-A8EB-589D63DDA4AD-1-192x155-0",
+            "type": "thumbnail",
+            "is_password_protected": false
+          },
+          {
+            "primary_key": 3346,
+            "parent_primary_key": null,
+            "note_id": 3171,
+            "uuid": "12E4716F-07A1-482C-A8EB-589D63DDA4AD-1-384x311-0",
+            "type": "thumbnail",
+            "is_password_protected": false
+          }
+        ]
+      }
+    ],
+    "hashtags": []
+  },
+  {
+    "note_id": 3174,
+    "uuid": "9CCAAF8E-9455-48A5-A380-836A43A45CFE",
+    "primary_key": 664,
+    "creation_time": "2025-01-21 18:56:00 +0100",
+    "modify_time": "2025-01-25 17:18:53 +0100",
+    "is_pinned": false,
+    "title": "Portada de prueba",
+    "html": "\n<h1>Portada de prueba<br>\n</h1>\n<br>😃<br><br>Digital garden [applenotes:note/cc6aece7-388d-439f-98d1-b087134dbae2?ownerIdentifier=_534fb4ed294e8a305ac606f7368d1ca8]<br><br><br>\n</div>\n",
+    "embedded_objects": [
+      {
+        "primary_key": 3175,
+        "note_id": 3174,
+        "uuid": "CC4C1139-A0E8-4862-AAEB-BCE815C96447",
+        "type": "com.apple.notes.inlinetextattachment.link",
+        "conforms_to": "inline",
+        "alt_text": "Digital garden",
+        "token_identifier": "applenotes:note/cc6aece7-388d-439f-98d1-b087134dbae2?ownerIdentifier=_534fb4ed294e8a305ac606f7368d1ca8",
+        "html": "Digital garden [applenotes:note/cc6aece7-388d-439f-98d1-b087134dbae2?ownerIdentifier=_534fb4ed294e8a305ac606f7368d1ca8]"
+      }
+    ],
+    "hashtags": []
+  },
+  {
+    "note_id": 3314,
+    "uuid": "10C63106-932A-46DC-BDF8-EE8B4933EFAA",
+    "primary_key": 667,
+    "creation_time": "2025-01-25 17:33:37 +0100",
+    "modify_time": "2025-01-26 15:35:57 +0100",
+    "is_pinned": false,
+    "title": "Cómo publico mis notas personales",
+    "html": "\n<h1>Cómo publico mis notas personales<br>\n</h1>\n<br>Estoy Publicando mis notas personales [applenotes:note/610847d4-311d-4e7b-9c36-7e5c7176b243?ownerIdentifier=_534fb4ed294e8a305ac606f7368d1ca8].<br><br>El mecanismo ideal, por lo tanto, toma una carpeta de Notas y lo publica en mi sitio web sin ningún esfuerzo adicional por mi parte. Para este fin he diseñado un sistema que comprende un aplicación y un agente de monitorización:<br><br><ol data-apple-notes-indent-amount=\"0\">\n<li>\n<b>La aplicación</b> toma el fichero SQLite en que Apple Notes persiste en disco mis notas.</li>\n<li>\n<b>El agente de monitorización</b> lanza la aplicación cada vez que el fichero SQLite cambia.</li>\n</ol>\n<br><h3><span style=\"font-family: '.AppleSystemUIFont'\">Este es el diseño más simple a que he llegado, habida cuenta de que el sistema ha de tener acceso de lectura al fichero SQLite, que por defecto es ilegible al agente por política del </span></h3>\n<span style=\"font-family: '.AppleSystemUIFont'\"><a href=\"https://support.apple.com/en-la/102149\" target=\"_blank\">System Integrity Protection</a></span><span style=\"font-family: '.AppleSystemUIFont'\"> (SIP) vigente en macOS. Por el </span><span style=\"font-family: '.AppleSystemUIFont'\"><a href=\"https://es.wikipedia.org/wiki/Principio_de_m%C3%ADnimo_privilegio\" target=\"_blank\">principio de mínimo privilegio</a></span><span style=\"font-family: '.AppleSystemUIFont'\"> decido desactivar SIP solo para esta concreta aplicación, por eso es necesario empaquetarla con Automator.</span><br><br><h2>Aplicación<br>\n</h2>\n<br>Con Automator, creo una nueva aplicación, que guardo en <span style=\"color: #8DE5DB; background-color: #289C8ECC\">~/Applications/Monitorizador de Apuntes.app</span>. Esta aplicación tiene una única acción, de tipo «Ejecutar script de shell». Dentro de esta acción pego este script:<br><h2><br></h2>\n<pre>#!/bin/bash\n# Monitorea cambios en Apple Notes y publica los cambios en mi sitio web.\n\nNOTES_FILE=\"$HOME/Library/Group Containers/group.com.apple.notes/NoteStore.sqlite\"\nPARSER_DIR=\"$HOME/Library/Application Support/com.jaime.notesmonitor/apple_cloud_notes_parser\"\nCACHE_DIR=\"$HOME/Library/Caches/com.jaime.notesmonitor\"\nLOG_FILE=\"$CACHE_DIR/notesmonitor.log\"\nREPO_URL=\"https://github.com/jaimeobregon/jaime.gomezobregon.com/\"\nREPO_DIR=\"$CACHE_DIR/jaime.gomezobregon.com\"\nHTTPDOCS_DIR=\"$REPO_DIR/httpdocs\"\nTMP_DIR=$(mktemp -d /tmp/notesmonitor.XXXXXX)\n\n# Función para escribir mensajes en el log con la fecha actual\nlog() {\n  local MESSAGE=\"$1\"\n  local TIMESTAMP=$(date \"+%Y-%m-%d %H:%M:%S\")\n  echo \"$TIMESTAMP - $MESSAGE\" &gt;&gt; \"$LOG_FILE\"\n}\n\n# Crear el directorio de caché si no existe\nmkdir -p \"$CACHE_DIR\"\n\n# Verificar que RVM esté disponible\nif [ ! -s \"$HOME/.rvm/scripts/rvm\" ]; then\n  log \"Error: RVM no está instalado o no se encuentra en $HOME/.rvm/scripts/rvm\"\n  exit 1\nfi\n\n# Cargar RVM\nsource \"$HOME/.rvm/scripts/rvm\"\n\n# Obtener la última versión de Ruby instalada\nLATEST_RUBY=$(rvm list strings | grep -E \"^ruby-\" | tail -n 1)\n\nif [ -z \"$LATEST_RUBY\" ]; then\n  log \"Error: No se encontró ninguna versión de Ruby instalada con RVM.\"\n  exit 2\nfi\n\n# Usar la última versión de Ruby\nrvm use \"$LATEST_RUBY\" --default || {\n  log \"Error: No se pudo usar Ruby $LATEST_RUBY con RVM.\"\n  exit 3\n}\n\n# Registrar la versión de Ruby en el log\nlog \"Usando Ruby $(ruby -v)\"\n\n# Validar el archivo Notes\nif [ ! -e \"$NOTES_FILE\" ]; then\n  log \"Error: El archivo $NOTES_FILE no existe.\"\n  exit 4\nfi\n\nif [ ! -r \"$NOTES_FILE\" ]; then\n  log \"Error: El archivo $NOTES_FILE no tiene permisos de lectura.\"\n  exit 5\nfi\n\nif [ ! -s \"$NOTES_FILE\" ]; then\n  log \"Error: El archivo $NOTES_FILE está vacío.\"\n  exit 6\nfi\n\n# Copiar el archivo Notes al directorio temporal\ncp \"$NOTES_FILE\" \"$TMP_DIR/NoteStore.sqlite\" || {\n  log \"Error: Falló la copia de $NOTES_FILE a $TMP_DIR.\"\n  rm -rf \"$TMP_DIR\"\n  exit 7\n}\n\n# Cambiar al directorio temporal\ncd \"$TMP_DIR\" || {\n  log \"Error: No se pudo acceder a $TMP_DIR.\"\n  rm -rf \"$TMP_DIR\"\n  exit 8\n}\n\n# Clonar o actualizar el repositorio\nif ! git -C \"$REPO_DIR\" rev-parse 2&gt;/dev/null; then\n  log \"Clonando el repositorio…\"\n  git clone \"$REPO_URL\" \"$REPO_DIR\" &gt;&gt; \"$LOG_FILE\" 2&gt;&amp;1 || {\n    log \"Error: Falló al clonar el repositorio $REPO_URL en $REPO_DIR.\"\n    rm -rf \"$TMP_DIR\"\n    exit 9\n  }\nelse\n  log \"Trayendo cambios del repositorio…\"\n  git -C \"$REPO_DIR\" pull origin master &gt;&gt; \"$LOG_FILE\" 2&gt;&amp;1 || {\n    log \"Error: Falló al traer los cambios del repositorio $REPO_URL.\"\n    rm -rf \"$TMP_DIR\"\n    exit 10\n  }\nfi\n\n# Ejecutar el script Ruby\nruby \"$PARSER_DIR/notes_cloud_ripper.rb\" --one-output-folder --file \"$TMP_DIR/NoteStore.sqlite\"\nif [ $? -ne 0 ]; then\n  log \"Error: El script Ruby falló durante su ejecución.\"\n  rm -rf \"$TMP_DIR\"\n  exit 11\nfi\n\n# Verificar si el archivo JSON existe\nJSON_FILE=\"$TMP_DIR/output/notes_rip/json/all_notes_1.json\"\nif [ ! -e \"$JSON_FILE\" ]; then\n  log \"Error: El archivo JSON $JSON_FILE no fue generado.\"\n  rm -rf \"$TMP_DIR\"\n  exit 12\nfi\n\n# Procesar el archivo JSON con jq\njq '.notes \n    | to_entries \n    | map(select(\n        .value.folder == \"Público\" and \n        .value.is_password_protected == false\n      )) \n    | map({\n        note_id: .value.note_id,\n        uuid: .value.uuid,\n        primary_key: .value.primary_key,\n        creation_time: .value.creation_time,\n        modify_time: .value.modify_time,\n        is_pinned: .value.is_pinned,\n        title: .value.title,\n        html: (.value.html \n          | split(\"&lt;div class=\\\"note-content\\\"&gt;\")[1] \n          | split(\"&lt;/div&gt;\") \n          | .[0:-1] \n          | join(\"&lt;/div&gt;\")),\n        embedded_objects: .value.embedded_objects,\n        hashtags: .value.hashtags,\n      })' \"$JSON_FILE\" &gt; \"$HTTPDOCS_DIR/notes.json\"\nif [ $? -ne 0 ]; then\n  log \"Error: Falló al procesar el archivo JSON con jq.\"\n  rm -rf \"$TMP_DIR\"\n  exit 13\nfi\n\n# Limpiar el directorio temporal\nrm -rf \"$TMP_DIR\"\n\n# Indicar que la operación fue exitosa\nFILE_SIZE_KB=$(du -k \"$HTTPDOCS_DIR/notes.json\" | cut -f1)\nlog \"Operación completada con éxito. Tamaño del fichero JSON: ${FILE_SIZE_KB} KB.\"\n\nexit 0\n</pre>\n<br>Es preciso después ir a Ajustes del Sistema → Privacidad y Seguridad → Acceso total a disco, agregar la nueva aplicación y activarle el acceso total a disco.<br><br><h2>Agente de monitorización<br>\n</h2>\n<br>He creado el archivo <span style=\"color: #8DE5DB; background-color: #289C8ECC\">~/Library/LaunchAgents/com.jaime.notesmonitor.plist</span>:<br><br><pre>&lt;?xml version=\"1.0\" encoding=\"UTF-8\"?&gt;\n&lt;!DOCTYPE plist PUBLIC \"-//Apple//DTD PLIST 1.0//EN\" \"http://www.apple.com/DTDs/PropertyList-1.0.dtd\"&gt;\n&lt;plist version=\"1.0\"&gt;\n    &lt;dict&gt;\n        &lt;!-- Monitorea cambios en Apple Notes y publica los cambios en mi sitio web. --&gt;\n        &lt;key&gt;Label&lt;/key&gt;\n        &lt;string&gt;com.jaime.notesmonitor&lt;/string&gt;\n        &lt;key&gt;ProgramArguments&lt;/key&gt;\n        &lt;array&gt;\n            &lt;string&gt;open&lt;/string&gt;\n            &lt;string&gt;</pre>\n<span style=\"color: #8DE5DB; background-color: #289C8ECC\">/Users/jaime/Applications/Monitorizador de Apuntes.app</span>&lt;/string&gt;<br>        &lt;/array&gt;<br>        &lt;key&gt;WatchPaths&lt;/key&gt;<br>        &lt;array&gt;<br>            &lt;string&gt;<span style=\"color: #8DE5DB; background-color: #289C8ECC\">/Users/jaime/Library/Group Containers/group.com.apple.notes/NoteStore.sqlite</span>&lt;/string&gt;<br>        &lt;/array&gt;<br>        &lt;key&gt;RunAtLoad&lt;/key&gt;<br>        &lt;false/&gt;<br>    &lt;/dict&gt;<br>&lt;/plist&gt;<br><br>\n</div>\n",
+    "embedded_objects": [
+      {
+        "primary_key": 3316,
+        "note_id": 3314,
+        "uuid": "E90DFC4F-492E-41DE-8A1B-8BC58739E9C6",
+        "type": "com.apple.notes.inlinetextattachment.link",
+        "conforms_to": "inline",
+        "alt_text": "Publicando mis notas personales",
+        "token_identifier": "applenotes:note/610847d4-311d-4e7b-9c36-7e5c7176b243?ownerIdentifier=_534fb4ed294e8a305ac606f7368d1ca8",
+        "html": "Publicando mis notas personales [applenotes:note/610847d4-311d-4e7b-9c36-7e5c7176b243?ownerIdentifier=_534fb4ed294e8a305ac606f7368d1ca8]"
+      }
+    ],
+    "hashtags": []
+  },
+  {
+    "note_id": 3315,
+    "uuid": "610847D4-311D-4E7B-9C36-7E5C7176B243",
+    "primary_key": 668,
+    "creation_time": "2025-01-25 18:23:38 +0100",
+    "modify_time": "2025-01-25 18:26:48 +0100",
+    "is_pinned": false,
+    "title": "Publicando mis notas personales",
+    "html": "\n<h1>Publicando mis notas personales<br>\n</h1>\n<br><b>Notas</b> (Apple Notes) es un sistema de toma de notas de baja fricción:<br><br><ul class=\"dashed\" data-apple-notes-indent-amount=\"0\">\n<li>es rápido, po</li>\n<li>es mínimo, cualidad que valoro por mi </li>\n<li>. </li>\n<li>es gratuito</li>\n<li>está integrado, atajos de teclado, integrado en el sistema, en mi teléfono, en el UI…</li>\n<li>sincronizado con iCloud</li>\n<li>respaldado por defecto</li>\n<li>está instalado por defecto en todos los dispositivos de Apple.</li>\n</ul>Minimalismo [applenotes:note/8a14c722-83f2-4c65-abaa-235eb2874464?ownerIdentifier=_534fb4ed294e8a305ac606f7368d1ca8]<br>Hay otras excelentes herramientas de toma de notas, como Obsidian, Notion o Supernotes, pero mi preferencia es Notas.<br><br>Quiero experimentar con la idea de hacer públicas algunas de las notas, como esta, que escribo en Notas. Reducir la fricción es crucial para este experimento, pues si publicar requiere un sobresfuerzo, con el tiempo probablemente dejaré de publicarlas.<br><br>\n</div>\n",
+    "embedded_objects": [
+      {
+        "primary_key": 3319,
+        "note_id": 3315,
+        "uuid": "A47470AA-A83A-4020-83F8-0C3E9E2C1DD9",
+        "type": "com.apple.notes.inlinetextattachment.link",
+        "conforms_to": "inline",
+        "alt_text": "Minimalismo",
+        "token_identifier": "applenotes:note/8a14c722-83f2-4c65-abaa-235eb2874464?ownerIdentifier=_534fb4ed294e8a305ac606f7368d1ca8",
+        "html": "Minimalismo [applenotes:note/8a14c722-83f2-4c65-abaa-235eb2874464?ownerIdentifier=_534fb4ed294e8a305ac606f7368d1ca8]"
+      }
+    ],
+    "hashtags": []
+  },
+  {
+    "note_id": 3317,
+    "uuid": "8A14C722-83F2-4C65-ABAA-235EB2874464",
+    "primary_key": 669,
+    "creation_time": "2025-01-25 18:24:51 +0100",
+    "modify_time": "2025-01-25 18:44:32 +0100",
+    "is_pinned": false,
+    "title": "Minimalismo",
+    "html": "\n<h1>Minimalismo<br>\n</h1>\n<br>…<br>\n</div>\n",
+    "embedded_objects": [],
+    "hashtags": []
+  },
+  {
+    "note_id": 3322,
+    "uuid": "5BDFDE3B-570A-46E2-BDD8-D1E87FCEE285",
+    "primary_key": 671,
+    "creation_time": "2025-01-25 22:57:26 +0100",
+    "modify_time": "2025-01-26 15:32:59 +0100",
+    "is_pinned": false,
+    "title": "El script",
+    "html": "\n<h1>El script<br>\n</h1>\n<br>git clone <a href=\"https://github.com/threeplanetssoftware/apple_cloud_notes_parser.git\" target=\"_blank\">https://github.com/threeplanetssoftware/apple_cloud_notes_parser.git</a><br>cd apple_cloud_notes_parser<br>bundle install<br><br><br>ruby notes_cloud_ripper.rb --file /tmp/NoteStore.sqlite --one-output-folder<br><br>\n</div>\n",
+    "embedded_objects": [],
+    "hashtags": []
+  }
+]
