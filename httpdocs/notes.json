@@ -4,74 +4,11 @@
     "uuid": "CC6AECE7-388D-439F-98D1-B087134DBAE2",
     "primary_key": 661,
     "creation_time": "2025-01-20 23:54:46 +0100",
-    "modify_time": "2025-01-26 15:36:23 +0100",
+    "modify_time": "2025-01-26 15:58:31 +0100",
     "is_pinned": false,
     "title": "Digital garden",
-    "html": "\n<h1>Digital garden<br>\n</h1>\n<br>jaime.gomezobregon.com/apuntes<br>apuntes.jaime.gomezobregon.com<br><br><ul class=\"dashed\" data-apple-notes-indent-amount=\"0\">\n<li>Un «agent» monitoriza cambios en el fichero SQLite de Apple Notes<ul class=\"dashed\" data-apple-notes-indent-amount=\"1\"><li>Con un mecanismo de «debounce»<ul class=\"dashed\" data-apple-notes-indent-amount=\"2\"><li>Cuando hay cambios<ul class=\"dashed\" data-apple-notes-indent-amount=\"3\"><li>Exporta las notas a JSON mediante «apple_cloud_notes_parser»<ul class=\"dashed\" data-apple-notes-indent-amount=\"4\">\n<li>Solo la carpeta «Público»</li>\n<li>…</li>\n</ul>\n</li></ul>\n</li></ul>\n</li></ul>\n</li>\n<li>Las adapta a formato de Quartz</li>\n</ul>\n<br><h3>.notesmonitor/notesmonitor.sh<br>\n</h3>\n<br><pre>#!/bin/bash\n# Monitorea cambios en Apple Notes y publica los cambios en mi sitio web.\n\n# Ruta del archivo a monitorizar\nMONITORED_FILE=\"/Users/jaime/Library/Group Containers/group.com.apple.notes/NoteStore.sqlite\"\n\necho \"$(md5sum \"$MONITORED_FILE\")\"\n</pre>\n<br><h3>Automator<br>\n</h3>\n<br><ol data-apple-notes-indent-amount=\"0\">\n<li>Abrir Automator y crear una nueva aplicación</li>\n<li>Seleccionar «Ejecutar script de shell» y crear uno cuyo cuerpo sea: /Users/jaime/.notesmonitor/notesmonitor.sh</li>\n<li>Guardarla en la ruta adecuada</li>\n</ol>\n<br>{public.png missing due to not having a file reference location}<br>{public.png missing due to not having a file reference location}<br>w<br>\n</div>\n",
-    "embedded_objects": [
-      {
-        "primary_key": 3339,
-        "parent_primary_key": null,
-        "note_id": 3171,
-        "uuid": "FE0251D3-0987-481C-B439-B9E4F2A1AA41",
-        "type": "public.png",
-        "conforms_to": "image",
-        "filename": "Captura de pantalla 2025-01-26 a las 13.33.17.png",
-        "filepath": "Accounts/9562DF82-016A-40BA-A633-04971CE206A3/Media/06C04BE6-7C55-458F-B888-E96EAEC1AF0B/1_165BAC34-FC03-443E-850A-590A49688BCA/Captura de pantalla 2025-01-26 a las 13.33.17.png",
-        "user_title": null,
-        "is_password_protected": false,
-        "html": "{public.png missing due to not having a file reference location}",
-        "thumbnails": [
-          {
-            "primary_key": 3342,
-            "parent_primary_key": null,
-            "note_id": 3171,
-            "uuid": "FE0251D3-0987-481C-B439-B9E4F2A1AA41-1-192x136-0",
-            "type": "thumbnail",
-            "is_password_protected": false
-          },
-          {
-            "primary_key": 3341,
-            "parent_primary_key": null,
-            "note_id": 3171,
-            "uuid": "FE0251D3-0987-481C-B439-B9E4F2A1AA41-1-384x271-0",
-            "type": "thumbnail",
-            "is_password_protected": false
-          }
-        ]
-      },
-      {
-        "primary_key": 3343,
-        "parent_primary_key": null,
-        "note_id": 3171,
-        "uuid": "12E4716F-07A1-482C-A8EB-589D63DDA4AD",
-        "type": "public.png",
-        "conforms_to": "image",
-        "filename": "Captura de pantalla 2025-01-26 a las 13.33.20.png",
-        "filepath": "Accounts/9562DF82-016A-40BA-A633-04971CE206A3/Media/5E255634-1F15-42DC-88B8-EF0C4AB03055/1_150A91AE-665D-44BF-81E8-F91057891A3B/Captura de pantalla 2025-01-26 a las 13.33.20.png",
-        "user_title": null,
-        "is_password_protected": false,
-        "html": "{public.png missing due to not having a file reference location}",
-        "thumbnails": [
-          {
-            "primary_key": 3345,
-            "parent_primary_key": null,
-            "note_id": 3171,
-            "uuid": "12E4716F-07A1-482C-A8EB-589D63DDA4AD-1-192x155-0",
-            "type": "thumbnail",
-            "is_password_protected": false
-          },
-          {
-            "primary_key": 3346,
-            "parent_primary_key": null,
-            "note_id": 3171,
-            "uuid": "12E4716F-07A1-482C-A8EB-589D63DDA4AD-1-384x311-0",
-            "type": "thumbnail",
-            "is_password_protected": false
-          }
-        ]
-      }
-    ],
+    "html": "\n<h1>Digital garden<br>\n</h1>\n<br>jaime.gomezobregon.com/apuntes<br>apuntes.jaime.gomezobregon.com<br><br><ul class=\"dashed\" data-apple-notes-indent-amount=\"0\">\n<li>Un «agent» monitoriza cambios en el fichero SQLite de Apple Notes<ul class=\"dashed\" data-apple-notes-indent-amount=\"1\"><li>Con un mecanismo de «debounce»<ul class=\"dashed\" data-apple-notes-indent-amount=\"2\"><li>Cuando hay cambios<ul class=\"dashed\" data-apple-notes-indent-amount=\"3\"><li>Exporta las notas a JSON mediante «apple_cloud_notes_parser»<ul class=\"dashed\" data-apple-notes-indent-amount=\"4\">\n<li>Solo la carpeta «Público»</li>\n<li>…</li>\n</ul>\n</li></ul>\n</li></ul>\n</li></ul>\n</li>\n<li>Las adapta a formato de Quartz</li>\n</ul>\n<br><h3>.notesmonitor/notesmonitor.sh<br>\n</h3>\n<br><pre>#!/bin/bash\n# Monitorea cambios en Apple Notes y publica los cambios en mi sitio web.\n\n# Ruta del archivo a monitorizar\nMONITORED_FILE=\"/Users/jaime/Library/Group Containers/group.com.apple.notes/NoteStore.sqlite\"\n\necho \"$(md5sum \"$MONITORED_FILE\")\"\n</pre>\n<br><h3>Automator<br>\n</h3>\n<br><ol data-apple-notes-indent-amount=\"0\">\n<li>Abrir Automator y crear una nueva aplicación</li>\n<li>Seleccionar «Ejecutar script de shell» y crear uno cuyo cuerpo sea: /Users/jaime/.notesmonitor/notesmonitor.sh</li>\n<li>Guardarla en la ruta adecuada</li>\n</ol>\n</div>\n",
+    "embedded_objects": [],
     "hashtags": []
   },
   {
@@ -160,10 +97,10 @@
     "uuid": "5BDFDE3B-570A-46E2-BDD8-D1E87FCEE285",
     "primary_key": 671,
     "creation_time": "2025-01-25 22:57:26 +0100",
-    "modify_time": "2025-01-26 15:32:59 +0100",
+    "modify_time": "2025-01-26 15:58:38 +0100",
     "is_pinned": false,
     "title": "El script",
-    "html": "\n<h1>El script<br>\n</h1>\n<br>git clone <a href=\"https://github.com/threeplanetssoftware/apple_cloud_notes_parser.git\" target=\"_blank\">https://github.com/threeplanetssoftware/apple_cloud_notes_parser.git</a><br>cd apple_cloud_notes_parser<br>bundle install<br><br><br>ruby notes_cloud_ripper.rb --file /tmp/NoteStore.sqlite --one-output-folder<br><br>\n</div>\n",
+    "html": "\n<h1>El script<br>\n</h1>\n<br>git clone <a href=\"https://github.com/threeplanetssoftware/apple_cloud_notes_parser.git\" target=\"_blank\">https://github.com/threeplanetssoftware/apple_cloud_notes_parser.git</a><br>cd apple_cloud_notes_parser<br>bundle install<br><br>ruby notes_cloud_ripper.rb --file /tmp/NoteStore.sqlite --one-output-folder<br>\n</div>\n",
     "embedded_objects": [],
     "hashtags": []
   }
