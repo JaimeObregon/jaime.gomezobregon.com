@@ -16,10 +16,10 @@
     "uuid": "9CCAAF8E-9455-48A5-A380-836A43A45CFE",
     "primary_key": 664,
     "creation_time": "2025-01-21 18:56:00 +0100",
-    "modify_time": "2025-01-26 16:26:46 +0100",
+    "modify_time": "2025-01-27 12:45:13 +0100",
     "is_pinned": false,
     "title": "Portada de prueba",
-    "html": "\n<h1>Portada de prueba<br>\n</h1>\n<br>😃<br><br>Digital garden [applenotes:note/cc6aece7-388d-439f-98d1-b087134dbae2?ownerIdentifier=_534fb4ed294e8a305ac606f7368d1ca8]<br><br>TODO:<br><ul class=\"dashed\" data-apple-notes-indent-amount=\"0\">\n<li>debounce</li>\n<li>revisar seguridad</li>\n</ul>\n<br>\n</div>\n",
+    "html": "\n<h1>Portada de prueba<br>\n</h1>\n<br>😃<br><br>Digital garden [applenotes:note/cc6aece7-388d-439f-98d1-b087134dbae2?ownerIdentifier=_534fb4ed294e8a305ac606f7368d1ca8]<br><br>TODO: revisar seguridad<br><br>\n</div>\n",
     "embedded_objects": [
       {
         "primary_key": 3175,
