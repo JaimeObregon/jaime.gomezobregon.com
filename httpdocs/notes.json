@@ -1,0 +1,201 @@
+[
+  {
+    "note_id": 3171,
+    "uuid": "CC6AECE7-388D-439F-98D1-B087134DBAE2",
+    "primary_key": 661,
+    "creation_time": "2025-01-20 23:54:46 +0100",
+    "modify_time": "2025-01-26 19:35:38 +0100",
+    "is_pinned": false,
+    "title": "Digital garden",
+    "html": "\n<h1>Digital garden<br>\n</h1>\n<br>jaime.gomezobregon.com/apuntes<br>apuntes.jaime.gomezobregon.com<br><br><ul class=\"dashed\" data-apple-notes-indent-amount=\"0\">\n<li>Un «agent» monitoriza cambios en el fichero SQLite de Apple Notes<ul class=\"dashed\" data-apple-notes-indent-amount=\"1\"><li>Con un mecanismo de «debounce»<ul class=\"dashed\" data-apple-notes-indent-amount=\"2\"><li>Cuando hay cambios<ul class=\"dashed\" data-apple-notes-indent-amount=\"3\"><li>Exporta las notas a JSON mediante «apple_cloud_notes_parser»<ul class=\"dashed\" data-apple-notes-indent-amount=\"4\">\n<li>Solo la carpeta «Público»</li>\n<li>…</li>\n</ul>\n</li></ul>\n</li></ul>\n</li></ul>\n</li>\n<li>Las adapta a formato de Quartz</li>\n</ul>\n<br><h3>Automator<br>\n</h3>\n<br><ol data-apple-notes-indent-amount=\"0\">\n<li>Abrir Automator y crear una nueva aplicación</li>\n<li>Seleccionar «Ejecutar script de shell» y crear uno cuyo cuerpo sea: /Users/jaime/.notesmonitor/notesmonitor.sh</li>\n<li>Guardarla en la ruta adecuada</li>\n</ol>\n</div>\n",
+    "embedded_objects": [],
+    "hashtags": []
+  },
+  {
+    "note_id": 3174,
+    "uuid": "9CCAAF8E-9455-48A5-A380-836A43A45CFE",
+    "primary_key": 664,
+    "creation_time": "2025-01-21 18:56:00 +0100",
+    "modify_time": "2025-01-27 12:48:14 +0100",
+    "is_pinned": false,
+    "title": "Portada de prueba",
+    "html": "\n<h1>Portada de prueba<br>\n</h1>\n<br>😃<br><br>Digital garden [applenotes:note/cc6aece7-388d-439f-98d1-b087134dbae2?ownerIdentifier=_534fb4ed294e8a305ac606f7368d1ca8]<br><br>TODO: revisar seguridad<br>\n</div>\n",
+    "embedded_objects": [
+      {
+        "primary_key": 3175,
+        "note_id": 3174,
+        "uuid": "CC4C1139-A0E8-4862-AAEB-BCE815C96447",
+        "type": "com.apple.notes.inlinetextattachment.link",
+        "conforms_to": "inline",
+        "alt_text": "Digital garden",
+        "token_identifier": "applenotes:note/cc6aece7-388d-439f-98d1-b087134dbae2?ownerIdentifier=_534fb4ed294e8a305ac606f7368d1ca8",
+        "html": "Digital garden [applenotes:note/cc6aece7-388d-439f-98d1-b087134dbae2?ownerIdentifier=_534fb4ed294e8a305ac606f7368d1ca8]"
+      }
+    ],
+    "hashtags": []
+  },
+  {
+    "note_id": 3314,
+    "uuid": "10C63106-932A-46DC-BDF8-EE8B4933EFAA",
+    "primary_key": 667,
+    "creation_time": "2025-01-25 17:33:37 +0100",
+    "modify_time": "2025-01-26 19:36:10 +0100",
+    "is_pinned": false,
+    "title": "Cómo publico mis notas personales",
+    "html": "\n<h1>Cómo publico mis notas personales<br>\n</h1>\n<br>Estoy Publicando mis notas personales [applenotes:note/610847d4-311d-4e7b-9c36-7e5c7176b243?ownerIdentifier=_534fb4ed294e8a305ac606f7368d1ca8].<br><br>El mecanismo ideal, por lo tanto, toma una carpeta de Notas y lo publica en mi sitio web sin ningún esfuerzo adicional por mi parte. Para este fin he diseñado un sistema que comprende un aplicación y un agente de monitorización:<br><br><ol data-apple-notes-indent-amount=\"0\">\n<li>\n<b>La aplicación</b> toma el fichero SQLite en que Apple Notes persiste en disco mis notas.</li>\n<li>\n<b>El agente de monitorización</b> lanza la aplicación cada vez que el fichero SQLite cambia.</li>\n</ol>\n<br><h3><span style=\"font-family: '.AppleSystemUIFont'\">Este es el diseño más simple a que he llegado, habida cuenta de que el sistema ha de tener acceso de lectura al fichero SQLite, que por defecto es ilegible al agente por política del </span></h3>\n<span style=\"font-family: '.AppleSystemUIFont'\"><a href=\"https://support.apple.com/en-la/102149\" target=\"_blank\">System Integrity Protection</a></span><span style=\"font-family: '.AppleSystemUIFont'\"> (SIP) vigente en macOS. Por el </span><span style=\"font-family: '.AppleSystemUIFont'\"><a href=\"https://es.wikipedia.org/wiki/Principio_de_m%C3%ADnimo_privilegio\" target=\"_blank\">principio de mínimo privilegio</a></span><span style=\"font-family: '.AppleSystemUIFont'\"> decido desactivar SIP solo para esta concreta aplicación, por eso es necesario empaquetarla con Automator.</span><br><br><h2>Aplicación<br>\n</h2>\n<br>Con Automator, creo una nueva aplicación, que guardo en <span style=\"color: #8DE5DB; background-color: #289C8ECC\">~/Applications/Monitorizador de Apuntes.app</span>. Esta aplicación tiene una única acción, de tipo «Ejecutar script de shell». Dentro de esta acción pego este script:<br><h2><br></h2>\n<pre>#!/bin/bash\n# Publica en mi sitio web los cambios en la carpeta «Público» de Apple Notes.\n\nset -e  # Detener el script si cualquier comando falla\n\nNOTES_FILE=\"$HOME/Library/Group Containers/group.com.apple.notes/NoteStore.sqlite\"\nPARSER_DIR=\"$HOME/Library/Application Support/com.jaime.notesmonitor/apple_cloud_notes_parser\"\nCACHE_DIR=\"$HOME/Library/Caches/com.jaime.notesmonitor\"\nLOG_FILE=\"$CACHE_DIR/notesmonitor.log\"\nREPO_URL=\"https://github.com/JaimeObregon/jaime.gomezobregon.com.git\"\nREPO_DIR=\"$CACHE_DIR/jaime.gomezobregon.com\"\nTMP_DIR=$(mktemp -d /tmp/notesmonitor.XXXXXX)\nJSON_FILE=\"$TMP_DIR/output/notes_rip/json/all_notes_1.json\"\nJSON_OUTPUT_FILE=\"$REPO_DIR/httpdocs/notes.json\"\n\n# Función para escribir mensajes en el log con la fecha actual\nlog() {\n  echo \"$(date \"+%Y-%m-%d %H:%M:%S\") - $1\" &gt;&gt; \"$LOG_FILE\"\n}\n\n# Función para manejar errores y realizar limpieza\nerror() {\n  log \"Error: $1\"\n  rm -rf \"$TMP_DIR\"\n  exit 1\n}\n\n# Crear el directorio de caché si no existe\nmkdir -p \"$CACHE_DIR\"\n\n# Verificar que RVM esté disponible\n[ -s \"$HOME/.rvm/scripts/rvm\" ] ||\n  error \"RVM no está instalado o no se encuentra en $HOME/.rvm/scripts/rvm\"\n\n# Cargar RVM y usar la última versión de Ruby\nsource \"$HOME/.rvm/scripts/rvm\"\nLATEST_RUBY=$(rvm list strings | grep -E \"^ruby-\" | tail -n 1)\n[ -n \"$LATEST_RUBY\" ] || error \"No se encontró ninguna versión de Ruby instalada con RVM.\"\nrvm use \"$LATEST_RUBY\" --default || error \"No se pudo usar Ruby $LATEST_RUBY con RVM.\"\nlog \"Usando Ruby $(ruby -v)\"\n\n# Validar el archivo Notes\n[ -e \"$NOTES_FILE\" ] || error \"$NOTES_FILE no existe.\"\n[ -r \"$NOTES_FILE\" ] || error \"$NOTES_FILE no tiene permisos de lectura.\"\n[ -s \"$NOTES_FILE\" ] || error \"$NOTES_FILE está vacío.\"\n\n# Copiar el archivo Notes al directorio temporal\ncp \"$NOTES_FILE\" \"$TMP_DIR/NoteStore.sqlite\" ||\n  error \"Falló la copia de $NOTES_FILE a $TMP_DIR.\"\ncd \"$TMP_DIR\" || error \"No se pudo acceder a $TMP_DIR.\"\n\n# Clonar o actualizar el repositorio\nif ! git -C \"$REPO_DIR\" rev-parse 2&gt;/dev/null; then\n  log \"Clonando el repositorio…\"\n  git clone \"$REPO_URL\" \"$REPO_DIR\" &gt;&gt; \"$LOG_FILE\" 2&gt;&amp;1 ||\n    error \"Falló al clonar el repositorio $REPO_URL en $REPO_DIR.\"\nelse\n  log \"Trayendo cambios del repositorio…\"\n  git -C \"$REPO_DIR\" pull &gt;&gt; \"$LOG_FILE\" 2&gt;&amp;1 ||\n    error \"Falló al traer los cambios del repositorio $REPO_URL.\"\nfi\n\n# Ejecutar el script Ruby\nruby \"$PARSER_DIR/notes_cloud_ripper.rb\" --one-output-folder --file \"$TMP_DIR/NoteStore.sqlite\" ||\n  error \"El script Ruby falló durante su ejecución.\"\n\n# Verificar si el archivo JSON existe\n[ -e \"$JSON_FILE\" ] || error \"El archivo JSON $JSON_FILE no fue generado.\"\nlog \"Generando el archivo $JSON_OUTPUT_FILE...\"\n\n\n# Procesar el archivo JSON con jq\njq '.notes \n    | to_entries \n    | map(select(\n        .value.folder == \"P\\u00fablico\" and \n        .value.is_password_protected == false\n      )) \n    | map({\n        note_id: .value.note_id,\n        uuid: .value.uuid,\n        primary_key: .value.primary_key,\n        creation_time: .value.creation_time,\n        modify_time: .value.modify_time,\n        is_pinned: .value.is_pinned,\n        title: .value.title,\n        html: (.value.html \n          | split(\"&lt;div class=\\\"note-content\\\"&gt;\")[1] \n          | split(\"&lt;/div&gt;\") \n          | .[0:-1] \n          | join(\"&lt;/div&gt;\")),\n        embedded_objects: .value.embedded_objects,\n        hashtags: .value.hashtags,\n      })' \"$JSON_FILE\" &gt; \"$JSON_OUTPUT_FILE\" ||\n        error \"Falló al procesar el archivo $JSON_OUTPUT_FILE con jq.\"\n\n# Agregar el fichero JSON al repositorio, hacer commit y push\n\ncd \"$REPO_DIR\" ||\n  error \"No se pudo acceder al directorio del repositorio $REPO_DIR.\"\ngit add \"$JSON_OUTPUT_FILE\" &gt;&gt; \"$LOG_FILE\" 2&gt;&amp;1 ||\n  error \"Falló al ejecutar 'git add' para $JSON_OUTPUT_FILE.\"\ngit commit -m \"Actualiza automáticamente los apuntes\" &gt;&gt; \"$LOG_FILE\" 2&gt;&amp;1 || {\n  log \"No hay cambios para commitear.\"\n  rm -rf \"$TMP_DIR\"\n  exit 0\n}\ngit push &gt;&gt; \"$LOG_FILE\" 2&gt;&amp;1 || error \"Falló al ejecutar 'git push'.\"\nlog \"Fichero JSON añadido al repositorio y cambios enviados.\"\n\nrm -rf \"$TMP_DIR\"\nexit 0\n</pre>\n<br>Es preciso después ir a Ajustes del Sistema → Privacidad y Seguridad → Acceso total a disco, agregar la nueva aplicación y activarle el acceso total a disco.<br><br><h2>Agente de monitorización<br>\n</h2>\n<br>He creado el archivo <span style=\"color: #8DE5DB; background-color: #289C8ECC\">~/Library/LaunchAgents/com.jaime.notesmonitor.plist</span>:<br><br><pre>&lt;?xml version=\"1.0\" encoding=\"UTF-8\"?&gt;\n&lt;!DOCTYPE plist PUBLIC \"-//Apple//DTD PLIST 1.0//EN\" \"http://www.apple.com/DTDs/PropertyList-1.0.dtd\"&gt;\n&lt;plist version=\"1.0\"&gt;\n    &lt;dict&gt;\n        &lt;!-- Monitorea cambios en Apple Notes y publica los cambios en mi sitio web. --&gt;\n        &lt;key&gt;Label&lt;/key&gt;\n        &lt;string&gt;com.jaime.notesmonitor&lt;/string&gt;\n        &lt;key&gt;ProgramArguments&lt;/key&gt;\n        &lt;array&gt;\n            &lt;string&gt;open&lt;/string&gt;\n            &lt;string&gt;</pre>\n<span style=\"color: #8DE5DB; background-color: #289C8ECC\">/Users/jaime/Applications/Monitorizador de Apuntes.app</span>&lt;/string&gt;<br>        &lt;/array&gt;<br>        &lt;key&gt;WatchPaths&lt;/key&gt;<br>        &lt;array&gt;<br>            &lt;string&gt;<span style=\"color: #8DE5DB; background-color: #289C8ECC\">/Users/jaime/Library/Group Containers/group.com.apple.notes/NoteStore.sqlite</span>&lt;/string&gt;<br>        &lt;/array&gt;<br>        &lt;key&gt;RunAtLoad&lt;/key&gt;<br>        &lt;false/&gt;<br>    &lt;/dict&gt;<br>&lt;/plist&gt;<br><br>\n</div>\n",
+    "embedded_objects": [
+      {
+        "primary_key": 3316,
+        "note_id": 3314,
+        "uuid": "E90DFC4F-492E-41DE-8A1B-8BC58739E9C6",
+        "type": "com.apple.notes.inlinetextattachment.link",
+        "conforms_to": "inline",
+        "alt_text": "Publicando mis notas personales",
+        "token_identifier": "applenotes:note/610847d4-311d-4e7b-9c36-7e5c7176b243?ownerIdentifier=_534fb4ed294e8a305ac606f7368d1ca8",
+        "html": "Publicando mis notas personales [applenotes:note/610847d4-311d-4e7b-9c36-7e5c7176b243?ownerIdentifier=_534fb4ed294e8a305ac606f7368d1ca8]"
+      }
+    ],
+    "hashtags": []
+  },
+  {
+    "note_id": 3315,
+    "uuid": "610847D4-311D-4E7B-9C36-7E5C7176B243",
+    "primary_key": 668,
+    "creation_time": "2025-01-25 18:23:38 +0100",
+    "modify_time": "2025-01-26 20:48:12 +0100",
+    "is_pinned": false,
+    "title": "Publicando mis notas personales",
+    "html": "\n<h1>Publicando mis notas personales<br>\n</h1>\n<br>La aplicación Apple Notes (Notas) es un sistema de Toma de notas [applenotes:note/b17d4cfe-cb34-446f-b9d1-fd92648047c4?ownerIdentifier=_534fb4ed294e8a305ac606f7368d1ca8] de baja fricción:<br><br><ul class=\"dashed\" data-apple-notes-indent-amount=\"0\">\n<li>es rápido, po</li>\n<li>es mínimo, cualidad que valoro por mi </li>\n<li>. </li>\n<li>es gratuito</li>\n<li>está integrado, atajos de teclado, integrado en el sistema, en mi teléfono, en el UI…</li>\n<li>sincronizado con iCloud</li>\n<li>respaldado por defecto</li>\n<li>está instalado por defecto en todos los dispositivos de Apple.</li>\n</ul>Minimalismo [applenotes:note/8a14c722-83f2-4c65-abaa-235eb2874464?ownerIdentifier=_534fb4ed294e8a305ac606f7368d1ca8]<br>Hay otras excelentes herramientas de toma de notas, como Obsidian, Notion o Supernotes, pero mi preferencia es Notas.<br><br>Quiero experimentar con la idea de hacer públicas algunas de las notas, como esta, que escribo en Notas. Reducir la fricción es crucial para este experimento, pues si publicar requiere un sobresfuerzo, con el tiempo probablemente dejaré de publicarlas.<br><br><br><br>Jardín digital<br>Diario<br>Escritura<br>Segundo cerebro<br>Método PARA<br>Objetivos (OKR)<br>Hábitos atómicos<br>Lifestyle design<br>Marca personal<br>POSSE<br>Indie web<br>La decadencia de la web<br><ul class=\"dashed\" data-apple-notes-indent-amount=\"0\"><li>IA, SEO…</li></ul>\n</div>\n",
+    "embedded_objects": [
+      {
+        "primary_key": 3408,
+        "note_id": 3315,
+        "uuid": "9262D78C-49B8-4196-A36B-676E0F837393",
+        "type": "com.apple.notes.inlinetextattachment.link",
+        "conforms_to": "inline",
+        "alt_text": "Toma de notas",
+        "token_identifier": "applenotes:note/b17d4cfe-cb34-446f-b9d1-fd92648047c4?ownerIdentifier=_534fb4ed294e8a305ac606f7368d1ca8",
+        "html": "Toma de notas [applenotes:note/b17d4cfe-cb34-446f-b9d1-fd92648047c4?ownerIdentifier=_534fb4ed294e8a305ac606f7368d1ca8]"
+      },
+      {
+        "primary_key": 3319,
+        "note_id": 3315,
+        "uuid": "A47470AA-A83A-4020-83F8-0C3E9E2C1DD9",
+        "type": "com.apple.notes.inlinetextattachment.link",
+        "conforms_to": "inline",
+        "alt_text": "Minimalismo",
+        "token_identifier": "applenotes:note/8a14c722-83f2-4c65-abaa-235eb2874464?ownerIdentifier=_534fb4ed294e8a305ac606f7368d1ca8",
+        "html": "Minimalismo [applenotes:note/8a14c722-83f2-4c65-abaa-235eb2874464?ownerIdentifier=_534fb4ed294e8a305ac606f7368d1ca8]"
+      }
+    ],
+    "hashtags": []
+  },
+  {
+    "note_id": 3317,
+    "uuid": "8A14C722-83F2-4C65-ABAA-235EB2874464",
+    "primary_key": 669,
+    "creation_time": "2025-01-25 18:24:51 +0100",
+    "modify_time": "2025-04-09 18:24:30 +0200",
+    "is_pinned": false,
+    "title": "Minimalismo",
+    "html": "\n<h1>Minimalismo<br>\n</h1>\n<br>…<br>\n</div>\n",
+    "embedded_objects": [],
+    "hashtags": []
+  },
+  {
+    "note_id": 3322,
+    "uuid": "5BDFDE3B-570A-46E2-BDD8-D1E87FCEE285",
+    "primary_key": 671,
+    "creation_time": "2025-01-25 22:57:26 +0100",
+    "modify_time": "2025-01-26 15:58:38 +0100",
+    "is_pinned": false,
+    "title": "El script",
+    "html": "\n<h1>El script<br>\n</h1>\n<br>git clone <a href=\"https://github.com/threeplanetssoftware/apple_cloud_notes_parser.git\" target=\"_blank\">https://github.com/threeplanetssoftware/apple_cloud_notes_parser.git</a><br>cd apple_cloud_notes_parser<br>bundle install<br><br>ruby notes_cloud_ripper.rb --file /tmp/NoteStore.sqlite --one-output-folder<br>\n</div>\n",
+    "embedded_objects": [],
+    "hashtags": []
+  },
+  {
+    "note_id": 3407,
+    "uuid": "B17D4CFE-CB34-446F-B9D1-FD92648047C4",
+    "primary_key": 672,
+    "creation_time": "2025-01-26 20:46:14 +0100",
+    "modify_time": "2025-01-26 20:46:22 +0100",
+    "is_pinned": false,
+    "title": "Toma de notas",
+    "html": "\n<h1>Toma de notas<br>\n</h1>\n<br>\n</div>\n",
+    "embedded_objects": [],
+    "hashtags": []
+  },
+  {
+    "note_id": 3409,
+    "uuid": "85FC343F-7831-45CE-901C-0AA47E95DEA2",
+    "primary_key": 673,
+    "creation_time": "2025-01-26 20:48:29 +0100",
+    "modify_time": "2025-01-26 20:49:27 +0100",
+    "is_pinned": false,
+    "title": "De la decadencia de la web",
+    "html": "\n<h1>De la decadencia de la web<br>\n</h1>\n<br>La web nació como un ecosistema abierto y descentralizado: conectas tu nodo y comienzas a cargar y descargar contenido. Sin pedir permiso. Sin que puedan impedirlo. Esta es la web que muchos abrazamos; una de las más fabulosas aventuras de la civilización.<br><br>En 2005 escribíamos en nuestros sitios web. Y en nuestros blogs. Y en comunidades en línea. Nos escribíamos unos a otros, y era divertido.<br><br>En 2025 la web —e internet— es un asco. Ya no escribimos para los otros y para el mundo: escribimos para los algoritmos.<br><br><span style=\"font-family: '.AppleColorEmojiUI'\">🤔</span> El SEO llenó la web de contenido-basura dirigido a los robots¹. La mayoría de los sitios web se ha llenado de <i>keywords</i> y redundancias «para salir más arriba en Google».<br><br><span style=\"font-family: '.AppleColorEmojiUI'\">🤔</span> La IA generativa reduce casi a cero el coste de crear contenidos prácticamente indistinguibles de los que antes elaborábamos los humanos. Y la web se está infestando rápidamente de este contenido automático.<br><br><span style=\"font-family: '.AppleColorEmojiUI'\">🤔</span> En las plataformas como YouTube, los creadores monetizan sus vídeos seduciendo al algoritmo. ¿Y el algoritmo qué pide? <i>Engagement</i>. ¿Y cómo pagan los creadores ese tributo? Con <i>clickbait</i>, efectismo y sensacionalismo.<br><br><span style=\"font-family: '.AppleColorEmojiUI'\">🤔</span> Las redes sociales nos ofrecen generosas dosis de la misma cicuta: el algoritmo determina qué recibe <i>reach</i> (alcance). ¿El incentivo? Capturar tu atención. Viralidad. Dopamina.<br><br>La web era un ecosistema abierto y descentralizado de páginas y comunidades digitales. Los blogs y sitios web personales fueron el Everest de una época.<br><br>Veinte años después, la web está sumida en una espiral autodestructiva:<br><br><span style=\"font-family: '.AppleColorEmojiUI'\">⚠️</span> Los protocolos abiertos, como RSS, han sido fagocitados por plataformas cerradas como Facebook o <span style=\"font-family: 'STIXTwoMath-Regular'\">𝕏</span>.<br><br><span style=\"font-family: '.AppleColorEmojiUI'\">⚠️</span> La topología distribuida original, a la que cualquiera podía conectar su nodo, es reemplazada por servicios centralizados que pueden cerrar o silenciar tu cuenta.<br><br><span style=\"font-family: '.AppleColorEmojiUI'\">⚠️</span> Y lo que sobrevive de la web está anegado de contenido escrito por máquinas (IA) o para máquinas (SEO).<br><br>¡Ya no escribimos para los demás y para el mundo! Ahora escribimos para algoritmos. Este es el signo de los tiempos.<br><br>____<br>¹ Las arañas o <i>crawlers</i> como Googlebot, que rastrean la web y califican los sitios en función de su contenido.<br>\n</div>\n",
+    "embedded_objects": [],
+    "hashtags": []
+  },
+  {
+    "note_id": 3410,
+    "uuid": "6885D9CB-1B1C-4EC1-BD9D-87DDE2CF9D02",
+    "primary_key": 674,
+    "creation_time": "2025-01-26 20:49:38 +0100",
+    "modify_time": "2025-01-26 20:50:01 +0100",
+    "is_pinned": false,
+    "title": "Pequeñas cosas que han cambiado mi vida",
+    "html": "\n<h1>Pequeñas cosas que han cambiado mi vida<br>\n</h1>\n<br>Pequeñas cosas que han cambiado mi vida:<br><br>— Tener el móvil siempre en silencio. Mi teléfono no suena; solo vibra si me llaman. Con eso me basta, y así no me interrumpe. A veces dejo que se acumulen las llamadas y las devuelvo todas seguidas cuando yo quiero.<br><br>— No usar despertador. El sueño es un proceso fisiológico importante y no lo interrumpo. Hace años que me despierto de forma natural. Suelo dormir ocho horas al día.<br><br>— No tener deudas. Nunca he comprado a crédito. No gasto lo que no tengo, y eso me da una libertad profunda. Tengo poco dinero, pero lo he ganado yo y no debo nada. Mis tarjetas son de débito.<br><br>— Escribir. Es mi forma de desarrollar ideas y engarzar pensamientos. Escribo en público y en privado. Escribo cartas, en mi diario, en las redes sociales, en mi sitio web… Escribo mucho.<br><br>— No fumar, no beber alcohol y no tomar drogas. Tengo cinco sentidos para relacionarme con el mundo y no permito que ninguna sustancia adultere mi percepción de la realidad.<br><br>— Vivir con propósito. Sé hacia dónde voy, aunque alguna vez lo olvidé y a menudo siento que el camino es incómodo e incierto. Me repito con frecuencia que el viaje es más importante que el destino.<br><br>— Hacer ejercicio. Nuestras vidas son cada vez más intelectuales y sedentarias. Hago pesas, camino mucho y mantengo un peso saludable. Mens sana…<br><br>— Tener un diario. Que en realidad son dos: uno con la crónica de mis días y otro con vivencias, pensamientos y sentimientos que son importantes para mí. Escribir es reflexionar, y hacerlo me conecta con el presente.<br><br>— Adoptar el minimalismo. Tanto en mi profesión tecnológica como en mi casa he aprendido que menos es más. Cada cosa que quito aumenta el valor de las que dejo.<br><br>— Vivir en asíncrono «by default». Me concentro en una sola tarea cada vez, y evito las interrupciones teniendo solo comunicaciones asíncronas. Vivir en asíncrono me permite alinear mi trabajo con mi energía y concentrarme.<br><br>— Tener un segundo cerebro digital. Mi mente es buena conectando pensamientos e ideas, pero mala reteniéndolos. Busca en la web «second brain», «personal knowledge management», «PARA method», «digital garden»…<br><br>— Leer libros antiguos. Especialmente ensayos. Muchos de los retos del presente son reediciones de problemas conocidos desde la antigüedad. La filosofía y los clásicos me brindan una visión atemporal de la actualidad y de mi naturaleza humana.<br><br>— No separar el trabajo de la vida. Soy muy afortunado de confundir trabajo con pasión. Por ello, para mí el trabajo es un espacio de realización personal. Mi trabajo es una parte indisociable de mi personalidad, de mi instalación en el mundo.<br><br>— Aprender a entenderme. Nadie me enseñó a gestionar mis sentimientos y he tenido que aprenderlo por mi cuenta: inteligencia emocional, regulación emocional, mentalización y reflexión sobre mis estados anímicos. Escribir un diario me ayuda a entender cómo me siento.<br><br>— No llevar reloj. No tengo horarios ni tengo rutinas. Prefiero que mis días sean todos diferentes. No distingo martes de domingo porque siempre he trabajado para mí. He aprendido a abrazar la incertidumbre; me gusta más así.<br><br>— Pasar tiempo solo. Tomé un camino sin camino, apartado de la senda que la mayoría huella. He viajado mucho solo, y paso la mayor parte de mi tiempo solo. Aunque disfruto de la buena compañía, me siento bien solo.<br><br>— Entender que la atención es más valiosa que el tiempo. La divisa de nuestro tiempo es el tiempo, pero más escasa que mi tiempo es la atención. Solo puedo tener un puñado de cosas en la cabeza, y soy muy selectivo con ellas.<br><br>— No consumir diarios ni televisión. Vivimos en la era de la sobrecarga cognitiva: el ruido embota nuestra mente y nos hace confundir lo urgente con lo importante. Al igual que no como cualquier cosa, también filtro muy bien lo que alimenta mi cerebro.<br><br>— Aceptar que no tengo el timón de mi vida. Estoy trenzado contigo, con la Naturaleza y con el todo. Yo no tengo control sobre la mayoría de las cosas que me pasan. Yo solo controlo mi actitud.<br><br>Esta es mi receta. Habrá otras mejores.<br>Humildemente la comparto; difúndela si te inspira o ayuda.<br>\n</div>\n",
+    "embedded_objects": [],
+    "hashtags": []
+  },
+  {
+    "note_id": 3411,
+    "uuid": "0BAF938E-8CA6-4AC7-A5AD-40800F38A9AA",
+    "primary_key": 675,
+    "creation_time": "2025-01-26 20:50:42 +0100",
+    "modify_time": "2025-01-26 20:51:08 +0100",
+    "is_pinned": false,
+    "title": "¿Hacia dónde vamos?",
+    "html": "\n<h1>¿Hacia dónde vamos?<br>\n</h1>\n<br>Leo ahora esto:<br><br><blockquote class=\"block-quote\" data-apple-notes-indent-amount=\"1\">Los partidos políticos, hoy en día, se reducen a fórmulas vastas e imprecisas de las que no se puede deducir lógicamente y con claridad nada. […] Lo único concreto es un círculo pernicioso por el que los individuos arruinan los partidos, y los partidos no ayudan al progreso de los individuos […] Los partidos, en suma, van un siglo por detrás. Y la ciudadanía está incómoda. La historia avanza y la ciudadanía avanza con ella. Pero los partidos no pueden permanecer inmóviles. [Los partidos] están promoviendo la desorganización y la confusión, esas que para organizar y ordenar nacieron.<br>\n</blockquote>\n<br>La reflexión es de un joven periodista italiano, Piero Gobetti, en 1919. Aprendo con esta y otras lecturas recientes que la desafección con el sistema de partidos —lo que hoy, peyorativamente, se dice partidocracia— viene, al menos, de un siglo atrás.<br><br>Si de aquella decadencia del sistema de partidos surtió el fascismo —estoy leyendo mucho estas semanas sobre Gabriele d'Annunzio— me pregunto si de la desafección, la antipolítica y el abstencionismo de nuestro siglo, en concurso con el poder inédito de las redes sociales como medio de comunicación y alienación de masas, no florecerán pronto nuevas autocracias globales a golpe de tuit.<br><br>Parece que el péndulo de la historia está cambiando de sentido. Quizá pronto dejemos de elegir a nuestros gobiernos. Quizá pronto troquemos la democracia parlamentaria por la democracia plebiscitaria: consultas directas en las redes sociales para legitimar un poder político cada vez más centralizado, infantilización del debate público, reducción de problemas complejos a dicotomías binarias («a favor», «en contra») y el debilitamiento de las instituciones representativas. Quizá ya estemos ahí.<br>\n</div>\n",
+    "embedded_objects": [],
+    "hashtags": []
+  },
+  {
+    "note_id": 3412,
+    "uuid": "FC20B165-5944-4C86-B663-4819901E0C7F",
+    "primary_key": 676,
+    "creation_time": "2025-01-26 20:51:21 +0100",
+    "modify_time": "2025-01-26 20:51:33 +0100",
+    "is_pinned": false,
+    "title": "Memoria del Nadzak",
+    "html": "\n<h1>Memoria del Nadzak<br>\n</h1>\n<br>Del archivo de vívidas memorias de este año:<br><br>En enero estaba solo, roto y sediento de cielos nuevos. Acabé frente al 105 del bulevar Орце Николов de Skopje, en un discreto café que se llama Nadzak.<br><br>Lo mejor de la vida sucede por accidente: al pasar distraído junto al Nadzak oí una canción que me llamó la atención. Me paré a escucharla. La busqué y descubrí que era un éxito de Iva Zanicchi de 1971: «La riva bianca, la riva nera».<br><br>A la mañana siguiente volví a pasar por el Nadzak, sito a medio camino entre mi apartamento y los cafés de la Plaza de Macedonia a que solía ir a escribir y programar.<br><br>Pero esta vez sonaba Aznavour. Volví a detenerme sorprendido. ¿Qué trébol de cuatro hojas era aquel que resistía en la vasta pradera global del reguetón y la música más zafia?<br><br>Troqué mis planes y entré al Nadzak. Afuera el sol fundía sobre la acera la nieve exigua de la noche anterior. Me senté en una esquina al abrigo de una estufa de gas y saqué el portátil.<br><br>Aquellas semanas fui todas las mañanas al Nadzak.<br><br>La última, de camino al autobús que me llevaría a Bulgaria, me detuve a agradecer al mesero su heroica resistencia a la pandemia del «arte degenerado». Muy cordial, el chico del Nadzak me anotó en un recorte de papel el nombre de la emisora serbia que ambientaba mis mañanas.<br><br>Desde entonces, escribo y programo escuchando esta emisora sin publicidad que son en realidad varias: de la «nouvelle chanson» al rock de la antigua Yugoslavia; del Festival de San Remo al sirtaki.<br><br>Y cuando me siento solo, roto y sediento de cielos nuevos, me reconforta pensar que en mi esquina del Nadzak alguien escucha conmigo a Zanicchi o Aznavour, al abrigo de una estufa de gas.<br>\n</div>\n",
+    "embedded_objects": [],
+    "hashtags": []
+  },
+  {
+    "note_id": 3413,
+    "uuid": "AA15D5D5-8262-494F-BA29-61FBAC612848",
+    "primary_key": 677,
+    "creation_time": "2025-01-26 20:51:55 +0100",
+    "modify_time": "2025-01-26 20:52:04 +0100",
+    "is_pinned": false,
+    "title": "Morirse es un lío",
+    "html": "\n<h1>Morirse es un lío<br>\n</h1>\n<br>Morirse es un lío.<br><br>Hice mi árbol genealógico, pero más arriba de un par de generaciones en los archivos públicos solo hay datos glaciares: fecha y lugar de nacimiento, matrimonio y muerte, discretos recortes de prensa y algún pasaje de indiano.<br><br>¿Dónde se esconde el oro del acervo? No es en los guarismos y efemérides, sino en los pensamientos que inspiraron, preocuparon o ilusionaron a nuestros ancestros. No es en los datos personales, sino en la personalidad. <br><br>Pero la personalidad rara vez se lega.<br>Rara vez trasciende.<br><br>Hace años que escribo un diario personal. Ya son más de 400 páginas colmadas de reflexiones, sentimientos, incertidumbres e ilusiones. Porque no es lo mismo estar vivo que vivir. Y porque es el único espacio de expresión escrita en que puedo regodearme desatado en esta voluptuosidad tan mía de escribir como un talibán del lenguaje, como un muyahidín de las palabras.<br><br>Mi diario está cifrado con un par de clave criptográficas. La clave privada está cifrada, a su vez, con una enorme contraseña que solo existe en mi cabeza.<br><br>Llamé a la notaría y pregunté cómo incorporar a mi testamento la clave que desbloquea mi diario y algunas viejas fotografías digitales que son importantes para mí. Quería legar mis pensamientos. Mi personalidad. Y un hatillo con criptomonedas.<br><br>Para sorpresa de nadie, parece que tal cosa no es posible. O el oficial que me atendió¹ —al menos— no sabía hacerlo. Pregunté entonces si yo podía depositar un sobre lacrado que solo pudiese ser abierto al cabo de unos años de mi fallecimiento. Me explicaron que esto tampoco es posible.<br><br>Somos una generación frontera. Por encima de la nuestra, todo es celulosa. Por debajo, todo es silicio. Nuestra generación está digitalizando el mundo. Sin embargo, los ladrillos más fundamentales de nuestro universo siguen siendo seculares: firma ológrafa, papel timbrado, cita previa.<br><br>Así que asumo que desaparecerá conmigo mi elaborado diario digital, crónica de mi personal camino. Hay obras, hay cartas, que no necesitan de lector. Y constato que solo lo que publique en vida trascenderá mi muerte.<br><br>He renovado mi dominio web por una década, el máximo posible. Y para este año que estrenamos me conjuro —sin dejar de hacerlo aquí— a escribir más en mi sitio web.²<br><br>______<br>¹ Escribo «atender» pero debería decir «despachar», pues en las tres notarías que he pisado últimamente he tenido que plantear mi consulta de pie ante un mostrador, sin ninguna intimidad ni opción de repreguntar.<br>² Los curiosos pueden buscar las cinco letras de POSSE: «Publish (on your) Own Site, Syndicate Elsewhere».</div>\n",
+    "embedded_objects": [],
+    "hashtags": []
+  },
+  {
+    "note_id": 3414,
+    "uuid": "63AF7E95-F415-4C81-A8EA-0FCF5547CC96",
+    "primary_key": 678,
+    "creation_time": "2025-01-26 20:52:25 +0100",
+    "modify_time": "2025-01-27 12:46:20 +0100",
+    "is_pinned": false,
+    "title": "Crecer duele",
+    "html": "\n<h1>Crecer duele<br>\n</h1>\n<br>De adolescente me dolían los huesos y mi madre me llevó al médico.<br><br>—Es normal; es el crecimiento —me dijo el doctor.<br><br>En la universidad aprendí que aprender es incómodo. Uno no se sienta durante semanas delante de unos crípticos apuntes sobre integrales vectoriales tomados a toda velocidad desde la duodécima fila de un aula escalonada y simplemente disfruta de la lectura. No. A menudo pasaba horas atascado, intentando entender un razonamiento al que le faltaba un paso. O tenía que saltar al concepto siguiente sin terminar de comprender del todo el anterior. Aprender te ensancha la mente, y eso es incómodo.<br><br>En la empresa conviví con el estrés durante diez años. Fui muy feliz, pero era muy estresante hacer crecer un negocio y liderar un equipo siendo socio y administrador único. Una mañana llegó temprano un compañero a la oficina:<br><br>—¡Que pronto has venido hoy! —me dijo sorprendido.<br>—No he llegado pronto; es que aún no me he ido.<br><br>Emil Zátopek es una leyenda del atletismo. En las Olimpiadas de 1952 logró una gesta sobrehumana que nadie más ha repetido: ganó las medallas de oro corriendo lo 5000 metros, los 10 000 metros y la maratón, y batiendo el récord del mundo en todas ellas. Mientras corría, Zátopek gemía, gesticulaba, se fruncía y hacía muecas. Un día le preguntaron sobre este particular estilo.<br><br>—Mira… una maratón no es como la gimnasia rítmica; yo no puedo correr y sonreir al mismo tiempo —contestó.<br><br>Y esta es la realidad que a menudo omiten los patéticos manuales de autoayuda, los vídeos motivacionales de internet y los «coach» de los mundos de Disney:<br><br>Que crecer duele.<br>Que aprender es incómodo.<br>Que el éxito es aldaba del sacrificio.<br>\n</div>\n",
+    "embedded_objects": [],
+    "hashtags": []
+  }
+]
