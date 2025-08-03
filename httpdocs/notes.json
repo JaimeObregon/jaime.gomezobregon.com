@@ -4,10 +4,10 @@
     "uuid": "CC6AECE7-388D-439F-98D1-B087134DBAE2",
     "primary_key": 661,
     "creation_time": "2025-01-20 23:54:46 +0100",
-    "modify_time": "2025-01-26 19:35:38 +0100",
+    "modify_time": "2025-08-02 11:26:22 +0200",
     "is_pinned": false,
-    "title": "Digital garden",
-    "html": "\n<h1>Digital garden<br>\n</h1>\n<br>jaime.gomezobregon.com/apuntes<br>apuntes.jaime.gomezobregon.com<br><br><ul class=\"dashed\" data-apple-notes-indent-amount=\"0\">\n<li>Un «agent» monitoriza cambios en el fichero SQLite de Apple Notes<ul class=\"dashed\" data-apple-notes-indent-amount=\"1\"><li>Con un mecanismo de «debounce»<ul class=\"dashed\" data-apple-notes-indent-amount=\"2\"><li>Cuando hay cambios<ul class=\"dashed\" data-apple-notes-indent-amount=\"3\"><li>Exporta las notas a JSON mediante «apple_cloud_notes_parser»<ul class=\"dashed\" data-apple-notes-indent-amount=\"4\">\n<li>Solo la carpeta «Público»</li>\n<li>…</li>\n</ul>\n</li></ul>\n</li></ul>\n</li></ul>\n</li>\n<li>Las adapta a formato de Quartz</li>\n</ul>\n<br><h3>Automator<br>\n</h3>\n<br><ol data-apple-notes-indent-amount=\"0\">\n<li>Abrir Automator y crear una nueva aplicación</li>\n<li>Seleccionar «Ejecutar script de shell» y crear uno cuyo cuerpo sea: /Users/jaime/.notesmonitor/notesmonitor.sh</li>\n<li>Guardarla en la ruta adecuada</li>\n</ol>\n</div>\n",
+    "title": "Jardín digital",
+    "html": "\n<h1>Jardín digital<br>\n</h1>\n<br>jaime.gomezobregon.com/apuntes<br>apuntes.jaime.gomezobregon.com<br><br><ul class=\"dashed\" data-apple-notes-indent-amount=\"0\">\n<li>Un «agent» monitoriza cambios en el fichero SQLite de Apple Notes<ul class=\"dashed\" data-apple-notes-indent-amount=\"1\"><li>Con un mecanismo de «debounce»<ul class=\"dashed\" data-apple-notes-indent-amount=\"2\"><li>Cuando hay cambios<ul class=\"dashed\" data-apple-notes-indent-amount=\"3\"><li>Exporta las notas a JSON mediante «apple_cloud_notes_parser»<ul class=\"dashed\" data-apple-notes-indent-amount=\"4\">\n<li>Solo la carpeta «Público»</li>\n<li>…</li>\n</ul>\n</li></ul>\n</li></ul>\n</li></ul>\n</li>\n<li>Las adapta a formato de Quartz</li>\n</ul>\n<br><h3>Automator<br>\n</h3>\n<br><ol data-apple-notes-indent-amount=\"0\">\n<li>Abrir Automator y crear una nueva aplicación</li>\n<li>Seleccionar «Ejecutar script de shell» y crear uno cuyo cuerpo sea: /Users/jaime/.notesmonitor/notesmonitor.sh</li>\n<li>Guardarla en la ruta adecuada</li>\n</ol>\n</div>\n",
     "embedded_objects": [],
     "hashtags": []
   },
@@ -16,10 +16,10 @@
     "uuid": "9CCAAF8E-9455-48A5-A380-836A43A45CFE",
     "primary_key": 664,
     "creation_time": "2025-01-21 18:56:00 +0100",
-    "modify_time": "2025-01-27 12:48:14 +0100",
+    "modify_time": "2025-08-02 11:27:23 +0200",
     "is_pinned": false,
-    "title": "Portada de prueba",
-    "html": "\n<h1>Portada de prueba<br>\n</h1>\n<br>😃<br><br>Digital garden [applenotes:note/cc6aece7-388d-439f-98d1-b087134dbae2?ownerIdentifier=_534fb4ed294e8a305ac606f7368d1ca8]<br><br>TODO: revisar seguridad<br>\n</div>\n",
+    "title": "Portada",
+    "html": "\n<h1>Portada<br>\n</h1>\n<br>😃<br><br>Jardín digital [applenotes:note/cc6aece7-388d-439f-98d1-b087134dbae2?ownerIdentifier=_534fb4ed294e8a305ac606f7368d1ca8]<br><br>TODO: revisar seguridad<br>\n</div>\n",
     "embedded_objects": [
       {
         "primary_key": 3175,
@@ -27,9 +27,9 @@
         "uuid": "CC4C1139-A0E8-4862-AAEB-BCE815C96447",
         "type": "com.apple.notes.inlinetextattachment.link",
         "conforms_to": "inline",
-        "alt_text": "Digital garden",
+        "alt_text": "Jardín digital",
         "token_identifier": "applenotes:note/cc6aece7-388d-439f-98d1-b087134dbae2?ownerIdentifier=_534fb4ed294e8a305ac606f7368d1ca8",
-        "html": "Digital garden [applenotes:note/cc6aece7-388d-439f-98d1-b087134dbae2?ownerIdentifier=_534fb4ed294e8a305ac606f7368d1ca8]"
+        "html": "Jardín digital [applenotes:note/cc6aece7-388d-439f-98d1-b087134dbae2?ownerIdentifier=_534fb4ed294e8a305ac606f7368d1ca8]"
       }
     ],
     "hashtags": []
@@ -91,18 +91,6 @@
     "hashtags": []
   },
   {
-    "note_id": 3317,
-    "uuid": "8A14C722-83F2-4C65-ABAA-235EB2874464",
-    "primary_key": 669,
-    "creation_time": "2025-01-25 18:24:51 +0100",
-    "modify_time": "2025-04-09 18:24:30 +0200",
-    "is_pinned": false,
-    "title": "Minimalismo",
-    "html": "\n<h1>Minimalismo<br>\n</h1>\n<br>…<br>\n</div>\n",
-    "embedded_objects": [],
-    "hashtags": []
-  },
-  {
     "note_id": 3322,
     "uuid": "5BDFDE3B-570A-46E2-BDD8-D1E87FCEE285",
     "primary_key": 671,
@@ -111,18 +99,6 @@
     "is_pinned": false,
     "title": "El script",
     "html": "\n<h1>El script<br>\n</h1>\n<br>git clone <a href=\"https://github.com/threeplanetssoftware/apple_cloud_notes_parser.git\" target=\"_blank\">https://github.com/threeplanetssoftware/apple_cloud_notes_parser.git</a><br>cd apple_cloud_notes_parser<br>bundle install<br><br>ruby notes_cloud_ripper.rb --file /tmp/NoteStore.sqlite --one-output-folder<br>\n</div>\n",
-    "embedded_objects": [],
-    "hashtags": []
-  },
-  {
-    "note_id": 3407,
-    "uuid": "B17D4CFE-CB34-446F-B9D1-FD92648047C4",
-    "primary_key": 672,
-    "creation_time": "2025-01-26 20:46:14 +0100",
-    "modify_time": "2025-01-26 20:46:22 +0100",
-    "is_pinned": false,
-    "title": "Toma de notas",
-    "html": "\n<h1>Toma de notas<br>\n</h1>\n<br>\n</div>\n",
     "embedded_objects": [],
     "hashtags": []
   },
@@ -179,12 +155,25 @@
     "uuid": "AA15D5D5-8262-494F-BA29-61FBAC612848",
     "primary_key": 677,
     "creation_time": "2025-01-26 20:51:55 +0100",
-    "modify_time": "2025-01-26 20:52:04 +0100",
+    "modify_time": "2025-08-02 20:26:26 +0200",
     "is_pinned": false,
     "title": "Morirse es un lío",
-    "html": "\n<h1>Morirse es un lío<br>\n</h1>\n<br>Morirse es un lío.<br><br>Hice mi árbol genealógico, pero más arriba de un par de generaciones en los archivos públicos solo hay datos glaciares: fecha y lugar de nacimiento, matrimonio y muerte, discretos recortes de prensa y algún pasaje de indiano.<br><br>¿Dónde se esconde el oro del acervo? No es en los guarismos y efemérides, sino en los pensamientos que inspiraron, preocuparon o ilusionaron a nuestros ancestros. No es en los datos personales, sino en la personalidad. <br><br>Pero la personalidad rara vez se lega.<br>Rara vez trasciende.<br><br>Hace años que escribo un diario personal. Ya son más de 400 páginas colmadas de reflexiones, sentimientos, incertidumbres e ilusiones. Porque no es lo mismo estar vivo que vivir. Y porque es el único espacio de expresión escrita en que puedo regodearme desatado en esta voluptuosidad tan mía de escribir como un talibán del lenguaje, como un muyahidín de las palabras.<br><br>Mi diario está cifrado con un par de clave criptográficas. La clave privada está cifrada, a su vez, con una enorme contraseña que solo existe en mi cabeza.<br><br>Llamé a la notaría y pregunté cómo incorporar a mi testamento la clave que desbloquea mi diario y algunas viejas fotografías digitales que son importantes para mí. Quería legar mis pensamientos. Mi personalidad. Y un hatillo con criptomonedas.<br><br>Para sorpresa de nadie, parece que tal cosa no es posible. O el oficial que me atendió¹ —al menos— no sabía hacerlo. Pregunté entonces si yo podía depositar un sobre lacrado que solo pudiese ser abierto al cabo de unos años de mi fallecimiento. Me explicaron que esto tampoco es posible.<br><br>Somos una generación frontera. Por encima de la nuestra, todo es celulosa. Por debajo, todo es silicio. Nuestra generación está digitalizando el mundo. Sin embargo, los ladrillos más fundamentales de nuestro universo siguen siendo seculares: firma ológrafa, papel timbrado, cita previa.<br><br>Así que asumo que desaparecerá conmigo mi elaborado diario digital, crónica de mi personal camino. Hay obras, hay cartas, que no necesitan de lector. Y constato que solo lo que publique en vida trascenderá mi muerte.<br><br>He renovado mi dominio web por una década, el máximo posible. Y para este año que estrenamos me conjuro —sin dejar de hacerlo aquí— a escribir más en mi sitio web.²<br><br>______<br>¹ Escribo «atender» pero debería decir «despachar», pues en las tres notarías que he pisado últimamente he tenido que plantear mi consulta de pie ante un mostrador, sin ninguna intimidad ni opción de repreguntar.<br>² Los curiosos pueden buscar las cinco letras de POSSE: «Publish (on your) Own Site, Syndicate Elsewhere».</div>\n",
-    "embedded_objects": [],
-    "hashtags": []
+    "html": "\n<h1>Morirse es un lío<br>\n</h1>#pensamientos <br><br>Morirse es un lío.<br><br>Hice mi árbol genealógico, pero más arriba de un par de generaciones en los archivos públicos solo hay datos glaciares: fecha y lugar de nacimiento, matrimonio y muerte, discretos recortes de prensa y algún pasaje de indiano.<br><br>¿Dónde se esconde el oro del acervo? No es en los guarismos y efemérides, sino en los pensamientos que inspiraron, preocuparon o ilusionaron a nuestros ancestros. No es en los datos personales, sino en la personalidad. <br><br>Pero la personalidad rara vez se lega.<br>Rara vez trasciende.<br><br>Hace años que escribo un diario personal. Ya son más de 400 páginas colmadas de reflexiones, sentimientos, incertidumbres e ilusiones. Porque no es lo mismo estar vivo que vivir. Y porque es el único espacio de expresión escrita en que puedo regodearme desatado en esta voluptuosidad tan mía de escribir como un talibán del lenguaje, como un muyahidín de las palabras.<br><br>Mi diario está cifrado con un par de clave criptográficas. La clave privada está cifrada, a su vez, con una enorme contraseña que solo existe en mi cabeza.<br><br>Llamé a la notaría y pregunté cómo incorporar a mi testamento la clave que desbloquea mi diario y algunas viejas fotografías digitales que son importantes para mí. Quería legar mis pensamientos. Mi personalidad. Y un hatillo con criptomonedas.<br><br>Para sorpresa de nadie, parece que tal cosa no es posible. O el oficial que me atendió¹ —al menos— no sabía hacerlo. Pregunté entonces si yo podía depositar un sobre lacrado que solo pudiese ser abierto al cabo de unos años de mi fallecimiento. Me explicaron que esto tampoco es posible.<br><br>Somos una generación frontera. Por encima de la nuestra, todo es celulosa. Por debajo, todo es silicio. Nuestra generación está digitalizando el mundo. Sin embargo, los ladrillos más fundamentales de nuestro universo siguen siendo seculares: firma ológrafa, papel timbrado, cita previa.<br><br>Así que asumo que desaparecerá conmigo mi elaborado diario digital, crónica de mi personal camino. Hay obras, hay cartas, que no necesitan de lector. Y constato que solo lo que publique en vida trascenderá mi muerte.<br><br>He renovado mi dominio web por una década, el máximo posible. Y para este año que estrenamos me conjuro —sin dejar de hacerlo aquí— a escribir más en mi sitio web.²<br><br>______<br>¹ Escribo «atender» pero debería decir «despachar», pues en las tres notarías que he pisado últimamente he tenido que plantear mi consulta de pie ante un mostrador, sin ninguna intimidad ni opción de repreguntar.<br>² Los curiosos pueden buscar las cinco letras de POSSE: «Publish (on your) Own Site, Syndicate Elsewhere».</div>\n",
+    "embedded_objects": [
+      {
+        "primary_key": 7121,
+        "note_id": 3413,
+        "uuid": "9B55645B-793B-4C37-8F53-1E09CB05D0EF",
+        "type": "com.apple.notes.inlinetextattachment.hashtag",
+        "conforms_to": "inline",
+        "alt_text": "#pensamientos",
+        "token_identifier": "PENSAMIENTOS",
+        "html": "#pensamientos"
+      }
+    ],
+    "hashtags": [
+      "#pensamientos"
+    ]
   },
   {
     "note_id": 3414,
