@@ -131,12 +131,25 @@
     "uuid": "0BAF938E-8CA6-4AC7-A5AD-40800F38A9AA",
     "primary_key": 675,
     "creation_time": "2025-01-26 20:50:42 +0100",
-    "modify_time": "2025-01-26 20:51:08 +0100",
+    "modify_time": "2025-08-03 11:47:09 +0200",
     "is_pinned": false,
     "title": "¿Hacia dónde vamos?",
-    "html": "\n<h1>¿Hacia dónde vamos?<br>\n</h1>\n<br>Leo ahora esto:<br><br><blockquote class=\"block-quote\" data-apple-notes-indent-amount=\"1\">Los partidos políticos, hoy en día, se reducen a fórmulas vastas e imprecisas de las que no se puede deducir lógicamente y con claridad nada. […] Lo único concreto es un círculo pernicioso por el que los individuos arruinan los partidos, y los partidos no ayudan al progreso de los individuos […] Los partidos, en suma, van un siglo por detrás. Y la ciudadanía está incómoda. La historia avanza y la ciudadanía avanza con ella. Pero los partidos no pueden permanecer inmóviles. [Los partidos] están promoviendo la desorganización y la confusión, esas que para organizar y ordenar nacieron.<br>\n</blockquote>\n<br>La reflexión es de un joven periodista italiano, Piero Gobetti, en 1919. Aprendo con esta y otras lecturas recientes que la desafección con el sistema de partidos —lo que hoy, peyorativamente, se dice partidocracia— viene, al menos, de un siglo atrás.<br><br>Si de aquella decadencia del sistema de partidos surtió el fascismo —estoy leyendo mucho estas semanas sobre Gabriele d'Annunzio— me pregunto si de la desafección, la antipolítica y el abstencionismo de nuestro siglo, en concurso con el poder inédito de las redes sociales como medio de comunicación y alienación de masas, no florecerán pronto nuevas autocracias globales a golpe de tuit.<br><br>Parece que el péndulo de la historia está cambiando de sentido. Quizá pronto dejemos de elegir a nuestros gobiernos. Quizá pronto troquemos la democracia parlamentaria por la democracia plebiscitaria: consultas directas en las redes sociales para legitimar un poder político cada vez más centralizado, infantilización del debate público, reducción de problemas complejos a dicotomías binarias («a favor», «en contra») y el debilitamiento de las instituciones representativas. Quizá ya estemos ahí.<br>\n</div>\n",
-    "embedded_objects": [],
-    "hashtags": []
+    "html": "\n<h1>¿Hacia dónde vamos?<br>\n</h1>#pensamientos<br><br>Leo ahora esto:<br><br><blockquote class=\"block-quote\" data-apple-notes-indent-amount=\"1\">Los partidos políticos, hoy en día, se reducen a fórmulas vastas e imprecisas de las que no se puede deducir lógicamente y con claridad nada. […] Lo único concreto es un círculo pernicioso por el que los individuos arruinan los partidos, y los partidos no ayudan al progreso de los individuos […] Los partidos, en suma, van un siglo por detrás. Y la ciudadanía está incómoda. La historia avanza y la ciudadanía avanza con ella. Pero los partidos no pueden permanecer inmóviles. [Los partidos] están promoviendo la desorganización y la confusión, esas que para organizar y ordenar nacieron.<br>\n</blockquote>\n<br>La reflexión es de un joven periodista italiano, Piero Gobetti, en 1919. Aprendo con esta y otras lecturas recientes que la desafección con el sistema de partidos —lo que hoy, peyorativamente, se dice partidocracia— viene, al menos, de un siglo atrás.<br><br>Si de aquella decadencia del sistema de partidos surtió el fascismo —estoy leyendo mucho estas semanas sobre Gabriele d'Annunzio— me pregunto si de la desafección, la antipolítica y el abstencionismo de nuestro siglo, en concurso con el poder inédito de las redes sociales como medio de comunicación y alienación de masas, no florecerán pronto nuevas autocracias globales a golpe de tuit.<br><br>Parece que el péndulo de la historia está cambiando de sentido. Quizá pronto dejemos de elegir a nuestros gobiernos. Quizá pronto troquemos la democracia parlamentaria por la democracia plebiscitaria: consultas directas en las redes sociales para legitimar un poder político cada vez más centralizado, infantilización del debate público, reducción de problemas complejos a dicotomías binarias («a favor», «en contra») y el debilitamiento de las instituciones representativas. Quizá ya estemos ahí.<br>\n</div>\n",
+    "embedded_objects": [
+      {
+        "primary_key": 7128,
+        "note_id": 3411,
+        "uuid": "77D69146-A700-454E-87C7-1A160EA3F3D8",
+        "type": "com.apple.notes.inlinetextattachment.hashtag",
+        "conforms_to": "inline",
+        "alt_text": "#pensamientos",
+        "token_identifier": "PENSAMIENTOS",
+        "html": "#pensamientos"
+      }
+    ],
+    "hashtags": [
+      "#pensamientos"
+    ]
   },
   {
     "note_id": 3412,
