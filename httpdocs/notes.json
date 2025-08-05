@@ -219,11 +219,24 @@
     "uuid": "63AF7E95-F415-4C81-A8EA-0FCF5547CC96",
     "primary_key": 678,
     "creation_time": "2025-01-26 20:52:25 +0100",
-    "modify_time": "2025-01-27 12:46:20 +0100",
+    "modify_time": "2025-08-06 00:23:13 +0200",
     "is_pinned": false,
     "title": "Crecer duele",
-    "html": "\n<h1>Crecer duele<br>\n</h1>\n<br>De adolescente me dolían los huesos y mi madre me llevó al médico.<br><br>—Es normal; es el crecimiento —me dijo el doctor.<br><br>En la universidad aprendí que aprender es incómodo. Uno no se sienta durante semanas delante de unos crípticos apuntes sobre integrales vectoriales tomados a toda velocidad desde la duodécima fila de un aula escalonada y simplemente disfruta de la lectura. No. A menudo pasaba horas atascado, intentando entender un razonamiento al que le faltaba un paso. O tenía que saltar al concepto siguiente sin terminar de comprender del todo el anterior. Aprender te ensancha la mente, y eso es incómodo.<br><br>En la empresa conviví con el estrés durante diez años. Fui muy feliz, pero era muy estresante hacer crecer un negocio y liderar un equipo siendo socio y administrador único. Una mañana llegó temprano un compañero a la oficina:<br><br>—¡Que pronto has venido hoy! —me dijo sorprendido.<br>—No he llegado pronto; es que aún no me he ido.<br><br>Emil Zátopek es una leyenda del atletismo. En las Olimpiadas de 1952 logró una gesta sobrehumana que nadie más ha repetido: ganó las medallas de oro corriendo lo 5000 metros, los 10 000 metros y la maratón, y batiendo el récord del mundo en todas ellas. Mientras corría, Zátopek gemía, gesticulaba, se fruncía y hacía muecas. Un día le preguntaron sobre este particular estilo.<br><br>—Mira… una maratón no es como la gimnasia rítmica; yo no puedo correr y sonreir al mismo tiempo —contestó.<br><br>Y esta es la realidad que a menudo omiten los patéticos manuales de autoayuda, los vídeos motivacionales de internet y los «coach» de los mundos de Disney:<br><br>Que crecer duele.<br>Que aprender es incómodo.<br>Que el éxito es aldaba del sacrificio.<br>\n</div>\n",
-    "embedded_objects": [],
-    "hashtags": []
+    "html": "\n<h1>Crecer duele<br>\n</h1>#pensamientos<br><br>De adolescente me dolían los huesos y mi madre me llevó al médico.<br><br>—Es normal; es el crecimiento —me dijo el doctor.<br><br>En la universidad aprendí que aprender es incómodo. Uno no se sienta durante semanas delante de unos crípticos apuntes sobre integrales vectoriales tomados a toda velocidad desde la duodécima fila de un aula escalonada y simplemente disfruta de la lectura. No. A menudo pasaba horas atascado, intentando entender un razonamiento al que le faltaba un paso. O tenía que saltar al concepto siguiente sin terminar de comprender del todo el anterior. Aprender te ensancha la mente, y eso es incómodo.<br><br>En la empresa conviví con el estrés durante diez años. Fui muy feliz, pero era muy estresante hacer crecer un negocio y liderar un equipo siendo socio y administrador único. Una mañana llegó temprano un compañero a la oficina:<br><br>—¡Que pronto has venido hoy! —me dijo sorprendido.<br>—No he llegado pronto; es que aún no me he ido.<br><br>Emil Zátopek es una leyenda del atletismo. En las Olimpiadas de 1952 logró una gesta sobrehumana que nadie más ha repetido: ganó las medallas de oro corriendo lo 5000 metros, los 10 000 metros y la maratón, y batiendo el récord del mundo en todas ellas. Mientras corría, Zátopek gemía, gesticulaba, se fruncía y hacía muecas. Un día le preguntaron sobre este particular estilo.<br><br>—Mira… una maratón no es como la gimnasia rítmica; yo no puedo correr y sonreir al mismo tiempo —contestó.<br><br>Y esta es la realidad que a menudo omiten los patéticos manuales de autoayuda, los vídeos motivacionales de internet y los «coach» de los mundos de Disney:<br><br>Que crecer duele.<br>Que aprender es incómodo.<br>Que el éxito es aldaba del sacrificio.<br>\n</div>\n",
+    "embedded_objects": [
+      {
+        "primary_key": 7320,
+        "note_id": 3414,
+        "uuid": "CA7FF17E-A029-4B9B-879D-3AC74C2D57C2",
+        "type": "com.apple.notes.inlinetextattachment.hashtag",
+        "conforms_to": "inline",
+        "alt_text": "#pensamientos",
+        "token_identifier": "PENSAMIENTOS",
+        "html": "#pensamientos"
+      }
+    ],
+    "hashtags": [
+      "#pensamientos"
+    ]
   }
 ]
