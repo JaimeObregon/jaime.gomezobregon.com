@@ -4,12 +4,25 @@
     "uuid": "CC6AECE7-388D-439F-98D1-B087134DBAE2",
     "primary_key": 661,
     "creation_time": "2025-01-20 23:54:46 +0100",
-    "modify_time": "2025-08-02 11:26:22 +0200",
+    "modify_time": "2025-08-06 00:09:01 +0200",
     "is_pinned": false,
     "title": "Jardín digital",
-    "html": "\n<h1>Jardín digital<br>\n</h1>\n<br>jaime.gomezobregon.com/apuntes<br>apuntes.jaime.gomezobregon.com<br><br><ul class=\"dashed\" data-apple-notes-indent-amount=\"0\">\n<li>Un «agent» monitoriza cambios en el fichero SQLite de Apple Notes<ul class=\"dashed\" data-apple-notes-indent-amount=\"1\"><li>Con un mecanismo de «debounce»<ul class=\"dashed\" data-apple-notes-indent-amount=\"2\"><li>Cuando hay cambios<ul class=\"dashed\" data-apple-notes-indent-amount=\"3\"><li>Exporta las notas a JSON mediante «apple_cloud_notes_parser»<ul class=\"dashed\" data-apple-notes-indent-amount=\"4\">\n<li>Solo la carpeta «Público»</li>\n<li>…</li>\n</ul>\n</li></ul>\n</li></ul>\n</li></ul>\n</li>\n<li>Las adapta a formato de Quartz</li>\n</ul>\n<br><h3>Automator<br>\n</h3>\n<br><ol data-apple-notes-indent-amount=\"0\">\n<li>Abrir Automator y crear una nueva aplicación</li>\n<li>Seleccionar «Ejecutar script de shell» y crear uno cuyo cuerpo sea: /Users/jaime/.notesmonitor/notesmonitor.sh</li>\n<li>Guardarla en la ruta adecuada</li>\n</ol>\n</div>\n",
-    "embedded_objects": [],
-    "hashtags": []
+    "html": "\n<h1>Jardín digital<br>\n</h1>#proyectos<br><br>jaime.gomezobregon.com/apuntes<br>apuntes.jaime.gomezobregon.com<br><br><ul class=\"dashed\" data-apple-notes-indent-amount=\"0\">\n<li>Un «agent» monitoriza cambios en el fichero SQLite de Apple Notes<ul class=\"dashed\" data-apple-notes-indent-amount=\"1\"><li>Con un mecanismo de «debounce»<ul class=\"dashed\" data-apple-notes-indent-amount=\"2\"><li>Cuando hay cambios<ul class=\"dashed\" data-apple-notes-indent-amount=\"3\"><li>Exporta las notas a JSON mediante «apple_cloud_notes_parser»<ul class=\"dashed\" data-apple-notes-indent-amount=\"4\">\n<li>Solo la carpeta «Público»</li>\n<li>…</li>\n</ul>\n</li></ul>\n</li></ul>\n</li></ul>\n</li>\n<li>Las adapta a formato de Quartz</li>\n</ul>\n<br><h3>Automator<br>\n</h3>\n<br><ol data-apple-notes-indent-amount=\"0\">\n<li>Abrir Automator y crear una nueva aplicación</li>\n<li>Seleccionar «Ejecutar script de shell» y crear uno cuyo cuerpo sea: /Users/jaime/.notesmonitor/notesmonitor.sh</li>\n<li>Guardarla en la ruta adecuada</li>\n</ol>\n</div>\n",
+    "embedded_objects": [
+      {
+        "primary_key": 7298,
+        "note_id": 3171,
+        "uuid": "3A3B0D57-8CC2-40BB-84F7-6397A014C783",
+        "type": "com.apple.notes.inlinetextattachment.hashtag",
+        "conforms_to": "inline",
+        "alt_text": "#proyectos",
+        "token_identifier": "PROYECTOS",
+        "html": "#proyectos"
+      }
+    ],
+    "hashtags": [
+      "#proyectos"
+    ]
   },
   {
     "note_id": 3174,
@@ -107,12 +120,25 @@
     "uuid": "85FC343F-7831-45CE-901C-0AA47E95DEA2",
     "primary_key": 673,
     "creation_time": "2025-01-26 20:48:29 +0100",
-    "modify_time": "2025-01-26 20:49:27 +0100",
+    "modify_time": "2025-08-06 00:07:19 +0200",
     "is_pinned": false,
     "title": "De la decadencia de la web",
-    "html": "\n<h1>De la decadencia de la web<br>\n</h1>\n<br>La web nació como un ecosistema abierto y descentralizado: conectas tu nodo y comienzas a cargar y descargar contenido. Sin pedir permiso. Sin que puedan impedirlo. Esta es la web que muchos abrazamos; una de las más fabulosas aventuras de la civilización.<br><br>En 2005 escribíamos en nuestros sitios web. Y en nuestros blogs. Y en comunidades en línea. Nos escribíamos unos a otros, y era divertido.<br><br>En 2025 la web —e internet— es un asco. Ya no escribimos para los otros y para el mundo: escribimos para los algoritmos.<br><br><span style=\"font-family: '.AppleColorEmojiUI'\">🤔</span> El SEO llenó la web de contenido-basura dirigido a los robots¹. La mayoría de los sitios web se ha llenado de <i>keywords</i> y redundancias «para salir más arriba en Google».<br><br><span style=\"font-family: '.AppleColorEmojiUI'\">🤔</span> La IA generativa reduce casi a cero el coste de crear contenidos prácticamente indistinguibles de los que antes elaborábamos los humanos. Y la web se está infestando rápidamente de este contenido automático.<br><br><span style=\"font-family: '.AppleColorEmojiUI'\">🤔</span> En las plataformas como YouTube, los creadores monetizan sus vídeos seduciendo al algoritmo. ¿Y el algoritmo qué pide? <i>Engagement</i>. ¿Y cómo pagan los creadores ese tributo? Con <i>clickbait</i>, efectismo y sensacionalismo.<br><br><span style=\"font-family: '.AppleColorEmojiUI'\">🤔</span> Las redes sociales nos ofrecen generosas dosis de la misma cicuta: el algoritmo determina qué recibe <i>reach</i> (alcance). ¿El incentivo? Capturar tu atención. Viralidad. Dopamina.<br><br>La web era un ecosistema abierto y descentralizado de páginas y comunidades digitales. Los blogs y sitios web personales fueron el Everest de una época.<br><br>Veinte años después, la web está sumida en una espiral autodestructiva:<br><br><span style=\"font-family: '.AppleColorEmojiUI'\">⚠️</span> Los protocolos abiertos, como RSS, han sido fagocitados por plataformas cerradas como Facebook o <span style=\"font-family: 'STIXTwoMath-Regular'\">𝕏</span>.<br><br><span style=\"font-family: '.AppleColorEmojiUI'\">⚠️</span> La topología distribuida original, a la que cualquiera podía conectar su nodo, es reemplazada por servicios centralizados que pueden cerrar o silenciar tu cuenta.<br><br><span style=\"font-family: '.AppleColorEmojiUI'\">⚠️</span> Y lo que sobrevive de la web está anegado de contenido escrito por máquinas (IA) o para máquinas (SEO).<br><br>¡Ya no escribimos para los demás y para el mundo! Ahora escribimos para algoritmos. Este es el signo de los tiempos.<br><br>____<br>¹ Las arañas o <i>crawlers</i> como Googlebot, que rastrean la web y califican los sitios en función de su contenido.<br>\n</div>\n",
-    "embedded_objects": [],
-    "hashtags": []
+    "html": "\n<h1>De la decadencia de la web<br>\n</h1>#pensamientos<br><br>La web nació como un ecosistema abierto y descentralizado: conectas tu nodo y comienzas a cargar y descargar contenido. Sin pedir permiso. Sin que puedan impedirlo. Esta es la web que muchos abrazamos; una de las más fabulosas aventuras de la civilización.<br><br>En 2005 escribíamos en nuestros sitios web. Y en nuestros blogs. Y en comunidades en línea. Nos escribíamos unos a otros, y era divertido.<br><br>En 2025 la web —e internet— es un asco. Ya no escribimos para los otros y para el mundo: escribimos para los algoritmos.<br><br><span style=\"font-family: '.AppleColorEmojiUI'\">🤔</span> El SEO llenó la web de contenido-basura dirigido a los robots¹. La mayoría de los sitios web se ha llenado de <i>keywords</i> y redundancias «para salir más arriba en Google».<br><br><span style=\"font-family: '.AppleColorEmojiUI'\">🤔</span> La IA generativa reduce casi a cero el coste de crear contenidos prácticamente indistinguibles de los que antes elaborábamos los humanos. Y la web se está infestando rápidamente de este contenido automático.<br><br><span style=\"font-family: '.AppleColorEmojiUI'\">🤔</span> En las plataformas como YouTube, los creadores monetizan sus vídeos seduciendo al algoritmo. ¿Y el algoritmo qué pide? <i>Engagement</i>. ¿Y cómo pagan los creadores ese tributo? Con <i>clickbait</i>, efectismo y sensacionalismo.<br><br><span style=\"font-family: '.AppleColorEmojiUI'\">🤔</span> Las redes sociales nos ofrecen generosas dosis de la misma cicuta: el algoritmo determina qué recibe <i>reach</i> (alcance). ¿El incentivo? Capturar tu atención. Viralidad. Dopamina.<br><br>La web era un ecosistema abierto y descentralizado de páginas y comunidades digitales. Los blogs y sitios web personales fueron el Everest de una época.<br><br>Veinte años después, la web está sumida en una espiral autodestructiva:<br><br><span style=\"font-family: '.AppleColorEmojiUI'\">⚠️</span> Los protocolos abiertos, como RSS, han sido fagocitados por plataformas cerradas como Facebook o <span style=\"font-family: 'STIXTwoMath-Regular'\">𝕏</span>.<br><br><span style=\"font-family: '.AppleColorEmojiUI'\">⚠️</span> La topología distribuida original, a la que cualquiera podía conectar su nodo, es reemplazada por servicios centralizados que pueden cerrar o silenciar tu cuenta.<br><br><span style=\"font-family: '.AppleColorEmojiUI'\">⚠️</span> Y lo que sobrevive de la web está anegado de contenido escrito por máquinas (IA) o para máquinas (SEO).<br><br>¡Ya no escribimos para los demás y para el mundo! Ahora escribimos para algoritmos. Este es el signo de los tiempos.<br><br>____<br>¹ Las arañas o <i>crawlers</i> como Googlebot, que rastrean la web y califican los sitios en función de su contenido.<br>\n</div>\n",
+    "embedded_objects": [
+      {
+        "primary_key": 7294,
+        "note_id": 3409,
+        "uuid": "B0948B5D-92B0-4D3D-B0F8-1DDAF9AF4589",
+        "type": "com.apple.notes.inlinetextattachment.hashtag",
+        "conforms_to": "inline",
+        "alt_text": "#pensamientos",
+        "token_identifier": "PENSAMIENTOS",
+        "html": "#pensamientos"
+      }
+    ],
+    "hashtags": [
+      "#pensamientos"
+    ]
   },
   {
     "note_id": 3410,
