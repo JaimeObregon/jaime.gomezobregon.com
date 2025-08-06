@@ -195,12 +195,25 @@
     "uuid": "FC20B165-5944-4C86-B663-4819901E0C7F",
     "primary_key": 676,
     "creation_time": "2025-01-26 20:51:21 +0100",
-    "modify_time": "2025-01-26 20:51:33 +0100",
+    "modify_time": "2025-08-06 13:20:36 +0200",
     "is_pinned": false,
     "title": "Memoria del Nadzak",
-    "html": "\n<h1>Memoria del Nadzak<br>\n</h1>\n<br>Del archivo de vívidas memorias de este año:<br><br>En enero estaba solo, roto y sediento de cielos nuevos. Acabé frente al 105 del bulevar Орце Николов de Skopje, en un discreto café que se llama Nadzak.<br><br>Lo mejor de la vida sucede por accidente: al pasar distraído junto al Nadzak oí una canción que me llamó la atención. Me paré a escucharla. La busqué y descubrí que era un éxito de Iva Zanicchi de 1971: «La riva bianca, la riva nera».<br><br>A la mañana siguiente volví a pasar por el Nadzak, sito a medio camino entre mi apartamento y los cafés de la Plaza de Macedonia a que solía ir a escribir y programar.<br><br>Pero esta vez sonaba Aznavour. Volví a detenerme sorprendido. ¿Qué trébol de cuatro hojas era aquel que resistía en la vasta pradera global del reguetón y la música más zafia?<br><br>Troqué mis planes y entré al Nadzak. Afuera el sol fundía sobre la acera la nieve exigua de la noche anterior. Me senté en una esquina al abrigo de una estufa de gas y saqué el portátil.<br><br>Aquellas semanas fui todas las mañanas al Nadzak.<br><br>La última, de camino al autobús que me llevaría a Bulgaria, me detuve a agradecer al mesero su heroica resistencia a la pandemia del «arte degenerado». Muy cordial, el chico del Nadzak me anotó en un recorte de papel el nombre de la emisora serbia que ambientaba mis mañanas.<br><br>Desde entonces, escribo y programo escuchando esta emisora sin publicidad que son en realidad varias: de la «nouvelle chanson» al rock de la antigua Yugoslavia; del Festival de San Remo al sirtaki.<br><br>Y cuando me siento solo, roto y sediento de cielos nuevos, me reconforta pensar que en mi esquina del Nadzak alguien escucha conmigo a Zanicchi o Aznavour, al abrigo de una estufa de gas.<br>\n</div>\n",
-    "embedded_objects": [],
-    "hashtags": []
+    "html": "\n<h1>Memoria del Nadzak<br>\n</h1>#pensamientos<br><br>Del archivo de vívidas memorias de este año:<br><br>En enero estaba solo, roto y sediento de cielos nuevos. Acabé frente al 105 del bulevar Орце Николов de Skopje, en un discreto café que se llama Nadzak.<br><br>Lo mejor de la vida sucede por accidente: al pasar distraído junto al Nadzak oí una canción que me llamó la atención. Me paré a escucharla. La busqué y descubrí que era un éxito de Iva Zanicchi de 1971: «La riva bianca, la riva nera».<br><br>A la mañana siguiente volví a pasar por el Nadzak, sito a medio camino entre mi apartamento y los cafés de la Plaza de Macedonia a que solía ir a escribir y programar.<br><br>Pero esta vez sonaba Aznavour. Volví a detenerme sorprendido. ¿Qué trébol de cuatro hojas era aquel que resistía en la vasta pradera global del reguetón y la música más zafia?<br><br>Troqué mis planes y entré al Nadzak. Afuera el sol fundía sobre la acera la nieve exigua de la noche anterior. Me senté en una esquina al abrigo de una estufa de gas y saqué el portátil.<br><br>Aquellas semanas fui todas las mañanas al Nadzak.<br><br>La última, de camino al autobús que me llevaría a Bulgaria, me detuve a agradecer al mesero su heroica resistencia a la pandemia del «arte degenerado». Muy cordial, el chico del Nadzak me anotó en un recorte de papel el nombre de la emisora serbia que ambientaba mis mañanas.<br><br>Desde entonces, escribo y programo escuchando esta emisora sin publicidad que son en realidad varias: de la «nouvelle chanson» al rock de la antigua Yugoslavia; del Festival de San Remo al sirtaki.<br><br>Y cuando me siento solo, roto y sediento de cielos nuevos, me reconforta pensar que en mi esquina del Nadzak alguien escucha conmigo a Zanicchi o Aznavour, al abrigo de una estufa de gas.<br>\n</div>\n",
+    "embedded_objects": [
+      {
+        "primary_key": 7352,
+        "note_id": 3412,
+        "uuid": "473D282C-A91C-4220-B275-40AF86FB685E",
+        "type": "com.apple.notes.inlinetextattachment.hashtag",
+        "conforms_to": "inline",
+        "alt_text": "#pensamientos",
+        "token_identifier": "PENSAMIENTOS",
+        "html": "#pensamientos"
+      }
+    ],
+    "hashtags": [
+      "#pensamientos"
+    ]
   },
   {
     "note_id": 3413,
