@@ -536,12 +536,13 @@
 
   :is(p, footer, figcaption) a {
     color: inherit;
-    text-decoration: underline 1px;
+    text-decoration: underline;
+    text-decoration-thickness: 1px;
     text-underline-offset: 3px;
 
     &:hover {
       color: var(--color-attention);
-      text-decoration: underline 1px double;
+      text-decoration-style: double;
     }
   }
 
