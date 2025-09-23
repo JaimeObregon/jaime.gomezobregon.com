@@ -1,6 +1,6 @@
 @layer general, layout, newsletter, backbutton, article, home, footnotes;
 
-@import url('./normalize.css');
+@import url('./system.css');
 @import url('./typography.css');
 
 @layer footnotes {
@@ -715,4 +715,9 @@
   main article :is(dt, dd) {
     width: 100%;
   }
+}
+
+article {
+  max-width: var(--width);
+  margin: var(--margin) auto;
 }

@@ -401,13 +401,54 @@ const blog = {
 
       const url = `${blog.github.url}/commits/${blog.github.branch}/httpdocs/posts/${item.id}/index.html`
 
-      header.innerHTML = `
-                <a href="/">Jaime Gómez-Obregón</a>
-                <h1>${h1}</h1>
-                <time datetime="${item.date_published}">
-                    ${date}
-                </time>
-            `
+      const license = item['x-license']
+
+      header.innerHTML = html`
+        <nav>
+          <span
+            >${item.tags
+              .map((tag) => `<a href="/temas/${tag}">${tag}</a>`)
+              .join(', ')}</span
+          >
+          <span>
+            <span>3</span>
+            <a href="" title="Ver las referencias utilizadas en este artículo"
+              >Bibliografía</a
+            >
+          </span>
+          <span>
+            <span>11</span>
+            <a href="" title="Mostrar otros textos míos que enlazan a este"
+              >Retroenlaces</a
+            >
+          </span>
+          <span>
+            <span>2</span>
+            <a
+              href=""
+              title="Obras y trabajos creativos citados en este artículo"
+              >Citas</a
+            >
+          </span>
+          <span>
+            <span>4</span>
+            <a href="${url}" title="Ir al historial de cambios en GitHub"
+              >Actualizaciones</a
+            >
+          </span>
+          ${license
+            ? `
+                    <span>
+                        <a href="${this.feed['x-licenses'][license]}" title="Ver la licencia ${license}">
+                            ${license}
+                        </a>
+                    </span>`
+            : ''}
+        </nav>
+        <a href="/">Jaime Gómez-Obregón</a>
+        <h1>${h1}</h1>
+        <time datetime="${item.date_published}"> ${date} </time>
+      `
 
       this.article.querySelector('h1').replaceWith(header)
     }

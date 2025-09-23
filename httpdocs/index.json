@@ -27,6 +27,18 @@
   },
   "items": [
     {
+      "id": "salazar",
+      "url": "https://jaime.gomezobregon.com/salazar",
+      "title": "Salazar",
+      "content_text": "…",
+      "date_published": "2024-08-21T17:19:00Z",
+      "tags": ["Destacado", "Reflexiones", "Literatura"],
+      "language": "es",
+      "_jaime": {
+        "license": "CC BY-NC-ND"
+      }
+    },
+    {
       "id": "memoria-del-nadzak",
       "url": "https://jaime.gomezobregon.com/memoria-del-nadzak",
       "title": "Memoria del Nadzak",
@@ -237,6 +249,30 @@
       "content_text": "España necesita un diario de operaciones mercantiles efectivamente transparente y eficaz en la lucha contra la corrupción. Y la nueva ministra de Justicia debe tener la audacia de poner estos datos al servicio público.",
       "date_published": "2021-07-23T21:26:00Z",
       "tags": ["Destacado", "Transparencia"],
+      "language": "es",
+      "_jaime": {
+        "license": "CC BY-SA"
+      }
+    },
+    {
+      "id": "certificado-digital-el-proceso",
+      "url": "https://jaime.gomezobregon.com/certificado-digital-el-proceso",
+      "title": "Certificado digital: el proceso",
+      "content_text": "El drama de la administración electrónica en España: la Fábrica Nacional de Moneda y Timbre y su kafkiano procedimiento para solicitar un certificado digital.",
+      "date_published": "2021-05-21T15:40:00Z",
+      "tags": ["Tecnología"],
+      "language": "es",
+      "_jaime": {
+        "license": "CC BY-SA"
+      }
+    },
+    {
+      "id": "el-registro-mercantil-espanol-esta-obsoleto",
+      "url": "https://jaime.gomezobregon.com/el-registro-mercantil-espanol-esta-obsoleto",
+      "title": "El Registro Mercantil español está obsoleto",
+      "content_text": "La finalidad esencial del Registro Mercantil es dar publicidad a los hechos y actos de las empresas obligadas, para que quienes contraten con ellas puedan tener conocimiento. Sin embargo, y como desarrollo a continuación, el Registro Mercantil no cumple esta función con eficacia. Urge adecuar esta institución a la realidad social actual y al nivel de servicio de otros países europeos.",
+      "date_published": "2021-05-20T10:15:00Z",
+      "tags": ["Transparencia"],
       "language": "es",
       "_jaime": {
         "license": "CC BY-SA"
