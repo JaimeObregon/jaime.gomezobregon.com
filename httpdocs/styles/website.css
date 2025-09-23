@@ -318,6 +318,7 @@
         > a {
           font-size: 0.8em;
           font-variant: all-small-caps;
+          font-variant-ligatures: none;
           letter-spacing: 5px;
         }
 
@@ -390,6 +391,7 @@
   main article cite {
     font-style: normal;
     font-variant: all-small-caps;
+    font-variant-ligatures: none;
   }
 
   main article audio,
@@ -553,6 +555,7 @@
 
   span.roman {
     font-variant: all-small-caps;
+    font-variant-ligatures: none;
   }
 
   .hidden {
