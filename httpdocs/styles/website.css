@@ -237,7 +237,7 @@
         position: absolute;
         top: -0.1em;
         margin-left: calc(-1 * var(--indentation));
-        font-family: Numbered;
+        font-family: Numbered, sans-serif;
         font-size: 1.15em;
         content: counter(number);
         counter-increment: number;
@@ -257,7 +257,7 @@
     main article h2 {
       margin-top: calc(2 * var(--margin));
       font-size: 1.25em;
-      line-height: 1.15;
+      line-height: 1.35;
 
       a {
         position: relative;
@@ -357,7 +357,7 @@
 
         > span > span {
           margin-right: 0.125em;
-          font-family: Numbered;
+          font-family: Numbered, sans-serif;
         }
       }
 
@@ -466,7 +466,6 @@
   html {
     font-variant-numeric: oldstyle-nums;
     scroll-padding-top: var(--margin);
-    scroll-behavior: smooth;
   }
 
   html,
