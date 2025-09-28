@@ -67,7 +67,7 @@ export const blog = {
   /**
    * Manejador del evento disparado al avanzar o retroceder por el historial del navegador
    */
-  popstateHandler: function (event) {
+  popstateHandler: function () {
     blog.dispatch(document.URL)
   },
 
@@ -344,10 +344,6 @@ export const blog = {
 
     blog.dispatch(document.URL)
 
-    // Queremos transiciones suaves al cargar un artículo,
-    // pero no cuando se accede directamente a uno por su URL
-    setTimeout(() => document.body.classList.add('transition'), 500)
-
     blog.renderHome()
 
     blog.renderDashes('div > header > nav')
@@ -362,22 +358,6 @@ export const blog = {
       history.pushState(null, '', '/')
       blog.showHome()
     })
-
-    document
-      .querySelector('header')
-      ?.addEventListener('transitionend', (event) => {
-        if (
-          event.target instanceof Element &&
-          event.target.tagName === 'HEADER' &&
-          event.propertyName === 'margin-left'
-        ) {
-          const element = document.body.classList.contains('article')
-            ? this.nav
-            : this.article
-
-          element.parentNode.classList.add('hidden')
-        }
-      })
   },
 
   /**
@@ -412,7 +392,8 @@ export const blog = {
 
     blog.article.innerHTML = await response.text()
     blog.article.setAttribute('lang', item.language)
-    blog.article.parentNode.classList.remove('hidden')
+
+    blog.nav?.parentNode.classList.add('hidden')
 
     if (type === 'post') {
       const h1 = this.article.querySelector('h1').innerHTML
