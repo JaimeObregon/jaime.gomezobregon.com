@@ -350,7 +350,7 @@ export const blog = {
 
     blog.renderHome()
 
-    blog.renderDashes('div > header')
+    blog.renderDashes('div > header > nav')
 
     blog.renderInitials('header > section > p:first-of-type')
 
@@ -421,13 +421,11 @@ export const blog = {
 
       const url = `${blog.github.url}/commits/${blog.github.branch}/httpdocs/posts/${item.id}/index.html`
 
-      header.innerHTML = `
-                <a href="/">Jaime Gómez-Obregón</a>
-                <h1>${h1}</h1>
-                <time datetime="${item.date_published}">
-                    ${date}
-                </time>
-            `
+      header.innerHTML = html`
+        <a href="/">Jaime Gómez-Obregón</a>
+        <h1>${h1}</h1>
+        <time datetime="${item.date_published}">${date}</time>
+      `
 
       this.article.querySelector('h1').replaceWith(header)
     }
