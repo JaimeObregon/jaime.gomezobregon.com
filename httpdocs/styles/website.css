@@ -1,4 +1,4 @@
-@layer general, layout, newsletter, backbutton, article, home, footnotes;
+@layer general, layout, backbutton, article, home, footnotes;
 
 @import url('./normalize.css');
 @import url('./typography.css');
@@ -48,34 +48,6 @@
         font-weight: 700;
         text-align: right;
         content: counter(number) ' ';
-      }
-    }
-  }
-}
-
-@layer newsletter {
-  main > aside {
-    font-size: 0.85em;
-
-    > p {
-      all: revert;
-      margin: 0;
-    }
-
-    > a {
-      display: inline-block;
-      padding: 0 1em;
-      margin-top: 1em;
-      font-weight: 700;
-      text-decoration: none;
-      background: var(--color-background);
-      border: 1px solid;
-      border-radius: 1em;
-
-      &:hover {
-        text-decoration: none;
-        border-color: transparent;
-        filter: saturate(0) contrast(2) invert(1);
       }
     }
   }
