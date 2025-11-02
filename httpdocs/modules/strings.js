@@ -15,4 +15,18 @@ const slugize = (string) => {
     .replace(/(^-|-$)/g, '')
 }
 
-export { css, html, slugize }
+// Escapa caracteres especiales para XML
+const escape = (str) => {
+  if (!str) {
+    return ''
+  }
+
+  return str
+    .replace(/&/g, '&amp;')
+    .replace(/</g, '&lt;')
+    .replace(/>/g, '&gt;')
+    .replace(/"/g, '&quot;')
+    .replace(/'/g, '&apos;')
+}
+
+export { css, html, slugize, escape }

@@ -41,3 +41,5 @@ jq --compact-output '.items[]' httpdocs/index.json | while IFS= read -r item; do
 $metadata" httpdocs/index.html \
       > "build/$id/index.html"
 done
+
+node bin/rss.js
