@@ -27,6 +27,30 @@
   },
   "items": [
     {
+      "id": "la-vida-adulta",
+      "url": "https://jaime.gomezobregon.com/la-vida-adulta",
+      "title": "La vida adulta es jodida",
+      "content_text": "Hay un cómodo carril por el que casi todo el mundo transita: contrato laboral, sueldo fijo, boda, hipoteca, familia, suegros, Netflix, sábados en Carrefour. Yo he intentado hacer mi propio sendero, humildemente.",
+      "date_published": "2026-01-15T01:13:00Z",
+      "tags": ["Destacado", "Reflexiones"],
+      "language": "es",
+      "_jaime": {
+        "license": "CC BY-NC-ND"
+      }
+    },
+    {
+      "id": "del-sindrome-de-stendhal",
+      "url": "https://jaime.gomezobregon.com/del-sindrome-de-stendhal",
+      "title": "Del síndrome de Stendhal",
+      "content_text": "A los 23 años me enamoré de una chica. Simplemente la vi por la calle pasar, tal y como un ángel pasaría. Me volví con disimulo, sintiendo en ese mismo instante todas las punzadas del síndrome de Stendhal.",
+      "date_published": "2025-12-25T17:11:00Z",
+      "tags": ["Destacado", "Reflexiones"],
+      "language": "es",
+      "_jaime": {
+        "license": "CC BY-NC-ND"
+      }
+    },
+    {
       "id": "memoria-del-nadzak",
       "url": "https://jaime.gomezobregon.com/memoria-del-nadzak",
       "title": "Memoria del Nadzak",
