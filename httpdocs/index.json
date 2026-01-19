@@ -27,6 +27,18 @@
   },
   "items": [
     {
+      "id": "no-hay-salida",
+      "url": "https://jaime.gomezobregon.com/no-hay-salida",
+      "title": "No hay salida",
+      "content_text": "El mundo es un lugar extraño. Si a veces me cautivó; hoy me toma por cautivo. Tantos años intentando encajar en él… Escribí este texto roto, herido, mirando al abismo. Y ahora lo leo y dudo entre expiarlo aquí o guardármelo en las entrañas. Entre lo temerario y lo temeroso. Qué más da: no hay salida.",
+      "date_published": "2026-01-16T15:32:00Z",
+      "tags": ["Destacado", "Reflexiones"],
+      "language": "es",
+      "_jaime": {
+        "license": "CC BY-NC-ND"
+      }
+    },
+    {
       "id": "la-vida-adulta",
       "url": "https://jaime.gomezobregon.com/la-vida-adulta",
       "title": "La vida adulta es jodida",
