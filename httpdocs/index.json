@@ -27,6 +27,18 @@
   },
   "items": [
     {
+      "id": "el-algoritmo-que-cambio-el-mundo",
+      "url": "https://jaime.gomezobregon.com/el-algoritmo-que-cambio-el-mundo",
+      "title": "Prólogo a «El algoritmo que cambió el mundo»",
+      "content_text": "Mi amigo David Bonilla compendió en un libro una selección de las reflexiones semanales que comparte en su lista de correo. El volumen se titula «El algoritmo que cambió el mundo» y me honró pidiéndome que escribiera este prólogo.",
+      "date_published": "2026-02-22T16:18:00Z",
+      "tags": ["Destacado", "Reflexiones"],
+      "language": "es",
+      "_jaime": {
+        "license": "CC BY-NC-ND"
+      }
+    },
+    {
       "id": "no-hay-salida",
       "url": "https://jaime.gomezobregon.com/no-hay-salida",
       "title": "No hay salida",
