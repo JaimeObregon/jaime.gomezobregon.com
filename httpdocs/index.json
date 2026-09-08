@@ -27,6 +27,18 @@
   },
   "items": [
     {
+      "id": "lo-que-ayer-me-enseno-un-tipo-callejero",
+      "url": "https://jaime.gomezobregon.com/lo-que-ayer-me-enseno-un-tipo-callejero",
+      "title": "Lo que ayer me enseñó un tipo callejero",
+      "content_text": "Ayer, en la calle, se me aproximó un tipo con pinta chunga. Merodeaba, mal vestido y se fijó en mí. Se me acercó y me preguntó por una calle. Olía a alcohol.",
+      "date_published": "2026-09-08T00:00:00Z",
+      "tags": ["Destacado", "Reflexiones"],
+      "language": "es",
+      "_jaime": {
+        "license": "CC BY-NC-ND"
+      }
+    },
+    {
       "id": "el-algoritmo-que-cambio-el-mundo",
       "url": "https://jaime.gomezobregon.com/el-algoritmo-que-cambio-el-mundo",
       "title": "Prólogo a «El algoritmo que cambió el mundo»",
